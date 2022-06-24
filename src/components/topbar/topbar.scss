@@ -14,20 +14,17 @@
     padding: 0 20px;
 
     &Menu {
-        &.active {
-
-        }
         display: none;
     }
     &Group {
-        &.active {
-
-        }
         display: flex;
         align-items: center;
 
         // Item
         .topbarItem {
+            &:hover {
+                color: $mainColor;
+            }
             &:last-child {
                 margin-right: 0;
             }
@@ -57,8 +54,10 @@
                 top: calc(100% + 1px);
                 left: 20px;
                 background-color: white;
-                border-bottom: 1px solid $disableColor;
                 box-shadow: $shawdowNotTop;
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+                overflow: hidden;
                 .topbarCategoryItem {
                     padding: 0 20px;
                     text-decoration: none;
@@ -120,8 +119,13 @@
                 background-color: white;
                 box-shadow: $shawdowNotTop;
                 max-height: calc($heightChildTopbar * 4);
-                overflow-y: scroll;
+                overflow-y: auto;
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
                 .topbarNotifyItem {
+                    &:last-child {
+                        border: none;
+                    }
                     display: flex;
                     align-items: center;
                     height: $heightChildTopbar;
@@ -169,7 +173,13 @@
                 right: 20px;
                 background-color: white;
                 box-shadow: $shawdowNotTop;
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+                overflow: hidden;
                 .topbarSettingItem {
+                    &:last-child {
+                        border: none;
+                    }
                     padding: 0 20px;
                     text-decoration: none;
                     color: black;
@@ -188,11 +198,429 @@
     }
 }
 
-//* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
-@media (min-width: 1024px) and (max-width: 1239px) {}
 
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
-@media (min-width: 740px) and (max-width: 1023px) {}
+@media (min-width: 740px) and (max-width: 900px) {
+    .topbar {
+        width: 100%;
+        height: $heightTopbar;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        border-bottom: 1px solid $disableColor;
+        @include font('part');
+        background-color: white;
+        padding: 0 15px; //
+    
+        &Menu {
+            display: none;
+        }
+        &Group {
+            display: flex;
+            align-items: center;
+    
+            // Item
+            .topbarItem {
+                &:hover {
+                    color: $mainColor;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+                display: flex;
+                align-items: center;
+                margin-right: 15px; //
+                text-decoration: none;
+                color: black;
+                cursor: pointer;
+    
+                // Category
+                .topbarCategoryIcon {
+                    &.active {
+                        color: $mainColor;
+                        @include rotate180;
+                    }
+                    margin-left: 5px;
+                }
+                .topbarCategoryList {
+                    &.active {
+                        display: flex;
+                        align-items: center;
+                        @include slideRight;
+                    }
+                    display: none;
+                    position: absolute;
+                    top: calc(100% + 1px);
+                    left: 15px; //
+                    background-color: white;
+                    box-shadow: $shawdowNotTop;
+                    border-bottom-left-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                    overflow: hidden;
+                    .topbarCategoryItem {
+                        padding: 0 15px; //
+                        text-decoration: none;
+                        color: black;
+                        height: $heightChildTopbar;
+                        display: flex;
+                        align-items: center;
+                        font-size: 15px;
+                        &:hover {
+                            background-color: $mainColor
+                        }
+                    }
+                }
+    
+                // Search
+                .topbarSearchIcon {
+    
+                }
+                .topbarSearchInput {
+                    @include font('part');
+                    width: 100%;
+                    margin-left: 15px; //
+                }
+    
+                // Notify
+                .topbarNotifyIcon {
+                    &.active {
+                        color: $mainColor;
+                    }
+                }
+                .topbarNotifyNumber {
+                    &.active {
+                        display: none;
+                    }
+                    position: absolute;
+                    top: 20%;
+                    transform: translateX(85%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 15px;
+                    width: 15px;
+                    font-size: 10px;
+                    font-weight: 700;
+                    color: white;
+                    font-weight: 500;
+                    background-color: $errorColor;
+                    border-radius: 50%;
+                }
+                .topbarNotifyList {
+                    &.active {
+                        display: block;
+                        @include slideLeft;
+                    }
+                    display: none;
+                    position: absolute;
+                    top: calc(100% + 1px);
+                    right: 15px; //
+                    background-color: white;
+                    box-shadow: $shawdowNotTop;
+                    max-height: calc($heightChildTopbar * 4);
+                    overflow-y: auto;
+                    border-bottom-left-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                    .topbarNotifyItem {
+                        &:last-child {
+                            border: none;
+                        }
+                        display: flex;
+                        align-items: center;
+                        height: $heightChildTopbar;
+                        padding: 0 10px;
+                        border-bottom: 1px solid $disableColor;
+                        text-decoration: none;
+                        color: black;
+                        &:hover {
+                            background-color: $mainColor;
+                        }
+                        .topbarNotifyImg {
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                        }
+                        .topbarNotifyContent {
+                            font-size: 15px;
+                        }
+                    }
+                }
+    
+                // Image
+                .topbarImg {
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 50%;
+                }
+    
+                // Setting
+                .topbarSettingIcon {
+                    &.active {
+                        color: $mainColor;
+                        @include rotate180;
+                    }
+                }
+                .topbarSettingList {
+                    &.active {
+                        display: block;
+                        @include slideLeft;
+                    }
+                    display: none;
+                    position: absolute;
+                    top: calc(100% + 1px);
+                    right: 15px; //
+                    background-color: white;
+                    box-shadow: $shawdowNotTop;
+                    border-bottom-left-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                    overflow: hidden;
+                    .topbarSettingItem {
+                        &:last-child {
+                            border: none;
+                        }
+                        padding: 0 15px; //
+                        text-decoration: none;
+                        color: black;
+                        height: $heightChildTopbar;
+                        display: flex;
+                        align-items: center;
+                        font-size: 15px;
+                        border-bottom: 1px solid $disableColor;
+                        &:hover {
+                            background-color: $mainColor
+                        }
+                    }
+                }
+    
+            }
+        }
+    }
+}
 
 /* OPEN - MOBILE độ phân giải <= 739px */
-@media (max-width: 739px) {}
+@media (max-width: 739px) {
+    .topbar {
+        width: 100%;
+        height: $heightTopbarM; ///
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        border-bottom: 1px solid $disableColor;
+        @include font('part');
+        background-color: white;
+        padding: 0 10px; ///
+    
+        &Menu {
+            &.active {
+                color: $mainColor; ///
+            }
+            display: block; ///
+        }
+        &Group {
+
+            &:nth-child(2) {
+                &.active {
+                    display: flex; ///
+                    justify-content: space-between; ///
+                    @include slideRight; ///
+                }
+                display: none; ///
+                position: absolute;///
+                top: calc(100% + 1px);///
+                left: 0; ///
+                background-color: white; ///
+                height: $heightChildTopbarM; ///
+                width: 100%; ///
+                padding: 0 10px; ///
+                box-shadow: $shawdowNotTop; ///
+            }
+            display: flex;
+            align-items: center;
+    
+            // Item
+            .topbarItem {
+                &:hover {
+                    color: $mainColor;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+                display: flex;
+                align-items: center;
+                margin-right: 10px; ///
+                text-decoration: none;
+                color: black;
+                cursor: pointer;
+    
+                // Category
+                .topbarCategoryIcon {
+                    &.active {
+                        color: $mainColor;
+                        @include rotate180;
+                    }
+                    margin-left: 5px;
+                }
+                .topbarCategoryList {
+                    &.active {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between; ///
+                        @include slideRight;
+                    }
+                    display: none;
+                    position: absolute;
+                    top: 100%; ///
+                    left: 0; ///
+                    width: 100%; ///
+                    background-color: white;
+                    box-shadow: $shawdowNotTop;
+                    border-top: 1px solid $disableColor; ///
+                    border-bottom-left-radius: 0; ///
+                    border-bottom-right-radius: 0; ///
+                    overflow: hidden;
+                    padding: 0 10px; ///
+                    .topbarCategoryItem {
+                        padding: 0; ///
+                        text-decoration: none;
+                        color: black;
+                        height: $heightChildTopbarM; ///
+                        display: flex;
+                        align-items: center;
+                        font-size: 15px;
+                        &:hover {
+                            background-color: $mainColor
+                        }
+                    }
+                }
+    
+                // Search
+                .topbarSearchIcon {
+    
+                }
+                .topbarSearchInput {
+                    @include font('part');
+                    width: 100%;
+                    margin-left: 10px; ///
+                }
+    
+                // Notify
+                .topbarNotifyIcon {
+                    &.active {
+                        color: $mainColor;
+                    }
+                }
+                .topbarNotifyNumber {
+                    &.active {
+                        display: none;
+                    }
+                    position: absolute;
+                    top: 10%; /// 
+                    transform: translateX(75%); ///
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 15px;
+                    width: 15px;
+                    font-size: 10px;
+                    font-weight: 700;
+                    color: white;
+                    font-weight: 500;
+                    background-color: $errorColor;
+                    border-radius: 50%;
+                }
+                .topbarNotifyList {
+                    &.active {
+                        display: block;
+                        @include slideLeft;
+                    }
+                    display: none;
+                    position: absolute;
+                    top: calc(100% + 1px);
+                    right: 0; ///
+                    background-color: white;
+                    box-shadow: $shawdowNotTop;
+                    max-height: calc($heightChildTopbarM * 4); ///
+                    overflow-y: auto;
+                    border-bottom-left-radius: 4px;
+                    border-bottom-right-radius: 0; ///
+                    .topbarNotifyItem {
+                        &:last-child {
+                            border: none;
+                        }
+                        display: flex;
+                        align-items: center;
+                        height: $heightChildTopbarM; ///
+                        padding: 0 10px;
+                        border-bottom: 1px solid $disableColor;
+                        text-decoration: none;
+                        color: black;
+                        &:hover {
+                            background-color: $mainColor;
+                        }
+                        .topbarNotifyImg {
+                            height: 25px; ///
+                            width: 25px; ///
+                            border-radius: 50%;
+                            margin-right: 10px;
+                        }
+                        .topbarNotifyContent {
+                            font-size: 15px;
+                        }
+                    }
+                }
+    
+                // Image
+                .topbarImg {
+                    height: 25px; ///
+                    width: 25px; ///
+                    border-radius: 50%;
+                }
+    
+                // Setting
+                .topbarSettingIcon {
+                    &.active {
+                        color: $mainColor;
+                        @include rotate180;
+                    }
+                }
+                .topbarSettingList {
+                    &.active {
+                        display: block;
+                        @include slideLeft;
+                    }
+                    display: none;
+                    position: absolute;
+                    top: calc(100% + 1px);
+                    right: 0; ///
+                    background-color: white;
+                    box-shadow: $shawdowNotTop;
+                    border-bottom-left-radius: 4px;
+                    border-bottom-right-radius: 0; ///
+                    overflow: hidden;
+                    .topbarSettingItem {
+                        &:last-child {
+                            border: none;
+                        }
+                        padding: 0 10px; ///
+                        text-decoration: none;
+                        color: black;
+                        height: $heightChildTopbarM; ///
+                        display: flex;
+                        align-items: center;
+                        font-size: 15px;
+                        border-bottom: 1px solid $disableColor;
+                        &:hover {
+                            background-color: $mainColor
+                        }
+                    }
+                }
+    
+            }
+        }
+    }
+}

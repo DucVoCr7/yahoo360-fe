@@ -13,10 +13,12 @@ export default function Topbar() {
     const [openCategory, setOpenCategory] = useState(false)
     const [openNotify, setOpenNotify] = useState(false)
     const [openSetting, setOpenSetting] = useState(false)
-    const [openMenu, setOpenMenu] = useState(false)
+    const [openMenuM, setOpenMenuM] = useState(false)
     const refCategory = useRef()
     const refNotify = useRef()
     const refSetting = useRef()
+    const refMenuM = useRef()
+    const refMenuMIcon = useRef()
 
     // Click outSide close ref
     useEffect(() => {
@@ -35,23 +37,30 @@ export default function Topbar() {
                 setOpenSetting(false)
             }
         }
+        const handleClickOutSideMenuM = (event) => {
+            if (refMenuM.current && !refMenuM.current.contains(event.target) && !refMenuMIcon.current.contains(event.target)) {
+                setOpenMenuM(false)
+            }
+        }
         window.addEventListener('click', handleClickOutSideCategory)
         window.addEventListener('click', handleClickOutSideNotify)
         window.addEventListener('click', handleClickOutSideSetting)
+        window.addEventListener('click', handleClickOutSideMenuM)
         return () => {
             window.removeEventListener('click', handleClickOutSideCategory)
             window.removeEventListener('click', handleClickOutSideNotify)
             window.removeEventListener('click', handleClickOutSideSetting)
+            window.removeEventListener('click', handleClickOutSideMenuM)
         }
     }, [])
     return (
         <div className='topbar'>
-            <i onClick={() => setOpenMenu(!openMenu)}
-                className={openMenu ? 'topbarMenu bi-list-nested active' : 'topbarMenu bi bi-list'}
+            <i onClick={() => setOpenMenuM(!openMenuM)} ref={refMenuMIcon}
+                className={openMenuM ? 'topbarMenu bi-list-nested active' : 'topbarMenu bi bi-list'}
             ></i>
-            <div className={openMenu ? 'topbarGroup active' : 'topbarGroup'}>
-                <Link className='topbarItem' to='/'>COMMUNITY</Link>
-                <Link className='topbarItem' to='/write'>WRITE</Link>
+            <div className={openMenuM ? 'topbarGroup active' : 'topbarGroup'} ref={refMenuM}>
+                <Link className='topbarItem' to='/' onClick={() => setOpenMenuM(!openMenuM)}>COMMUNITY</Link>
+                <Link className='topbarItem' to='/write' onClick={() => setOpenMenuM(!openMenuM)}>WRITE</Link>
                 <div className='topbarItem' onClick={() => setOpenCategory(!openCategory)}ref={refCategory}> 
                     CATEGORY
                     <i className={openCategory ? 'topbarCategoryIcon bi bi-chevron-right active' : 'topbarCategoryIcon bi bi-chevron-right'}></i>
