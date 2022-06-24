@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './login.scss'
 import logo from '../../assets/image/logo.png'
+import axios from 'axios'
 export default function Login() {
 
   const [userInfo, setUserInfo] = useState()
@@ -9,6 +10,15 @@ export default function Login() {
   const handleChange = (event)=> setUserInfo({...userInfo, [event.target.name]: event.target.value})
   const handleLogin = async (event)=> {
     event.preventDefault()
+    setError({password: "At least 6 characters!", email: "Email is not registered!"})
+    try {
+      // event.preventDefault()
+      // const res = await axios.post('https://server-yahoo360v2.herokuapp.com/login', userInfo)
+      // console.log(res.data)
+    } catch (error) {
+      // setError(error.response.data)
+      
+    }
     //
   }
 
@@ -30,9 +40,9 @@ export default function Login() {
             <input className='loginInput' id='loginPassword' type='password' name='password' placeholder='Enter your password....'
               onChange={handleChange}
             />
-            <button className='loginSubmit' type='submit'>Login</button>
+            <button className='loginSubmit' type='submit'>LOGIN</button>
             <div className='loginToRegister'>
-              New to Yahoo! 360°? <Link to='/register' className='loginToRegisterLink'>Register</Link>
+              New to Yahoo! 360°? <Link to='/register' className='loginToRegisterLink'>REGISTER</Link>
             </div>
         </form>
     </div>

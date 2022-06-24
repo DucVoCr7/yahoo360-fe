@@ -448,8 +448,7 @@ input[type="search"] {
 }
 
 ::placeholder {
-  color: $disableColor;
-  font-style: italic;
+  color: $placeholderColor;
 }
 
 ul {
@@ -458,13 +457,16 @@ ul {
 }
 
 button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  &:active {
+    background-color: $clickColor;
+  }
   height: 40px;
-  min-width: 120px;
-  font-size: 25px;
+  min-width: 140px;
+  @include font('title');
   background-color: $mainColor;
+  box-shadow: $shadowFull;
+  color: $blackColor;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }

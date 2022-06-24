@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './register.scss'
+import logo from '../../assets/image/logo.png'
 
 export default function Register() {
 
@@ -15,9 +16,7 @@ export default function Register() {
   return (
     <div className='register'>
       <form className="registerForm" onSubmit={handleSubmit}>
-        <div className="registerFormTitle">
-          Yahoo! 360°
-        </div>
+      <img src={logo} alt="" className="registerLogo" />
         <label className='registerLabel'>
           Name
           {error?.name && <span className="registerError">{error.name}</span>}
@@ -39,11 +38,11 @@ export default function Register() {
         <input className='registerInput' type="password" name='password' placeholder='Enter your password....'
           onChange={handleChange}
         />
-        <button className='registerSubmit' type='submit'>Register</button>
+        <button className='registerSubmit' type='submit'>REGISTER</button>
         <div className="registerRules">
-          Signing up signifies that you have read and agree to the&nbsp;
+        Learn about&nbsp;
           <Link to='/about' className='registerRulesLink'>Terms of Service</Link>&nbsp;
-          and our&nbsp;
+          & &nbsp;
           <Link to='/about' className='registerRulesLink'>Privacy Policy</Link>.
         </div>
       </form>

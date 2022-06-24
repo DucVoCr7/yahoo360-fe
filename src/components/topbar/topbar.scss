@@ -7,6 +7,7 @@
     justify-content: space-between;
     align-items: center;
     position: sticky;
+    position: -webkit-sticky; /* Safari */
     top: 0;
     border-bottom: 1px solid $disableColor;
     @include font('part');
@@ -65,7 +66,7 @@
                     height: $heightChildTopbar;
                     display: flex;
                     align-items: center;
-                    font-size: 15px;
+                    font-size: 17px;
                     &:hover {
                         background-color: $mainColor
                     }
@@ -143,7 +144,7 @@
                         margin-right: 10px;
                     }
                     .topbarNotifyContent {
-                        font-size: 15px;
+                        font-size: 17px;
                     }
                 }
             }
@@ -186,7 +187,7 @@
                     height: $heightChildTopbar;
                     display: flex;
                     align-items: center;
-                    font-size: 15px;
+                    font-size: 17px;
                     border-bottom: 1px solid $disableColor;
                     &:hover {
                         background-color: $mainColor
@@ -208,6 +209,7 @@
         justify-content: space-between;
         align-items: center;
         position: sticky;
+        position: -webkit-sticky; /* Safari */
         top: 0;
         border-bottom: 1px solid $disableColor;
         @include font('part');
@@ -266,7 +268,7 @@
                         height: $heightChildTopbar;
                         display: flex;
                         align-items: center;
-                        font-size: 15px;
+                        font-size: 17px;
                         &:hover {
                             background-color: $mainColor
                         }
@@ -344,7 +346,7 @@
                             margin-right: 10px;
                         }
                         .topbarNotifyContent {
-                            font-size: 15px;
+                            font-size: 17px;
                         }
                     }
                 }
@@ -387,7 +389,7 @@
                         height: $heightChildTopbar;
                         display: flex;
                         align-items: center;
-                        font-size: 15px;
+                        font-size: 17px;
                         border-bottom: 1px solid $disableColor;
                         &:hover {
                             background-color: $mainColor
@@ -409,6 +411,7 @@
         justify-content: space-between;
         align-items: center;
         position: sticky;
+        position: -webkit-sticky; /* Safari */
         top: 0;
         border-bottom: 1px solid $disableColor;
         @include font('part');
@@ -491,7 +494,7 @@
                         height: $heightChildTopbarM; ///
                         display: flex;
                         align-items: center;
-                        font-size: 15px;
+                        font-size: 15px;///
                         &:hover {
                             background-color: $mainColor
                         }
@@ -569,7 +572,7 @@
                             margin-right: 10px;
                         }
                         .topbarNotifyContent {
-                            font-size: 15px;
+                            font-size: 15px;///
                         }
                     }
                 }
@@ -612,7 +615,7 @@
                         height: $heightChildTopbarM; ///
                         display: flex;
                         align-items: center;
-                        font-size: 15px;
+                        font-size: 15px;///
                         border-bottom: 1px solid $disableColor;
                         &:hover {
                             background-color: $mainColor
