@@ -8,8 +8,7 @@ import Register from "./pages/register/Register";
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
 import { useSelector } from "react-redux/es/exports";
-import './assets/css/lib-grid.css'
-import './assets/css/reset.css'
+import './assets/scss/reset.scss'
 import User from "./pages/user/User";
 import UpdateAccount from "./pages/updateAccount/UpdateAccount";
 import ManageUsers from "./pages/manageUsers/ManageUsers";
@@ -23,8 +22,8 @@ export default function App() {
       <BrowserRouter>
         <Topbar/>
         <Routes>
-          <Route path="/register" element={user ? <Home/> : <Register/>}/>
-          <Route path="/login" element={user ? <Home/> : <Login/>}/>
+          <Route path="/register" element={<Register/>}/>
+          <Route path="/login" element={<Login/>}/>
 
           <Route path="/" element={<Community/>}/>
           <Route path="/user/:userId" element={<User/>}/>

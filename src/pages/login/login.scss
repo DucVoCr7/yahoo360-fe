@@ -1,6 +1,53 @@
 @use '/src/assets/scss' as *;
-.login {
 
+.login {
+    width: 100%;
+    height: calc(100vh - $heightTopbar - $heightFooter);
+    background-image: url('../../assets/image/background-login.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include font('title');
+    &Form {
+        width: 25%;
+        height: 40%;
+        background-color: rgba($whiteColor, 0.7) ;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 20px;
+        border-radius: 20px;
+        box-shadow: $shadowFull;
+        .loginLogo {
+            object-fit: cover;
+            width: 70%;
+        }
+        .loginLabel {
+            width: 100%;
+            .loginError {
+
+            }
+        }
+        .loginInput {
+            &::placeholder {
+                color: $blackColor;
+            }
+            width: 100%;
+            padding: 5px 0;
+            background-color: transparent;
+            border-bottom: 1px solid $blackColor;
+        }
+        .loginSubmit {
+
+        }
+        .loginToRegister {
+            &Link {
+
+            }
+        }
+    }
 }
 
 //* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */

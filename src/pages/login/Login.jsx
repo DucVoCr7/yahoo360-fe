@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './login.scss'
-
+import logo from '../../assets/image/logo.png'
 export default function Login() {
 
   const [userInfo, setUserInfo] = useState()
@@ -14,26 +14,24 @@ export default function Login() {
 
   return (
     <div className='login'>
-        <form className="loginForm" onSubmit={handleLogin}>
-            <div className="loginFormTitle">
-                Yahoo! 360°
-            </div>
-            <label className='loginLabel' htmlFor="loginEmail">
+        <form className='loginForm' onSubmit={handleLogin}>
+            <img src={logo} alt="" className="loginLogo" />
+            <label className='loginLabel' htmlFor='loginEmail'>
               Email
               {error?.email && <span className='loginError'>{error.email}</span>}
             </label>
-            <input className='loginInput' id='loginEmail' type="text" name='email' placeholder='Enter your mail...' 
+            <input className='loginInput' id='loginEmail' type='text' name='email' placeholder='Enter your mail...' 
               onChange={handleChange}
             />
-            <label className='loginLabel' htmlFor="loginPassword">
+            <label className='loginLabel' htmlFor='loginPassword'>
               Password
               {error?.password && <span className='loginError'>{error.password}</span>}
             </label>
-            <input className='loginInput' id='loginPassword' type="password" name='password' placeholder='Enter your password....'
+            <input className='loginInput' id='loginPassword' type='password' name='password' placeholder='Enter your password....'
               onChange={handleChange}
             />
             <button className='loginSubmit' type='submit'>Login</button>
-            <div className="loginToRegister">
+            <div className='loginToRegister'>
               New to Yahoo! 360°? <Link to='/register' className='loginToRegisterLink'>Register</Link>
             </div>
         </form>

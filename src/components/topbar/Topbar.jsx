@@ -4,11 +4,11 @@ import avatar from '../../assets/image/avatar.jpg'
 import './topbar.scss'
 export default function Topbar() {
     const categoryList = ['Life', 'Sport', 'Style', 'Tech', 'Music', 'Cinema', 'Travel', 'Food']
-    const user = {
-        roleId: 'R0'
-    }
+    // const user = {
+    //     roleId: 'R0'
+    // }
     // const user = 'sdsd'
-    // const user = null
+    const user = null
 
     const [openCategory, setOpenCategory] = useState(false)
     const [openNotify, setOpenNotify] = useState(false)
@@ -61,10 +61,10 @@ export default function Topbar() {
             <div className={openMenuM ? 'topbarGroup active' : 'topbarGroup'} ref={refMenuM}>
                 <Link className='topbarItem' to='/' onClick={() => setOpenMenuM(!openMenuM)}>COMMUNITY</Link>
                 <Link className='topbarItem' to='/write' onClick={() => setOpenMenuM(!openMenuM)}>WRITE</Link>
-                <div className='topbarItem' onClick={() => setOpenCategory(!openCategory)}ref={refCategory}> 
+                <div className='topbarItem' onClick={() => setOpenCategory(!openCategory)} ref={refCategory}> 
                     CATEGORY
                     <i className={openCategory ? 'topbarCategoryIcon bi bi-chevron-right active' : 'topbarCategoryIcon bi bi-chevron-right'}></i>
-                    <ul className={openCategory ? 'topbarCategoryList active' : 'topbarCategoryList'}>
+                    <ul className={openCategory ? 'topbarCategoryList active' : 'topbarCategoryList'} onClick={() => setOpenMenuM(!openMenuM)}>
                         {categoryList.map((categoryItem, index) => (
                             <Link to={`posts?Category=${categoryItem}`} className='topbarCategoryItem' key={index}>{categoryItem}</Link>
                         ))}

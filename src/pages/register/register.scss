@@ -1,6 +1,9 @@
 @use '/src/assets/scss' as *;
 .register {
-
+    width: 100%;
+    height: calc(100vh - $heightTopbar - $heightFooter);
+    background-image: url('../../assets/image/background-register.jpg');
+    background-size: cover;
 }
 
 //* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
