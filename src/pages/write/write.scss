@@ -1,17 +1,631 @@
 @use '/src/assets/scss' as *;
 .write {
-
+    width: 100%;
+    min-height: calc(100vh - $heightTopbar - $heightFooter);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include font('title');
+    &Image {
+        width: 100%;
+        min-height: 200px;
+        position: relative;
+        background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
+        margin-bottom: 15px;
+        &Content {
+            display: block;
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+        }
+        &Icon {
+            &.active {
+                bottom: 6%;
+                left: 2%;
+                font-size: 18px;
+                transform: translateX(0%) translateY(0%);
+                color: $mainColor;
+                transition: bottom 1s linear, left 1s linear;
+                .writeImageIconChild {
+                    &:last-child {
+                        font-size: 15px;
+                        bottom: -5px;
+                        right: -10px;
+                        border: 3px solid $whiteColor;
+                    }
+                    margin-left: 10px;
+                    font-size: 35px;
+                }
+            }
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(50%);
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            &Child {
+                &:last-child {
+                    position: absolute;
+                    font-size: 25px;
+                    bottom: -10px;
+                    right: -20px;
+                    background-color: $whiteColor;
+                    border: 5px solid $whiteColor;
+                    border-radius: 50%;
+                }
+                margin-left: 10px;
+                font-size: 60px;
+            }
+        }
+    }
+    &Title {
+        font-size: 22px;
+        font-weight: 600;
+        border: 1px solid transparent;
+        box-shadow: $shadowFull;
+        width: calc(100% - 40px);
+        margin-bottom: 15px;
+        padding: 10px 20px;
+        border-radius: 10px !important;
+        &:focus {
+            border-color: $mainColor;
+        }
+    }
+    &Category {
+        width: calc(100% - 40px);
+        position: relative;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        &Icon{
+            cursor: pointer;
+            padding: 0 10px;
+        }
+        &Content {
+            cursor: pointer;
+            font-size: 15px;
+            height: 100%;
+            width: 80px;
+            background-color: $mainColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        &List {
+            &.active {
+                display: flex;
+                @include slideLeft;
+            }
+            display: none;
+            position: absolute;
+            height: 100%;
+            right: 0;
+            top: 0;
+            font-size: 15px;
+            .writeCategoryItem {
+                &:hover {
+                    background-color: $clickColor;
+                }
+                width: 80px;
+                margin-left: 10px;
+                background-color: $mainColor;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+    &Content {
+        @include font('content');
+        width: calc(100% - 40px);
+        margin-bottom: 15px;
+        flex: 1;
+        box-shadow: $shadowFull;
+        border-radius: 10px;
+        overflow: hidden;
+        // Custom ckEditor
+        .ck-toolbar {
+            border: none !important;
+        }
+        .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+            border: none !important;
+        }
+        .ck.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
+            box-shadow: none;
+            border: none !important;
+        }
+        .ck.ck-toolbar.ck-toolbar_grouping>.ck-toolbar__items {
+            background-color: white;
+        }
+    }
+    &Submit {
+        margin-bottom: 15px;
+    }
+    &Error {
+        margin-bottom: 15px;
+        width: calc(100% - 40px);
+        color: $errorColor;
+    }
 }
 
-//* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
-@media (min-width: 1024px) and (max-width: 1239px) {
-
-}
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
-@media (min-width: 740px) and (max-width: 1023px) {
-
+@media (min-width: 930px) and (max-width: 1023px) {
+    .write {
+        width: 100%;
+        min-height: calc(100vh - $heightTopbar - $heightFooter);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include font('title');
+        &Image {
+            width: 100%;
+            min-height: 200px;
+            position: relative;
+            background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
+            margin-bottom: 15px;
+            &Content {
+                display: block;
+                width: 100%;
+                max-height: 300px;
+                object-fit: cover;
+            }
+            &Icon {
+                &.active {
+                    bottom: 6%;
+                    left: 2%;
+                    font-size: 18px;
+                    transform: translateX(0%) translateY(0%);
+                    color: $mainColor;
+                    transition: bottom 1s linear, left 1s linear;
+                    .writeImageIconChild {
+                        &:last-child {
+                            font-size: 15px;
+                            bottom: -5px;
+                            right: -10px;
+                            border: 3px solid $whiteColor;
+                        }
+                        margin-left: 10px;
+                        font-size: 35px;
+                    }
+                }
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%);
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                &Child {
+                    &:last-child {
+                        position: absolute;
+                        font-size: 25px;
+                        bottom: -10px;
+                        right: -20px;
+                        background-color: $whiteColor;
+                        border: 5px solid $whiteColor;
+                        border-radius: 50%;
+                    }
+                    margin-left: 10px;
+                    font-size: 60px;
+                }
+            }
+        }
+        &Title {
+            font-size: 22px;
+            font-weight: 600;
+            border: 1px solid transparent;
+            box-shadow: $shadowFull;
+            width: calc(100% - 40px);
+            margin-bottom: 15px;
+            padding: 10px 20px;
+            border-radius: 10px !important;
+            &:focus {
+                border-color: $mainColor;
+            }
+        }
+        &Category {
+            width: calc(100% - 40px);
+            position: relative;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            &Icon{
+                cursor: pointer;
+                padding: 0 10px;
+            }
+            &Content {
+                cursor: pointer;
+                font-size: 15px;
+                height: 100%;
+                width: 70px; //
+                background-color: $mainColor;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+            }
+            &List {
+                &.active {
+                    display: flex;
+                    @include slideLeft;
+                }
+                display: none;
+                position: absolute;
+                height: 100%;
+                right: 0;
+                top: 0;
+                font-size: 15px;
+                .writeCategoryItem {
+                    &:hover {
+                        background-color: $clickColor;
+                    }
+                    width: 70px; //
+                    margin-left: 10px;
+                    background-color: $mainColor;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 10px;
+                    cursor: pointer;
+                }
+            }
+        }
+        &Content {
+            @include font('content');
+            width: calc(100% - 40px);
+            margin-bottom: 15px;
+            flex: 1;
+            box-shadow: $shadowFull;
+            border-radius: 10px;
+            overflow: hidden;
+            // Custom ckEditor
+            .ck-toolbar {
+                border: none !important;
+            }
+            .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+                border: none !important;
+            }
+            .ck.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
+                box-shadow: none;
+                border: none !important;
+            }
+            .ck.ck-toolbar.ck-toolbar_grouping>.ck-toolbar__items {
+                background-color: white;
+            }
+        }
+        &Submit {
+            margin-bottom: 15px;
+        }
+        &Error {
+            margin-bottom: 15px;
+            width: calc(100% - 40px);
+            color: $errorColor;
+        }
+    }
+}
+@media (min-width: 740px) and (max-width: 929px) {
+    .write {
+        width: 100%;
+        min-height: calc(100vh - $heightTopbar - $heightFooter);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include font('title');
+        &Image {
+            width: 100%;
+            min-height: 200px;
+            position: relative;
+            background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
+            margin-bottom: 15px;
+            &Content {
+                display: block;
+                width: 100%;
+                max-height: 300px;
+                object-fit: cover;
+            }
+            &Icon {
+                &.active {
+                    bottom: 6%;
+                    left: 2%;
+                    font-size: 18px;
+                    transform: translateX(0%) translateY(0%);
+                    color: $mainColor;
+                    transition: bottom 1s linear, left 1s linear;
+                    .writeImageIconChild {
+                        &:last-child {
+                            font-size: 15px;
+                            bottom: -5px;
+                            right: -10px;
+                            border: 3px solid $whiteColor;
+                        }
+                        margin-left: 10px;
+                        font-size: 35px;
+                    }
+                }
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%);
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                &Child {
+                    &:last-child {
+                        position: absolute;
+                        font-size: 25px;
+                        bottom: -10px;
+                        right: -20px;
+                        background-color: $whiteColor;
+                        border: 5px solid $whiteColor;
+                        border-radius: 50%;
+                    }
+                    margin-left: 10px;
+                    font-size: 60px;
+                }
+            }
+        }
+        &Title {
+            font-size: 22px;
+            font-weight: 600;
+            border: 1px solid transparent;
+            box-shadow: $shadowFull;
+            width: calc(100% - 30px); //
+            margin-bottom: 15px;
+            padding: 10px 20px;
+            border-radius: 10px !important;
+            &:focus {
+                border-color: $mainColor;
+            }
+        }
+        &Category {
+            width: calc(100% - 30px); //
+            position: relative;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            &Icon{
+                cursor: pointer;
+                padding: 0 10px;
+            }
+            &Content {
+                cursor: pointer;
+                font-size: 15px;
+                height: 100%;
+                width: 55px; //
+                background-color: $mainColor;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+            }
+            &List {
+                &.active {
+                    display: flex;
+                    @include slideLeft;
+                }
+                display: none;
+                position: absolute;
+                height: 100%;
+                right: 0;
+                top: 0;
+                font-size: 15px;
+                .writeCategoryItem {
+                    &:hover {
+                        background-color: $clickColor;
+                    }
+                    width: 55px; //
+                    margin-left: 5px; //
+                    background-color: $mainColor;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 10px;
+                    cursor: pointer;
+                }
+            }
+        }
+        &Content {
+            @include font('content');
+            width: calc(100% - 30px); //
+            margin-bottom: 15px;
+            flex: 1;
+            box-shadow: $shadowFull;
+            border-radius: 10px;
+            overflow: hidden;
+            // Custom ckEditor
+            .ck-toolbar {
+                border: none !important;
+            }
+            .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+                border: none !important;
+            }
+            .ck.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
+                box-shadow: none;
+                border: none !important;
+            }
+            .ck.ck-toolbar.ck-toolbar_grouping>.ck-toolbar__items {
+                background-color: white;
+            }
+        }
+        &Submit {
+            margin-bottom: 15px;
+        }
+        &Error {
+            margin-bottom: 15px;
+            width: calc(100% - 30px); //
+            color: $errorColor;
+        }
+    }
 }
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
-
+    .write {
+        width: 100%;
+        min-height: calc(100vh - $heightTopbarM - $heightFooterM);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include font('title');
+        &Image {
+            width: 100%;
+            min-height: 200px;
+            position: relative;
+            background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
+            margin-bottom: 15px;
+            &Content {
+                display: block;
+                width: 100%;
+                max-height: 300px;
+                object-fit: cover;
+            }
+            &Icon {
+                &.active {
+                    bottom: 6%;
+                    left: 2%;
+                    font-size: 18px;
+                    transform: translateX(0%) translateY(0%);
+                    color: $mainColor;
+                    transition: bottom 1s linear, left 1s linear;
+                    .writeImageIconChild {
+                        &:last-child {
+                            font-size: 15px;
+                            bottom: -5px;
+                            right: -10px;
+                            border: 3px solid $whiteColor;
+                        }
+                        margin-left: 10px;
+                        font-size: 35px;
+                    }
+                }
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%);
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                &Child {
+                    &:last-child {
+                        position: absolute;
+                        font-size: 25px;
+                        bottom: -10px;
+                        right: -20px;
+                        background-color: $whiteColor;
+                        border: 5px solid $whiteColor;
+                        border-radius: 50%;
+                    }
+                    margin-left: 10px;
+                    font-size: 60px;
+                }
+            }
+        }
+        &Title {
+            font-size: 22px;
+            font-weight: 600;
+            border: 1px solid transparent;
+            box-shadow: $shadowFull;
+            width: calc(100% - 20px); //
+            margin-bottom: 15px;
+            padding: 10px 20px;
+            border-radius: 10px !important;
+            &:focus {
+                border-color: $mainColor;
+            }
+        }
+        &Category {
+            width: calc(100% - 20px); //
+            position: relative;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            &Icon{
+                cursor: pointer;
+                padding: 0 10px;
+            }
+            &Content {
+                cursor: pointer;
+                font-size: 16px; //
+                height: 100%;
+                width: 55px; //
+                background-color: $mainColor;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+            }
+            &List {
+                &.active {
+                    display: flex;
+                    justify-content: space-around; //
+                    @include slideLeft;
+                }
+                width: 100%; ///
+                border-radius: 10px; //
+                box-shadow: $shadowFull;
+                background-color: $mainColor; ///
+                display: none;
+                position: absolute;
+                height: 100%;
+                right: 0;
+                top: 0;
+                font-size: 16px; ///
+                .writeCategoryItem {
+                    &:hover {
+                        background-color: $clickColor;
+                    }
+                    width: unset; //
+                    margin-left: 0px; //
+                    background-color: unset; //
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 10px;
+                    cursor: pointer;
+                }
+            }
+        }
+        &Content {
+            @include font('content');
+            width: calc(100% - 20px); //
+            margin-bottom: 15px;
+            flex: 1;
+            box-shadow: $shadowFull;
+            border-radius: 10px;
+            overflow: hidden;
+            // Custom ckEditor
+            .ck-toolbar {
+                border: none !important;
+            }
+            .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+                border: none !important;
+            }
+            .ck.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
+                box-shadow: none;
+                border: none !important;
+            }
+            .ck.ck-toolbar.ck-toolbar_grouping>.ck-toolbar__items {
+                background-color: white;
+            }
+        }
+        &Submit {
+            margin-bottom: 15px;
+        }
+        &Error {
+            margin-bottom: 15px;
+            width: calc(100% - 20px); //
+            color: $errorColor;
+        }
+    }
 }
