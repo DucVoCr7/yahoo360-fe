@@ -21,8 +21,9 @@
         border-radius: 20px;
         box-shadow: $shadowFull;
         .loginLogo {
-            object-fit: cover;
-            width: 70%;
+            @include font('logo');
+            text-shadow: $shadowFull;
+            color: $logoColor;
         }
         .loginLabel {
             display: flex;
@@ -73,8 +74,9 @@
             border-radius: 20px;
             box-shadow: $shadowFull;
             .loginLogo {
-                object-fit: cover;
-                width: 70%;
+                @include font('logo');
+                text-shadow: $shadowFull;
+                color: $logoColor;
             }
             .loginLabel {
                 display: flex;

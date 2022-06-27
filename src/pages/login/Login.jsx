@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './login.scss'
-import logo from '../../assets/image/logo.png'
 import axios from 'axios'
 export default function Login() {
 
@@ -25,7 +24,7 @@ export default function Login() {
   return (
     <div className='login'>
         <form className='loginForm' onSubmit={handleLogin}>
-            <img src={logo} alt="" className="loginLogo" />
+            <div className="loginLogo">YAHOO 360</div>
             <label className='loginLabel' htmlFor='loginEmail'>
               Email
               {error?.email && <span className='loginError'>{error.email}</span>}

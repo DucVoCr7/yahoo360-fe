@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './register.scss'
-import logo from '../../assets/image/logo.png'
 
 export default function Register() {
 
@@ -16,7 +15,7 @@ export default function Register() {
   return (
     <div className='register'>
       <form className="registerForm" onSubmit={handleSubmit}>
-      <img src={logo} alt="" className="registerLogo" />
+      <div className="registerLogo">YAHOO 360</div>
         <label className='registerLabel'>
           Name
           {error?.name && <span className="registerError">{error.name}</span>}

@@ -1,7 +1,7 @@
 @use '/src/assets/scss' as *;
 
 .topbar {
-    z-index: 1;
+    z-index: 3;
     width: 100%;
     height: $heightTopbar;
     display: flex;
@@ -204,7 +204,7 @@
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
 @media (min-width: 740px) and (max-width: 900px) {
     .topbar {
-        z-index: 1;
+        z-index: 3;
         width: 100%;
         height: $heightTopbar;
         display: flex;
@@ -407,7 +407,7 @@
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
     .topbar {
-        z-index: 1;
+        z-index: 3;
         width: 100%;
         height: $heightTopbarM; ///
         display: flex;

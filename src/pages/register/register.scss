@@ -20,8 +20,9 @@
         border-radius: 20px;
         box-shadow: $shadowFull;
         .registerLogo {
-            object-fit: cover;
-            width: 70%;
+            @include font('logo');
+            text-shadow: $shadowFull;
+            color: $logoColor;
         }
         .registerLabel {
             display: flex;
@@ -74,8 +75,9 @@
             border-radius: 20px;
             box-shadow: $shadowFull;
             .registerLogo {
-                object-fit: cover;
-                width: 70%;
+                @include font('logo');
+                text-shadow: $shadowFull;
+                color: $logoColor;
             }
             .registerLabel {
                 display: flex;

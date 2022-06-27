@@ -463,7 +463,7 @@ button {
     background-color: $clickColor;
   }
   height: 40px;
-  min-width: 140px;
+  width: 140px;
   @include font('title');
   background-color: $mainColor;
   box-shadow: $shadowFull;
@@ -471,4 +471,9 @@ button {
   border: none;
   border-radius: 10px;
   cursor: pointer;
+}
+
+@font-face {
+  font-family: 'Logo';
+  src: local('Logo'), url(../font/logoFont.otf) format('opentype');
 }
