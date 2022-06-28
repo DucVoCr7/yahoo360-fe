@@ -14,9 +14,9 @@ import UpdateAccount from "./pages/updateAccount/UpdateAccount";
 import ManageUsers from "./pages/manageUsers/ManageUsers";
 import PostsCategory from "./pages/postsCategory/PostsCategory";
 
+
 export default function App() {
-  const user = useSelector(state => state)
-  console.log(user)
+  const user = useSelector(state => state.user)
   return (
     <div className="App">
       <BrowserRouter>
@@ -27,7 +27,7 @@ export default function App() {
 
           <Route path="/" element={<Community/>}/>
           <Route path="/user/:userId" element={<User/>}/>
-          <Route path="/post/:postId" element={<Single/>}/>
+          <Route path="/posts/:postId" element={<Single/>}/>
           <Route path='/posts' element={<PostsCategory/>}/>
 
           <Route path="/home" element={user ? <Home/> : <Login/>}/>

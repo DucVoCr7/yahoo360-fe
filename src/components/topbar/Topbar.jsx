@@ -1,15 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 import avatar from '../../assets/image/avatar.jpg'
+import { logout } from '../../redux/userSlice'
 import './topbar.scss'
 export default function Topbar() {
     const categoryList = ['Life', 'Sport', 'Style', 'Tech', 'Music', 'Cinema', 'Travel', 'Food']
-    // const user = {
-    //     roleId: 'R0'
-    // }
-    // const user = 'sdsd'
-    const user = null
-
     const [openCategory, setOpenCategory] = useState(false)
     const [openNotify, setOpenNotify] = useState(false)
     const [openSetting, setOpenSetting] = useState(false)
@@ -19,7 +15,13 @@ export default function Topbar() {
     const refSetting = useRef()
     const refMenuM = useRef()
     const refMenuMIcon = useRef()
-
+    const navigate = useNavigate()
+    const user = useSelector(state => state.user)
+    const dispatch = useDispatch()
+    const handleLogout = (event) => {
+        dispatch(logout())
+        navigate('/')
+    }
     // Click outSide close ref
     useEffect(() => {
         const handleClickOutSideCategory = (event) => {
@@ -124,7 +126,7 @@ export default function Topbar() {
                         <i className={openSetting ? 'topbarSettingIcon bi bi-gear-fill active' : 'topbarSettingIcon bi bi-gear'} ></i>
                         <ul className={openSetting ? 'topbarSettingList active' : 'topbarSettingList'}>
                             <Link className='topbarSettingItem' to='/updateAccount'>Update Account</Link>
-                            <Link className='topbarSettingItem' to='/'>Logout</Link>
+                            <Link className='topbarSettingItem' to='/' onClick={handleLogout}>Logout</Link>
                         </ul>
                     </div>
                 }

@@ -14,12 +14,13 @@
       font-family: 'Dosis', sans-serif;
     }
     @if ($type == 'content') {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 400;
+      line-height: 2;
       font-family: 'M PLUS 1p', sans-serif;
     }
     @if ($type == 'logo') {
-      font-size: 35px;
+      font-size: 30px;
       font-family: 'Logo';
     }
 }

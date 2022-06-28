@@ -1,7 +1,9 @@
 import React from 'react'
 import './header.scss'
+import '../../assets/scss/customSlider.scss'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick/lib/slider'
-import { CustomNextArrow, CustomPrevArrow } from '../customSlider/CustomSlider'
 import style from '../../assets/image/style.jpg'
 import travel from '../../assets/image/travel.jpg'
 import tech from '../../assets/image/tech.jpg'

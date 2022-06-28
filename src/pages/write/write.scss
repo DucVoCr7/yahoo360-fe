@@ -478,7 +478,7 @@
         @include font('title');
         &Image {
             width: 100%;
-            min-height: 200px;
+            min-height: 100px; //
             position: relative;
             background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
             margin-bottom: 15px;
@@ -511,22 +511,22 @@
                 bottom: 50%;
                 left: 50%;
                 transform: translateX(-50%) translateY(50%);
-                font-size: 30px;
+                font-size: 20px; //
                 display: flex;
                 align-items: center;
                 cursor: pointer;
                 &Child {
                     &:last-child {
                         position: absolute;
-                        font-size: 25px;
-                        bottom: -10px;
-                        right: -20px;
+                        font-size: 17px; //
+                        bottom: -5px; //
+                        right: -15px; //
                         background-color: $whiteColor;
                         border: 5px solid $whiteColor;
                         border-radius: 50%;
                     }
                     margin-left: 10px;
-                    font-size: 60px;
+                    font-size: 40px; //
                 }
             }
         }
