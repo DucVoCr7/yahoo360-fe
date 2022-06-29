@@ -4,6 +4,13 @@
         .slick-slider , .slick-list, .slick-track, .slick-slide > div {
             height: 100%;
         }
+        .slick-arrow , .slick-next, .slick-prev {
+            right: 0;
+            &::before {
+
+                display: none;
+            }
+        }
         .slick-dots {
             bottom: 10px;
             display: flex !important;

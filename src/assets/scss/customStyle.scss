@@ -1,0 +1,90 @@
+@use '/src/assets/scss' as *;
+/* Private css style of Duc */
+* {
+    box-sizing: inherit;
+
+}
+
+html {
+    box-sizing: border-box;
+}
+
+
+/* Scroll*/
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $mainColor;
+    border-radius: 10px;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Remove border radius IOS */
+textarea,
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="text"],
+input[type="search"] {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+::placeholder {
+    color: $placeholderColor;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    &:active {
+        background-color: $clickColor;
+    }
+    height: 40px;
+    min-width: 140px;
+    @include font('title');
+    font-size: 20px;
+    background-color: $mainColor;
+    box-shadow: $shadowFull;
+    color: $blackColor;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

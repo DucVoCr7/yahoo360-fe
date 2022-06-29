@@ -1,27 +1,21 @@
-// Dosis (300, 400, 500, 600, 700) M PLUS Rounded 1c (300) M PLUS 1p (300, 400)
-// font-family: 'Dosis', sans-serif;
-// font-family: 'M PLUS 1p', sans-serif;
-// font-family: 'M PLUS Rounded 1c', sans-serif;
+
 @mixin font($type) {
     @if ($type == 'part') {
         font-size: 20px;
-        font-weight: 300;
         font-family: 'M PLUS Rounded 1c', sans-serif;
     }
     @if ($type == 'title') {
-      font-size: 18px;
-      font-weight: 500;
-      font-family: 'Dosis', sans-serif;
+      font-size: 17px;
+      font-family: 'title';
     }
     @if ($type == 'content') {
       font-size: 18px;
-      font-weight: 400;
       line-height: 2;
-      font-family: 'M PLUS 1p', sans-serif;
+      font-family: content;
     }
     @if ($type == 'logo') {
       font-size: 30px;
-      font-family: 'Logo';
+      font-family: 'logo';
     }
 }
 

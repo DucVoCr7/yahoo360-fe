@@ -1,6 +1,20 @@
 @use '/src/assets/scss' as *;
-.posts {
-
+.postsEqual {
+    display: flex;
+    > :nth-child(n) {
+        flex: 1;
+        padding-left: 15px;
+        border-left: 1px solid $disableColor;
+        margin-left: 15px;
+        &:hover {
+            color: $mainColor;
+        }
+    }
+    > :first-child {
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
 }
 
 //* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */

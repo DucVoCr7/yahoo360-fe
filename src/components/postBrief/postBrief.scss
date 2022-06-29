@@ -1,0 +1,34 @@
+@use '/src/assets/scss' as *;
+
+.postBrief {
+    width: 100%;
+    color: $blackColor;
+    text-decoration: none;
+    .postImg {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+    }
+    .postTitle {
+        @include font('title');
+        font-size: 15px
+    }
+    .postContent {
+        @include font('content');
+        text-align: justify;
+    }
+    &.noContent {
+        .postContent {
+            display: none;
+        }
+    }
+}
+
+//* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
+@media (min-width: 1024px) and (max-width: 1239px) {}
+
+/* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
+@media (min-width: 740px) and (max-width: 1023px) {}
+
+/* OPEN - MOBILE độ phân giải <= 739px */
+@media (max-width: 739px) {}

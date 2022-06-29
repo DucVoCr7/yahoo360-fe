@@ -1,0 +1,67 @@
+@use '/src/assets/scss' as *;
+.postsBigTop {
+    &.communityPostsTop {
+        width: 100%;
+        .postsTop {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            &Left {
+                flex: 1;
+                &Child {
+                    &:first-child {
+                        margin-bottom: 15px;
+                    }
+                    background-color: aqua;
+                }
+            }
+            &Center {
+                background-color: green;
+                flex: 2;
+                margin: 0 15px;
+            }
+            &Right {
+                
+                flex: 1;
+                &Child {
+                    &:first-child {
+                        margin-bottom: 15px;
+                    }
+                    background-color: yellow;
+                }
+            }
+        }
+        .postsBottom {
+            display: flex;
+            justify-content: space-between;
+            &Child {
+                flex: 2;
+                margin-right: 15px;
+                background-color: aqua;
+            }
+        }
+    }
+    &MidLeft {
+
+    }
+    &MidRight {
+
+    }
+    &Bottom {
+
+    }
+}
+
+//* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
+@media (min-width: 1024px) and (max-width: 1239px) {
+
+}
+/* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
+@media (min-width: 740px) and (max-width: 1023px) {
+
+}
+/* OPEN - MOBILE độ phân giải <= 739px */
+@media (max-width: 739px) {
+
+}

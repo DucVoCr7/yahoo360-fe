@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'logo';
+    src: local('logo'), url(../font/logoFont.otf) format('opentype');
+}
+@font-face {
+    font-family: 'title';
+    src: local('title'), url(../font/titleFont.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'content';
+    src: local('content'), url(../font/contentFont.ttf) format('truetype');
+}

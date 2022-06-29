@@ -1,7 +1,7 @@
 import axios from "axios"
 
 
-const baseURL = 'https://server-yahoo360v2.herokuapp.com'
+const baseURL = 'https://server-yahoo360v2.herokuapp.com/api'
 export const publicRequest = axios.create({
     baseURL: baseURL
 })

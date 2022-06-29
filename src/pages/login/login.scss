@@ -23,7 +23,6 @@
         .loginLogo {
             @include font('logo');
             text-shadow: $shadowFull;
-            color: $logoColor;
         }
         .loginLabel {
             display: flex;

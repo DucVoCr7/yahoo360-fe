@@ -10,7 +10,7 @@ const user = useSelector(state=> state.user)
 useEffect(()=> {
   (async()=> {
     try {
-      const response = await userRequest.get(`/api/homeUserPage/${user.id}`)
+      const response = await userRequest.get(`/homePage/${user.id}`)
       setDataUser(response.data)
     } catch (error) {
       console.log(error)

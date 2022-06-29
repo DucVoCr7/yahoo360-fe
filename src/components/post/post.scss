@@ -1,74 +1,86 @@
 @use '/src/assets/scss' as *;
+
 .post {
-    width: 100%;
-    &.single {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .postImg {
-            width: 100%;
-            max-height: 400px;
-            object-fit: cover;
-        }
-        .postTitle {
-            width: calc(100% - 40px);
-            @include font('title');
-            font-size: 40px
-        }
-        .postActions {
-            width: calc(100% - 40px);
-            @include font('title');
-            margin: 20px 0;
-            &Child {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    transform: translateX(50%);
+    .postImg {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+    }
+    .postTitle {
+        @include font('title');
+        font-size: 35px
+    }
+    .postActions {
+        @include font('title');
+        margin: 10px 0 20px 0;
+
+        &Child {
+            &:first-child {
+                background-color: $mainColor;
+
                 &:hover {
-                    background-color: $mainColor;
-                }
-                border: 1px solid $disableColor;
-                border-radius: 5px;
-                box-shadow: $shadowFull;
-                padding: 5px 10px;
-                margin-right: 20px;
-                cursor: pointer;
-                &Icon {
-                    margin-right: 5px;
+                    background-color: $clickColor;
                 }
             }
-        }
-        .postAuthor {
+
             &:hover {
-                color: $mainColor;
-                text-shadow: $shadowFull;
+                background-color: $mainColor;
             }
+
+            border: 1px solid $disableColor;
+            border-radius: 5px;
+            box-shadow: $shadowFull;
+            padding: 5px 10px;
+            margin-right: 20px;
             cursor: pointer;
-            width: calc(100% - 40px);
-            margin: 20px 0;
-            &Img {
-                width: 30px;
-                height: 30px;
-                box-shadow: $shadowFull;
-                border-radius: 50%
-            }
-            &Name {
-                @include font('title');
+
+            &Icon {
+                margin-right: 5px;
             }
         }
-        .postContent {
-            width: calc(100% - 40px);
-            @include font('content');
-            text-align: justify;
+    }
+    .postAuthor {
+        &:hover {
+            color: $mainColor;
+            text-shadow: $shadowFull;
         }
+
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin: 20px 0;
+
+        &Img {
+            width: 40px;
+            height: 40px;
+            box-shadow: $shadowFull;
+            border-radius: 50%;
+            margin-right: 10px
+        }
+
+        &Name {
+            @include font('title');
+            font-weight: 600;
+        }
+    }
+    .postContent {
+        @include font('content');
+        text-align: justify;
+    }
+    .postComments {
+        margin: 15px 0;
     }
 }
 
 //* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
-@media (min-width: 1024px) and (max-width: 1239px) {
+@media (min-width: 1024px) and (max-width: 1239px) {}
 
-}
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
-@media (min-width: 740px) and (max-width: 1023px) {
+@media (min-width: 740px) and (max-width: 1023px) {}
 
-}
 /* OPEN - MOBILE độ phân giải <= 739px */
-@media (max-width: 739px) {
-
-}
+@media (max-width: 739px) {}

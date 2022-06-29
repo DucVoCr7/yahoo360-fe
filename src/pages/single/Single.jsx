@@ -10,7 +10,7 @@ export default function Single() {
     useEffect(()=> {
         (async()=> {
             try {
-                const response = await publicRequest(`/api/posts/${params.postId}`)
+                const response = await publicRequest(`/posts/${params.postId}`)
                 setPost(response.data.post)
             } catch (error) {
                 console.log(error)
@@ -19,7 +19,7 @@ export default function Single() {
     }, [])
     return (
         <div className={post ? 'single' : 'single loading'}>
-           {post && <Post post = {post} type='single'/>}
+           {post && <Post post = {post}/>}
         </div>
     )
 }

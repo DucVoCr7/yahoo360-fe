@@ -1,19 +1,23 @@
 import React from 'react'
 import './post.scss'
 
-export default function Post({post, type}) {
+export default function Post({post}) {
     return (
-        <div className={`post ${type}`}>
+        <div className='post'>
             <img src={post.image} alt="postImg" className="postImg" />
             <h1 className="postTitle">{post.title}</h1>
             <div className="postActions">
+                <span className="postActionsChild">
+                    <i className="postActionsChildIcon bi bi-bookmarks"></i>
+                    {post.category}
+                </span>
                 <span className="postActionsChild">
                     <i className="postActionsChildIcon bi bi-hand-thumbs-up"></i>
                     {post.likesNumber}
                 </span>
                 <span className="postActionsChild">
                     <i className="postActionsChildIcon bi bi-chat-left"></i>
-                    {post.comments.length}
+                    {post.comments?.length}
                 </span>
                 <i className="postActionsChild bi bi-recycle"></i>
                 <i className="postActionsChild bi bi-trash"></i>
@@ -23,7 +27,7 @@ export default function Post({post, type}) {
                 <span className="postAuthorName">by {post.user.name}</span>
             </div>
             <div className="postContent">{post.content}</div>
-            <div className="postComments">Read {post.comments.length} Comments</div>
+            <button className="postComments">Read {post.comments?.length} Comments</button>
         </div>
     )
 }
