@@ -1,14 +1,12 @@
 @use '/src/assets/scss' as *;
 .postsEqual {
     display: flex;
+    height: 200px;
     > :nth-child(n) {
         flex: 1;
         padding-left: 15px;
         border-left: 1px solid $disableColor;
         margin-left: 15px;
-        &:hover {
-            color: $mainColor;
-        }
     }
     > :first-child {
         padding: 0;

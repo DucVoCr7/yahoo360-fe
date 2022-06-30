@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './community.scss'
 import Header from '../../components/header/Header'
-import { useSelector } from 'react-redux'
 import { publicRequest } from '../../utils/requestMethods'
-import Posts from '../../components/postsEqual/PostsEqual'
 import PostsEqual from '../../components/postsEqual/PostsEqual'
+import PostsBigTop from '../../components/postsBigTop/PostsBigTop'
 import { Link } from 'react-router-dom'
+import PostsBigRight from '../../components/postsBigRight/PostsBigRight'
 export default function Community() {
     const [dataCommunity, setDataCommunity] = useState()
     useEffect(() => {
@@ -22,42 +22,63 @@ export default function Community() {
     return (<>
         <Header />
         <div className={dataCommunity ? 'community' : 'community loading'}>
-            <div className="communityGroup">
-                <Link to='' className='communityGroupName'>Cenima</Link>
+            <div className="communityTop">
+                <Link to='' className='communityName'>Cenima</Link>
                 Top
             </div>
-            <div className="communityGroup">
-                <div className="communityGroupChild">
-                    <div className="communityGroupChildItem">
-                        <Link to='' className='communityGroupName'>Cenima</Link>
-                        Mid Left
+            <div className="communityMid">
+                <div className="communityMidLeft">
+                    <div className="communityMidLeftItem">
+                        <Link to='' className='communityName'>
+                            <i className="communityNameIcon bi bi-bookmarks"></i>
+                            Tech
+                        </Link>
+                        {/* {dataCommunity && <PostsBigRight posts={dataCommunity.newPostsTech}/>} */}
                     </div>
-                    <div className="communityGroupChildItem">
-                        <Link to='' className='communityGroupName'>Cenima</Link>
-                        Mid Left
+                    <div className="communityMidLeftItem">
+                        <Link to='' className='communityName'>
+                            <i className="communityNameIcon bi bi-bookmarks"></i>
+                            Sport
+                        </Link>
+                        {/* {dataCommunity && <PostsBigRight posts={dataCommunity.newPostsSport}/>} */}
                     </div>
-                    <div className="communityGroupChildItem">
-                        <Link to='' className='communityGroupName'>Cenima</Link>
-                        Mid Left
+                    <div className="communityMidLeftItem">
+                        <Link to='' className='communityName'>
+                            <i className="communityNameIcon bi bi-bookmarks"></i>
+                            Travel
+                        </Link>
+                        {/* {dataCommunity && <PostsBigRight posts={dataCommunity.newPostsTravel}/>} */}
                     </div>
                 </div>
-                <div className="communityGroupChild">
-                    <div className="communityGroupChildItem">
-                        <Link to='' className='communityGroupName'>Cenima</Link>
-                        Mid Left
+                <div className="communityMidRight">
+                    <div className="communityMidRightItem">
+                        <Link to='' className='communityName'>
+                            <i className="communityNameIcon bi bi-bookmarks"></i>
+                            Music
+                        </Link>
+                        {dataCommunity && <PostsBigTop posts={dataCommunity.newPostsMusic}/>}
                     </div>
-                    <div className="communityGroupChildItem">
-                        <Link to='' className='communityGroupName'>Cenima</Link>
-                        Mid Left
+                    <div className="communityMidRightItem">
+                        <Link to='' className='communityName'>
+                            <i className="communityNameIcon bi bi-bookmarks"></i>
+                            Life
+                        </Link>
+                        {dataCommunity && <PostsBigTop posts={dataCommunity.newPostsLife}/>}
                     </div>
-                    <div className="communityGroupChildItem">
-                        <Link to='' className='communityGroupName'>Cenima</Link>
-                        Mid Left
+                    <div className="communityMidRightItem">
+                        <Link to='' className='communityName'>
+                            <i className="communityNameIcon bi bi-bookmarks"></i>
+                            Food
+                        </Link>
+                        {dataCommunity && <PostsBigTop posts={dataCommunity.newPostsFood}/>}
                     </div>
                 </div>
             </div>
-            <div className="communityGroup">
-                <Link to='' className='communityGroupName'>Cenima</Link>
+            <div className="communityBottom">
+                <Link to='' className='communityName'>
+                    <i className="communityNameIcon bi bi-bookmarks"></i>
+                    Cenima
+                </Link>
                 {dataCommunity && <PostsEqual posts={dataCommunity.newPostsCinema} />}
             </div>
             {/* 

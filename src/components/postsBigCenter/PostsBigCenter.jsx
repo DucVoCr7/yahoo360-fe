@@ -4,33 +4,23 @@ import Post from '../post/Post'
 export default function PostsBigCenter({posts, type}) {
     return (
         <div className='postsBigCenter'>
-            <div className="postsTop">
-                <div className="postsTopLeft">
-                    <div className="postsTopLeftChild">
-                        1
-                    </div>
-                    <div className="postsTopLeftChild">
-                        2
-                    </div>
+            <div className="postsBigCenterGroup">
+                <div className="postsBigCenterGroupChild">
+                    <PostBrief post={posts[1]} type={'noImg'}/>
+                    <PostBrief post={posts[2]} type={'noImg'}/>
                 </div>
-                <div className="postsTopCenter">
-                    0
+                <div className="postsBigCenterGroupChild">
+                <PostBrief post={posts[0]} type={'noContent'}/>
                 </div>
-                <div className="postsTopRight">
-                    <div className="postsTopRightChild">
-                        3
-                    </div>
-                    <div className="postsTopRightChild">
-                        4
-                    </div>
+                <div className="postsBigCenterGroupChild">
+                <PostBrief post={posts[3]} type={'noImg'}/>
+                <PostBrief post={posts[4]} type={'noImg'}/>
                 </div>
             </div>
-            <div className="postsBottom">
-                <div className="postsBottomChild">5</div>
-                <div className="postsBottomChild">6</div>
-                <div className="postsBottomChild">7</div>
-                <div className="postsBottomChild">8</div>
-                <div className="postsBottomChild">9</div>
+            <div className="postsBigCenterGroup">
+                <PostBrief post={posts[5]} type={'noImg'}/>
+                <PostBrief post={posts[6]} type={'noImg'}/>
+                <PostBrief post={posts[7]} type={'noImg'}/>
             </div>
         </div>
     )

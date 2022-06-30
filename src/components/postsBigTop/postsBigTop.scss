@@ -1,55 +1,44 @@
 @use '/src/assets/scss' as *;
 .postsBigTop {
-    &.communityPostsTop {
-        width: 100%;
-        .postsTop {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            &Left {
-                flex: 1;
-                &Child {
-                    &:first-child {
-                        margin-bottom: 15px;
-                    }
-                    background-color: aqua;
-                }
-            }
-            &Center {
-                background-color: green;
-                flex: 2;
-                margin: 0 15px;
-            }
-            &Right {
-                
-                flex: 1;
-                &Child {
-                    &:first-child {
-                        margin-bottom: 15px;
-                    }
-                    background-color: yellow;
-                }
-            }
-        }
-        .postsBottom {
-            display: flex;
-            justify-content: space-between;
-            &Child {
-                flex: 2;
-                margin-right: 15px;
-                background-color: aqua;
-            }
-        }
-    }
-    &MidLeft {
-
-    }
-    &MidRight {
-
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    &Top {
+        flex: 1;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $disableColor;
+        margin-bottom: 15px;
+        overflow: hidden;
     }
     &Bottom {
-
+        flex: 1;
+        overflow: hidden;
+        display: flex;
+        &Item {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            &:first-child {
+                padding-right: 15px;
+                border-right: 1px solid $disableColor;
+                margin-right: 15px;
+            }
+            > :nth-child(n) {
+                flex: 1;
+                height: 50%;
+                display: block;
+            }
+            > :first-child {
+                padding-bottom: 15px;
+                border-bottom: 1px solid $disableColor;
+                // margin-bottom: 15px;
+            }
+            > :last-child {
+                padding-top: 15px;
+            }
+        }
     }
 }
 

@@ -17,50 +17,64 @@
         }
     }
     width: 100%;
-    padding: 0 20px;
-    > :nth-child(2) {
-        display: flex;
+    padding: 15px 20px;
+    &Top {
+        padding-bottom: 15px;
     }
-    &Group {
-        &:last-child {
-            border: none;
-        };
-        width: 100%;
-        padding: 15px 0;
+    &Mid {
+        display: flex;
         border-bottom: 1px solid $blackColor;
-        &Name {
-            &:hover {
-                color: $mainColor
-            }
-            @include font('title');
-            font-weight: 600;
-            display: inline-block;
-            text-decoration: none;
-            color: $blackColor;
-            margin-bottom: 10px;
-        }
-        &Child {
-            &:first-child {
-                flex: 7;
-            }
-            &:last-child {
-                flex: 4;
-                margin-left: 15px;
-                border-left: 1px solid $disableColor;
-                padding-left: 15px;
-            }
+        border-top: 1px solid $blackColor;
+        padding: 15px 0;
+        &Left {
+            flex: 7;
+            padding-right: 15px;
+            border-right: 1px solid $blackColor;
+            margin-right: 15px;
             &Item {
+                padding-bottom: 15px;
+                border-bottom: 1px solid $blackColor;
+                margin-bottom: 15px;
                 &:last-child {
-                    padding-bottom: 0;
+                    padding: 0;
+                    margin: 0;
                     border: none;
                 }
-                &:first-child {
-                    padding-top: 0
-                }
-                padding: 15px 0;
-                border-bottom: 1px solid $disableColor;
-
             }
+        }
+        &Right {
+            flex: 3;
+            &Item {
+                padding-bottom: 15px;
+                border-bottom: 1px solid $blackColor;
+                margin-bottom: 15px;
+                &:last-child {
+                    padding: 0;
+                    margin: 0;
+                    border: none;
+                }
+            }
+        }
+    }
+    &Bottom {
+        padding-top: 15px;
+    }
+    &Name {
+        &:hover {
+            background-color: $clickColor;
+        }
+        display: inline-block;
+        @include font('title');
+        background-color: $mainColor;
+        border: 1px solid $disableColor;
+        border-radius: 5px;
+        box-shadow: $shadowFull;
+        padding: 5px 10px;
+        text-decoration: none;
+        color: $blackColor;
+        margin-bottom: 15px;
+        &Icon {
+            margin-right: 5px;
         }
     }
 }

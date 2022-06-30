@@ -1,25 +1,62 @@
 @use '/src/assets/scss' as *;
-
 .postBrief {
+    &:hover {
+        color: $contentBriefColor;
+    }
     width: 100%;
+    height: 100%;
     color: $blackColor;
     text-decoration: none;
     .postImg {
+        display: block;
         width: 100%;
-        max-height: 400px;
         object-fit: cover;
     }
     .postTitle {
         @include font('title');
-        font-size: 15px
+        font-size: 15.5px;
+        line-height: 1.5;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
     }
     .postContent {
         @include font('content');
         text-align: justify;
+        font-size: 14px;
+        line-height: 1.4;
+        color: $contentBriefColor;
+        overflow: hidden;
     }
     &.noContent {
         .postContent {
             display: none;
+        }
+        .postImg {
+            height: 75%;
+        }
+        .postTitle {
+            height: 25%;
+            padding-top: 5px;
+        }
+    }
+    &.noImg {
+        .postImg {
+            display: none;
+        }
+        .postTitle {
+            height: 40%;
+            padding-bottom: 5px;
+        }
+        .postContent {
+            height: 60%;
+        }
+    }
+    &.bigTitle {
+        .postTitle {
+            font-size: 20px;
+            font-weight: 600;
+            padding-top: 10px;
         }
     }
 }
