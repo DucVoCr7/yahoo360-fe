@@ -18,6 +18,7 @@ useEffect(()=> {
 
   })();
 }, [])
+  console.log(dataUser)
     return (
         <div className={dataUser ? 'home' : 'home loading'}>
           hello

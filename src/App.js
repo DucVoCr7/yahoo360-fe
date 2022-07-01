@@ -28,7 +28,7 @@ export default function App() {
           <Route path="/login" element={<Login/>}/>
 
           <Route path="/" element={<Community/>}/>
-          <Route path="/user/:userId" element={<User/>}/>
+          <Route path="/users/:userId" element={<User/>}/>
           <Route path="/posts/:postId" element={<Single/>}/>
           <Route path='/posts' element={<PostsCategory/>}/>
 

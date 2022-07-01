@@ -5,15 +5,18 @@
     flex-direction: column;
     width: 50%;
     transform: translateX(50%);
+
     .postImg {
         width: 100%;
         max-height: 400px;
         object-fit: cover;
     }
+
     .postTitle {
         @include font('title');
         font-size: 35px
     }
+
     .postActions {
         @include font('title');
         margin: 10px 0 20px 0;
@@ -36,41 +39,56 @@
             box-shadow: $shadowFull;
             padding: 5px 10px;
             margin-right: 20px;
-            cursor: pointer;
-
+            text-decoration: none;
+            color: $blackColor;
             &Icon {
                 margin-right: 5px;
             }
         }
     }
-    .postAuthor {
-        &:hover {
-            color: $mainColor;
-            text-shadow: $shadowFull;
-        }
 
+    .postAuthorTime {
         display: flex;
         align-items: center;
-        cursor: pointer;
-        margin: 20px 0;
+        .postAuthor {
+            &:hover {
+                color: $mainColor;
+                text-shadow: $shadowFull;
+            }
+            color: $blackColor;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin: 20px 0;
 
-        &Img {
-            width: 40px;
-            height: 40px;
-            box-shadow: $shadowFull;
-            border-radius: 50%;
-            margin-right: 10px
+            &Img {
+                width: 40px;
+                height: 40px;
+                box-shadow: $shadowFull;
+                border-radius: 50%;
+            }
+
+            &Name {
+                @include font('title');
+                font-weight: 600;
+                margin-left: 10px
+            }
         }
-
-        &Name {
+        .postTime {
             @include font('title');
-            font-weight: 600;
+            font-weight: 500;
+            padding-left: 10px;
+            border-left: 1px solid $disableColor;
+            margin-left: 10px
         }
     }
+
     .postContent {
         @include font('content');
         text-align: justify;
     }
+
     .postComments {
         margin: 15px 0;
     }

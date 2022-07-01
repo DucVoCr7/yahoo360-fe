@@ -68,7 +68,7 @@ export default function Topbar() {
                     <i className={openCategory ? 'topbarCategoryIcon bi bi-chevron-right active' : 'topbarCategoryIcon bi bi-chevron-right'}></i>
                     <ul className={openCategory ? 'topbarCategoryList active' : 'topbarCategoryList'} onClick={() => setOpenMenuM(!openMenuM)}>
                         {categoryList.map((categoryItem, index) => (
-                            <Link to={`posts?Category=${categoryItem}`} className='topbarCategoryItem' key={index}>{categoryItem}</Link>
+                            <Link to={`posts?category=${categoryItem}`} className='topbarCategoryItem' key={index}>{categoryItem}</Link>
                         ))}
                     </ul>
                 </div>

@@ -6,7 +6,7 @@ export default function PostsEqual({posts}) {
     return (
         <div className='postsEqual'>
             {posts.map((post, index)=> (
-                <PostBrief post={post} type={'noContent'} key={index}/>
+                <PostBrief post={post} type={'noContentEqual'} key={index}/>
             ))}
         </div>
     )

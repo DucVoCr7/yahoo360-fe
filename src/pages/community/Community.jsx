@@ -21,76 +21,71 @@ export default function Community() {
     console.log(dataCommunity)
     return (<>
         <Header />
-        <div className={dataCommunity ? 'community' : 'community loading'}>
-            <div className="communityTop">
-                <Link to='' className='communityName'>Cenima</Link>
-                Top
-            </div>
-            <div className="communityMid">
-                <div className="communityMidLeft">
-                    <div className="communityMidLeftItem">
-                        <Link to='' className='communityName'>
-                            <i className="communityNameIcon bi bi-bookmarks"></i>
-                            Tech
-                        </Link>
-                        {/* {dataCommunity && <PostsBigRight posts={dataCommunity.newPostsTech}/>} */}
+        {dataCommunity ?
+            <div className='community'>
+                <div className="communityTop">
+                    <Link to='' className='communityName'>Cenima</Link>
+                    Top
+                </div>
+                <div className="communityMid">
+                    <div className="communityMidLeft">
+                        <div className="communityMidLeftItem">
+                            <Link to='' className='communityName'>
+                                <i className="communityNameIcon bi bi-bookmarks"></i>
+                                Tech
+                            </Link>
+                            <PostsBigRight posts={dataCommunity.newPostsTech}/>
+                        </div>
+                        <div className="communityMidLeftItem">
+                            <Link to='' className='communityName'>
+                                <i className="communityNameIcon bi bi-bookmarks"></i>
+                                Sport
+                            </Link>
+                            <PostsBigRight posts={dataCommunity.newPostsSport}/>
+                        </div>
+                        <div className="communityMidLeftItem">
+                            <Link to='' className='communityName'>
+                                <i className="communityNameIcon bi bi-bookmarks"></i>
+                                Travel
+                            </Link>
+                            <PostsBigRight posts={dataCommunity.newPostsTravel}/>
+                        </div>
                     </div>
-                    <div className="communityMidLeftItem">
-                        <Link to='' className='communityName'>
-                            <i className="communityNameIcon bi bi-bookmarks"></i>
-                            Sport
-                        </Link>
-                        {/* {dataCommunity && <PostsBigRight posts={dataCommunity.newPostsSport}/>} */}
-                    </div>
-                    <div className="communityMidLeftItem">
-                        <Link to='' className='communityName'>
-                            <i className="communityNameIcon bi bi-bookmarks"></i>
-                            Travel
-                        </Link>
-                        {/* {dataCommunity && <PostsBigRight posts={dataCommunity.newPostsTravel}/>} */}
+                    <div className="communityMidRight">
+                        <div className="communityMidRightItem">
+                            <Link to='' className='communityName'>
+                                <i className="communityNameIcon bi bi-bookmarks"></i>
+                                Music
+                            </Link>
+                            <PostsBigTop posts={dataCommunity.newPostsMusic}/>
+                        </div>
+                        <div className="communityMidRightItem">
+                            <Link to='' className='communityName'>
+                                <i className="communityNameIcon bi bi-bookmarks"></i>
+                                Life
+                            </Link>
+                            <PostsBigTop posts={dataCommunity.newPostsLife}/>
+                        </div>
+                        <div className="communityMidRightItem">
+                            <Link to='' className='communityName'>
+                                <i className="communityNameIcon bi bi-bookmarks"></i>
+                                Food
+                            </Link>
+                            <PostsBigTop posts={dataCommunity.newPostsFood}/>
+                        </div>
                     </div>
                 </div>
-                <div className="communityMidRight">
-                    <div className="communityMidRightItem">
-                        <Link to='' className='communityName'>
-                            <i className="communityNameIcon bi bi-bookmarks"></i>
-                            Music
-                        </Link>
-                        {dataCommunity && <PostsBigTop posts={dataCommunity.newPostsMusic}/>}
-                    </div>
-                    <div className="communityMidRightItem">
-                        <Link to='' className='communityName'>
-                            <i className="communityNameIcon bi bi-bookmarks"></i>
-                            Life
-                        </Link>
-                        {dataCommunity && <PostsBigTop posts={dataCommunity.newPostsLife}/>}
-                    </div>
-                    <div className="communityMidRightItem">
-                        <Link to='' className='communityName'>
-                            <i className="communityNameIcon bi bi-bookmarks"></i>
-                            Food
-                        </Link>
-                        {dataCommunity && <PostsBigTop posts={dataCommunity.newPostsFood}/>}
-                    </div>
+                <div className="communityBottom">
+                    <Link to='' className='communityName'>
+                        <i className="communityNameIcon bi bi-bookmarks"></i>
+                        Cenima
+                    </Link>
+                    <PostsEqual posts={dataCommunity.newPostsCinema} />
                 </div>
             </div>
-            <div className="communityBottom">
-                <Link to='' className='communityName'>
-                    <i className="communityNameIcon bi bi-bookmarks"></i>
-                    Cenima
-                </Link>
-                {dataCommunity && <PostsEqual posts={dataCommunity.newPostsCinema} />}
-            </div>
-            {/* 
-            <Posts posts={dataCommunity.newPostsTech} type={'communityMidLeft'}/>
-            <Posts posts={dataCommunity.newPostsMusic} type={'communityMidRight'}/>
-            <Posts posts={dataCommunity.newPostsSport} type={'communityMidLeft'}/>
-            <Posts posts={dataCommunity.newPostsLife} type={'communityMidRight'}/>
-            <Posts posts={dataCommunity.newPostsTravel} type={'communityMidLeft'}/>
-            <Posts posts={dataCommunity.newPostsFood} type={'communityMidRight'}/>
-            <Posts posts={dataCommunity.newPostsStyle} type={'communityBottom'}/>
-            <Posts posts={dataCommunity.newPostsCinema} type={'communityBottom'}/> */}
-        </div>
+            :
+            <div className="community loading"></div>
+        }
     </>
     )
 }

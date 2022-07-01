@@ -1,50 +1,51 @@
 @use '/src/assets/scss' as *;
 .postsBigRight {
-    &Group {
-        &:first-child {
-            > :nth-child(n) {
-                flex: 1;
-            }
-            > :last-child {
-                flex: 2
-            }
-        }
-        &:last-child {
-            padding-top: 15px;
-            border-top: 1px solid $disableColor;
-            margin-top: 15px;
-
-        }
-        > :nth-child(n) {
-            flex: 1;
-            &:hover {
-                color: $contentBriefColor;
-            }
-        }
-        > :first-child {
-            border-right: 1px solid $disableColor;
-            padding-right: 15px;
-            margin-right: 15px;
-        }
-        width: 100%;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    &Top {
+        flex: 8;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $disableColor;
+        margin-bottom: 15px;
+        overflow: hidden;
         display: flex;
-        &Child {
+        &Left {
+            flex: 4;
+            padding-right: 15px;
+            border-right: 1px solid $disableColor;
+            margin-right: 15px;
             display: flex;
             flex-direction: column;
             > :nth-child(n) {
                 flex: 1;
-                padding-top: 15px;
-                border-top: 1px solid $disableColor;
-                margin-top: 15px;
-                &:hover {
-                    color: $contentBriefColor;
-                }
+                height: 50%;
             }
             > :first-child {
-                padding: 0;
-                margin: 0;
-                border: none;
+                padding-bottom: 15px;
+                border-bottom: 1px solid $disableColor;
+                // margin-bottom: 15px;
             }
+            > :last-child {
+                padding-top: 15px;
+            }
+        }
+        &Right {
+            flex: 7;
+        }
+    }
+    &Bottom {
+        flex: 3;
+        overflow: hidden;
+        display: flex;
+        > :nth-child(n) {
+            flex: 1;
+        }
+        > :first-child {
+            padding-right: 15px;
+            border-right: 1px solid $disableColor;
+            margin-right: 15px;
         }
     }
 }
