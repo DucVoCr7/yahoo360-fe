@@ -6,7 +6,9 @@ import PostsEqual from '../../components/postsEqual/PostsEqual'
 import PostsBigTop from '../../components/postsBigTop/PostsBigTop'
 import { Link } from 'react-router-dom'
 import PostsBigRight from '../../components/postsBigRight/PostsBigRight'
+import { useSelector } from 'react-redux'
 export default function Community() {
+    const {category} = useSelector(state=> state.app)
     const [dataCommunity, setDataCommunity] = useState()
     useEffect(() => {
         (async () => {
@@ -18,7 +20,6 @@ export default function Community() {
             }
         })()
     }, [])
-    console.log(dataCommunity)
     return (<>
         <Header />
         {dataCommunity ?
@@ -32,55 +33,55 @@ export default function Community() {
                         <div className="communityMidLeftItem">
                             <Link to='' className='communityName'>
                                 <i className="communityNameIcon bi bi-bookmarks"></i>
-                                Tech
+                                {category[0].value}
                             </Link>
-                            <PostsBigRight posts={dataCommunity.newPostsTech}/>
+                            <PostsBigRight posts={dataCommunity.newPostsC0}/>
                         </div>
                         <div className="communityMidLeftItem">
                             <Link to='' className='communityName'>
                                 <i className="communityNameIcon bi bi-bookmarks"></i>
-                                Sport
+                                {category[1].value}
                             </Link>
-                            <PostsBigRight posts={dataCommunity.newPostsSport}/>
+                            <PostsBigRight posts={dataCommunity.newPostsC1}/>
                         </div>
                         <div className="communityMidLeftItem">
                             <Link to='' className='communityName'>
                                 <i className="communityNameIcon bi bi-bookmarks"></i>
-                                Travel
+                                {category[2].value}
                             </Link>
-                            <PostsBigRight posts={dataCommunity.newPostsTravel}/>
+                            <PostsBigRight posts={dataCommunity.newPostsC2}/>
                         </div>
                     </div>
                     <div className="communityMidRight">
                         <div className="communityMidRightItem">
                             <Link to='' className='communityName'>
                                 <i className="communityNameIcon bi bi-bookmarks"></i>
-                                Music
+                                {category[3].value}
                             </Link>
-                            <PostsBigTop posts={dataCommunity.newPostsMusic}/>
+                            <PostsBigTop posts={dataCommunity.newPostsC3}/>
                         </div>
                         <div className="communityMidRightItem">
                             <Link to='' className='communityName'>
                                 <i className="communityNameIcon bi bi-bookmarks"></i>
-                                Life
+                                {category[4].value}
                             </Link>
-                            <PostsBigTop posts={dataCommunity.newPostsLife}/>
+                            <PostsBigTop posts={dataCommunity.newPostsC4}/>
                         </div>
                         <div className="communityMidRightItem">
                             <Link to='' className='communityName'>
                                 <i className="communityNameIcon bi bi-bookmarks"></i>
-                                Food
+                                {category[5].value}
                             </Link>
-                            <PostsBigTop posts={dataCommunity.newPostsFood}/>
+                            <PostsBigTop posts={dataCommunity.newPostsC5}/>
                         </div>
                     </div>
                 </div>
                 <div className="communityBottom">
                     <Link to='' className='communityName'>
                         <i className="communityNameIcon bi bi-bookmarks"></i>
-                        Cenima
+                        {category[6].value}
                     </Link>
-                    <PostsEqual posts={dataCommunity.newPostsCinema} />
+                    <PostsEqual posts={dataCommunity.newPostsC6} />
                 </div>
             </div>
             :

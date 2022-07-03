@@ -2,10 +2,9 @@ import React, { useRef, useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import avatar from '../../assets/image/avatar.jpg'
-import { logout } from '../../redux/userSlice'
 import './topbar.scss'
 export default function Topbar() {
-    const categoryList = ['Life', 'Sport', 'Style', 'Tech', 'Music', 'Cinema', 'Travel', 'Food']
+    const {category} = useSelector(state => state.app)
     const [openCategory, setOpenCategory] = useState(false)
     const [openNotify, setOpenNotify] = useState(false)
     const [openSetting, setOpenSetting] = useState(false)
@@ -16,10 +15,10 @@ export default function Topbar() {
     const refMenuM = useRef()
     const refMenuMIcon = useRef()
     const navigate = useNavigate()
-    const user = useSelector(state => state.user)
+    const userInfo = useSelector(state => state.user.userInfo)
     const dispatch = useDispatch()
     const handleLogout = (event) => {
-        dispatch(logout())
+        // dispatch(logout())
         navigate('/')
     }
     // Click outSide close ref
@@ -55,6 +54,7 @@ export default function Topbar() {
             window.removeEventListener('click', handleClickOutSideMenuM)
         }
     }, [])
+    // console.log(category)
     return (
         <div className='topbar'>
             <i onClick={() => setOpenMenuM(!openMenuM)} ref={refMenuMIcon}
@@ -67,8 +67,8 @@ export default function Topbar() {
                     CATEGORY
                     <i className={openCategory ? 'topbarCategoryIcon bi bi-chevron-right active' : 'topbarCategoryIcon bi bi-chevron-right'}></i>
                     <ul className={openCategory ? 'topbarCategoryList active' : 'topbarCategoryList'} onClick={() => setOpenMenuM(!openMenuM)}>
-                        {categoryList.map((categoryItem, index) => (
-                            <Link to={`posts?category=${categoryItem}`} className='topbarCategoryItem' key={index}>{categoryItem}</Link>
+                        {category.map((categoryItem, index) => (
+                            <Link to={`posts?category=${categoryItem.key}`} className='topbarCategoryItem' key={index}>{categoryItem.value}</Link>
                         ))}
                     </ul>
                 </div>
@@ -78,7 +78,7 @@ export default function Topbar() {
                     <input type='text' className='topbarSearchInput' placeholder='Search...' />
                     <i className='topbarSearchIcon bi bi-search'></i>
                 </div>
-                {user &&
+                {userInfo &&
                     <div className='topbarItem' onClick={() => setOpenNotify(!openNotify)} ref={refNotify}>
                         <i className={openNotify ? 'topbarNotifyIcon bi bi-bell-fill active' : 'topbarNotifyIcon bi bi-bell'} ></i>
                         <span className={openNotify ? 'topbarNotifyNumber active' : "topbarNotifyNumber"} >1</span>
@@ -116,12 +116,12 @@ export default function Topbar() {
                         </ul>
                     </div>
                 }
-                {user &&
+                {userInfo &&
                     <Link className='topbarItem' to='/home'>
-                        <img className='topbarImg' src={user.image ? user.image : avatar} alt='avatar' />
+                        <img className='topbarImg' src={userInfo.image ? userInfo.image : avatar} alt='avatar' />
                     </Link>}
-                {user?.roleId === 'R0' && <Link to='/manageUsers' className='topbarItem'>MANAGE</Link>}
-                {user &&
+                {userInfo?.roleId === 'R0' && <Link to='/manageUsers' className='topbarItem'>MANAGE</Link>}
+                {userInfo &&
                     <div className='topbarItem' onClick={() => setOpenSetting(!openSetting)} ref={refSetting}>
                         <i className={openSetting ? 'topbarSettingIcon bi bi-gear-fill active' : 'topbarSettingIcon bi bi-gear'} ></i>
                         <ul className={openSetting ? 'topbarSettingList active' : 'topbarSettingList'}>
@@ -130,8 +130,8 @@ export default function Topbar() {
                         </ul>
                     </div>
                 }
-                {!user && <Link className='topbarItem' to='/login'>LOGIN</Link>}
-                {!user && <Link className='topbarItem' to='/register'>REGISTER</Link>}
+                {!userInfo && <Link className='topbarItem' to='/login'>LOGIN</Link>}
+                {!userInfo && <Link className='topbarItem' to='/register'>REGISTER</Link>}
             </div>
         </div>
     )

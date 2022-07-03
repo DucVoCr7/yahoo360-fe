@@ -1,8 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import './post.scss'
-
 export default function Post({post}) {
+    /// Chỗ này dùng tạm từ từ fix sau.
+    const valueCategory = useSelector(state => state.app.category.find(element => element.key === post.category).value)
+    ////
+    ////
     return (
         <div className='post'>
             <img src={post.image} alt="postImg" className="postImg" />
@@ -10,7 +14,7 @@ export default function Post({post}) {
             <div className="postActions">
                 <Link to={`/posts?category=${post.category}`} className="postActionsChild">
                     <i className="postActionsChildIcon bi bi-bookmarks"></i>
-                    {post.category}
+                    {valueCategory}
                 </Link>
                 <span className="postActionsChild">
                     <i className="postActionsChildIcon bi bi-hand-thumbs-up"></i>
@@ -18,7 +22,7 @@ export default function Post({post}) {
                 </span>
                 <span className="postActionsChild">
                     <i className="postActionsChildIcon bi bi-chat-left"></i>
-                    {post.comments?.length}
+                    {post.commentsNumber}
                 </span>
                 <i className="postActionsChild bi bi-recycle"></i>
                 <i className="postActionsChild bi bi-trash"></i>
@@ -31,7 +35,7 @@ export default function Post({post}) {
                 <span className="postTime">at {post.updatedAt}</span>
             </div>
             <div className="postContent">{post.content}</div>
-            <button className="postComments">Read {post.comments?.length} Comments</button>
+            <button className="postComments">Read {post.commentsNumber} Comments</button>
         </div>
     )
 }

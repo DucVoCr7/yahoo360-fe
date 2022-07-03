@@ -1,26 +1,42 @@
-import { createSlice } from "@reduxjs/toolkit";
-
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { publicRequest } from "../utils/requestMethods";
+export const login = createAsyncThunk('users/login', async(userInfo, {rejectWithValue})=> {
+    try {
+        const response = await publicRequest.post('/login', userInfo)
+        return response.data
+    } catch (error) {
+        return rejectWithValue(error.response.data)
+    }
+})
 export const userSlice = createSlice({
     // Name Slice
     name: 'user', 
-    initialState: null,
-    reducers: {
-        //Actions
-        login: (state, action)=> {
-            state.user = action.payload.user
+    initialState: {
+        userInfo: null,
+        pending: null,
+        error: null,
+        accessToken: null,
+        refreshToken: null
+    },
+    reducers: {},
+    extraReducers: {
+        [login.pending]: (state)=> {
+            state.pending = true
+            state.error = false
+        },
+        [login.fulfilled]: (state, action)=> {
+            state.pending = false
+            state.error = false
+            state.userInfo = action.payload.user
             state.accessToken = action.payload.accessToken
             state.refreshToken = action.payload.refreshToken
         },
-        logout: (state)=> {
-            state.user = null
-            state.accessToken = null
-            state.refreshToken = null
-        },
-        update: (state, action)=> {
-            state.user = action.payload.user
+        [login.rejected]: (state, action)=> {
+            state.pending = false
+            state.error = action.payload
         }
     }
 })
 
-export const {login, logout, update} = userSlice.actions
-export default userSlice.reducer // userReducer
+const userReducer = userSlice.reducer
+export default userReducer

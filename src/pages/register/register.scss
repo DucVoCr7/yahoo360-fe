@@ -1,7 +1,7 @@
 @use '/src/assets/scss' as *;
 .register {
     width: 100%;
-    height: calc(100vh - $heightTopbar - $heightFooter);
+    min-height: calc(100vh - $heightTopbar - $heightFooter);
     background-image: url('../../assets/image/background-register.jpg');
     background-size: cover;
     display: flex;
@@ -55,7 +55,7 @@
 @media (max-width: 739px) {
     .register {
         width: 100%;
-        height: calc(100vh - $heightTopbarM - $heightFooterM); //
+        min-height: calc(100vh - $heightTopbarM - $heightFooterM); //
         background-image: url('../../assets/image/background-register.jpg');
         background-size: cover;
         display: flex;
@@ -76,7 +76,6 @@
             .registerLogo {
                 @include font('logo');
                 text-shadow: $shadowFull;
-                color: $logoColor;
             }
             .registerLabel {
                 display: flex;
