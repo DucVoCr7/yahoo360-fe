@@ -1,9 +1,9 @@
 @use '/src/assets/scss' as *;
 /* Custom slide header*/
 .header {
-        .slick-slider , .slick-list, .slick-track, .slick-slide > div {
-            height: 100%;
-        }
+        // .slick-slider , .slick-list, .slick-track, .slick-slide > div {
+        //     height: 100%;
+        // }
         .slick-arrow , .slick-next, .slick-prev {
             right: 0;
             &::before {
@@ -11,34 +11,34 @@
                 display: none;
             }
         }
-        .slick-dots {
-            bottom: 10px;
-            display: flex !important;
-            justify-content: center;
-            & > li {
-                &.slick-active {
-                    background-color: $mainColor;
-                }
-                width: 40px;
-                height: 2px;
-                margin: 0 2px;
-                background-color: $disableColor;
-                & > button {
-                    position: absolute;
-                    transform: translateY(-50%);
-                    width: 100%;
-                    height: 15px;
-                    background-color: transparent;
-                    box-shadow: none;
-                    &::before {
-                        all: unset;
-                    }
-                }
-            }
-            .slick-active {
+        // .slick-dots {
+        //     bottom: 10px;
+        //     display: flex !important;
+        //     justify-content: center;
+        //     & > li {
+        //         &.slick-active {
+        //             background-color: $mainColor;
+        //         }
+        //         width: 40px;
+        //         height: 2px;
+        //         margin: 0 2px;
+        //         background-color: $disableColor;
+        //         & > button {
+        //             position: absolute;
+        //             transform: translateY(-50%);
+        //             width: 100%;
+        //             height: 15px;
+        //             background-color: transparent;
+        //             box-shadow: none;
+        //             &::before {
+        //                 all: unset;
+        //             }
+        //         }
+        //     }
+        //     .slick-active {
         
-            }
-        }
+        //     }
+        // }
 }
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {

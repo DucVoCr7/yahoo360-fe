@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { publicRequest } from "../utils/requestMethods";
+import { logoutRequest, publicRequest } from "../utils/requestMethods";
 export const login = createAsyncThunk('users/login', async(userInfo, {rejectWithValue})=> {
     try {
         const response = await publicRequest.post('/login', userInfo)
@@ -7,6 +7,11 @@ export const login = createAsyncThunk('users/login', async(userInfo, {rejectWith
     } catch (error) {
         return rejectWithValue(error.response.data)
     }
+})
+export const logout = createAsyncThunk('users/logout', async ()=> {
+    const response = await logoutRequest.post('/deleteRefreshToken')
+    console.log(response)
+    return response.data
 })
 export const userSlice = createSlice({
     // Name Slice
@@ -34,8 +39,14 @@ export const userSlice = createSlice({
         [login.rejected]: (state, action)=> {
             state.pending = false
             state.error = action.payload
+        },
+
+        [logout.fulfilled]: (state)=> {
+            state.userInfo = null
+            state.accessToken = null
+            state.refreshToken = null
         }
-    }
+    },
 })
 
 const userReducer = userSlice.reducer

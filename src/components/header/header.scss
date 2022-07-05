@@ -29,20 +29,31 @@
     &Slide {
         width: 100%;
         height: $heightHeader;
+        border-bottom: 1px double white;
         position: relative;
-        &Img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        &Content {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            color: $whiteColor;
-            @include font('logo');
+        object-fit: cover;
+    }
+    &Category {
+        position: absolute;
+        bottom: 0;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background: linear-gradient(rgba(255, 255, 255, 0), white);
+        &Item {
+            &:hover {
+                color: $mainColor
+            }
+            @include font('part');
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            color: black;
+            padding: 0 15px;
             text-shadow: $shadowFull;
-            text-align: center;
         }
     }
 }
@@ -88,21 +99,37 @@
         &Slide {
             width: 100%;
             height: $heightHeaderM;
+            border-bottom: 1px double white;
             position: relative;
-            &Img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-            &Content {
-                position: absolute;
-                bottom: 10px; //
-                width: 100%;
-                color: $whiteColor;
-                @include font('logo');
-                font-size: 22px; //
+            object-fit: cover;
+        }
+        &Category {
+            position: absolute;
+            bottom: 0;
+            height: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between; //
+            align-items: flex-end;
+            background: linear-gradient(rgba(255, 255, 255, 0), white);
+            &Item {
+                &:first-child{ //
+                    padding-left: 10px; //
+                }
+                &:last-child{
+                    padding-right: 10px; //
+                } //
+                &:hover {
+                    color: $mainColor
+                }
+                @include font('part');
+                text-transform: uppercase;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 14px; //
+                color: black;
+                padding: 0; //
                 text-shadow: $shadowFull;
-                text-align: center;
             }
         }
     }

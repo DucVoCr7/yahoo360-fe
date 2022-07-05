@@ -28,8 +28,8 @@ export default function App() {
       <BrowserRouter>
         <Topbar/>
         <Routes>
-          <Route path="/register" element={<Register/>}/>
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={userInfo ? <Home/> : <Register/>}/>
+          <Route path="/login" element={userInfo ? <Home/> : <Login/>}/>
 
           <Route path="/" element={<Community/>}/>
           <Route path="/users/:userId" element={<User/>}/>

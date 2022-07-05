@@ -6,11 +6,11 @@ import './home.scss'
 export default function Home() {
 
 const [dataUser, setDataUser] = useState()
-const user = useSelector(state=> state.user)
+const {userInfo} = useSelector(state=> state.user)
 useEffect(()=> {
   (async()=> {
     try {
-      const response = await userRequest.get(`/homePage/${user.id}`)
+      const response = await userRequest.get(`/homePage/${userInfo.id}`)
       setDataUser(response.data)
     } catch (error) {
       console.log(error)

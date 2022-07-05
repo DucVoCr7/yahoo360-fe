@@ -3,8 +3,7 @@
 .post {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    transform: translateX(50%);
+    width: 600px;
 
     .postImg {
         width: 100%;
@@ -101,4 +100,103 @@
 @media (min-width: 740px) and (max-width: 1023px) {}
 
 /* OPEN - MOBILE độ phân giải <= 739px */
-@media (max-width: 739px) {}
+@media (max-width: 739px) {
+    .post {
+        display: flex;
+        flex-direction: column;
+        align-items: center;//
+        width: 100%; //
+    
+        .postImg {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+    
+        .postTitle {
+            width: calc(100% - 20px);//
+            @include font('title');
+            font-size: 35px
+        }
+    
+        .postActions {
+            width: calc(100% - 20px);//
+            @include font('title');
+            margin: 10px 0 20px 0;
+    
+            &Child {
+                &:first-child {
+                    background-color: $mainColor;
+    
+                    &:hover {
+                        background-color: $clickColor;
+                    }
+                }
+    
+                &:hover {
+                    background-color: $mainColor;
+                }
+    
+                border: 1px solid $disableColor;
+                border-radius: 5px;
+                box-shadow: $shadowFull;
+                padding: 5px 10px;
+                margin-right: 10px; //
+                text-decoration: none;
+                color: $blackColor;
+                &Icon {
+                    margin-right: 5px;
+                }
+            }
+        }
+    
+        .postAuthorTime {
+            width: calc(100% - 20px);//
+            display: flex;
+            align-items: center;
+            .postAuthor {
+                &:hover {
+                    color: $mainColor;
+                    text-shadow: $shadowFull;
+                }
+                color: $blackColor;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                margin: 20px 0;
+    
+                &Img {
+                    width: 40px;
+                    height: 40px;
+                    box-shadow: $shadowFull;
+                    border-radius: 50%;
+                }
+    
+                &Name {
+                    @include font('title');
+                    font-weight: 600;
+                    margin-left: 10px
+                }
+            }
+            .postTime {
+                @include font('title');
+                font-weight: 500;
+                padding-left: 10px; 
+                border-left: 1px solid $disableColor;
+                margin-left: 10px
+            }
+        }
+    
+        .postContent {
+            width: calc(100% - 20px);//
+            @include font('content');
+            text-align: justify;
+        }
+    
+        .postComments {
+            width: calc(100% - 20px);//
+            margin: 15px 0;
+        }
+    }
+}

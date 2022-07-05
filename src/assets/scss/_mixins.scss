@@ -6,6 +6,7 @@
     }
     @if ($type == 'title') {
       font-size: 17px;
+      font-weight: 300;
       font-family: 'title';
     }
     @if ($type == 'content') {

@@ -2,7 +2,7 @@
 
 .login {
     width: 100%;
-    min-height: calc(100vh - $heightTopbar - $heightFooter);
+    height: calc(100vh - $heightTopbar - $heightFooter);
     background-image: url('../../assets/image/background-login.jpg');
     background-size: cover;
     display: flex;
@@ -54,7 +54,7 @@
 @media (max-width: 739px) {
     .login {
         width: 100%;
-        min-height: calc(100vh - $heightTopbarM - $heightFooterM); //
+        height: calc(100vh - $heightTopbar - $heightFooterM); //
         background-image: url('../../assets/image/background-login.jpg');
         background-size: cover;
         display: flex;

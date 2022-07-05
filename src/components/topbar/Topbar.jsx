@@ -2,32 +2,25 @@ import React, { useRef, useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import avatar from '../../assets/image/avatar.jpg'
+import { logout } from '../../redux/userSlice'
 import './topbar.scss'
 export default function Topbar() {
-    const {category} = useSelector(state => state.app)
-    const [openCategory, setOpenCategory] = useState(false)
     const [openNotify, setOpenNotify] = useState(false)
     const [openSetting, setOpenSetting] = useState(false)
-    const [openMenuM, setOpenMenuM] = useState(false)
-    const refCategory = useRef()
+    const [openTopbarMenu, setOpenTopbarMenu] = useState(false)
     const refNotify = useRef()
     const refSetting = useRef()
-    const refMenuM = useRef()
-    const refMenuMIcon = useRef()
+    const refTopbarMenu = useRef()
+    const refTopbarMenuIcon = useRef()
     const navigate = useNavigate()
     const userInfo = useSelector(state => state.user.userInfo)
     const dispatch = useDispatch()
     const handleLogout = (event) => {
-        // dispatch(logout())
+        dispatch(logout())
         navigate('/')
     }
     // Click outSide close ref
     useEffect(() => {
-        const handleClickOutSideCategory = (event) => {
-            if (refCategory.current && !refCategory.current.contains(event.target)) {
-                setOpenCategory(false)
-            }
-        }
         const handleClickOutSideNotify = (event) => {
             if (refNotify.current && !refNotify.current.contains(event.target)) {
                 setOpenNotify(false)
@@ -38,40 +31,27 @@ export default function Topbar() {
                 setOpenSetting(false)
             }
         }
-        const handleClickOutSideMenuM = (event) => {
-            if (refMenuM.current && !refMenuM.current.contains(event.target) && !refMenuMIcon.current.contains(event.target)) {
-                setOpenMenuM(false)
+        const handleClickOutSideTopbarMenu = (event) => {
+            if (refTopbarMenu.current && !refTopbarMenu.current.contains(event.target) && !refTopbarMenuIcon.current.contains(event.target)) {
+                setOpenTopbarMenu(false)
             }
         }
-        window.addEventListener('click', handleClickOutSideCategory)
         window.addEventListener('click', handleClickOutSideNotify)
         window.addEventListener('click', handleClickOutSideSetting)
-        window.addEventListener('click', handleClickOutSideMenuM)
+        window.addEventListener('click', handleClickOutSideTopbarMenu)
         return () => {
-            window.removeEventListener('click', handleClickOutSideCategory)
             window.removeEventListener('click', handleClickOutSideNotify)
             window.removeEventListener('click', handleClickOutSideSetting)
-            window.removeEventListener('click', handleClickOutSideMenuM)
+            window.removeEventListener('click', handleClickOutSideTopbarMenu)
         }
     }, [])
     // console.log(category)
     return (
         <div className='topbar'>
-            <i onClick={() => setOpenMenuM(!openMenuM)} ref={refMenuMIcon}
-                className={openMenuM ? 'topbarMenu bi-list-nested active' : 'topbarMenu bi bi-list'}
-            ></i>
-            <div className={openMenuM ? 'topbarGroup active' : 'topbarGroup'} ref={refMenuM}>
-                <Link className='topbarItem' to='/' onClick={() => setOpenMenuM(!openMenuM)}>COMMUNITY</Link>
-                <Link className='topbarItem' to='/write' onClick={() => setOpenMenuM(!openMenuM)}>WRITE</Link>
-                <div className='topbarItem' onClick={() => setOpenCategory(!openCategory)} ref={refCategory}> 
-                    CATEGORY
-                    <i className={openCategory ? 'topbarCategoryIcon bi bi-chevron-right active' : 'topbarCategoryIcon bi bi-chevron-right'}></i>
-                    <ul className={openCategory ? 'topbarCategoryList active' : 'topbarCategoryList'} onClick={() => setOpenMenuM(!openMenuM)}>
-                        {category.map((categoryItem, index) => (
-                            <Link to={`posts?category=${categoryItem.key}`} className='topbarCategoryItem' key={index}>{categoryItem.value}</Link>
-                        ))}
-                    </ul>
-                </div>
+            {/* Topbar Tablet Computer */}
+            <div className='topbarGroup'>
+                <Link className='topbarItem' to='/'>COMMUNITY</Link>
+                <Link className='topbarItem' to='/write'>WRITE</Link>
             </div>
             <div className='topbarGroup'>
                 <div className='topbarItem'>
@@ -84,31 +64,31 @@ export default function Topbar() {
                         <span className={openNotify ? 'topbarNotifyNumber active' : "topbarNotifyNumber"} >1</span>
                         <ul className={openNotify ? 'topbarNotifyList active' : 'topbarNotifyList'}>
                             <Link className='topbarNotifyItem' to='/notify'>
-                                <img src={avatar} className="topbarNotifyImg" alt='avatar'/>
+                                <img src={avatar} className="topbarNotifyImg" alt='avatar' />
                                 <span className="topbarNotifyContent">
                                     Hello vừa gửi yêu cầu kết bạn.
                                 </span>
                             </Link>
                             <Link className='topbarNotifyItem' to='/notify'>
-                                <img src={avatar} className="topbarNotifyImg" alt='avatar'/>
+                                <img src={avatar} className="topbarNotifyImg" alt='avatar' />
                                 <span className="topbarNotifyContent">
                                     Hello thích bài viết của bạn.
                                 </span>
                             </Link>
                             <Link className='topbarNotifyItem' to='/notify'>
-                                <img src={avatar} className="topbarNotifyImg" alt='avatar'/>
+                                <img src={avatar} className="topbarNotifyImg" alt='avatar' />
                                 <span className="topbarNotifyContent">
                                     Hello thích bài viết của bạn.
                                 </span>
                             </Link>
                             <Link className='topbarNotifyItem' to='/notify'>
-                                <img src={avatar} className="topbarNotifyImg" alt='avatar'/>
+                                <img src={avatar} className="topbarNotifyImg" alt='avatar' />
                                 <span className="topbarNotifyContent">
                                     Hello thích bài viết của bạn.
                                 </span>
                             </Link>
                             <Link className='topbarNotifyItem' to='/notify'>
-                                <img src={avatar} className="topbarNotifyImg" alt='avatar'/>
+                                <img src={avatar} className="topbarNotifyImg" alt='avatar' />
                                 <span className="topbarNotifyContent">
                                     Hello thích bài viết của bạn.
                                 </span>
@@ -132,6 +112,55 @@ export default function Topbar() {
                 }
                 {!userInfo && <Link className='topbarItem' to='/login'>LOGIN</Link>}
                 {!userInfo && <Link className='topbarItem' to='/register'>REGISTER</Link>}
+            </div>
+
+
+            {/* Topbar Mobile */}
+            <div className="topbarGroupM">
+                <i onClick={() => setOpenTopbarMenu(!openTopbarMenu)} ref={refTopbarMenuIcon}
+                    className={openTopbarMenu ? 'topbarItem bi-list-nested' : 'topbarItem bi bi-list'}
+                ></i>
+                <div className={openTopbarMenu ? "topbarMenu active" : "topbarMenu"} ref={refTopbarMenu}>
+                    <div className='topbarMenuItem'>
+                        <input type='text' className='topbarMenuSearchInput' placeholder='Search...' />
+                        <i className='topbarMenuSearchIcon bi bi-search'></i>
+                    </div>
+                    {userInfo &&
+                        <Link className='topbarMenuItem' to='/home'>
+                            <img className='topbarMenuImg' src={userInfo.image ? userInfo.image : avatar} alt='avatar' />
+                        </Link>
+                    }
+                    {userInfo ?
+                        <div className="topbarMenuItem">
+                            <Link className='topbarMenuItemChild' to='/updateAccount'>UPDATE ACCOUNT</Link>
+                            <Link className='topbarMenuItemChild' to='/' onClick={handleLogout}>LOGOUT</Link>
+                        </div>
+                        :
+                        <div className="topbarMenuItem">
+                            <Link className='topbarMenuItemChild' to='/login'>LOGIN</Link>
+                            <Link className='topbarMenuItemChild' to='/register'>REGISTER</Link>
+                        </div>
+                    }
+                    <Link to='/write' className="topbarMenuItem">
+                        <i className="topbarMenuItemChild bi bi-pen-fill"></i>
+                        WRITE YOUR POST!
+                    </Link>
+                </div>
+            </div>
+            <Link to='/' className="topbarGroupM">
+                YAHOO 360
+            </Link>
+            <div className="topbarGroupM">
+                {userInfo ?
+                    <Link to='' className='topbarItem'>
+                        <i className="topbarNotifyIcon bi bi-bell-fill"></i>
+                        <span className="topbarNotifyNumber">1</span>
+                    </Link>
+                    :
+                    <Link className='topbarItem' to='/home'>
+                        <i className="topbarIcon bi bi-person-fill"></i>
+                    </Link>
+                }
             </div>
         </div>
     )

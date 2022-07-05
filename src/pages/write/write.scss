@@ -471,7 +471,7 @@
 @media (max-width: 739px) {
     .write {
         width: 100%;
-        min-height: calc(100vh - $heightTopbarM - $heightFooterM);
+        min-height: calc(100vh - $heightTopbar - $heightFooterM);
         display: flex;
         flex-direction: column;
         align-items: center;
