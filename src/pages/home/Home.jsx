@@ -7,6 +7,7 @@ export default function Home() {
 
 const [dataUser, setDataUser] = useState()
 const {userInfo} = useSelector(state=> state.user)
+
 useEffect(()=> {
   (async()=> {
     try {
@@ -15,10 +16,8 @@ useEffect(()=> {
     } catch (error) {
       console.log(error)
     }
-
   })();
 }, [])
-  console.log(dataUser)
     return (
         <div className={dataUser ? 'home' : 'home loading'}>
           hello

@@ -13,11 +13,13 @@ export default function Topbar() {
     const refTopbarMenu = useRef()
     const refTopbarMenuIcon = useRef()
     const navigate = useNavigate()
-    const userInfo = useSelector(state => state.user.userInfo)
+    const {userInfo} = useSelector(state => state.user)
     const dispatch = useDispatch()
-    const handleLogout = (event) => {
-        dispatch(logout())
-        navigate('/')
+    const handleLogout = async (event) => {
+        const statusLogout = await dispatch(logout())
+        if(!statusLogout.error) {
+            navigate('/')
+        }
     }
     // Click outSide close ref
     useEffect(() => {
@@ -126,22 +128,22 @@ export default function Topbar() {
                         <i className='topbarMenuSearchIcon bi bi-search'></i>
                     </div>
                     {userInfo &&
-                        <Link className='topbarMenuItem' to='/home'>
+                        <Link className='topbarMenuItem' to='/home' onClick={()=> setOpenTopbarMenu(false)}>
                             <img className='topbarMenuImg' src={userInfo.image ? userInfo.image : avatar} alt='avatar' />
                         </Link>
                     }
                     {userInfo ?
-                        <div className="topbarMenuItem">
+                        <div className="topbarMenuItem" onClick={()=> setOpenTopbarMenu(false)}>
                             <Link className='topbarMenuItemChild' to='/updateAccount'>UPDATE ACCOUNT</Link>
                             <Link className='topbarMenuItemChild' to='/' onClick={handleLogout}>LOGOUT</Link>
                         </div>
                         :
-                        <div className="topbarMenuItem">
+                        <div className="topbarMenuItem" onClick={()=> setOpenTopbarMenu(false)}>
                             <Link className='topbarMenuItemChild' to='/login'>LOGIN</Link>
                             <Link className='topbarMenuItemChild' to='/register'>REGISTER</Link>
                         </div>
                     }
-                    <Link to='/write' className="topbarMenuItem">
+                    <Link to='/write' className="topbarMenuItem" onClick={()=> setOpenTopbarMenu(false)}>
                         <i className="topbarMenuItemChild bi bi-pen-fill"></i>
                         WRITE YOUR POST!
                     </Link>
@@ -157,7 +159,7 @@ export default function Topbar() {
                         <span className="topbarNotifyNumber">1</span>
                     </Link>
                     :
-                    <Link className='topbarItem' to='/home'>
+                    <Link className='topbarItem' to='/login'>
                         <i className="topbarIcon bi bi-person-fill"></i>
                     </Link>
                 }

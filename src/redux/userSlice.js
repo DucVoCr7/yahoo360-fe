@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { logoutRequest, publicRequest } from "../utils/requestMethods";
+import { publicRequest } from "../utils/requestMethods";
 export const login = createAsyncThunk('users/login', async(userInfo, {rejectWithValue})=> {
     try {
         const response = await publicRequest.post('/login', userInfo)
@@ -9,8 +9,9 @@ export const login = createAsyncThunk('users/login', async(userInfo, {rejectWith
     }
 })
 export const logout = createAsyncThunk('users/logout', async ()=> {
-    const response = await logoutRequest.post('/deleteRefreshToken')
-    console.log(response)
+    const response = await publicRequest.post('/deleteRefreshToken', {
+        refreshToken: JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).refreshToken
+    })
     return response.data
 })
 export const userSlice = createSlice({

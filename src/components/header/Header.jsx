@@ -40,7 +40,7 @@ export default function Header() {
           <div className="headerTitle">Store the experience your way!</div>
           <Slider {...settings}>
             {slideShow.map((slide, index)=> 
-                <img src={slide.img} alt='headerImg' className="headerSlide" />
+                <img src={slide.img} alt='headerImg' className="headerSlide" key={index}/>
             )}
           </Slider>
           <div className="headerCategory">

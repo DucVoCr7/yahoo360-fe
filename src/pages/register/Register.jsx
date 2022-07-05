@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './register.scss'
 
 export default function Register() {
 
   const [userInfo, setUserInfo] = useState()
   const [error, setError] = useState()
-
+  const navigate = useNavigate()
   const handleChange = (event) => { setUserInfo({ ...userInfo, [event.target.name]: event.target.value }) }
   const handleSubmit = (event) => {
     event.preventDefault()

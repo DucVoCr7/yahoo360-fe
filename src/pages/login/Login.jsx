@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { login } from '../../redux/userSlice'
 import './login.scss'
 export default function Login() {
   const [userInfo, setUserInfo] = useState()
-  // const [error, setError] = useState()
   const dispatch = useDispatch()
   const handleChange = (event) => setUserInfo({ ...userInfo, [event.target.name]: event.target.value })
   const {error} = useSelector(state => state.user)
+  const navigate = useNavigate()
   const handleLogin = async (event) => {
       event.preventDefault();
-      dispatch(login(userInfo))
+      const statusLogin = await dispatch(login(userInfo))
+      if(!statusLogin.error) {
+        navigate('/home')
+      }
   }
   return (
     <div className='login'>

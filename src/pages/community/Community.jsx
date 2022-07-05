@@ -6,13 +6,16 @@ import PostsEqual from '../../components/postsEqual/PostsEqual'
 import PostsBigTop from '../../components/postsBigTop/PostsBigTop'
 import { Link } from 'react-router-dom'
 import PostsBigRight from '../../components/postsBigRight/PostsBigRight'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { appStart } from '../../redux/appSlice'
 export default function Community() {
     const { category } = useSelector(state => state.app)
     const [dataCommunity, setDataCommunity] = useState()
+    const dispatch = useDispatch()
     useEffect(() => {
         (async () => {
             try {
+                await dispatch(appStart())
                 const response = await publicRequest.get('/communityPage')
                 setDataCommunity(response.data)
             } catch (error) {
