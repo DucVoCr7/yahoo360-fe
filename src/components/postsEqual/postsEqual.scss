@@ -15,15 +15,59 @@
     }
 }
 
-//* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
-@media (min-width: 1024px) and (max-width: 1239px) {
-
-}
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
-@media (min-width: 740px) and (max-width: 1023px) {
+@media (min-width: 740px) and (max-width: 900px) {
+    .postsEqual {
+        display: flex;
+        height: 200px;
 
+        overflow: scroll; //
+        &::-webkit-scrollbar { ///
+            display: none; //
+        }
+
+        > :nth-child(n) {
+            flex: none; //
+            width: 200px;
+            box-sizing: content-box;
+            padding-left: 10px; //
+            border-left: 1px solid $disableColor;
+            margin-left: 10px; //
+        }
+        > :first-child {
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+    }
 }
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
+    .postsEqual {
+        display: flex;
+        flex-direction: column; //
+        height: auto;
 
+        // overflow-x: scroll; //
+        // overflow-y: hidden;
+        // &::-webkit-scrollbar { ///
+        //     display: none; //
+        // }
+
+        > :nth-child(n) {
+            flex: none; //
+            width: 100%; //
+            padding-left: 0; //
+            border-left: none;//
+            margin-left: 0; //
+            padding-top: 10px; //
+            border-top: 1px solid $disableColor;//
+            margin-top: 10px; //
+        }
+        > :first-child {
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+    }
 }

@@ -93,12 +93,6 @@
     }
 }
 
-//* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
-@media (min-width: 1024px) and (max-width: 1239px) {}
-
-/* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
-@media (min-width: 740px) and (max-width: 1023px) {}
-
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
     .post {
@@ -114,13 +108,13 @@
         }
     
         .postTitle {
-            width: calc(100% - 20px);//
+            width: calc(100% - 30px);//
             @include font('title');
             font-size: 35px
         }
     
         .postActions {
-            width: calc(100% - 20px);//
+            width: calc(100% - 30px);//
             @include font('title');
             margin: 10px 0 20px 0;
     
@@ -151,7 +145,7 @@
         }
     
         .postAuthorTime {
-            width: calc(100% - 20px);//
+            width: calc(100% - 30px);//
             display: flex;
             align-items: center;
             .postAuthor {
@@ -189,13 +183,13 @@
         }
     
         .postContent {
-            width: calc(100% - 20px);//
+            width: calc(100% - 30px);//
             @include font('content');
             text-align: justify;
         }
     
         .postComments {
-            width: calc(100% - 20px);//
+            width: calc(100% - 30px);//
             margin: 15px 0;
         }
     }

@@ -45,7 +45,7 @@ export default function Header() {
           </Slider>
           <div className="headerCategory">
               {category.map((item, index)=> (
-                <Link to={`/posts?category=${item.key}`} className="headerCategoryItem">
+                <Link to={`/posts?category=${item.key}`} className="headerCategoryItem" key={index}>
                   {item.value}
                 </Link>
               ))}

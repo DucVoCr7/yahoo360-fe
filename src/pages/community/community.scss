@@ -99,22 +99,23 @@
         padding: 5px 15px 15px 15px; //
         &Top {
             display: flex;
+            flex-direction: column; //
             border-bottom: 1px solid $blackColor;
             border-top: 4px double $blackColor;
             padding: 10px 0; // 
             &Left {
                 flex: 7;
-                padding-right: 10px; // 
-                border-right: 1px solid $blackColor;
-                margin-right: 10px; //
+                padding-right: 0px; // 
+                border-right: none; //
+                margin-right: 0px; //
                 &Item {
                     padding-bottom: 10px; //
                     border-bottom: 1px solid $blackColor;
                     margin-bottom: 10px; //
                     &:last-child {
-                        padding: 0;
-                        margin: 0;
-                        border: none;
+                        padding-bottom: 10px; //
+                        border-bottom: 1px solid $blackColor;//
+                        margin-bottom: 10px; //
                     }
                 }
             }
@@ -159,7 +160,7 @@
 @media (max-width: 739px) {
     .community {
         &.loading {
-            height: calc(100vh - $heightTopbar - $heightFooterM); //
+            height: calc(100vh - $heightTopbar - $heightFooter);
             position: relative;
             &::after{
                 position: absolute;
@@ -175,34 +176,34 @@
             }
         }
         width: 100%;
-        padding: 5px 10px 10px 10px; //
+        padding: 5px 15px 15px 15px; //
         &Top {
             display: flex;
             flex-direction: column; //
-            border-bottom: 1px solid $blackColor;
+            border-bottom: 2px solid $blackColor;
             border-top: 4px double $blackColor;
-            padding: 10px 0; //
+            padding: 10px 0; // 
             &Left {
-                flex: 1; //
-                padding-right: 0px; //
+                flex: 7;
+                padding-right: 0px; // 
                 border-right: none; //
                 margin-right: 0px; //
                 &Item {
                     padding-bottom: 10px; //
-                    border-bottom: 1px solid $blackColor;
+                    border-bottom: 2px solid $blackColor;
                     margin-bottom: 10px; //
                     &:last-child {
-                        padding: 0;
-                        margin: 0;
-                        border: none;
+                        padding-bottom: 10px; //
+                        border-bottom: 2px solid $blackColor;//
+                        margin-bottom: 10px; //
                     }
                 }
             }
             &Right {
-                flex: 1; //
-                &Item {
+                flex: 3;
+                &Item { 
                     padding-bottom: 10px; //
-                    border-bottom: 1px solid $blackColor;
+                    border-bottom: 2px solid $blackColor;
                     margin-bottom: 10px; //
                     &:last-child {
                         padding: 0;
@@ -213,7 +214,7 @@
             }
         }
         &Bottom {
-            padding-top: 10px; //
+            padding-top: 10px;
         }
         &Name {
             &:hover {
@@ -223,9 +224,9 @@
             @include font('title');
             background-color: $mainColor;
             border: 1px solid $disableColor;
-            border-radius: 5px;
+            border-radius: 5px; 
             box-shadow: $shadowFull;
-            padding: 5px 10px;
+            padding: 5px 10px; 
             text-decoration: none;
             color: $blackColor;
             margin-bottom: 10px; //

@@ -50,15 +50,129 @@
     }
 }
 
-//* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
-@media (min-width: 1024px) and (max-width: 1239px) {
-
-}
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
-@media (min-width: 740px) and (max-width: 1023px) {
-
+@media (min-width: 740px) and (max-width: 900px) {
+    .postsBigRight {
+        width: 100%;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        &Top {
+            flex: 8;
+            padding-bottom: 10px; //
+            border-bottom: 1px solid $disableColor;
+            margin-bottom: 10px; //
+            overflow: hidden;
+            display: flex;
+            &Left {
+                flex: 4;
+                padding-right: 10px; //
+                border-right: 1px solid $disableColor;
+                margin-right: 10px; //
+                display: flex;
+                flex-direction: column;
+                > :nth-child(n) {
+                    flex: 1;
+                    height: 50%;
+                }
+                > :first-child {
+                    padding-bottom: 10px; //
+                    border-bottom: 1px solid $disableColor;
+                    // margin-bottom: 10px; //
+                }
+                > :last-child {
+                    padding-top: 10px; //
+                }
+            }
+            &Right {
+                flex: 7;
+            }
+        }
+        &Bottom {
+            flex: 3;
+            overflow: hidden;
+            display: flex;
+            > :nth-child(n) {
+                flex: 1;
+            }
+            > :first-child {
+                padding-right: 10px; //
+                border-right: 1px solid $disableColor;
+                margin-right: 10px; //
+            }
+        }
+    }
 }
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
-
+    .postsBigRight {
+        width: 100%;
+        height: auto; //
+        display: flex;
+        flex-direction: column;
+        &Top {
+            flex: none; //
+            padding-bottom: 10px; //
+            border-bottom: 1px solid $disableColor;
+            margin-bottom: 10px; //
+            overflow: hidden;
+            display: flex;
+            flex-direction: column; //
+            &Left {
+                flex: none; //
+                padding-right: 0; //
+                border-right: none;
+                margin-right: 0; //
+                display: flex;
+                flex-direction: column;
+                > :nth-child(n) {
+                    flex: none; //
+                    box-sizing: content-box; //
+                    height: 200px; //
+                    padding: 0;
+                    margin: 0;
+                    border: none;
+                    padding-bottom: 10px;
+                    margin-bottom: 10px;
+                    border-bottom: 1px solid $disableColor;
+                }
+                // > :first-child {
+                //     padding-bottom: 10px;
+                //     margin-bottom: 10px;
+                //     border-bottom: 1px solid $disableColor;
+                // }
+                // > :last-child {
+                //     padding-top: 0; //
+                //     padding-bottom: 10px;
+                //     margin-bottom: 10px;
+                //     border-bottom: 1px solid $disableColor;
+                // }
+            }
+            &Right {
+                flex: none; //
+            }
+        }
+        &Bottom {
+            flex: none; //
+            overflow: hidden;
+            display: flex;
+            flex-direction: column; //
+            > :nth-child(n) {
+                flex: none; //
+                height: 200px; //
+                box-sizing: content-box;
+                padding: 0; //
+                border: none; //
+                margin: 0; //
+                padding-bottom: 10px; //
+                border-bottom: 1px solid $disableColor; //
+                margin-bottom: 10px; //
+            }
+            > :last-child {
+                padding: 0; //
+                border: none; //
+                margin: 0; //
+            }
+        }
+    }
 }
