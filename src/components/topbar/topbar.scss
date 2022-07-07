@@ -13,7 +13,7 @@
     border-bottom: 1px solid $disableColor;
     @include font('part');
     background-color: $whiteColor;
-    padding: 0 20px;
+    padding: 0 $sizeAlignPagePC;
     // Mobile
     &GroupM {
         display: none;
@@ -81,7 +81,7 @@
                 display: none;
                 position: absolute;
                 top: calc(100% + 1px);
-                right: 20px;
+                right: $sizeAlignPagePC;
                 background-color: $whiteColor;
                 box-shadow: $shawdowNotTop;
                 max-height: calc(($heightChildTopbar + 10px) * 4);
@@ -136,7 +136,7 @@
                 display: none;
                 position: absolute;
                 top: calc(100% + 1px);
-                right: 20px;
+                right: $sizeAlignPagePC;
                 background-color: $whiteColor;
                 box-shadow: $shawdowNotTop;
                 border-bottom-left-radius: 4px;
@@ -180,7 +180,7 @@
         border-bottom: 1px solid $disableColor;
         @include font('part');
         background-color: $whiteColor;
-        padding: 0 15px; //
+        padding: 0 $sizeAlignPageTabletMobile; //
     
         &Menu {
             display: none;
@@ -252,7 +252,7 @@
                     display: none;
                     position: absolute;
                     top: calc(100% + 1px);
-                    right: 15px; //
+                    right: $sizeAlignPageTabletMobile; //
                     background-color: $whiteColor;
                     box-shadow: $shawdowNotTop;
                     max-height: calc(($heightChildTopbar + 10px) * 4);
@@ -307,7 +307,7 @@
                     display: none;
                     position: absolute;
                     top: calc(100% + 1px);
-                    right: 15px; //
+                    right: $sizeAlignPageTabletMobile; //
                     background-color: $whiteColor;
                     box-shadow: $shawdowNotTop;
                     border-bottom-left-radius: 4px;
@@ -351,7 +351,7 @@
         border-bottom: 1px solid $disableColor;
         @include font('part');
         background-color: $whiteColor;
-        padding: 0 15px; //
+        padding: 0 $sizeAlignPageTabletMobile; //
 
         // Tablet PC
         &Group {
@@ -414,10 +414,10 @@
                 left: 0;
                 width: 100%;
                 background-color: $whiteColor;
-                padding: 10px;
+                padding: $sizeAlignElementTabletMobile;
                 font-weight: 600;
                 &Item {
-                    padding: 10px 0;
+                    padding: $sizeAlignElementTabletMobile 0;
                     text-decoration: none;
                     color: $blackColor;
                     display: flex;
@@ -428,7 +428,7 @@
                         }
                         text-decoration: none;
                         color: $blackColor;
-                        padding: 0 10px;
+                        padding: 0 $sizeAlignElementTabletMobile;
                         border-right: 1px solid $disableColor;
                     }
                     .topbarMenuSearchInput {
@@ -441,7 +441,7 @@
                         font-size: 20px;
                     }
                     .topbarMenuSearchIcon {
-                        margin-left: 10px;
+                        margin-left: $sizeAlignElementTabletMobile;
                         display: flex;
                         align-items: center;
                         padding: 0 15px;

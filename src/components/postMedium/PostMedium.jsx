@@ -2,6 +2,7 @@ import React from 'react'
 import './postMedium.scss'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import convertDate from '../../utils/convertDate'
 export default function PostMedium({ post }) {
     // Dùng tạm khi nào biết cách mapSatetoprops thì xóa đi
     const valueCategory = useSelector(state => state.app.category.find(element => element.key === post.category).value)
@@ -23,9 +24,7 @@ export default function PostMedium({ post }) {
                         <i className="postMediumOtherChildIcon bi bi-chat-left"></i>
                         {post.commentsNumber}
                     </span>
-                    <span className="postMediumOtherChild">at {post.updatedAt}</span>
-                    <i className="postMediumOtherChild bi bi-recycle"></i>
-                    <i className="postMediumOtherChild bi bi-trash"></i>
+                    <span className="postMediumOtherChild">{convertDate(post.updatedAt)}</span>
                 </div>
                 <div className="postMediumContent">{post.content}</div>
             </div>

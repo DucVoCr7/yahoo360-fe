@@ -1,0 +1,99 @@
+@use '/src/assets/scss' as *;
+.headerOfUser {
+    width: 100%;
+    overflow: hidden;
+    height: $heightHeaderOfUser;
+    &Photo {
+        width: 100%;
+        height: $heightHeaderOfUser;
+        object-fit: cover;
+    }
+    &NoPhoto {
+        @include font('title');
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
+        &Icon {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(50%);
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            &Child {
+                &:last-child {
+                    position: absolute;
+                    font-size: 25px;
+                    bottom: -10px;
+                    right: -20px;
+                    background-color: $whiteColor;
+                    border: 5px solid $whiteColor;
+                    border-radius: 50%;
+                }
+                margin-left: 10px;
+                font-size: 60px;
+            }
+        }
+        &Content {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(50%);
+            font-size: 30px;
+        }
+    }
+}
+
+/* OPEN - MOBILE độ phân giải <= 739px */
+@media (max-width: 739px) {
+    .headerOfUser {
+        width: 100%;
+        overflow: hidden;
+        height: $heightHeaderOfUserM;
+        &Photo {
+            width: 100%;
+            height: $heightHeaderOfUserM; //
+            object-fit: cover;
+        }
+        &NoPhoto {
+            @include font('title');
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
+            &Icon {
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%);
+                font-size: 20px; //
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                &Child {
+                    &:last-child {
+                        position: absolute;
+                        font-size: 17px; //
+                        bottom: -5px; //
+                        right: -15px; //
+                        background-color: $whiteColor;
+                        border: 5px solid $whiteColor;
+                        border-radius: 50%;
+                    }
+                    margin-left: 10px;
+                    font-size: 40px; //
+                }
+            }
+            &Content {
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%);
+                font-size: 20px; //
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+@use '/src/assets/scss' as *;
+.photos {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    &Title {
+        @include font('title');
+        display: block;
+        margin-bottom: 7px;
+        border-radius: 5px;
+        background-color: $mainColor;
+        padding: 5px 10px;
+        &Icon {
+            margin-right: $sizeAlignElementPC;
+        }
+    }
+    &Content {
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        overflow: hidden;
+        position: relative;
+        &Item {
+            width: 50%;
+            height: 50%;
+            border-radius: 10px;
+        }
+        &Hidden {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            right: 0;
+            bottom: 0;
+            color: $mainColor;
+            @include font ('title');
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba($color: #000000, $alpha: 0.6);
+            border-radius: 10px;
+        }
+    }
+}

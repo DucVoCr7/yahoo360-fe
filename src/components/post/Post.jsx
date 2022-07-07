@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import './post.scss'
+import convertDate from '../../utils/convertDate'
 export default function Post({post}) {
     /// Chỗ này dùng tạm từ từ fix sau.
     const valueCategory = useSelector(state => state.app.category.find(element => element.key === post.category).value)
@@ -32,7 +33,7 @@ export default function Post({post}) {
                     <img src={post.user.image} alt="postImg" className="postAuthorImg"/>
                     <span className="postAuthorName">by {post.user.name}</span>
                 </Link>
-                <span className="postTime">at {post.updatedAt}</span>
+                <span className="postTime">{convertDate(post.updatedAt)}</span>
             </div>
             <div className="postContent">{post.content}</div>
             <button className="postComments">Read {post.commentsNumber} Comments</button>

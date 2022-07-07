@@ -1,0 +1,26 @@
+@use '/src/assets/scss' as *;
+.musics {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    &Title {
+        @include font('title');
+        display: block;
+        margin-bottom: 7px;
+        border-radius: 5px;
+        background-color: $mainColor;
+        padding: 5px 10px;
+        &Icon {
+            margin-right: $sizeAlignElementPC;
+        }
+    }
+    &Content {
+        flex: 1;
+        overflow: hidden;
+        border-radius: 10px;
+        &Item {
+            width: 100%;
+        }
+    }
+}

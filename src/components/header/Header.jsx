@@ -3,7 +3,7 @@ import './header.scss'
 import '../../assets/scss/customSlider.scss'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Slider from 'react-slick/lib/slider'
+import Slider from 'react-slick';
 import style from '../../assets/image/style.jpg'
 import travel from '../../assets/image/travel.jpg'
 import tech from '../../assets/image/tech.jpg'
@@ -36,7 +36,7 @@ export default function Header() {
     const {category} = useSelector(state=> state.app)
     return (
         <div className='header'>
-          <div className="headerLogo">YAHOO 360</div>
+          <Link to='/' className="headerLogo">YAHOO 360</Link>
           <div className="headerTitle">Store the experience your way!</div>
           <Slider {...settings}>
             {slideShow.map((slide, index)=> 

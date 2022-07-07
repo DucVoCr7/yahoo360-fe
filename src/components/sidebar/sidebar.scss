@@ -1,6 +1,25 @@
 @use '/src/assets/scss' as *;
 .sidebar {
-
+    width: calc(100% - $sizeAlignPagePC*2);
+    padding: $sizeAlignElementPC 0;
+    border-bottom: 4px double $blackColor;
+    margin-bottom: $sizeAlignElementPC;
+    box-sizing: border-box;
+    height: 200px;
+    display: flex;
+    > :nth-child(n) {
+        flex: 1;
+        padding-left: 15px;
+        margin-left: 15px;
+        border-left: 1px solid $disableColor;
+    }
+    > :first-child {
+        flex: none;
+        width: 200px;
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
 }
 
 //* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */

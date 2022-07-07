@@ -6,16 +6,16 @@
     flex-direction: column;
     &Top {
         flex: 8;
-        padding-bottom: 15px;
+        padding-bottom: $sizeAlignElementPC;
         border-bottom: 1px solid $disableColor;
-        margin-bottom: 15px;
+        margin-bottom: $sizeAlignElementPC;
         overflow: hidden;
         display: flex;
         &Left {
             flex: 4;
-            padding-right: 15px;
+            padding-right: $sizeAlignElementPC;
             border-right: 1px solid $disableColor;
-            margin-right: 15px;
+            margin-right: $sizeAlignElementPC;
             display: flex;
             flex-direction: column;
             > :nth-child(n) {
@@ -23,12 +23,12 @@
                 height: 50%;
             }
             > :first-child {
-                padding-bottom: 15px;
+                padding-bottom: $sizeAlignElementPC;
                 border-bottom: 1px solid $disableColor;
-                // margin-bottom: 15px;
+                // margin-bottom: $sizeAlignElementPC;
             }
             > :last-child {
-                padding-top: 15px;
+                padding-top: $sizeAlignElementPC;
             }
         }
         &Right {
@@ -43,9 +43,9 @@
             flex: 1;
         }
         > :first-child {
-            padding-right: 15px;
+            padding-right: $sizeAlignElementPC;
             border-right: 1px solid $disableColor;
-            margin-right: 15px;
+            margin-right: $sizeAlignElementPC;
         }
     }
 }
@@ -59,16 +59,16 @@
         flex-direction: column;
         &Top {
             flex: 8;
-            padding-bottom: 10px; //
+            padding-bottom: $sizeAlignElementTabletMobile; //
             border-bottom: 1px solid $disableColor;
-            margin-bottom: 10px; //
+            margin-bottom: $sizeAlignElementTabletMobile; //
             overflow: hidden;
             display: flex;
             &Left {
                 flex: 4;
-                padding-right: 10px; //
+                padding-right: $sizeAlignElementTabletMobile; //
                 border-right: 1px solid $disableColor;
-                margin-right: 10px; //
+                margin-right: $sizeAlignElementTabletMobile; //
                 display: flex;
                 flex-direction: column;
                 > :nth-child(n) {
@@ -76,12 +76,12 @@
                     height: 50%;
                 }
                 > :first-child {
-                    padding-bottom: 10px; //
+                    padding-bottom: $sizeAlignElementTabletMobile; //
                     border-bottom: 1px solid $disableColor;
-                    // margin-bottom: 10px; //
+                    // margin-bottom: $sizeAlignElementTabletMobile; //
                 }
                 > :last-child {
-                    padding-top: 10px; //
+                    padding-top: $sizeAlignElementTabletMobile; //
                 }
             }
             &Right {
@@ -96,9 +96,9 @@
                 flex: 1;
             }
             > :first-child {
-                padding-right: 10px; //
+                padding-right: $sizeAlignElementTabletMobile; //
                 border-right: 1px solid $disableColor;
-                margin-right: 10px; //
+                margin-right: $sizeAlignElementTabletMobile; //
             }
         }
     }
@@ -112,9 +112,9 @@
         flex-direction: column;
         &Top {
             flex: none; //
-            padding-bottom: 10px; //
+            padding-bottom: $sizeAlignElementTabletMobile; //
             border-bottom: 1px solid $disableColor;
-            margin-bottom: 10px; //
+            margin-bottom: $sizeAlignElementTabletMobile; //
             overflow: hidden;
             display: flex;
             flex-direction: column; //
@@ -132,19 +132,19 @@
                     padding: 0;
                     margin: 0;
                     border: none;
-                    padding-bottom: 10px;
-                    margin-bottom: 10px;
+                    padding-bottom: $sizeAlignElementTabletMobile;
+                    margin-bottom: $sizeAlignElementTabletMobile;
                     border-bottom: 1px solid $disableColor;
                 }
                 // > :first-child {
-                //     padding-bottom: 10px;
-                //     margin-bottom: 10px;
+                //     padding-bottom: $sizeAlignElementTabletMobile;
+                //     margin-bottom: $sizeAlignElementTabletMobile;
                 //     border-bottom: 1px solid $disableColor;
                 // }
                 // > :last-child {
                 //     padding-top: 0; //
-                //     padding-bottom: 10px;
-                //     margin-bottom: 10px;
+                //     padding-bottom: $sizeAlignElementTabletMobile;
+                //     margin-bottom: $sizeAlignElementTabletMobile;
                 //     border-bottom: 1px solid $disableColor;
                 // }
             }
@@ -164,9 +164,9 @@
                 padding: 0; //
                 border: none; //
                 margin: 0; //
-                padding-bottom: 10px; //
+                padding-bottom: $sizeAlignElementTabletMobile; //
                 border-bottom: 1px solid $disableColor; //
-                margin-bottom: 10px; //
+                margin-bottom: $sizeAlignElementTabletMobile; //
             }
             > :last-child {
                 padding: 0; //

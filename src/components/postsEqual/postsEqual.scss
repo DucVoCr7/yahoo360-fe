@@ -4,9 +4,9 @@
     height: 200px;
     > :nth-child(n) {
         flex: 1;
-        padding-left: 15px;
+        padding-left: $sizeAlignElementPC;
         border-left: 1px solid $disableColor;
-        margin-left: 15px;
+        margin-left: $sizeAlignElementPC;
     }
     > :first-child {
         padding: 0;
@@ -30,9 +30,9 @@
             flex: none; //
             width: 200px;
             box-sizing: content-box;
-            padding-left: 10px; //
+            padding-left: $sizeAlignElementTabletMobile; //
             border-left: 1px solid $disableColor;
-            margin-left: 10px; //
+            margin-left: $sizeAlignElementTabletMobile; //
         }
         > :first-child {
             padding: 0;
@@ -60,9 +60,9 @@
             padding-left: 0; //
             border-left: none;//
             margin-left: 0; //
-            padding-top: 10px; //
+            padding-top: $sizeAlignElementTabletMobile; //
             border-top: 1px solid $disableColor;//
-            margin-top: 10px; //
+            margin-top: $sizeAlignElementTabletMobile; //
         }
         > :first-child {
             padding: 0;

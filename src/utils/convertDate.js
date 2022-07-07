@@ -1,10 +1,10 @@
-export const convertDate = (timeStamp)=> {
+const convertDate = (timeStamp)=> {
     let dateObj = new Date(timeStamp);
     // let month = dateObj.getMonth() + 1; // Muốn thể hiện số thì dùng + 1
     let month = dateObj.getMonth(); // Muốn thể hiện text thì mở switch case
     let year = dateObj.getFullYear();
     let date = dateObj.getDate();
-    let day = dateObj.getDay()
+    // let day = dateObj.getDay()
     let hours = dateObj.getHours();
     let minutes = dateObj.getMinutes();
     switch(month) {
@@ -44,28 +44,29 @@ export const convertDate = (timeStamp)=> {
         default:
             month = 'December'   
     }
-    switch(day) {
-        case 0:
-            day = 'Sunday'
-            break
-        case 1:
-            day = 'Monday'
-            break
-        case 2:
-            day = 'Tuesday'
-            break
-        case 3:
-            day = 'Wednesday'
-            break    
-        case 4:
-            day = 'Thursday'
-            break
-        case 5:
-            day = 'Friday'
-            break    
-        default:
-            day = 'Saturday'
+    // switch(day) {
+    //     case 0:
+    //         day = 'Sunday'
+    //         break
+    //     case 1:
+    //         day = 'Monday'
+    //         break
+    //     case 2:
+    //         day = 'Tuesday'
+    //         break
+    //     case 3:
+    //         day = 'Wednesday'
+    //         break    
+    //     case 4:
+    //         day = 'Thursday'
+    //         break
+    //     case 5:
+    //         day = 'Friday'
+    //         break    
+    //     default:
+    //         day = 'Saturday'
         
-    }
-    return `${month} ${date}, ${year}`;
+    // }
+    return `at ${hours}:${minutes} ${month} ${date}, ${year}`;
 }
+export default convertDate

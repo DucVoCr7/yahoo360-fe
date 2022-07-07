@@ -10,9 +10,9 @@
     }
     &Left {
         flex: 8;
-        padding-right: 15px;
+        padding-right: $sizeAlignElementPC;
         border-right: 1px solid $disableColor;
-        margin-right: 15px;
+        margin-right: $sizeAlignElementPC;
         display: flex;
         flex-direction: column;
         .postMediumTitle {
@@ -23,7 +23,7 @@
         }
         .postMediumOther {
             @include font('title');
-            margin: 15px 0;
+            margin: $sizeAlignElementPC 0;
             font-size: 15px;
             &Child {
                 &:first-child {
@@ -33,8 +33,8 @@
                     border: none;
                 }
                 border-left: 1px solid $disableColor;
-                padding-left: 15px;
-                margin-left: 15px;
+                padding-left: $sizeAlignElementPC;
+                margin-left: $sizeAlignElementPC;
                 &Icon {
                     margin-right: 5px;
                 }
@@ -60,11 +60,133 @@
 
 }
 
-//* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
-@media (min-width: 1024px) and (max-width: 1239px) {}
 
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
-@media (min-width: 740px) and (max-width: 1023px) {}
+@media (min-width: 740px) and (max-width: 900px) {
+    .postMedium {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        color: $blackColor;
+        text-decoration: none;
+        &:hover {
+            color: $contentBriefColor;
+        }
+        &Left {
+            flex: 7; //
+            padding-right: $sizeAlignElementTabletMobile; //
+            border-right: 1px solid $disableColor;
+            margin-right: $sizeAlignElementTabletMobile; //
+            display: flex;
+            flex-direction: column;
+            .postMediumTitle {
+                @include font('title');
+                font-size: 20px;
+                padding: 0;
+                margin: 0;
+            }
+            .postMediumOther {
+                @include font('title');
+                margin: $sizeAlignElementTabletMobile 0; //
+                font-size: 15px;
+                &Child {
+                    &:first-child {
+                        color: $mainColor;
+                        padding: 0;
+                        margin: 0;
+                        border: none;
+                    }
+                    border-left: 1px solid $disableColor;
+                    padding-left: $sizeAlignElementTabletMobile;
+                    margin-left: $sizeAlignElementTabletMobile;
+                    &Icon {
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .postMediumContent {
+                @include font('content');
+                font-size: 15px;
+                line-height: 1.4;
+                text-align: justify;
+                overflow: hidden;
+                color: $contentBriefColor;
+            }
+        }
+        &Right {
+            flex: 3; //
+            .postMediumImg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    
+    }
+    
+}
 
 /* OPEN - MOBILE độ phân giải <= 739px */
-@media (max-width: 739px) {}
+@media (max-width: 739px) {
+    .postMedium {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        color: $blackColor;
+        text-decoration: none;
+        &:hover {
+            color: $contentBriefColor;
+        }
+        &Left {
+            flex: 6; //
+            padding-right: $sizeAlignElementTabletMobile; //
+            border-right: 1px solid $disableColor;
+            margin-right: $sizeAlignElementTabletMobile; //
+            display: flex;
+            flex-direction: column;
+            .postMediumTitle {
+                @include font('title');
+                font-size: 19px; //
+                flex: 1;
+                overflow: hidden;
+                padding: 0;
+                margin: 0;
+            }
+            .postMediumOther {
+                @include font('title');
+                margin: $sizeAlignElementTabletMobile 0 0 0; //
+                font-size: 15px;
+                &Child {
+                    &:first-child {
+                        color: $mainColor;
+                        padding: 0;
+                        margin: 0;
+                        border: none;
+                    }
+                    border-left: 1px solid $disableColor;
+                    padding-left: $sizeAlignElementTabletMobile; //
+                    margin-left: $sizeAlignElementTabletMobile; //
+                    &Icon {
+                        margin-right: 5px;
+                    }
+                    &:last-child {
+                        display: none;
+                    }
+                }
+
+            }
+            .postMediumContent {
+                display: none;
+            }
+        }
+        &Right {
+            flex: 4; //
+            .postMediumImg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    
+    }
+}

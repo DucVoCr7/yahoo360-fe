@@ -17,21 +17,21 @@
         }
     }
     width: 100%;
-    padding: 5px 20px 20px 20px;
+    padding: 5px $sizeAlignPagePC $sizeAlignPagePC $sizeAlignPagePC;
     &Top {
         display: flex;
         border-bottom: 1px solid $blackColor;
         border-top: 4px double $blackColor;
-        padding: 15px 0;
+        padding: $sizeAlignElementPC 0;
         &Left {
             flex: 7;
-            padding-right: 15px;
+            padding-right: $sizeAlignElementPC;
             border-right: 1px solid $blackColor;
-            margin-right: 15px;
+            margin-right: $sizeAlignElementPC;
             &Item {
-                padding-bottom: 15px;
+                padding-bottom: $sizeAlignElementPC;
                 border-bottom: 1px solid $blackColor;
-                margin-bottom: 15px;
+                margin-bottom: $sizeAlignElementPC;
                 &:last-child {
                     padding: 0;
                     margin: 0;
@@ -42,9 +42,9 @@
         &Right {
             flex: 3;
             &Item {
-                padding-bottom: 15px;
+                padding-bottom: $sizeAlignElementPC;
                 border-bottom: 1px solid $blackColor;
-                margin-bottom: 15px;
+                margin-bottom: $sizeAlignElementPC;
                 &:last-child {
                     padding: 0;
                     margin: 0;
@@ -54,7 +54,7 @@
         }
     }
     &Bottom {
-        padding-top: 15px;
+        padding-top: $sizeAlignElementPC;
     }
     &Name {
         &:hover {
@@ -69,7 +69,7 @@
         padding: 5px 10px;
         text-decoration: none;
         color: $blackColor;
-        margin-bottom: 15px;
+        margin-bottom: $sizeAlignElementPC;
         &Icon {
             margin-right: 5px;
         }
@@ -96,35 +96,35 @@
             }
         }
         width: 100%;
-        padding: 5px 15px 15px 15px; //
+        padding: 5px $sizeAlignPageTabletMobile $sizeAlignPageTabletMobile $sizeAlignPageTabletMobile; //
         &Top {
             display: flex;
             flex-direction: column; //
             border-bottom: 1px solid $blackColor;
             border-top: 4px double $blackColor;
-            padding: 10px 0; // 
+            padding: $sizeAlignElementTabletMobile 0; // 
             &Left {
                 flex: 7;
                 padding-right: 0px; // 
                 border-right: none; //
                 margin-right: 0px; //
                 &Item {
-                    padding-bottom: 10px; //
+                    padding-bottom: $sizeAlignElementTabletMobile; //
                     border-bottom: 1px solid $blackColor;
-                    margin-bottom: 10px; //
+                    margin-bottom: $sizeAlignElementTabletMobile; //
                     &:last-child {
-                        padding-bottom: 10px; //
+                        padding-bottom: $sizeAlignElementTabletMobile; //
                         border-bottom: 1px solid $blackColor;//
-                        margin-bottom: 10px; //
+                        margin-bottom: $sizeAlignElementTabletMobile; //
                     }
                 }
             }
             &Right {
                 flex: 3;
                 &Item { 
-                    padding-bottom: 10px; //
+                    padding-bottom: $sizeAlignElementTabletMobile; //
                     border-bottom: 1px solid $blackColor;
-                    margin-bottom: 10px; //
+                    margin-bottom: $sizeAlignElementTabletMobile; //
                     &:last-child {
                         padding: 0;
                         margin: 0;
@@ -134,7 +134,7 @@
             }
         }
         &Bottom {
-            padding-top: 10px;
+            padding-top: $sizeAlignElementTabletMobile;
         }
         &Name {
             &:hover {
@@ -149,7 +149,7 @@
             padding: 5px 10px; 
             text-decoration: none;
             color: $blackColor;
-            margin-bottom: 10px; //
+            margin-bottom: $sizeAlignElementTabletMobile; //
             &Icon {
                 margin-right: 5px;
             }
@@ -176,35 +176,35 @@
             }
         }
         width: 100%;
-        padding: 5px 15px 15px 15px; //
+        padding: 5px $sizeAlignPageTabletMobile $sizeAlignPageTabletMobile $sizeAlignPageTabletMobile; //
         &Top {
             display: flex;
             flex-direction: column; //
             border-bottom: 2px solid $blackColor;
             border-top: 4px double $blackColor;
-            padding: 10px 0; // 
+            padding: $sizeAlignElementTabletMobile 0; // 
             &Left {
                 flex: 7;
                 padding-right: 0px; // 
                 border-right: none; //
                 margin-right: 0px; //
                 &Item {
-                    padding-bottom: 10px; //
+                    padding-bottom: $sizeAlignElementTabletMobile; //
                     border-bottom: 2px solid $blackColor;
-                    margin-bottom: 10px; //
+                    margin-bottom: $sizeAlignElementTabletMobile; //
                     &:last-child {
-                        padding-bottom: 10px; //
+                        padding-bottom: $sizeAlignElementTabletMobile; //
                         border-bottom: 2px solid $blackColor;//
-                        margin-bottom: 10px; //
+                        margin-bottom: $sizeAlignElementTabletMobile; //
                     }
                 }
             }
             &Right {
                 flex: 3;
                 &Item { 
-                    padding-bottom: 10px; //
+                    padding-bottom: $sizeAlignElementTabletMobile; //
                     border-bottom: 2px solid $blackColor;
-                    margin-bottom: 10px; //
+                    margin-bottom: $sizeAlignElementTabletMobile; //
                     &:last-child {
                         padding: 0;
                         margin: 0;
@@ -214,7 +214,7 @@
             }
         }
         &Bottom {
-            padding-top: 10px;
+            padding-top: $sizeAlignElementTabletMobile;
         }
         &Name {
             &:hover {
@@ -229,7 +229,7 @@
             padding: 5px 10px; 
             text-decoration: none;
             color: $blackColor;
-            margin-bottom: 10px; //
+            margin-bottom: $sizeAlignElementTabletMobile; //
             &Icon {
                 margin-right: 5px;
             }

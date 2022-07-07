@@ -2,15 +2,14 @@ import React, { useState } from 'react'
 import './write.scss'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { useSelector } from 'react-redux';
 
 export default function Write() {
-
-    const categoryList = ['Life', 'Sport', 'Style', 'Tech', 'Music', 'Cinema', 'Travel', 'Food']
     const [openCategory, setOpenCategory] = useState(false)
     const [postInfo, setPostInfo] = useState()
     const [error, setError] = useState()
     const [isSubmit, setIsSubmit] = useState(false)
-
+    const {category} = useSelector(state => state.app)
     const handlePreview = (event) => {
         const file = event.target.files[0]
         file.preview = URL.createObjectURL(file)
@@ -90,11 +89,11 @@ export default function Write() {
                 <i className={postInfo?.category ? "writeCategoryIcon bi bi-arrow-repeat" :"writeCategoryIcon bi bi-ui-checks-grid"}></i>
                 {postInfo?.category && <span className="writeCategoryContent" name='category' onChange={handleChange}>{postInfo.category}</span>}
                 <ul className={openCategory ? "writeCategoryList active" : "writeCategoryList"}>
-                    {categoryList.map((categoryItem, index) => (
+                    {category.map((categoryItem, index) => (
                         <li className="writeCategoryItem" key={index}
                             onClick={(event) => setPostInfo({ ...postInfo, category: event.target.innerText })}
                         >
-                            {categoryItem}
+                            {categoryItem.value}
                         </li>
                     ))}
                 </ul>

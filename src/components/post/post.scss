@@ -13,13 +13,15 @@
 
     .postTitle {
         @include font('title');
-        font-size: 35px
+        font-size: 35px;
+        margin: 0;
+        padding: calc($sizeAlignElementPC * 2) 0;
     }
 
     .postActions {
         @include font('title');
-        margin: 10px 0 20px 0;
-
+        padding-bottom: calc($sizeAlignElementPC * 2);
+        display: flex;
         &Child {
             &:first-child {
                 background-color: $mainColor;
@@ -49,6 +51,7 @@
     .postAuthorTime {
         display: flex;
         align-items: center;
+        padding-bottom: calc($sizeAlignElementPC * 2);
         .postAuthor {
             &:hover {
                 color: $mainColor;
@@ -59,7 +62,6 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-            margin: 20px 0;
 
             &Img {
                 width: 40px;
@@ -89,7 +91,7 @@
     }
 
     .postComments {
-        margin: 15px 0;
+        margin: $sizeAlignElementPC 0 $sizeAlignPagePC 0;
     }
 }
 
@@ -108,16 +110,19 @@
         }
     
         .postTitle {
-            width: calc(100% - 30px);//
+            width: calc(100% - $sizeAlignPageTabletMobile * 2);//
             @include font('title');
-            font-size: 35px
+            font-size: 35px;
+            margin: 0;
+            padding: calc($sizeAlignElementTabletMobile * 2) 0;
+            
         }
     
         .postActions {
-            width: calc(100% - 30px);//
+            width: calc(100% - $sizeAlignPageTabletMobile * 2);//
             @include font('title');
-            margin: 10px 0 20px 0;
-    
+            padding-bottom: calc($sizeAlignElementTabletMobile * 2);
+            display: flex;
             &Child {
                 &:first-child {
                     background-color: $mainColor;
@@ -130,7 +135,6 @@
                 &:hover {
                     background-color: $mainColor;
                 }
-    
                 border: 1px solid $disableColor;
                 border-radius: 5px;
                 box-shadow: $shadowFull;
@@ -145,9 +149,10 @@
         }
     
         .postAuthorTime {
-            width: calc(100% - 30px);//
+            width: calc(100% - $sizeAlignPageTabletMobile * 2);//
             display: flex;
             align-items: center;
+            padding-bottom: calc($sizeAlignElementTabletMobile * 2);
             .postAuthor {
                 &:hover {
                     color: $mainColor;
@@ -158,7 +163,6 @@
                 display: flex;
                 align-items: center;
                 cursor: pointer;
-                margin: 20px 0;
     
                 &Img {
                     width: 40px;
@@ -183,14 +187,14 @@
         }
     
         .postContent {
-            width: calc(100% - 30px);//
+            width: calc(100% - $sizeAlignPageTabletMobile * 2);//
             @include font('content');
             text-align: justify;
         }
     
         .postComments {
-            width: calc(100% - 30px);//
-            margin: 15px 0;
+            width: calc(100% - $sizeAlignPageTabletMobile * 2);//
+            margin: $sizeAlignElementTabletMobile 0 $sizeAlignPageTabletMobile 0;
         }
     }
 }

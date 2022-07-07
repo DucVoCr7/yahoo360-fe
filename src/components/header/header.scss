@@ -14,6 +14,7 @@
         font-size: 50px;
         text-shadow: $shadowFull;
         @include trackingExpand;
+        text-decoration: none;
     }
     &Title {
         position: absolute;
@@ -29,7 +30,7 @@
     &Slide {
         width: 100%;
         height: $heightHeader;
-        border-bottom: 1px double white;
+        border-bottom: 1px solid white;
         position: relative;
         object-fit: cover;
     }
@@ -58,14 +59,6 @@
     }
 }
 
-//* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
-@media (min-width: 1024px) and (max-width: 1239px) {
-
-}
-/* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
-@media (min-width: 740px) and (max-width: 1023px) {
-
-}
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
     .header {
@@ -83,6 +76,7 @@
             font-size: 30px; //
             text-shadow: $shadowFull;
             @include trackingExpand;
+            text-decoration: none;
         }
         &Title {
             position: absolute;
@@ -99,14 +93,14 @@
         &Slide {
             width: 100%;
             height: $heightHeaderM;
-            border-bottom: 1px double white;
+            border-bottom: 1px solid white;
             position: relative;
             object-fit: cover;
         }
         &Category {
             position: absolute;
             bottom: 0;
-            height: 100px;
+            height: 50px; //
             width: 100%;
             display: flex;
             justify-content: space-between; //
@@ -114,10 +108,10 @@
             background: linear-gradient(rgba(255, 255, 255, 0), white);
             &Item {
                 &:first-child{ //
-                    padding-left: 15px; //
+                    padding-left: $sizeAlignPageTabletMobile; //
                 }
                 &:last-child{
-                    padding-right: 15px; //
+                    padding-right: $sizeAlignPageTabletMobile; //
                 } //
                 &:hover {
                     color: $mainColor
