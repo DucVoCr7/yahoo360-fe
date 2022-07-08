@@ -15,10 +15,10 @@ function Infomation({name, gender, position, postsNumber, address}) {
         </title>
         <div className="infomationContent">
             <div className="infomationContentItem">Name: {name}</div>
-            <div className="infomationContentItem">Gender: {valueGender}</div>
+            <div className="infomationContentItem">Gender: {valueGender ? valueGender : 'No information'}</div>
             <div className="infomationContentItem">Level: {valuePosition}</div>
             <div className="infomationContentItem">Number of posts: {postsNumber}</div>
-            <div className="infomationContentItem">Address: {address}</div>
+            <div className="infomationContentItem">Address: {address ? address : 'No information'}</div>
         </div>
     </div>
   )

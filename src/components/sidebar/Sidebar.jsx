@@ -18,8 +18,8 @@ export default function Sidebar({user, isHomePage = false}) {
             postsNumber = {user.posts.length}
             address = {user.address}
             />
-            <Photos photos={user.photos} isHomePage={isHomePage}/>
-            <Friends friends={user.friends}/>
+            <Photos name={user.name} photos={user.photos} isHomePage={isHomePage}/>
+            <Friends friends={user.friends} isHomePage={isHomePage}/>
             <Musics musics={user.musics} isHomePage={isHomePage}/>
         </div>
     )

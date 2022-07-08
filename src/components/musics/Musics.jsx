@@ -36,8 +36,6 @@ function Musics({musics, isHomePage = false}) {
                           <div className="musicsNoContentContent">
                               Music have not been added yet!
                           </div>
-
-
                   }
           </div>
         }

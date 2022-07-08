@@ -18,9 +18,9 @@ function HeaderOfUser({ photos, isHomePage = false }) {
             {photos.length === 0 ?
                 <div className="headerOfUserNoPhoto">
                     {
-                        !isHomePage ?
+                        isHomePage ?
                             <label className='headerOfUserNoPhotoIcon' htmlFor="headerOfUserNoPhoto">
-                                Add <br /> image
+                                Add <br /> photo
                                 <i className="headerOfUserNoPhotoIconChild bi bi-image"></i>
                                 <i className="headerOfUserNoPhotoIconChild bi bi-plus-circle"></i>
                             </label>
@@ -28,8 +28,6 @@ function HeaderOfUser({ photos, isHomePage = false }) {
                             <div className="headerOfUserNoPhotoContent">
                                 Photos have not been added yet!
                             </div>
-
-
                     }
                     <input type="file" id="headerOfUserNoPhoto" hidden />
                 </div>
