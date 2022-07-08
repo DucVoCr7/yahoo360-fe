@@ -3,8 +3,8 @@ import './infomation.scss'
 import { useSelector } from 'react-redux'
 function Infomation({name, gender, position, postsNumber, address}) {
       /// Chỗ này dùng tạm từ từ fix sau.
-      const valueGender = useSelector(state => state.app.gender.find(element => element.key === gender).value)
-      const valuePosition = useSelector(state => state.app.position.find(element => element.key === position).value)
+      const valueGender = useSelector(state => state.app.gender.find(element => element.key === gender)?.value)
+      const valuePosition = useSelector(state => state.app.position.find(element => element.key === position)?.value)
       ////
       ////
   return (

@@ -7,7 +7,7 @@ export default function Login() {
   const [userInfo, setUserInfo] = useState()
   const dispatch = useDispatch()
   const handleChange = (event) => setUserInfo({ ...userInfo, [event.target.name]: event.target.value })
-  const {error} = useSelector(state => state.user)
+  const {error, pending} = useSelector(state => state.user)
   const navigate = useNavigate()
   const handleLogin = async (event) => {
       event.preventDefault();
@@ -34,7 +34,9 @@ export default function Login() {
         <input className='loginInput' id='loginPassword' type='password' name='password' placeholder='Enter your password....'
           onChange={handleChange}
         />
-        <button className='loginSubmit' type='submit'>LOGIN</button>
+        <button className={pending ? 'loginSubmit active' : 'loginSubmit'}  type='submit'>
+          {!pending && 'LOGIN'}
+        </button>
         <div className='loginToRegister'>
           New to Yahoo! 360°? <Link to='/register' className='loginToRegisterLink'>REGISTER</Link>
         </div>

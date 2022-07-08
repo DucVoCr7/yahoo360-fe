@@ -1,7 +1,6 @@
 @use '/src/assets/scss' as *;
 .home {
     &.loading {
-        width: 100%;
         height: calc(100vh - $heightTopbar - $heightFooter);
         position: relative;
         &::after{
@@ -17,6 +16,10 @@
             height: 70px;
         }
     }
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 //* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */

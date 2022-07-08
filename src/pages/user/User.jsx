@@ -20,7 +20,7 @@ export default function User() {
       }
   
     })();
-  }, [])
+  }, [params.userId])
   console.log(dataUser)
       return (
         dataUser ? 

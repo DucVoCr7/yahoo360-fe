@@ -11,8 +11,19 @@
         border-radius: 5px;
         background-color: $mainColor;
         padding: 5px 10px;
-        &Icon {
-            margin-right: $sizeAlignElementPC;
+        display: flex;
+        justify-content: space-between;
+        &Content {
+            cursor: pointer;
+            &Icon {
+                margin-right: $sizeAlignElementPC;
+            }
+        }
+        &Add {
+            cursor: pointer;
+            &Icon {
+
+            }
         }
     }
     &Content {
@@ -23,18 +34,45 @@
         overflow: hidden;
         position: relative;
         &Item {
+            &:hover &View {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include slideTop;
+                
+            }
             width: 50%;
             height: 50%;
             border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            &Img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            &View {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 0;
+                font-size: 15px;
+                background-color: rgba($color: $mainColor, $alpha: 0.7);
+                @include font('content');
+            }
         }
         &Hidden {
+            cursor: pointer;
             position: absolute;
             width: 50%;
             height: 50%;
             right: 0;
             bottom: 0;
             color: $mainColor;
-            @include font ('title');
+            @include font ('content');
             font-size: 20px;
             display: flex;
             align-items: center;

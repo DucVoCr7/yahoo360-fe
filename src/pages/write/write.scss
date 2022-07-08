@@ -28,12 +28,11 @@
                 transition: bottom 1s linear, left 1s linear;
                 .writeImageIconChild {
                     &:last-child {
-                        font-size: 15px;
-                        bottom: -5px;
+                        font-size: 18px;
+                        bottom: -2px;
                         right: -10px;
-                        border: 3px solid $whiteColor;
                     }
-                    margin-left: 10px;
+                    margin-left: 5px;
                     font-size: 35px;
                 }
             }
@@ -41,7 +40,7 @@
             bottom: 50%;
             left: 50%;
             transform: translateX(-50%) translateY(50%);
-            font-size: 30px;
+            font-size: 25px;
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -49,14 +48,14 @@
                 &:last-child {
                     position: absolute;
                     font-size: 25px;
-                    bottom: -10px;
-                    right: -20px;
+                    bottom: 0;
+                    right: -10px;
                     background-color: $whiteColor;
-                    border: 5px solid $whiteColor;
+                    line-height: 1;
                     border-radius: 50%;
                 }
-                margin-left: 10px;
-                font-size: 60px;
+                margin-left: 5px;
+                font-size: 50px;
             }
         }
     }
@@ -185,12 +184,11 @@
                     transition: bottom 1s linear, left 1s linear;
                     .writeImageIconChild {
                         &:last-child {
-                            font-size: 15px;
-                            bottom: -5px;
+                            font-size: 18px;
+                            bottom: -2px;
                             right: -10px;
-                            border: 3px solid $whiteColor;
                         }
-                        margin-left: 10px;
+                        margin-left: 5px;
                         font-size: 35px;
                     }
                 }
@@ -198,7 +196,7 @@
                 bottom: 50%;
                 left: 50%;
                 transform: translateX(-50%) translateY(50%);
-                font-size: 30px;
+                font-size: 25px;
                 display: flex;
                 align-items: center;
                 cursor: pointer;
@@ -206,14 +204,14 @@
                     &:last-child {
                         position: absolute;
                         font-size: 25px;
-                        bottom: -10px;
-                        right: -20px;
+                        bottom: 0;
+                        right: -10px;
                         background-color: $whiteColor;
-                        border: 5px solid $whiteColor;
+                        line-height: 1;
                         border-radius: 50%;
                     }
-                    margin-left: 10px;
-                    font-size: 60px;
+                    margin-left: 5px;
+                    font-size: 50px;
                 }
             }
         }
@@ -341,12 +339,11 @@
                     transition: bottom 1s linear, left 1s linear;
                     .writeImageIconChild {
                         &:last-child {
-                            font-size: 15px;
-                            bottom: -5px;
+                            font-size: 18px;
+                            bottom: -2px;
                             right: -10px;
-                            border: 3px solid $whiteColor;
                         }
-                        margin-left: 10px;
+                        margin-left: 5px;
                         font-size: 35px;
                     }
                 }
@@ -354,7 +351,7 @@
                 bottom: 50%;
                 left: 50%;
                 transform: translateX(-50%) translateY(50%);
-                font-size: 30px;
+                font-size: 25px;
                 display: flex;
                 align-items: center;
                 cursor: pointer;
@@ -362,14 +359,14 @@
                     &:last-child {
                         position: absolute;
                         font-size: 25px;
-                        bottom: -10px;
-                        right: -20px;
+                        bottom: 0;
+                        right: -10px;
                         background-color: $whiteColor;
-                        border: 5px solid $whiteColor;
+                        line-height: 1;
                         border-radius: 50%;
                     }
-                    margin-left: 10px;
-                    font-size: 60px;
+                    margin-left: 5px;
+                    font-size: 50px;
                 }
             }
         }
@@ -498,12 +495,11 @@
                     transition: bottom 1s linear, left 1s linear;
                     .writeImageIconChild {
                         &:last-child {
-                            font-size: 15px;
-                            bottom: -5px;
+                            font-size: 18px;
+                            bottom: -2px;
                             right: -10px;
-                            border: 3px solid $whiteColor;
                         }
-                        margin-left: 10px;
+                        margin-left: 5px;
                         font-size: 35px;
                     }
                 }
@@ -511,21 +507,21 @@
                 bottom: 50%;
                 left: 50%;
                 transform: translateX(-50%) translateY(50%);
-                font-size: 20px; //
+                font-size: 17px; //
                 display: flex;
                 align-items: center;
                 cursor: pointer;
                 &Child {
                     &:last-child {
                         position: absolute;
-                        font-size: 17px; //
-                        bottom: -5px; //
-                        right: -15px; //
+                        font-size: 20px; //
+                        bottom: 0;
+                        right: -10px;
                         background-color: $whiteColor;
-                        border: 5px solid $whiteColor;
+                        line-height: 1;
                         border-radius: 50%;
                     }
-                    margin-left: 10px;
+                    margin-left: 5px;
                     font-size: 40px; //
                 }
             }

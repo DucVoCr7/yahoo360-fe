@@ -1,16 +1,22 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import { register } from '../../redux/userSlice'
 import './register.scss'
 
 export default function Register() {
 
   const [userInfo, setUserInfo] = useState()
-  const [error, setError] = useState()
+  const {error, pending} = useSelector(state => state.user)
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const handleChange = (event) => { setUserInfo({ ...userInfo, [event.target.name]: event.target.value }) }
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    //
+    const statusRegister = await dispatch(register(userInfo)) 
+    if(!statusRegister.error) {
+      navigate('/home')
+    }
   }
   return (
     <div className='register'>
@@ -37,7 +43,9 @@ export default function Register() {
         <input className='registerInput' type="password" name='password' placeholder='Enter your password....'
           onChange={handleChange}
         />
-        <button className='registerSubmit' type='submit'>REGISTER</button>
+        <button className={pending ? 'registerSubmit active' : 'registerSubmit'}  type='submit'>
+          {!pending && 'REGISTER'}
+        </button>
         <div className="registerRules">
         Learn about&nbsp;
           <Link to='/about' className='registerRulesLink'>Terms of Service</Link>&nbsp;

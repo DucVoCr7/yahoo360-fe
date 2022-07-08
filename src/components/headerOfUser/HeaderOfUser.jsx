@@ -4,7 +4,7 @@ import '../../assets/scss/customSlider.scss'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
-function HeaderOfUser({ photos, isUserPage = false }) {
+function HeaderOfUser({ photos, isHomePage = false }) {
     const settings = {
         dots: true,
         infinite: true,
@@ -18,16 +18,18 @@ function HeaderOfUser({ photos, isUserPage = false }) {
             {photos.length === 0 ?
                 <div className="headerOfUserNoPhoto">
                     {
-                        isUserPage ?
-                            <div className="headerOfUserNoPhotoContent">
-                                Photos have not been added yet!
-                            </div>
-                            :
+                        !isHomePage ?
                             <label className='headerOfUserNoPhotoIcon' htmlFor="headerOfUserNoPhoto">
                                 Add <br /> image
                                 <i className="headerOfUserNoPhotoIconChild bi bi-image"></i>
-                                <i className="headerOfUserNoPhotoIconChild bi bi-arrow-repeat"></i>
+                                <i className="headerOfUserNoPhotoIconChild bi bi-plus-circle"></i>
                             </label>
+                            :
+                            <div className="headerOfUserNoPhotoContent">
+                                Photos have not been added yet!
+                            </div>
+
+
                     }
                     <input type="file" id="headerOfUserNoPhoto" hidden />
                 </div>

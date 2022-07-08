@@ -17,7 +17,7 @@ function Friends({friends}) {
                 <span className="friendsContentItemName">{friend.dataFriend.name}</span>
               </Link>
             ))}
-            {friendsHiddenNumber && <span className="friendsContentHidden">+{friendsHiddenNumber}</span>}
+            {friendsHiddenNumber > 0 && <span className="friendsContentHidden">+{friendsHiddenNumber}</span>}
         </div>
     </div>
   )
