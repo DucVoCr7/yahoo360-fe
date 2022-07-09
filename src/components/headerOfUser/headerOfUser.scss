@@ -48,6 +48,50 @@
             font-size: 25px;
         }
     }
+
+
+    // Custom Slider
+        //Space between slide
+        .slick-list {margin: 0 -5px;}
+        .slick-slide>div {padding: 0 5px;}
+    
+        // Arrow
+        .slick-arrow,
+        .slick-next,
+        .slick-prev {
+            display: none !important;
+        }
+    
+        // Dot
+        .slick-dots {
+            bottom: 10px;
+            display: flex !important;
+            justify-content: center;
+    
+            & > li {
+                &.slick-active {
+                    background-color: $mainColor;
+                }
+    
+                width: 30px;
+                height: 2px;
+                margin: 0 2px;
+                background-color: $disableColor;
+    
+                & > button {
+                    position: absolute;
+                    transform: translateY(-50%);
+                    width: 100%;
+                    height: 15px;
+                    background-color: transparent;
+                    box-shadow: none;
+    
+                    &::before {
+                        all: unset;
+                    }
+                }
+            }
+        }
 }
 
 /* OPEN - MOBILE độ phân giải <= 739px */
@@ -96,6 +140,18 @@
                 left: 50%;
                 transform: translateX(-50%) translateY(50%);
                 font-size: 20px; //
+            }
+        }
+
+
+        // Custom Slider
+        .slick-list {margin: 0 -2px;}
+        .slick-slide>div {padding: 0 2px;}
+        .slick-dots {
+            bottom: 7px;
+            & > li {
+                width: 15px;
+                height: 1px;
             }
         }
     }

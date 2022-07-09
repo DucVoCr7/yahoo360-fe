@@ -1,8 +1,5 @@
 import React from 'react'
 import './header.scss'
-import '../../assets/scss/customSlider.scss'
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import style from '../../assets/image/style.jpg'
 import travel from '../../assets/image/travel.jpg'

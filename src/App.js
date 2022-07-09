@@ -11,6 +11,8 @@ import { useSelector } from "react-redux/es/exports";
 import './assets/scss/reset.scss'
 import './assets/scss/fontFace.scss'
 import './assets/scss/customStyle.scss'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import User from "./pages/user/User";
 import UpdateAccount from "./pages/updateAccount/UpdateAccount";
 import ManageUsers from "./pages/manageUsers/ManageUsers";

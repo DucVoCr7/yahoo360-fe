@@ -140,7 +140,6 @@
             padding-bottom: $sizeAlignElementPC;
             border-bottom: 1px solid $mainColor;
             margin-bottom: $sizeAlignElementPC;
-            font-weight: 600;
             color: $whiteColor;
             display: flex;
             align-items: center;
@@ -154,5 +153,82 @@
                 }
             }
         }
+    }
+    &Slider {
+        &.active {
+            display: block;
+        }
+        display: none;
+        @include fadeIn;
+        position: fixed;
+        width: 100%;
+        height: calc(100% - $heightTopbar);
+        top: $heightTopbar;
+        z-index: 2;
+        left: 0;
+        background-color: rgba($color: #000000, $alpha: 0.9);
+        padding: $sizeAlignPagePC;
+        overflow-y: scroll;
+        &Title {
+            @include font('title');
+            font-size: 25px;
+            line-height: 1;
+            padding-bottom: $sizeAlignElementPC;
+            border-bottom: 1px solid $mainColor;
+            margin-bottom: $sizeAlignElementPC;
+            color: $whiteColor;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &Close {
+                background-color: $whiteColor;
+                color: $mainColor;
+                &:hover {
+                    background-color: $mainColor;
+                    color: $blackColor;
+                }
+            }
+        }
+    }
+
+    // Custom Slider
+    .slick-next {
+        z-index: 3;
+        &::before {
+            content: none;
+        }
+        right: 0;
+        > i {
+            &:active {
+                color: $mainColor;;
+            }
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 60px;
+            text-shadow: $shadowFull;
+            color: $whiteColor;
+        }
+    }
+    .slick-prev {
+        z-index: 3;
+        &::before {
+            content: none;
+        }
+        left: 0;
+        > i {
+            &:active {
+                color: $mainColor;;
+            }
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 60px;
+            text-shadow: $shadowFull;
+            color: $whiteColor;
+        }
+    }
+    .slick-dots {
+        display: none !important;
     }
 }

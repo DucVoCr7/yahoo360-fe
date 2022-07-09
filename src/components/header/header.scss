@@ -57,6 +57,13 @@
             text-shadow: $shadowFull;
         }
     }
+
+    // Custom Slider
+    .slick-arrow,
+    .slick-next,
+    .slick-prev {
+        display: none !important;
+    }
 }
 
 /* OPEN - MOBILE độ phân giải <= 739px */
@@ -126,5 +133,12 @@
                 text-shadow: $shadowFull;
             }
         }
+
+            // Custom Slider
+            .slick-arrow,
+            .slick-next,
+            .slick-prev {
+                display: none !important;
+            }
     }
 }

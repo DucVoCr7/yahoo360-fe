@@ -1,8 +1,5 @@
 import React from 'react'
 import './headerOfUser.scss'
-import '../../assets/scss/customSlider.scss'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 function HeaderOfUser({ photos, isHomePage = false }) {
     const settings = {
