@@ -14,12 +14,12 @@
         &Icon {
             margin-right: $sizeAlignElementPC;
         }
+        cursor: pointer;
     }
     &Content {
         flex: 1;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
         overflow: hidden;
         position: relative;
         &Item {
@@ -29,7 +29,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-size: 15px;
+                font-size: 16px;
                 @include slideTop;
                 
             }
@@ -82,38 +82,94 @@
         position: relative;
         border-radius: 10px;
         background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
-        &Icon {
-            &:hover {
-                color: $mainColor;
-            }
-            position: absolute;
-            bottom: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(50%);
-            font-size: 17px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            &Child {
-                &:last-child {
-                    position: absolute;
-                    font-size: 17px;
-                    bottom: -2px;
-                    right: -5px;
-                    background-color: $whiteColor;
-                    line-height: 1;
-                    border-radius: 50%;
-                }
-                margin-left: 10px;
-                font-size: 34px;
-            }
-        }
         &Content {
             position: absolute;
             bottom: 50%;
             left: 50%;
             transform: translateX(-50%) translateY(50%);
             font-size: 17px;
+        }
+    }
+    &List {
+        @include fadeIn;
+        position: fixed;
+        width: 100%;
+        height: calc(100% - $heightTopbar);
+        top: $heightTopbar;
+        z-index: 2;
+        left: 0;
+        background-color: rgba($color: #000000, $alpha: 0.9);
+        padding: $sizeAlignPagePC;
+        overflow-y: scroll;
+        &Title {
+            @include font('title');
+            font-size: 25px;
+            line-height: 1;
+            padding-bottom: $sizeAlignElementPC;
+            border-bottom: 1px solid $mainColor;
+            margin-bottom: $sizeAlignElementPC;
+            color: $whiteColor;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &Close {
+                background-color: $whiteColor;
+                color: $mainColor;
+                border-radius: 5px;
+                padding: 0px 10px;
+                &:hover {
+                    background-color: $mainColor;
+                    color: $blackColor;
+                }
+            }
+        }
+        &Content {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            position: relative;
+            &Item {
+                &:hover &Name {
+                    height: 100%;
+                    @include limitLine(2);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 18px;
+                    @include slideTop;
+                    
+                }
+                &:nth-of-type(7n) {
+                    margin-right: 0;
+                }
+                width: 13%;
+                margin-right: 1.5%;
+                margin-bottom: 1.5%;
+                border-radius: 10px;
+                overflow: hidden;
+                position: relative;
+                text-decoration: none;
+                color: black;
+                &Img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                &Name {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: rgba($color: $mainColor, $alpha: 0.7);
+                    @include font('content');
+                    font-size: 14px;
+                    padding: 5px;
+                    line-height: 1.2;
+                    text-align: center;
+                    @include limitLine(1);
+                }
+            }
         }
     }
 }

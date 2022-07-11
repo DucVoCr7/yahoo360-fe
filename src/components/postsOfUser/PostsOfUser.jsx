@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { memo } from 'react'
 import './postsOfUser.scss'
 import PostMedium from '../postMedium/PostMedium'
-export default function PostsOfUser({posts, type}) {
+function PostsOfUser({posts, type}) {
+    console.log('re-render: PostsOfUser')
     return (
         <div className='postsOfUser'>
             {posts.map((post, index)=> (
@@ -10,3 +11,4 @@ export default function PostsOfUser({posts, type}) {
         </div>
     )
 }
+export default memo(PostsOfUser)

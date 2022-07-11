@@ -1,33 +1,37 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { memo } from 'react';
 import Gallery from 'react-photo-gallery'
+import { useSelector } from 'react-redux';
 import Slider from "react-slick";
+import { userRequest } from '../../utils/requestMethods';
 import './photos.scss'
 
 
 function CustomNextArrow(props) {
 
-  const {className, onClick} = props;
+  const { className, onClick } = props;
   return (
-      <div className={className} onClick={onClick}> 
-          <i className="bi bi-chevron-right"></i>
-      </div>
+    <div className={className} onClick={onClick}>
+      <i className="bi bi-chevron-right"></i>
+    </div>
   )
 }
 
 function CustomPrevArrow(props) {
-  
-  const {className, onClick} = props;
+
+  const { className, onClick } = props;
   return (
-      <div className={className} onClick={onClick}> 
-          <i className="bi bi-chevron-left"></i>
-      </div>
+    <div className={className} onClick={onClick}>
+      <i className="bi bi-chevron-left"></i>
+    </div>
   )
 }
 
 
-function Photos({ name, photos, isHomePage = false }) {
-  // 
+function Photos({ setPhotos, name, photos, isHomePage = false }) {
+
   const photosHiddenNumber = photos.length - 4
+  const [file, setFile] = useState()
 
   // Gallery
   const photosGallery = photos.map((item, index) => {
@@ -46,17 +50,43 @@ function Photos({ name, photos, isHomePage = false }) {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <CustomNextArrow/>,
-    prevArrow: <CustomPrevArrow/>,
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
     beforeChange: (current, next) => setSlideActive(next + 1),
   }
-  const handleOpenSlider = (index)=> {
+  const handleOpenSlider = (index) => {
     setOpenSlider(true)
     setOpenGallery(false)
     refSlider.current.slickGoTo(index)
   }
 
 
+
+  // UploadFile
+  const userId = useSelector(state => state.user.userInfo?.id)
+  const handleSetFile = (event) => {
+    const file = event.target.files[0]
+    file.preview = URL.createObjectURL(file)
+    setFile(file)
+  }
+  useEffect(() => {
+    (async () => {
+      if (file) {
+        const formData = new FormData()
+        formData.append('photo', file)
+        formData.append('userId', userId)
+        try {
+          const response = await userRequest.post('/photos', formData)
+          setPhotos([response.data.photo, ...photos])
+        } catch (error) {
+          console.log(error)
+        }
+      }
+    })()
+    return () => file && URL.revokeObjectURL(file.preview)
+  }, [file])
+
+  console.log('re-render: Photos')
   return (
     <div className='photos'>
       <title className='photosTitle'>
@@ -65,18 +95,21 @@ function Photos({ name, photos, isHomePage = false }) {
           PHOTOS ({photos.length})
         </span>
         {isHomePage &&
-          <span className="photosTitleAdd">
-            <i className="photosTitleAddIcon bi bi-plus"></i>
-            <i className="photosTitleAddIcon bi bi-card-image"></i>
-          </span>
+          <>
+            <label className="photosTitleAdd" htmlFor='photosId'>
+              <i className="photosTitleAddIcon bi bi-plus"></i>
+              <i className="photosTitleAddIcon bi bi-card-image"></i>
+            </label>
+            <input type="file" id="photosId" hidden onChange={handleSetFile} />
+          </>
         }
       </title>
       {photos.length > 0 ?
         <div className="photosContent">
           {photos.map((item, index) => (
             index < 4 &&
-            <div className="photosContentItem" key={index} onClick={()=> handleOpenSlider(index)}>
-              <img src={item.photo} alt="friendImg" className="photosContentItemImg"/>
+            <div className="photosContentItem" key={index} onClick={() => handleOpenSlider(index)}>
+              <img src={item.photo} alt="friendImg" className="photosContentItemImg" />
               <span className="photosContentItemView">View</span>
             </div>
           ))}
@@ -89,11 +122,11 @@ function Photos({ name, photos, isHomePage = false }) {
         :
         <div className="photosNoContent">
           {isHomePage ?
-            <div className='photosNoContentIcon'>
+            <label className='photosNoContentIcon'>
               Add <br /> photo
               <i className="photosNoContentIconChild bi bi bi-image"></i>
               <i className="photosNoContentIconChild  bi bi-plus-circle"></i>
-            </div>
+            </label>
             :
             <div className="photosNoContentContent">
               Photo have not been added yet!
@@ -111,7 +144,7 @@ function Photos({ name, photos, isHomePage = false }) {
             {name}'s photos
             <i className="photosGalleryTitleClose bi bi-x" onClick={() => setOpenGallery(false)}></i>
           </div>
-          <Gallery photos={photosGallery} onClick={(event, { photo, index })=> handleOpenSlider(index)}/>
+          <Gallery photos={photosGallery} onClick={(event, { photo, index }) => handleOpenSlider(index)} />
         </div>
       }
 
@@ -136,4 +169,4 @@ function Photos({ name, photos, isHomePage = false }) {
   )
 }
 
-export default Photos
+export default memo(Photos) 

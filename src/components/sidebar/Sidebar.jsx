@@ -6,21 +6,20 @@ import Friends from '../friends/Friends'
 import Musics from '../musics/Musics'
 import './sidebar.scss'
 
-export default function Sidebar({user, isHomePage = false}) {
-    console.log(user)
+export default function Sidebar({setPhotos, setMusics, image, postsNumber, photos, friends, musics, name, gender, position, address, isHomePage = false}) {
+    console.log('re-render: Sidebar')
     return (
         <div className='sidebar'>
-            <Image image={user.image}/>
+            <Image name={name} image={image}/>
             <Infomation 
-            name={user.name} 
-            gender={user.gender} 
-            position = {user.position}
-            postsNumber = {user.posts.length}
-            address = {user.address}
+            postsNumber={postsNumber}
+            gender={gender} 
+            position = {position}
+            address = {address}
             />
-            <Photos name={user.name} photos={user.photos} isHomePage={isHomePage}/>
-            <Friends friends={user.friends} isHomePage={isHomePage}/>
-            <Musics musics={user.musics} isHomePage={isHomePage}/>
+            <Photos name={name} photos={photos} setPhotos={setPhotos} isHomePage={isHomePage}/>
+            <Friends name={name} friends={friends}/>
+            <Musics musics={musics} isHomePage={isHomePage} setMusics={setMusics}/>
         </div>
     )
 }

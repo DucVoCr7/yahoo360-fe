@@ -1,6 +1,7 @@
 import React from 'react'
 import './headerOfUser.scss'
 import Slider from 'react-slick';
+import { memo } from 'react';
 function HeaderOfUser({ photos, isHomePage = false }) {
     const settings = {
         dots: true,
@@ -10,6 +11,7 @@ function HeaderOfUser({ photos, isHomePage = false }) {
         autoplay: true,
         autoplaySpeed: 10000
     };
+    console.log('re-render: HeaderOfUser')
     return (
         <div className='headerOfUser'>
             {photos.length === 0 ?
@@ -39,4 +41,4 @@ function HeaderOfUser({ photos, isHomePage = false }) {
     )
 }
 
-export default HeaderOfUser
+export default memo(HeaderOfUser)

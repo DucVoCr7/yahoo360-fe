@@ -1,12 +1,10 @@
-import React from 'react'
+import React, { memo } from 'react'
 import './infomation.scss'
 import { useSelector } from 'react-redux'
-function Infomation({name, gender, position, postsNumber, address}) {
-      /// Chỗ này dùng tạm từ từ fix sau.
-      const valueGender = useSelector(state => state.app.gender.find(element => element.key === gender)?.value)
-      const valuePosition = useSelector(state => state.app.position.find(element => element.key === position)?.value)
-      ////
-      ////
+function Infomation({gender, position, postsNumber, address}) {
+    const valueGender = useSelector(state => state.app.gender.find(item => item.key === gender)?.value)
+    const valuePosition = useSelector(state => state.app.position.find(item => item.key === position)?.value)
+    console.log('re-render: Infomation')
   return (
     <div className='infomation'>
         <title className='infomationTitle'>
@@ -14,14 +12,35 @@ function Infomation({name, gender, position, postsNumber, address}) {
             INFOMATION
         </title>
         <div className="infomationContent">
-            <div className="infomationContentItem">Name: {name}</div>
-            <div className="infomationContentItem">Gender: {valueGender ? valueGender : 'No information'}</div>
-            <div className="infomationContentItem">Level: {valuePosition}</div>
-            <div className="infomationContentItem">Number of posts: {postsNumber}</div>
-            <div className="infomationContentItem">Address: {address ? address : 'No information'}</div>
+            <div className="infomationContentItem">
+                {valueGender ? 
+                (valueGender === 'Male' ? 
+                    <>
+                    <i className="infomationContentItemIcon bi bi-gender-male"></i>
+                    {valueGender}
+                    </>
+                :
+                <>
+                    <i className="infomationContentItemIcon bi bi-gender-female"></i>
+                    {valueGender}
+                    </>
+                )
+                : 'No information'}
+            </div>
+            <div className="infomationContentItem">
+                <i className="infomationContentItemIcon bi bi-bookmark-star"></i>
+                {valuePosition}
+            </div>
+            <div className="infomationContentItem">
+                <i className="infomationContentItemIcon bi bi-file-earmark-richtext"></i>
+                {postsNumber}
+            </div>
+            <div className="infomationContentItem">
+                <i className="infomationContentItemIcon bi bi-geo"></i>
+                {address ? address : 'No information'}
+            </div>
         </div>
     </div>
   )
 }
-
-export default Infomation
+export default memo(Infomation)

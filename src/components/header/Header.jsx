@@ -11,7 +11,7 @@ import music from '../../assets/image/music.jpg'
 import sport from '../../assets/image/sport.jpg'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-export default function Header() {
+function Header() {
     const slideShow = [
       { img: life },
       { img: style },
@@ -50,3 +50,4 @@ export default function Header() {
         </div>
     )
 }
+export default Header
