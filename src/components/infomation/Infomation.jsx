@@ -25,7 +25,12 @@ function Infomation({gender, position, postsNumber, address}) {
                     {valueGender}
                     </>
                 )
-                : 'No information'}
+                : 
+                <>
+                    <i className="infomationContentItemIcon bi bi-question-octagon"></i>
+                    Gender
+                </>
+            }
             </div>
             <div className="infomationContentItem">
                 <i className="infomationContentItemIcon bi bi-bookmark-star"></i>
@@ -37,7 +42,7 @@ function Infomation({gender, position, postsNumber, address}) {
             </div>
             <div className="infomationContentItem">
                 <i className="infomationContentItemIcon bi bi-geo"></i>
-                {address ? address : 'No information'}
+                {address ? address : 'Address'}
             </div>
         </div>
     </div>

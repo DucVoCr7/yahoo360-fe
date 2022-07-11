@@ -18,8 +18,8 @@ function Musics({ musics, setMusics, isHomePage = false }) {
           userId: userId
         }
         const response = await userRequest.post('/musics', data)
-        console.log(response)
         setMusics([response.data.music.music, ...musics])
+        setOpenAddMusic(false)
       } catch (error) {
         console.log(error)
       }

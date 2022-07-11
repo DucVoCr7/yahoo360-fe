@@ -2,18 +2,66 @@
 .postsOfUser {
     width: calc(100% - $sizeAlignPagePC*2);
     padding-bottom: $sizeAlignElementPC;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    > :nth-child(n) {
-        height: 150px;
-        padding-bottom: $sizeAlignElementPC;
-        border-bottom: 1px solid $blackColor;
-        margin-bottom: $sizeAlignElementPC;
+    &Content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        > :nth-child(n) {
+            height: 150px;
+            padding-bottom: $sizeAlignElementPC;
+            border-bottom: 1px solid $blackColor;
+            margin-bottom: $sizeAlignElementPC;
+        }
+        > :last-child {
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
     }
-    > :last-child {
-        padding: 0;
-        margin: 0;
-        border: none;
+    &NoContent {
+        @include font('title');
+        width: 100%;
+        flex: 1;
+        border-radius: 10px;
+        position: relative;
+        background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
+        &Icon {
+            &:hover {
+                color: $mainColor;
+            }
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(50%);
+            font-size: 25px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            &Child {
+                &:last-child {
+                    position: absolute;
+                    font-size: 25px;
+                    bottom: -0px;
+                    right: -10px;
+                    background-color: $whiteColor;
+                    line-height: 1;
+                    border-radius: 50%;
+                }
+                margin-left: 10px;
+                font-size: 50px;
+            }
+        }
+        &Content {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(50%);
+            font-size: 25px;
+        }
     }
 }
 
@@ -22,18 +70,66 @@
     .postsOfUser {
         width: calc(100% - $sizeAlignPageTabletMobile*2);
         padding-bottom: $sizeAlignElementTabletMobile; //
+        flex: 1;
         display: flex;
         flex-direction: column;
-        > :nth-child(n) {
-            height: 150px;
-            padding-bottom: $sizeAlignElementTabletMobile; //
-            border-bottom: 1px solid $blackColor;
-            margin-bottom: $sizeAlignElementTabletMobile; //
+        &Content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            > :nth-child(n) {
+                height: 150px;
+                padding-bottom: $sizeAlignElementTabletMobile; //
+                border-bottom: 1px solid $blackColor;
+                margin-bottom: $sizeAlignElementTabletMobile; //
+            }
+            > :last-child {
+                padding: 0;
+                margin: 0;
+                border: none;
+            }
         }
-        > :last-child {
-            padding: 0;
-            margin: 0;
-            border: none;
+        &NoContent {
+            @include font('title');
+            width: 100%;
+            flex: 1;
+            border-radius: 10px;
+            position: relative;
+            background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
+            &Icon {
+                &:hover {
+                    color: $mainColor;
+                }
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%);
+                font-size: 25px;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: black;
+                &Child {
+                    &:last-child {
+                        position: absolute;
+                        font-size: 25px;
+                        bottom: -0px;
+                        right: -10px;
+                        background-color: $whiteColor;
+                        line-height: 1;
+                        border-radius: 50%;
+                    }
+                    margin-left: 10px;
+                    font-size: 50px;
+                }
+            }
+            &Content {
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%);
+                font-size: 25px;
+            }
         }
     }
 }
@@ -42,18 +138,63 @@
     .postsOfUser {
         width: calc(100% - $sizeAlignPageTabletMobile*2);
         padding-bottom: $sizeAlignElementTabletMobile; //
+        flex: 1;
         display: flex;
         flex-direction: column;
-        > :nth-child(n) {
-            height: 120px;
-            padding-bottom: $sizeAlignElementTabletMobile; //
-            border-bottom: 1px solid $blackColor;
-            margin-bottom: $sizeAlignElementTabletMobile; //
+        &Content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            > :nth-child(n) {
+                height: 120px;
+                padding-bottom: $sizeAlignElementTabletMobile; //
+                border-bottom: 1px solid $blackColor;
+                margin-bottom: $sizeAlignElementTabletMobile; //
+            }
+            > :last-child {
+                padding: 0;
+                margin: 0;
+                border: none;
+            }
         }
-        > :last-child {
-            padding: 0;
-            margin: 0;
-            border: none;
+        &NoContent {
+            @include font('title');
+            width: 100%;
+            height: 100%;
+            flex: 1;
+            border-radius: 10px;
+            position: relative;
+            background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
+            &Icon {
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%);
+                font-size: 20px; //
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: black;
+                &Child {
+                    &:last-child {
+                        position: absolute;
+                        font-size: 20px; //
+                        bottom: -3px; //
+                        right: -8px; //
+                        background-color: $whiteColor;
+                        border-radius: 50%;
+                    }
+                    margin-left: 10px;
+                    font-size: 40px; //
+                }
+            }
+            &Content {
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%);
+                font-size: 20px; //
+            }
         }
     }
 }

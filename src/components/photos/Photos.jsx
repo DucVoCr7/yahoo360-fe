@@ -122,7 +122,7 @@ function Photos({ setPhotos, name, photos, isHomePage = false }) {
         :
         <div className="photosNoContent">
           {isHomePage ?
-            <label className='photosNoContentIcon'>
+            <label className='photosNoContentIcon' htmlFor='photosId'>
               Add <br /> photo
               <i className="photosNoContentIconChild bi bi bi-image"></i>
               <i className="photosNoContentIconChild  bi bi-plus-circle"></i>

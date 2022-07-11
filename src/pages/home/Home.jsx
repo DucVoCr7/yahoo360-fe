@@ -17,7 +17,7 @@ const [name, setName] = useState()
 const [gender, setGender] = useState()
 const [position, setPosition] = useState()
 const [address, setAddress] = useState()
-const userId = useSelector(state=> state.user.userInfo.id)
+const userId = useSelector(state=> state.user.userInfo?.id)
 
 useEffect(()=> {
   (async()=> {
@@ -58,7 +58,7 @@ console.log('re-render:Home')
             setPhotos={setPhotos}
             setMusics={setMusics}
             isHomePage={true}/>
-          <PostsOfUser posts={posts}/>
+          <PostsOfUser posts={posts} isHomePage={true}/>
         </div>
       </>
       :

@@ -6,7 +6,7 @@ function HeaderOfUser({ photos, isHomePage = false }) {
     const settings = {
         dots: true,
         infinite: true,
-        slidesToShow: photos.length > 4 ? 3 : 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 10000
@@ -18,7 +18,7 @@ function HeaderOfUser({ photos, isHomePage = false }) {
                 <div className="headerOfUserNoPhoto">
                     {
                         isHomePage ?
-                            <label className='headerOfUserNoPhotoIcon' htmlFor="headerOfUserNoPhoto">
+                            <label className='headerOfUserNoPhotoIcon' htmlFor='photosId'>
                                 Add <br /> photo
                                 <i className="headerOfUserNoPhotoIconChild bi bi-image"></i>
                                 <i className="headerOfUserNoPhotoIconChild bi bi-plus-circle"></i>
@@ -28,7 +28,6 @@ function HeaderOfUser({ photos, isHomePage = false }) {
                                 Photos have not been added yet!
                             </div>
                     }
-                    <input type="file" id="headerOfUserNoPhoto" hidden />
                 </div>
                 :
                 <Slider {...settings}>
