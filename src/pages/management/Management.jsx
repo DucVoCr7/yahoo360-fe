@@ -8,13 +8,15 @@ export default function Management() {
 
     const [data, setData] = useState()
 
-    // useEffect(()=> {
-    //     (async()=> {
-    //         const response = await userRequest.get('/')
-    //     })()
-    // }, [])
+    useEffect(()=> {
+        (async()=> {
+            const response = await userRequest.get('/users')
+            setData(response.data.data)
+        })()
+    }, [])
+    console.log(data)
     return (
-        !data ?
+        data ?
             <div className='management'>
                 <div className="managementTitle">
                     MAGAGEMENT PAGE
@@ -109,24 +111,27 @@ export default function Management() {
                     </div>
                     <div className="managementBottomContent">
                         <table className='managementTable'>
+                            <tbody>
                             <tr className='managementTableRow'>
                                 <th className='managementTableHeader'>ID</th>
                                 <th className='managementTableHeader'>Name</th>
                                 <th className='managementTableHeader'>Email</th>
                                 <th className='managementTableHeader'>Actions</th>
                             </tr>
-                            <tr className='managementTableRow'>
-                                <td className='managementTableData'>1</td>
-                                <td className='managementTableData'>Maria Anders</td>
-                                <td className='managementTableData'>Germany@gmail.com</td>
-                                <td className='managementTableData'>ABC</td>
-                            </tr>
-                            <tr className='managementTableRow'>
-                                <td className='managementTableData'>1</td>
-                                <td className='managementTableData'>Maria Anders</td>
-                                <td className='managementTableData'>Germany@gmail.com</td>
-                                <td className='managementTableData'>ABC</td>
-                            </tr>
+                            {data.map((user, index)=> 
+                                <tr className='managementTableRow' key={index}>
+                                    <td className='managementTableData'>{user.id}</td>
+                                    <td className='managementTableData'>{user.name}</td>
+                                    <td className='managementTableData'>{user.email}</td>
+                                    <td className='managementTableData'>
+                                        <button className='managementTableDataButton'>Details</button>
+                                        <button className='managementTableDataButton'>Logout</button>
+                                        <button className='managementTableDataButton'>Block</button>
+                                        <button className='managementTableDataButton'>Delete</button>
+                                    </td>
+                                </tr>
+                            )}
+                            </tbody>
                         </table>
                     </div>
                 </div>

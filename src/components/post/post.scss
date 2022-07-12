@@ -17,12 +17,12 @@
             font-size: 35px;
             font-weight: 600;
             margin: 0;
-            padding: calc($sizeAlignElementPC * 2) 0;
+            padding: $sizeAlignElementPC 0;
         }
     
         .postActions {
             @include font('title');
-            padding-bottom: calc($sizeAlignElementPC * 2);
+            padding-bottom: $sizeAlignElementPC;
             display: flex;
             &Child {
                 &:first-child {
@@ -117,14 +117,14 @@
             font-size: 35px;
             font-weight: 600;
             margin: 0;
-            padding: calc($sizeAlignElementTabletMobile * 2) 0;
+            padding: $sizeAlignElementTabletMobile 0;
             
         }
     
         .postActions {
             width: calc(100% - $sizeAlignPageTabletMobile * 2);//
             @include font('title');
-            padding-bottom: calc($sizeAlignElementTabletMobile * 2);
+            padding-bottom: $sizeAlignElementTabletMobile;
             display: flex;
             &Child {
                 &:first-child {
@@ -155,7 +155,7 @@
             width: calc(100% - $sizeAlignPageTabletMobile * 2);//
             display: flex;
             align-items: center;
-            padding-bottom: calc($sizeAlignElementTabletMobile * 2);
+            padding-bottom: $sizeAlignElementTabletMobile;
             .postAuthor {
                 &:hover {
                     color: $mainColor;

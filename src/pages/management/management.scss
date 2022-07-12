@@ -19,7 +19,7 @@
     }
     width: 100%;
     padding: $sizeAlignElementPC $sizeAlignPagePC;
-    height: calc(100vh - $heightTopbar - $heightFooter);
+    min-height: calc(100vh - $heightTopbar - $heightFooter);
     display: flex;
     flex-direction: column;
     &Title {
@@ -49,6 +49,7 @@
             flex-direction: column;
             &Title {
                 @include font('title');
+                font-size: 20px;
                 font-weight: 600;
                 padding: 10px 20px;
                 margin-bottom: $sizeAlignElementPC;
@@ -84,10 +85,11 @@
                             background-color: $mainColor;
                         }
                         display: inline-block;
-                        padding: 5px;
+                        padding: 3px;
                     }
                 }
                 &Export {
+                    height: 35px;
                     font-size: 17px;
                     min-width: unset;
                     width: 100px;
@@ -110,6 +112,7 @@
         &Title {
             @include font('title');
             font-weight: 600;
+            font-size: 20px;
             padding: 10px 20px;
             margin-bottom: $sizeAlignElementPC;
             background-color: $mainColor;
@@ -136,16 +139,46 @@
         }
         &Content {
             flex: 1;
-            border-radius: 10px;
-            background-image: linear-gradient(to left, #dce8eb, #f8e8dc);
             .managementTable {
                 width: 100%;
                 &Row {
+                    &:hover td {
+                        background-color: $disableColor;
+                    }
                     .managementTableHeader {
-
+                        @include font('title');
+                        font-weight: 600;
+                        padding: 10px 0;
+                        background-color: rgb(24, 43, 134);
+                        color: white;
                     }
                     .managementTableData {
-
+                        @include font('content');
+                        font-size: 16px;
+                        text-align: center;
+                        background-color: rgb(186, 193, 228);
+                        padding: 5px;
+                        &Button {
+                            &:nth-child(1):hover {
+                                background-color: rgb(47, 163, 47);
+                            }
+                            &:nth-child(2):hover {
+                                background-color: rgb(224, 151, 42);
+                            }
+                            &:nth-child(3):hover {
+                                background-color: rgb(190, 74, 74);
+                            }
+                            &:nth-child(4):hover {
+                                background-color: rgb(255, 0, 0);
+                            }
+                            margin: 0 10px;
+                            height: 35px;
+                            font-size: 17px;
+                            min-width: unset;
+                            width: 100px;
+                            box-shadow: none;
+                            background-color: unset;
+                        }
                     }
                 }
             }

@@ -80,7 +80,10 @@ export default function Write() {
             {error?.image && <span className='writeError'>{error.image}</span>}
 
             {/* Title */}
-            <input className='writeTitle' name='title' type="text" placeholder='Write your title...' onChange={handleChange} />
+            <div className="writeTitle">
+                <i className="writeTitleIcon bi bi-pencil-square"></i>
+                <input className='writeTitleInput' name='title' type="text" placeholder='Write your title...' onChange={handleChange} />
+            </div>
             {error?.title && <span className='writeError'>{error.title}</span>}
 
             {/* Category */}
