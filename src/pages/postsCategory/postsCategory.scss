@@ -1,17 +1,154 @@
 @use '/src/assets/scss' as *;
-.postsCategory {
-
-}
-
-//* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
-@media (min-width: 1024px) and (max-width: 1239px) {
-
-}
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
-@media (min-width: 740px) and (max-width: 1023px) {
-
+@media (min-width: 740px) {
+    .postsCategory {
+        &.loading {
+            height: calc(100vh - $heightTopbar - $heightFooter);
+            position: relative;
+            &::after{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                display: block;
+                content: '';
+                background-image: url('../../assets/image/loading.gif');
+                background-size: cover;
+                width: 70px;
+                height: 70px;
+            }
+        }
+        width: 100%;
+        min-height: calc(100vh - $heightTopbar - $heightFooter);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &Header {
+            width: 100%;
+            height: $heightHeader;
+            position: relative;
+            box-sizing: content-box;
+            &Logo {
+                position: absolute;
+                top: 20px;
+                z-index: 2;
+                width: 100%;
+                text-align: center;
+                color: $whiteColor;
+                @include font('logo');
+                font-size: 50px;
+                text-shadow: $shadowFull;
+                @include trackingExpand;
+                text-decoration: none;
+            }
+            &Title {
+                position: absolute;
+                top: 80px;
+                z-index: 2;
+                width: 100%;
+                text-align: center;
+                color: $whiteColor;
+                @include font('logo');
+                text-shadow: $shadowFull;
+                @include trackingExpand;
+            }
+            &Img {
+                width: 100%;
+                height: $heightHeader;
+                object-fit: cover;
+            }
+            &Name {
+                position: absolute;
+                bottom: 0;
+                height: 100px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                @include font('logo');
+                line-height: 1.5;
+                font-size: 50px;
+                text-shadow: $shadowFull;
+                color: $mainColor;
+                background: linear-gradient(rgba(255, 255, 255, 0), white);
+            }
+        }
+    }
 }
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
-
+        .postsCategory {
+            &.loading {
+                height: calc(100vh - $heightTopbar - $heightFooterM);
+                position: relative;
+                &::after{
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    display: block;
+                    content: '';
+                    background-image: url('../../assets/image/loading.gif');
+                    background-size: cover;
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+            width: 100%;
+            min-height: calc(100vh - $heightTopbar - $heightFooterM);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &Header {
+                width: 100%;
+                height: $heightHeaderM;
+                position: relative;
+                box-sizing: content-box;
+                &Logo {
+                    position: absolute;
+                    top: 10px; //
+                    z-index: 2;
+                    width: 100%;
+                    text-align: center;
+                    color: $whiteColor;
+                    @include font('logo');
+                    font-size: 30px; //
+                    text-shadow: $shadowFull;
+                    @include trackingExpand;
+                    text-decoration: none;
+                }
+                &Title {
+                    position: absolute;
+                    top: 45px; //
+                    z-index: 2;
+                    width: 100%;
+                    text-align: center;
+                    color: $whiteColor;
+                    @include font('logo');
+                    font-size: 22px; //
+                    text-shadow: $shadowFull;
+                    @include trackingExpand;
+                }
+                &Img {
+                    width: 100%;
+                    height: $heightHeaderM;
+                    object-fit: cover;
+                }
+                &Name {
+                    position: absolute;
+                    bottom: 0;
+                    height: 50px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    @include font('logo');
+                    font-size: 22px;
+                    line-height: 1.5;
+                    text-shadow: $shadowFull;
+                    color: $mainColor;
+                    background: linear-gradient(rgba(255, 255, 255, 0), white);
+                }
+            }
+        }
 }

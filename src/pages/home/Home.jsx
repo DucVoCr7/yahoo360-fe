@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { userRequest } from '../../utils/requestMethods'
 import HeaderOfUser from '../../components/headerOfUser/HeaderOfUser'
-import PostsOfUser from '../../components/postsOfUser/PostsOfUser'
+import PostsSummary from '../../components/postsSummary/PostsSummary'
 import Sidebar from '../../components/sidebar/Sidebar'
 import './home.scss'
 export default function Home() {
@@ -42,7 +42,6 @@ useEffect(()=> {
 console.log('re-render:Home')
     return (
       name ? 
-      <>
         <div className='home'>
           <HeaderOfUser photos={photos} isHomePage={true}/>
           <Sidebar
@@ -58,9 +57,8 @@ console.log('re-render:Home')
             setPhotos={setPhotos}
             setMusics={setMusics}
             isHomePage={true}/>
-          <PostsOfUser posts={posts} isHomePage={true}/>
+          <PostsSummary posts={posts} isHomePage={true}/>
         </div>
-      </>
       :
       <div className='home loading'></div>
     )

@@ -1,75 +1,80 @@
 @use '/src/assets/scss' as *;
-.postsOfUser {
-    width: calc(100% - $sizeAlignPagePC*2);
-    padding-bottom: $sizeAlignElementPC;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    &Content {
+@media (min-width: 901px) {
+    .postsSummary {
+        width: calc(100% - $sizeAlignPagePC*2);
+        padding: $sizeAlignElementPC 0;
+        border-top: 4px double $blackColor;
         flex: 1;
         display: flex;
         flex-direction: column;
-        > :nth-child(n) {
-            height: 150px;
-            padding-bottom: $sizeAlignElementPC;
-            border-bottom: 1px solid $blackColor;
-            margin-bottom: $sizeAlignElementPC;
-        }
-        > :last-child {
-            padding: 0;
-            margin: 0;
-            border: none;
-        }
-    }
-    &NoContent {
-        @include font('title');
-        width: 100%;
-        flex: 1;
-        border-radius: 10px;
-        position: relative;
-        background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
-        &Icon {
-            &:hover {
-                color: $mainColor;
-            }
-            position: absolute;
-            bottom: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(50%);
-            font-size: 25px;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: black;
-            &Child {
-                &:last-child {
-                    position: absolute;
-                    font-size: 25px;
-                    bottom: -0px;
-                    right: -10px;
-                    background-color: $whiteColor;
-                    line-height: 1;
-                    border-radius: 50%;
-                }
-                margin-left: 10px;
-                font-size: 50px;
-            }
-        }
         &Content {
-            position: absolute;
-            bottom: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(50%);
-            font-size: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            > :nth-child(n) {
+                height: 150px;
+                box-sizing: content-box;
+                padding-bottom: $sizeAlignElementPC;
+                border-bottom: 1px solid $blackColor;
+                margin-bottom: $sizeAlignElementPC;
+            }
+            > :last-child {
+                padding: 0;
+                margin: 0;
+                border: none;
+            }
+        }
+        &NoContent {
+            @include font('title');
+            width: 100%;
+            flex: 1;
+            border-radius: 10px;
+            position: relative;
+            background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
+            &Icon {
+                &:hover {
+                    color: $mainColor;
+                }
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%);
+                font-size: 25px;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: black;
+                &Child {
+                    &:last-child {
+                        position: absolute;
+                        font-size: 25px;
+                        bottom: -0px;
+                        right: -10px;
+                        background-color: $whiteColor;
+                        line-height: 1;
+                        border-radius: 50%;
+                    }
+                    margin-left: 10px;
+                    font-size: 50px;
+                }
+            }
+            &Content {
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%);
+                font-size: 25px;
+            }
         }
     }
 }
 
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
 @media (min-width: 740px) and (max-width: 900px) {
-    .postsOfUser {
+    .postsSummary {
         width: calc(100% - $sizeAlignPageTabletMobile*2);
-        padding-bottom: $sizeAlignElementTabletMobile; //
+        padding: $sizeAlignElementTabletMobile 0;
+        border-top: 4px double $blackColor;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -135,9 +140,10 @@
 }
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
-    .postsOfUser {
+    .postsSummary {
         width: calc(100% - $sizeAlignPageTabletMobile*2);
-        padding-bottom: $sizeAlignElementTabletMobile; //
+        padding: $sizeAlignElementTabletMobile 0;
+        border-top: 4px double $blackColor;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -146,7 +152,7 @@
             display: flex;
             flex-direction: column;
             > :nth-child(n) {
-                height: 120px;
+                height: 130px;
                 padding-bottom: $sizeAlignElementTabletMobile; //
                 border-bottom: 1px solid $blackColor;
                 margin-bottom: $sizeAlignElementTabletMobile; //

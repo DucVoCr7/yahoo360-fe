@@ -1,66 +1,88 @@
 @use '/src/assets/scss' as *;
-.postMedium {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    color: $blackColor;
-    text-decoration: none;
-    &:hover {
-        color: $contentBriefColor;
-    }
-    &Left {
-        flex: 8;
-        padding-right: $sizeAlignElementPC;
-        border-right: 1px solid $disableColor;
-        margin-right: $sizeAlignElementPC;
+@media (min-width: 901px) {
+    .postMedium {
+        width: 100%;
+        height: 100%;
         display: flex;
-        flex-direction: column;
-        .postMediumTitle {
-            @include font('title');
-            font-size: 20px;
-            padding: 0;
-            margin: 0;
-        }
-        .postMediumOther {
-            @include font('title');
-            margin: $sizeAlignElementPC 0;
-            font-size: 15px;
-            &Child {
-                &:first-child {
-                    color: $mainColor;
-                    padding: 0;
-                    margin: 0;
-                    border: none;
-                }
-                border-left: 1px solid $disableColor;
-                padding-left: $sizeAlignElementPC;
-                margin-left: $sizeAlignElementPC;
-                &Icon {
-                    margin-right: 5px;
-                }
-            }
-        }
-        .postMediumContent {
-            @include font('content');
-            font-size: 15px;
-            line-height: 1.4;
-            text-align: justify;
-            overflow: hidden;
+        color: $blackColor;
+        text-decoration: none;
+        &:hover {
             color: $contentBriefColor;
         }
-    }
-    &Right {
-        flex: 2;
-        .postMediumImg {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        &Left {
+            flex: 8;
+            padding-right: $sizeAlignElementPC;
+            border-right: 1px solid $disableColor;
+            margin-right: $sizeAlignElementPC;
+            display: flex;
+            flex-direction: column;
+            .postMediumTitle {
+                @include font('title');
+                font-size: 20px;
+                padding: 0;
+                margin: 0;
+                font-weight: 600;
+                @include limitLine(1);
+                overflow: visible;
+                
+            }
+            .postMediumAuthor {
+                display: flex;
+                align-items: center;
+                padding-top: $sizeAlignElementPC;
+                background-color: $whiteColor;
+    
+                &Img {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                }
+    
+                &Name {
+                    @include font('title');
+                    font-size: 16px;
+                    margin-left: 10px
+                }
+            }
+            .postMediumOther {
+                @include font('title');
+                padding: $sizeAlignElementPC 0;
+                font-size: 15px;
+                background-color: $whiteColor;
+                &Child {
+                    &:first-child {
+                        padding: 0;
+                        margin: 0;
+                        border: none;
+                    }
+                    border-left: 1px solid $disableColor;
+                    padding-left: $sizeAlignElementPC;
+                    margin-left: $sizeAlignElementPC;
+                    &Icon {
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .postMediumContent {
+                @include font('content');
+                font-size: 14.5px;
+                line-height: 1.4;
+                text-align: justify;
+                color: $contentBriefColor;
+                overflow: hidden;
+            }
         }
+        &Right {
+            flex: 2;
+            .postMediumImg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    
     }
-
 }
-
-
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
 @media (min-width: 740px) and (max-width: 900px) {
     .postMedium {
@@ -84,14 +106,36 @@
                 font-size: 20px;
                 padding: 0;
                 margin: 0;
+                line-height: 1.2; //
+                font-weight: 600;
+                @include limitLine(1);
+                overflow: visible;
+            }
+            .postMediumAuthor {
+                display: flex;
+                align-items: center;
+                padding-top: $sizeAlignElementTabletMobile; //
+                background-color: $whiteColor;
+    
+                &Img {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                }
+    
+                &Name {
+                    @include font('title');
+                    font-size: 16px;
+                    margin-left: 10px
+                }
             }
             .postMediumOther {
                 @include font('title');
-                margin: $sizeAlignElementTabletMobile 0; //
+                padding: $sizeAlignElementTabletMobile 0; //
+                background-color: $whiteColor;
                 font-size: 15px;
                 &Child {
                     &:first-child {
-                        color: $mainColor;
                         padding: 0;
                         margin: 0;
                         border: none;
@@ -106,11 +150,11 @@
             }
             .postMediumContent {
                 @include font('content');
-                font-size: 15px;
+                font-size: 14.5px;
                 line-height: 1.4;
                 text-align: justify;
-                overflow: hidden;
                 color: $contentBriefColor;
+                overflow: hidden;
             }
         }
         &Right {
@@ -146,19 +190,40 @@
             flex-direction: column;
             .postMediumTitle {
                 @include font('title');
-                font-size: 19px; //
+                font-size: 16.5px; //
                 flex: 1;
-                overflow: hidden;
                 padding: 0;
+                font-weight: 600;
                 margin: 0;
+                @include limitLine(3);
+                overflow: visible;
+            }
+            .postMediumAuthor {
+                display: flex;
+                align-items: center;
+                padding-top: $sizeAlignElementTabletMobile; //
+                background-color: $whiteColor;
+    
+                &Img {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                }
+    
+                &Name {
+                    @include font('title');
+                    font-size: 15px;
+                    margin-left: 10px;
+                    @include limitLine(1);
+                }
             }
             .postMediumOther {
                 @include font('title');
-                margin: $sizeAlignElementTabletMobile 0 0 0; //
+                padding: $sizeAlignElementTabletMobile 0 0 0; //
                 font-size: 15px;
+                background-color: $whiteColor;
                 &Child {
                     &:first-child {
-                        color: $mainColor;
                         padding: 0;
                         margin: 0;
                         border: none;

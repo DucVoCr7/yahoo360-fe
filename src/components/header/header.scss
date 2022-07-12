@@ -1,68 +1,70 @@
 @use '/src/assets/scss' as *;
-.header {
-    width: 100%;
-    height: $heightHeader;
-    position: relative;
-    &Logo {
-        position: absolute;
-        top: 20px;
-        z-index: 2;
-        width: 100%;
-        text-align: center;
-        color: $whiteColor;
-        @include font('logo');
-        font-size: 50px;
-        text-shadow: $shadowFull;
-        @include trackingExpand;
-        text-decoration: none;
-    }
-    &Title {
-        position: absolute;
-        top: 80px;
-        z-index: 2;
-        width: 100%;
-        text-align: center;
-        color: $whiteColor;
-        @include font('logo');
-        text-shadow: $shadowFull;
-        @include trackingExpand;
-    }
-    &Slide {
+@media (min-width: 740px) {
+
+    .header {
         width: 100%;
         height: $heightHeader;
-        border-bottom: 1px solid white;
         position: relative;
-        object-fit: cover;
-    }
-    &Category {
-        position: absolute;
-        bottom: 0;
-        height: 100px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        background: linear-gradient(rgba(255, 255, 255, 0), white);
-        &Item {
-            &:hover {
-                color: $mainColor
-            }
-            @include font('part');
-            text-transform: uppercase;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-            color: black;
-            padding: 0 15px;
+        &Logo {
+            position: absolute;
+            top: 20px;
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+            color: $whiteColor;
+            @include font('logo');
+            font-size: 50px;
             text-shadow: $shadowFull;
+            @include trackingExpand;
+            text-decoration: none;
         }
-    }
-
-    // Custom Slider
-    .slick-arrow,
-    .slick-next,
-    .slick-prev {
-        display: none !important;
+        &Title {
+            position: absolute;
+            top: 80px;
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+            color: $whiteColor;
+            @include font('logo');
+            text-shadow: $shadowFull;
+            @include trackingExpand;
+        }
+        &Slide {
+            width: 100%;
+            height: $heightHeader;
+            position: relative;
+            object-fit: cover;
+        }
+        &Category {
+            position: absolute;
+            bottom: 0;
+            height: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            background: linear-gradient(rgba(255, 255, 255, 0), white);
+            &Item {
+                &:hover {
+                    color: $mainColor
+                }
+                @include font('part');
+                text-transform: uppercase;
+                text-decoration: none;
+                font-size: 15px;
+                font-weight: 600;
+                color: black;
+                padding: 0 15px;
+                text-shadow: $shadowFull;
+            }
+        }
+    
+        // Custom Slider
+        .slick-arrow,
+        .slick-next,
+        .slick-prev {
+            display: none !important;
+        }
     }
 }
 
@@ -100,7 +102,6 @@
         &Slide {
             width: 100%;
             height: $heightHeaderM;
-            border-bottom: 1px solid white;
             position: relative;
             object-fit: cover;
         }

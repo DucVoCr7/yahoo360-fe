@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import HeaderOfUser from '../../components/headerOfUser/HeaderOfUser'
-import PostsOfUser from '../../components/postsOfUser/PostsOfUser'
+import PostsSummary from '../../components/postsSummary/PostsSummary'
 import Sidebar from '../../components/sidebar/Sidebar'
 import { publicRequest } from '../../utils/requestMethods'
 import './user.scss'
@@ -42,7 +42,6 @@ export default function User() {
   console.log('re-render:User')
   return (
     name ?
-      <>
         <div className='user'>
           <HeaderOfUser photos={photos}/>
           <Sidebar
@@ -56,9 +55,8 @@ export default function User() {
             position={position}
             address={address}
             />
-          <PostsOfUser posts={posts} />
+          <PostsSummary posts={posts} />
         </div>
-      </>
       :
       <div className='user loading'></div>
   )

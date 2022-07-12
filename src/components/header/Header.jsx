@@ -1,27 +1,10 @@
 import React from 'react'
 import './header.scss'
 import Slider from 'react-slick';
-import style from '../../assets/image/style.jpg'
-import travel from '../../assets/image/travel.jpg'
-import tech from '../../assets/image/tech.jpg'
-import cenima from '../../assets/image/cenima.jpg'
-import food from '../../assets/image/food.jpg'
-import life from '../../assets/image/life.jpg'
-import music from '../../assets/image/music.jpg'
-import sport from '../../assets/image/sport.jpg'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import slideShow from '../../utils/constArrayImg';
 function Header() {
-    const slideShow = [
-      { img: life },
-      { img: style },
-      { img: travel },
-      { img: tech },
-      { img: cenima },
-      { img: food },
-      { img: music },
-      { img: sport },
-    ]
     const settings = {
       fade: true,
       infinite: true,
@@ -36,8 +19,8 @@ function Header() {
           <Link to='/' className="headerLogo">YAHOO 360</Link>
           <div className="headerTitle">Store the experience your way!</div>
           <Slider {...settings}>
-            {slideShow.map((slide, index)=> 
-                <img src={slide.img} alt='headerImg' className="headerSlide" key={index}/>
+            {slideShow.map((item, index)=> 
+                <img src={item.img} alt='headerImg' className="headerSlide" key={index}/>
             )}
           </Slider>
           <div className="headerCategory">

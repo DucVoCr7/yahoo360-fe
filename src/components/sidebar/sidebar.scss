@@ -2,8 +2,6 @@
 .sidebar {
     width: calc(100% - $sizeAlignPagePC*2);
     padding: $sizeAlignElementPC 0;
-    border-bottom: 4px double $blackColor;
-    margin-bottom: $sizeAlignElementPC;
     box-sizing: border-box;
     height: 200px;
     display: flex;

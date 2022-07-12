@@ -3,7 +3,7 @@ import './postMedium.scss'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import convertDate from '../../utils/convertDate'
-export default function PostMedium({ post }) {
+export default function PostMedium({ post, isPostsCategory = false }) {
     // Dùng tạm khi nào biết cách mapSatetoprops thì xóa đi
     const valueCategory = useSelector(state => state.app.category.find(element => element.key === post.category).value)
     ///
@@ -11,11 +11,22 @@ export default function PostMedium({ post }) {
         <Link to={`/posts/${post.id}`} className='postMedium'>
             <div className="postMediumLeft">
                 <h1 className="postMediumTitle">{post.title}</h1>
+                {
+                    isPostsCategory &&
+                <div className="postMediumAuthor">
+                    <img src={post.user.image} alt="postImg" className="postMediumAuthorImg"/>
+                    <span className="postMediumAuthorName">by {post.user.name}</span>
+                </div>
+                }
                 <div className="postMediumOther">
-                    <span className="postMediumOtherChild">
+                    {
+                        !isPostsCategory &&
+                        <span className="postMediumOtherChild">
                         <i className="postMediumOtherChildIcon bi bi-bookmarks"></i>
                         {valueCategory}
                     </span>
+                    }
+
                     <span className="postMediumOtherChild">
                         <i className="postMediumOtherChildIcon bi bi-hand-thumbs-up"></i>
                         {post.likesNumber}
