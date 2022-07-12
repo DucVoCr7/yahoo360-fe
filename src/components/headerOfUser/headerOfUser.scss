@@ -1,97 +1,99 @@
 @use '/src/assets/scss' as *;
-.headerOfUser {
-    width: 100%;
-    overflow: hidden;
-    height: $heightHeaderOfUser;
-    &Photo {
+@media (min-width: 740px) {
+    .headerOfUser {
         width: 100%;
+        overflow: hidden;
         height: $heightHeaderOfUser;
-        object-fit: cover;
-    }
-    &NoPhoto {
-        @include font('title');
-        width: 100%;
-        height: 100%;
-        position: relative;
-        background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
-        &Icon {
-            &:hover {
-                color: $mainColor;
-            }
-            position: absolute;
-            bottom: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(50%);
-            font-size: 25px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            &Child {
-                &:last-child {
-                    position: absolute;
-                    font-size: 25px;
-                    bottom: -0px;
-                    right: -15px;
-                    background-color: $whiteColor;
-                    line-height: 1;
-                    border-radius: 50%;
+        &Photo {
+            width: 100%;
+            height: $heightHeaderOfUser;
+            object-fit: cover;
+        }
+        &NoPhoto {
+            @include font('title');
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
+            &Icon {
+                &:hover {
+                    color: $mainColor;
                 }
-                margin-left: 10px;
-                font-size: 50px;
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%);
+                font-size: 25px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                &Child {
+                    &:last-child {
+                        position: absolute;
+                        font-size: 25px;
+                        bottom: -0px;
+                        right: -15px;
+                        background-color: $whiteColor;
+                        line-height: 1;
+                        border-radius: 50%;
+                    }
+                    margin-left: 10px;
+                    font-size: 50px;
+                }
+            }
+            &Content {
+                position: absolute;
+                bottom: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(50%);
+                font-size: 25px;
             }
         }
-        &Content {
-            position: absolute;
-            bottom: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(50%);
-            font-size: 25px;
-        }
-    }
-
-
-    // Custom Slider
-        //Space between slide
-        .slick-list {margin: 0 -5px;}
-        .slick-slide>div {padding: 0 5px;}
     
-        // Arrow
-        .slick-arrow,
-        .slick-next,
-        .slick-prev {
-            display: none !important;
-        }
     
-        // Dot
-        .slick-dots {
-            bottom: 10px;
-            display: flex !important;
-            justify-content: center;
-    
-            & > li {
-                &.slick-active {
-                    background-color: $mainColor;
-                }
-    
-                width: 30px;
-                height: 2px;
-                margin: 0 2px;
-                background-color: $disableColor;
-    
-                & > button {
-                    position: absolute;
-                    transform: translateY(-50%);
-                    width: 100%;
-                    height: 15px;
-                    background-color: transparent;
-                    box-shadow: none;
-    
-                    &::before {
-                        all: unset;
+        // Custom Slider
+            //Space between slide
+            .slick-list {margin: 0 -5px;}
+            .slick-slide>div {padding: 0 5px;}
+        
+            // Arrow
+            .slick-arrow,
+            .slick-next,
+            .slick-prev {
+                display: none !important;
+            }
+        
+            // Dot
+            .slick-dots {
+                bottom: 10px;
+                display: flex !important;
+                justify-content: center;
+        
+                & > li {
+                    &.slick-active {
+                        background-color: $mainColor;
+                    }
+        
+                    width: 30px;
+                    height: 2px;
+                    margin: 0 2px;
+                    background-color: $disableColor;
+        
+                    & > button {
+                        position: absolute;
+                        transform: translateY(-50%);
+                        width: 100%;
+                        height: 15px;
+                        background-color: transparent;
+                        box-shadow: none;
+        
+                        &::before {
+                            all: unset;
+                        }
                     }
                 }
             }
-        }
+    }
 }
 
 /* OPEN - MOBILE độ phân giải <= 739px */
@@ -142,16 +144,47 @@
             }
         }
 
-
-        // Custom Slider
-        .slick-list {margin: 0 -2px;}
-        .slick-slide>div {padding: 0 2px;}
-        .slick-dots {
-            bottom: 7px;
-            & > li {
-                width: 15px;
-                height: 1px;
+            // Custom Slider
+            //Space between slide
+            .slick-list {margin: 0 -2px;}
+            .slick-slide>div {padding: 0 2px;}
+        
+            // Arrow
+            .slick-arrow,
+            .slick-next,
+            .slick-prev {
+                display: none !important;
             }
-        }
+        
+            // Dot
+            .slick-dots {
+                bottom: 7px;
+                display: flex !important;
+                justify-content: center;
+        
+                & > li {
+                    &.slick-active {
+                        background-color: $mainColor;
+                    }
+        
+                    width: 10px;
+                    height: 1px;
+                    margin: 0 1.5px;
+                    background-color: $disableColor;
+        
+                    & > button {
+                        position: absolute;
+                        transform: translateY(-50%);
+                        width: 100%;
+                        height: 15px;
+                        background-color: transparent;
+                        box-shadow: none;
+        
+                        &::before {
+                            all: unset;
+                        }
+                    }
+                }
+            }
     }
 }

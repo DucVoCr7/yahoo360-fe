@@ -2,8 +2,7 @@
 @media (min-width: 901px) {
     .postsSummary {
         width: calc(100% - $sizeAlignPagePC*2);
-        padding: $sizeAlignElementPC 0;
-        border-top: 4px double $blackColor;
+        padding-bottom: $sizeAlignElementPC;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -73,8 +72,7 @@
 @media (min-width: 740px) and (max-width: 900px) {
     .postsSummary {
         width: calc(100% - $sizeAlignPageTabletMobile*2);
-        padding: $sizeAlignElementTabletMobile 0;
-        border-top: 4px double $blackColor;
+        padding-bottom: $sizeAlignElementTabletMobile;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -142,8 +140,7 @@
 @media (max-width: 739px) {
     .postsSummary {
         width: calc(100% - $sizeAlignPageTabletMobile*2);
-        padding: $sizeAlignElementTabletMobile 0;
-        border-top: 4px double $blackColor;
+        padding-bottom: $sizeAlignElementTabletMobile;
         flex: 1;
         display: flex;
         flex-direction: column;

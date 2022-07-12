@@ -16,10 +16,13 @@ export default function Single() {
                 console.log(error)
             }
         })()
-    }, [])
+    }, [params])
     return (
-        <div className={post ? 'single' : 'single loading'}>
-           {post && <Post post = {post}/>}
+        post ?
+        <div className='single'>
+           <Post post = {post}/>
         </div>
+        :
+        <div className='single loading'></div>
     )
 }

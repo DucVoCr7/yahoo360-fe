@@ -1,165 +1,166 @@
 @use '/src/assets/scss' as *;
-
-.topbar {
-    z-index: 3;
-    width: 100%;
-    height: $heightTopbar;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    position: -webkit-sticky; /* Safari */
-    top: 0;
-    border-bottom: 1px solid $disableColor;
-    @include font('part');
-    background-color: $whiteColor;
-    padding: 0 $sizeAlignPagePC;
-    // Mobile
-    &GroupM {
-        display: none;
-    }
-    // Tablet PC
-    &Group {
+@media (min-width: 901px) {
+    .topbar {
+        z-index: 3;
+        width: 100%;
+        height: $heightTopbar;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-
-        // Item
-        .topbarItem {
-            &:hover {
-                color: $mainColor;
-            }
-            &:last-child {
-                margin-right: 0;
-            }
+        position: sticky;
+        position: -webkit-sticky; /* Safari */
+        top: 0;
+        border-bottom: 1px solid $disableColor;
+        @include font('part');
+        background-color: $whiteColor;
+        padding: 0 $sizeAlignPagePC;
+        // Mobile
+        &GroupM {
+            display: none;
+        }
+        // Tablet PC
+        &Group {
             display: flex;
             align-items: center;
-            margin-right: 20px;
-            text-decoration: none;
-            color: $blackColor;
-            cursor: pointer;
-
-            // Search
-            .topbarSearchIcon {
-
-            }
-            .topbarSearchInput {
-                @include font('part');
-                width: 100%;
-                margin-left: 20px;
-            }
-
-            // Notify
-            .topbarNotifyIcon {
-                &.active {
+    
+            // Item
+            .topbarItem {
+                &:hover {
                     color: $mainColor;
                 }
-            }
-            .topbarNotifyNumber {
-                &.active {
-                    display: none;
+                &:last-child {
+                    margin-right: 0;
                 }
-                position: absolute;
-                top: 20%;
-                transform: translateX(85%);
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                height: 15px;
-                width: 15px;
-                font-size: 10px;
-                font-weight: 700;
-                color: $whiteColor;
-                font-weight: 500;
-                background-color: $errorColor;
-                border-radius: 50%;
-            }
-            .topbarNotifyList {
-                &.active {
-                    display: block;
-                    @include slideLeft;
+                margin-right: 20px;
+                text-decoration: none;
+                color: $blackColor;
+                cursor: pointer;
+    
+                // Search
+                .topbarSearchIcon {
+    
                 }
-                display: none;
-                position: absolute;
-                top: calc(100% + 1px);
-                right: $sizeAlignPagePC;
-                background-color: $whiteColor;
-                box-shadow: $shawdowNotTop;
-                max-height: calc(($heightChildTopbar + 10px) * 4);
-                overflow-y: auto;
-                border-bottom-left-radius: 4px;
-                border-bottom-right-radius: 4px;
-                .topbarNotifyItem {
-                    &:last-child {
-                        border: none;
+                .topbarSearchInput {
+                    @include font('part');
+                    width: 100%;
+                    margin-left: 20px;
+                }
+    
+                // Notify
+                .topbarNotifyIcon {
+                    &.active {
+                        color: $mainColor;
                     }
+                }
+                .topbarNotifyNumber {
+                    &.active {
+                        display: none;
+                    }
+                    position: absolute;
+                    top: 20%;
+                    transform: translateX(85%);
                     display: flex;
                     align-items: center;
-                    height: calc($heightChildTopbar + 10px);
-                    padding: 0 20px;
-                    border-bottom: 1px solid $disableColor;
-                    text-decoration: none;
-                    color: $blackColor;
-                    &:hover {
-                        background-color: $mainColor;
+                    justify-content: center;
+                    height: 15px;
+                    width: 15px;
+                    font-size: 10px;
+                    font-weight: 700;
+                    color: $whiteColor;
+                    font-weight: 500;
+                    background-color: $errorColor;
+                    border-radius: 50%;
+                }
+                .topbarNotifyList {
+                    &.active {
+                        display: block;
+                        @include slideLeft;
                     }
-                    .topbarNotifyImg {
-                        height: 30px;
-                        width: 30px;
-                        border-radius: 50%;
-                        margin-right: 10px;
+                    display: none;
+                    position: absolute;
+                    top: calc(100% + 1px);
+                    right: $sizeAlignPagePC;
+                    background-color: $whiteColor;
+                    box-shadow: $shawdowNotTop;
+                    max-height: calc(($heightChildTopbar + 10px) * 4);
+                    overflow-y: auto;
+                    border-bottom-left-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                    .topbarNotifyItem {
+                        &:last-child {
+                            border: none;
+                        }
+                        display: flex;
+                        align-items: center;
+                        height: calc($heightChildTopbar + 10px);
+                        padding: 0 20px;
+                        border-bottom: 1px solid $disableColor;
+                        text-decoration: none;
+                        color: $blackColor;
+                        &:hover {
+                            background-color: $mainColor;
+                        }
+                        .topbarNotifyImg {
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                        }
+                        .topbarNotifyContent {
+                            font-size: 17px;
+                        }
                     }
-                    .topbarNotifyContent {
+                }
+    
+                // Image
+                .topbarImg {
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 50%;
+                }
+    
+                // Setting
+                .topbarSettingIcon {
+                    &.active {
+                        color: $mainColor;
+                        @include rotate180;
+                    }
+                }
+                .topbarSettingList {
+                    &.active {
+                        display: block;
+                        @include slideLeft;
+                    }
+                    display: none;
+                    position: absolute;
+                    top: calc(100% + 1px);
+                    right: $sizeAlignPagePC;
+                    background-color: $whiteColor;
+                    box-shadow: $shawdowNotTop;
+                    border-bottom-left-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                    overflow: hidden;
+                    .topbarSettingItem {
+                        &:last-child {
+                            border: none;
+                        }
+                        padding: 0 20px;
+                        text-decoration: none;
+                        color: $blackColor;
+                        height: $heightChildTopbar;
+                        display: flex;
+                        align-items: center;
                         font-size: 17px;
+                        border-bottom: 1px solid $disableColor;
+                        &:hover {
+                            background-color: $mainColor
+                        }
                     }
                 }
+    
             }
-
-            // Image
-            .topbarImg {
-                height: 30px;
-                width: 30px;
-                border-radius: 50%;
-            }
-
-            // Setting
-            .topbarSettingIcon {
-                &.active {
-                    color: $mainColor;
-                    @include rotate180;
-                }
-            }
-            .topbarSettingList {
-                &.active {
-                    display: block;
-                    @include slideLeft;
-                }
-                display: none;
-                position: absolute;
-                top: calc(100% + 1px);
-                right: $sizeAlignPagePC;
-                background-color: $whiteColor;
-                box-shadow: $shawdowNotTop;
-                border-bottom-left-radius: 4px;
-                border-bottom-right-radius: 4px;
-                overflow: hidden;
-                .topbarSettingItem {
-                    &:last-child {
-                        border: none;
-                    }
-                    padding: 0 20px;
-                    text-decoration: none;
-                    color: $blackColor;
-                    height: $heightChildTopbar;
-                    display: flex;
-                    align-items: center;
-                    font-size: 17px;
-                    border-bottom: 1px solid $disableColor;
-                    &:hover {
-                        background-color: $mainColor
-                    }
-                }
-            }
-
         }
     }
 }

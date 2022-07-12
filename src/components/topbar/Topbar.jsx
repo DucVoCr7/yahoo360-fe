@@ -102,7 +102,7 @@ export default function Topbar() {
                     <Link className='topbarItem' to='/home'>
                         <img className='topbarImg' src={userInfo.image ? userInfo.image : avatar} alt='avatar' />
                     </Link>}
-                {userInfo?.roleId === 'R0' && <Link to='/manageUsers' className='topbarItem'>MANAGE</Link>}
+                {userInfo?.role === 'R0' && <Link to='/management' className='topbarItem'>MANAGEMENT</Link>}
                 {userInfo &&
                     <div className='topbarItem' onClick={() => setOpenSetting(!openSetting)} ref={refSetting}>
                         <i className={openSetting ? 'topbarSettingIcon bi bi-gear-fill active' : 'topbarSettingIcon bi bi-gear'} ></i>
@@ -147,6 +147,11 @@ export default function Topbar() {
                         <i className="topbarMenuItemChild bi bi-pen-fill"></i>
                         WRITE YOUR POST!
                     </Link>
+                    {userInfo?.role === 'R0' && 
+                    <Link to='/management' className='topbarMenuItem' onClick={()=> setOpenTopbarMenu(false)}>
+                        <i className="topbarMenuItemChild bi bi-clipboard-data-fill"></i>
+                        MANAGEMENT
+                    </Link>}
                 </div>
             </div>
             <Link to='/' className="topbarGroupM">

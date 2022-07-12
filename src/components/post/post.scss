@@ -1,96 +1,99 @@
 @use '/src/assets/scss' as *;
+@media (min-width: 740px) {
 
-.post {
-    display: flex;
-    flex-direction: column;
-    width: 600px;
-
-    .postImg {
-        width: 100%;
-        max-height: 400px;
-        object-fit: cover;
-    }
-
-    .postTitle {
-        @include font('title');
-        font-size: 35px;
-        margin: 0;
-        padding: calc($sizeAlignElementPC * 2) 0;
-    }
-
-    .postActions {
-        @include font('title');
-        padding-bottom: calc($sizeAlignElementPC * 2);
+    .post {
         display: flex;
-        &Child {
-            &:first-child {
-                background-color: $mainColor;
-
+        flex-direction: column;
+        width: 600px;
+    
+        .postImg {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+    
+        .postTitle {
+            @include font('title');
+            font-size: 35px;
+            font-weight: 600;
+            margin: 0;
+            padding: calc($sizeAlignElementPC * 2) 0;
+        }
+    
+        .postActions {
+            @include font('title');
+            padding-bottom: calc($sizeAlignElementPC * 2);
+            display: flex;
+            &Child {
+                &:first-child {
+                    background-color: $mainColor;
+    
+                    &:hover {
+                        background-color: $clickColor;
+                    }
+                }
+    
                 &:hover {
-                    background-color: $clickColor;
+                    background-color: $mainColor;
+                }
+    
+                border: 1px solid $disableColor;
+                border-radius: 5px;
+                box-shadow: $shadowFull;
+                padding: 5px 10px;
+                margin-right: 20px;
+                text-decoration: none;
+                color: $blackColor;
+                &Icon {
+                    margin-right: 5px;
                 }
             }
-
-            &:hover {
-                background-color: $mainColor;
-            }
-
-            border: 1px solid $disableColor;
-            border-radius: 5px;
-            box-shadow: $shadowFull;
-            padding: 5px 10px;
-            margin-right: 20px;
-            text-decoration: none;
-            color: $blackColor;
-            &Icon {
-                margin-right: 5px;
-            }
         }
-    }
-
-    .postAuthorTime {
-        display: flex;
-        align-items: center;
-        padding-bottom: calc($sizeAlignElementPC * 2);
-        .postAuthor {
-            &:hover {
-                color: $mainColor;
-                text-shadow: $shadowFull;
-            }
-            color: $blackColor;
-            text-decoration: none;
+    
+        .postAuthorTime {
             display: flex;
             align-items: center;
-
-            &Img {
-                width: 40px;
-                height: 40px;
-                box-shadow: $shadowFull;
-                border-radius: 50%;
+            padding-bottom: calc($sizeAlignElementPC * 2);
+            .postAuthor {
+                &:hover {
+                    color: $mainColor;
+                    text-shadow: $shadowFull;
+                }
+                color: $blackColor;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+    
+                &Img {
+                    width: 40px;
+                    height: 40px;
+                    box-shadow: $shadowFull;
+                    border-radius: 50%;
+                }
+    
+                &Name {
+                    @include font('title');
+                    font-weight: 600;
+                    margin-left: 10px
+                }
             }
-
-            &Name {
+            .postTime {
                 @include font('title');
-                font-weight: 600;
+                font-weight: 500;
+                padding-left: 10px;
+                border-left: 1px solid $disableColor;
                 margin-left: 10px
             }
         }
-        .postTime {
-            @include font('title');
-            font-weight: 500;
-            padding-left: 10px;
-            border-left: 1px solid $disableColor;
-            margin-left: 10px
+    
+        .postContent {
+            @include font('content');
+            text-align: justify;
         }
-    }
-
-    .postContent {
-        @include font('content');
-        text-align: justify;
-    }
-
-    .postComments {
-        margin: $sizeAlignElementPC 0 $sizeAlignPagePC 0;
+    
+        .postComments {
+            margin: $sizeAlignElementPC 0 $sizeAlignPagePC 0;
+        }
     }
 }
 
@@ -112,6 +115,7 @@
             width: calc(100% - $sizeAlignPageTabletMobile * 2);//
             @include font('title');
             font-size: 35px;
+            font-weight: 600;
             margin: 0;
             padding: calc($sizeAlignElementTabletMobile * 2) 0;
             

@@ -1,43 +1,43 @@
 @use '/src/assets/scss' as *;
-.footer {
-    height: $heightFooter;
-    width: 100%;
-    background-color: $greyColor;
-    color: $disableColor;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    @include font('part');
-    font-size: 14px;
-    &Group {
-        &:first-child {
-            border-bottom: 1px solid $mainColor;
-        }        
+
+/* OPEN - TABLET độ phân giải từ 740px đến +++*/
+@media (min-width: 740px) {
+    .footer {
+        height: $heightFooter;
+        width: 100%;
+        background-color: $greyColor;
+        color: $disableColor;
         display: flex;
-        padding: 5px 0;
-        .footerItem {
-            &:hover {
-                color: $mainColor
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        @include font('part');
+        font-size: 14px;
+        &Group {
+            &:first-child {
+                border-bottom: 1px solid $mainColor;
             }
-            cursor: pointer;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0 20px;
-            .footerItemIcon {
-                font-size: 17px;
-                margin-bottom: 5px;
+            padding: 5px 0;
+            .footerItem {
+                &:hover {
+                    color: $mainColor
+                }
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0 20px;
+                .footerItemIcon {
+                    font-size: 17px;
+                    margin-bottom: 5px;
+                }
             }
         }
+
     }
-
 }
 
-/* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
-@media (min-width: 740px) and (max-width: 1023px) {
-
-}
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
     .footer {
@@ -50,28 +50,33 @@
         justify-content: space-evenly;
         align-items: center;
         @include font('part');
-        font-size: 13px; //
+        font-size: 11px; //
+
         &Group {
             &:first-child {
                 border-bottom: 1px solid $mainColor;
-            }        
+            }
+
             display: flex;
             padding: 5px 0;
+
             .footerItem {
                 &:hover {
                     color: $mainColor
                 }
+
                 cursor: pointer;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 padding: 0 5px; //
+
                 .footerItemIcon {
                     font-size: 15px; //
                     margin-bottom: 5px;
                 }
             }
         }
-    
+
     }
 }

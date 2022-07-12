@@ -15,7 +15,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import User from "./pages/user/User";
 import UpdateAccount from "./pages/updateAccount/UpdateAccount";
-import ManageUsers from "./pages/manageUsers/ManageUsers";
+import Management from "./pages/management/Management";
 import PostsCategory from "./pages/postsCategory/PostsCategory";
 
 
@@ -37,7 +37,7 @@ export default function App() {
           <Route path="/home" element={<Home/>}/>
           <Route path="/write" element={<Write/>}/>
           <Route path="/updateAccount" element={<UpdateAccount/>}/>
-          <Route path='/manageUsers' element={<ManageUsers/>}/>
+          <Route path='/management' element={<Management/>}/>
         </Routes>
       </BrowserRouter>
       <Footer/>

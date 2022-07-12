@@ -1,80 +1,83 @@
 @use '/src/assets/scss' as *;
-.community {
-    &.loading {
-        height: calc(100vh - $heightTopbar - $heightFooter);
-        position: relative;
-        &::after{
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            display: block;
-            content: '';
-            background-image: url('../../assets/image/loading.gif');
-            background-size: cover;
-            width: 70px;
-            height: 70px;
+@media (min-width: 901px) {
+    .community {
+        &.loading {
+            height: calc(100vh - $heightTopbar - $heightFooter);
+            position: relative;
+            &::after{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                display: block;
+                content: '';
+                background-image: url('../../assets/image/loading.gif');
+                background-size: cover;
+                width: 70px;
+                height: 70px;
+            }
         }
-    }
-    width: 100%;
-    padding: 5px $sizeAlignPagePC $sizeAlignPagePC $sizeAlignPagePC;
-    &Top {
-        display: flex;
-        border-bottom: 1px solid $blackColor;
-        border-top: 4px double $blackColor;
-        padding: $sizeAlignElementPC 0;
-        &Left {
-            flex: 7;
-            padding-right: $sizeAlignElementPC;
-            border-right: 1px solid $blackColor;
-            margin-right: $sizeAlignElementPC;
-            &Item {
-                padding-bottom: $sizeAlignElementPC;
-                border-bottom: 1px solid $blackColor;
-                margin-bottom: $sizeAlignElementPC;
-                &:last-child {
-                    padding: 0;
-                    margin: 0;
-                    border: none;
+        width: 100%;
+        padding: 5px $sizeAlignPagePC $sizeAlignPagePC $sizeAlignPagePC;
+        &Top {
+            display: flex;
+            border-bottom: 1px solid $blackColor;
+            border-top: 4px double $blackColor;
+            padding: $sizeAlignElementPC 0;
+            &Left {
+                flex: 7;
+                padding-right: $sizeAlignElementPC;
+                border-right: 1px solid $blackColor;
+                margin-right: $sizeAlignElementPC;
+                &Item {
+                    padding-bottom: $sizeAlignElementPC;
+                    border-bottom: 1px solid $blackColor;
+                    margin-bottom: $sizeAlignElementPC;
+                    &:last-child {
+                        padding: 0;
+                        margin: 0;
+                        border: none;
+                    }
+                }
+            }
+            &Right {
+                flex: 3;
+                &Item {
+                    padding-bottom: $sizeAlignElementPC;
+                    border-bottom: 1px solid $blackColor;
+                    margin-bottom: $sizeAlignElementPC;
+                    &:last-child {
+                        padding: 0;
+                        margin: 0;
+                        border: none;
+                    }
                 }
             }
         }
-        &Right {
-            flex: 3;
-            &Item {
-                padding-bottom: $sizeAlignElementPC;
-                border-bottom: 1px solid $blackColor;
-                margin-bottom: $sizeAlignElementPC;
-                &:last-child {
-                    padding: 0;
-                    margin: 0;
-                    border: none;
-                }
+        &Bottom {
+            padding-top: $sizeAlignElementPC;
+        }
+        &Name {
+            &:hover {
+                background-color: $clickColor;
             }
-        }
-    }
-    &Bottom {
-        padding-top: $sizeAlignElementPC;
-    }
-    &Name {
-        &:hover {
-            background-color: $clickColor;
-        }
-        display: inline-block;
-        @include font('title');
-        background-color: $mainColor;
-        border: 1px solid $disableColor;
-        border-radius: 5px;
-        box-shadow: $shadowFull;
-        padding: 5px 10px;
-        text-decoration: none;
-        color: $blackColor;
-        margin-bottom: $sizeAlignElementPC;
-        &Icon {
-            margin-right: 5px;
+            display: inline-block;
+            @include font('title');
+            background-color: $mainColor;
+            border: 1px solid $disableColor;
+            border-radius: 5px;
+            box-shadow: $shadowFull;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: $blackColor;
+            margin-bottom: $sizeAlignElementPC;
+            &Icon {
+                margin-right: 5px;
+            }
         }
     }
 }
+
 
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
 @media (min-width: 740px) and (max-width: 900px) {

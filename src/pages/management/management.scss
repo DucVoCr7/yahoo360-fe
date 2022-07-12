@@ -1,0 +1,167 @@
+@use '/src/assets/scss' as *;
+.management {
+    &.loading {
+        width: 100%;
+        height: calc(100vh - $heightTopbar - $heightFooter);
+        position: relative;
+        &::after{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            display: block;
+            content: '';
+            background-image: url('../../assets/image/loading.gif');
+            background-size: cover;
+            width: 70px;
+            height: 70px;
+        }
+    }
+    width: 100%;
+    padding: $sizeAlignElementPC $sizeAlignPagePC;
+    height: calc(100vh - $heightTopbar - $heightFooter);
+    display: flex;
+    flex-direction: column;
+    &Title {
+        @include font('title');
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 1;
+        padding-bottom: $sizeAlignElementPC;
+        border-bottom: 4px double $blackColor;
+        margin-bottom: $sizeAlignElementPC;
+    }
+    &Top {
+        display: flex;
+        width: 100%;
+        padding-bottom: $sizeAlignElementPC;
+        border-bottom: 1px solid $disableColor;
+        margin-bottom: $sizeAlignElementPC;
+        &Item {
+            &:first-child {
+                padding-right: $sizeAlignElementPC;
+                border-right: 1px solid $disableColor;
+                margin-right: $sizeAlignElementPC;
+            }
+            flex: 1;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            &Title {
+                @include font('title');
+                font-weight: 600;
+                padding: 10px 20px;
+                margin-bottom: $sizeAlignElementPC;
+                border: 1px solid $mainColor;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                &Content {
+                    flex: 1;
+                }
+                &Search {
+                    border: 1px solid;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    background-color: $whiteColor;
+                    &Icon {
+                        padding: 5px 10px;
+                    }
+                    &Input {
+                        @include font('content');
+                        line-height: 1;
+                        padding: 5px;
+                    }
+                }
+                &View {
+                    margin: 0 $sizeAlignElementPC;
+                    font-size: 20px;
+                    border: 1px solid $mainColor;
+                    overflow: hidden;
+                    border-radius: 5px;
+                    &Icon {
+                        &.active {
+                            background-color: $mainColor;
+                        }
+                        display: inline-block;
+                        padding: 5px;
+                    }
+                }
+                &Export {
+                    font-size: 17px;
+                    min-width: unset;
+                    width: 100px;
+                }
+            }
+            &Content {
+                flex: 1;
+                border-radius: 10px;
+                background-image: linear-gradient(to left, #dce8eb, #f8e8dc);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    &Bottom {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        &Title {
+            @include font('title');
+            font-weight: 600;
+            padding: 10px 20px;
+            margin-bottom: $sizeAlignElementPC;
+            background-color: $mainColor;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            &Content {
+                flex: 1;
+            }
+            &Search {
+                border: 1px solid;
+                border-radius: 10px;
+                overflow: hidden;
+                background-color: $whiteColor;
+                &Icon {
+                    padding: 5px 10px;
+                }
+                &Input {
+                    @include font('content');
+                    line-height: 1;
+                    padding: 5px;
+                }
+            }
+        }
+        &Content {
+            flex: 1;
+            border-radius: 10px;
+            background-image: linear-gradient(to left, #dce8eb, #f8e8dc);
+            .managementTable {
+                width: 100%;
+                &Row {
+                    .managementTableHeader {
+
+                    }
+                    .managementTableData {
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+//* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
+@media (min-width: 1024px) and (max-width: 1239px) {
+
+}
+/* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
+@media (min-width: 740px) and (max-width: 1023px) {
+
+}
+/* OPEN - MOBILE độ phân giải <= 739px */
+@media (max-width: 739px) {
+
+}
