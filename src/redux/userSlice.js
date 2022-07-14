@@ -22,6 +22,12 @@ export const logout = createAsyncThunk('users/logout', async ()=> {
     })
     return response.data
 })
+export const refreshToken = createAsyncThunk('users/refreshToken', async ()=> {
+    const response = await publicRequest.post('/refreshToken', {
+        refreshToken: JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).refreshToken
+    })
+    return response.data
+})
 export const userSlice = createSlice({
     // Name Slice
     name: 'user', 
@@ -80,6 +86,12 @@ export const userSlice = createSlice({
             state.accessToken = null
             state.refreshToken = null
             state.friendsRequest = null
+        },
+
+        // RefreshToken
+        [refreshToken.fulfilled]: (state, action)=> {
+            state.accessToken = action.payload.accessToken
+            state.refreshToken = action.payload.refreshToken
         }
     },
 })

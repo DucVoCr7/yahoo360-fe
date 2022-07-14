@@ -28,17 +28,17 @@
             border-radius: 20px;
             margin-bottom: $sizeAlignElementPC;
             &Item {
-                // &:last-child {
-                //     padding-bottom: 0;
-                //     border: none;
-                // }
                 &:first-child &Label {
+                    &:hover {
+                        background-color: $clickColor;
+                    }
                     height: 30px;
                     width: unset;
                     justify-content: center;
                     background-color: $mainColor;
                     padding: 0 10px;
                     border-radius: 10px;
+                    cursor: pointer;
                     &Info {
                         font-size: 20px;
                         margin-left: 10px;
@@ -64,8 +64,9 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    font-weight: 600;
                     &Info {
-
+                        font-weight: 500;
                     }
                 }
                 &Input {
@@ -93,6 +94,8 @@
     .updateAccount {
         width: 100%;
         min-height: calc(100vh - $heightTopbar - $heightFooter);
+        background-image: url('../../assets/image/background-update.jpg');
+        background-size: cover;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -103,9 +106,74 @@
             line-height: 1;
             text-transform: uppercase;
             font-weight: 600;
-            padding: $sizeAlignElementTabletMobile 0;
+            padding: $sizeAlignElementPC 0;
             border-bottom: 4px double $blackColor;
-            margin-bottom: $sizeAlignElementTabletMobile;
+            margin-bottom: $sizeAlignElementPC;
+        }
+        &Content {
+            min-width: 500px;
+            background-color: rgba($whiteColor, 0.85);
+            padding: 15px 25px;
+            border-radius: 20px;
+            margin-bottom: $sizeAlignElementPC;
+            &Item {
+                &:first-child &Label {
+                    &:hover {
+                        background-color: $clickColor;
+                    }
+                    height: 30px;
+                    width: unset;
+                    justify-content: center;
+                    background-color: $mainColor;
+                    padding: 0 10px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    &Info {
+                        font-size: 20px;
+                        margin-left: 10px;
+                        line-height: 1;
+                    }
+                }
+                margin-bottom: $sizeAlignElementPC;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                @include font('title');
+                &Img {
+                    width: 200px;
+                    height: 160px;
+                    margin-bottom: $sizeAlignElementPC;
+                    border-radius: 10px;
+                    border: 3px solid $mainColor;
+                    object-fit: cover;
+                }
+                &Label {
+                    width: 100%;
+                    line-height: 1;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-weight: 600;
+                    &Info {
+                        font-weight: 500;
+                    }
+                }
+                &Input {
+                    &:focus {
+                        border-color: $mainColor;
+                    }
+                    @include font('title');
+                    margin-top: $sizeAlignElementPC;
+                    width: 100%;
+                    padding: 5px 0;
+                    background-color: transparent;
+                    border-bottom: 1px solid $blackColor;
+                }
+
+            }
+            &Submit {
+                width: 100%;
+            }
         }
     }
     
@@ -121,13 +189,76 @@
         &Title {
             @include font('title');
             width: calc(100% - $sizeAlignPageTabletMobile*2);
-            font-size: 30px;
+            font-size: 20px;
             line-height: 1;
             text-transform: uppercase;
             font-weight: 600;
-            padding: $sizeAlignElementTabletMobile 0;
+            padding: $sizeAlignElementPC 0;
             border-bottom: 4px double $blackColor;
-            margin-bottom: $sizeAlignElementTabletMobile;
+            margin-bottom: $sizeAlignElementPC;
+        }
+        &Content {
+            width: calc(100% - $sizeAlignPageTabletMobile* 2);
+            margin-bottom: $sizeAlignElementPC;
+            &Item {
+                &:first-child &Label {
+                    &:hover {
+                        background-color: $clickColor;
+                    }
+                    color: black;
+                    height: 30px;
+                    width: unset;
+                    justify-content: center;
+                    background-color: $mainColor;
+                    padding: 0 10px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    &Info {
+                        font-size: 20px;
+                        margin-left: 10px;
+                        line-height: 1;
+                    }
+                }
+                margin-bottom: $sizeAlignElementPC;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                @include font('title');
+                &Img {
+                    width: 200px;
+                    height: 160px;
+                    margin-bottom: $sizeAlignElementPC;
+                    border-radius: 10px;
+                    border: 3px solid $mainColor;
+                    object-fit: cover;
+                }
+                &Label {
+                    width: 100%;
+                    line-height: 1;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-weight: 600;
+                    &Info {
+                        font-weight: 500;
+                    }
+                }
+                &Input {
+                    &:focus {
+                        border-color: $mainColor;
+                    }
+                    @include font('title');
+                    margin-top: $sizeAlignElementPC;
+                    width: 100%;
+                    padding: 5px 0;
+                    background-color: transparent;
+                    border-bottom: 1px solid $blackColor;
+                }
+
+            }
+            &Submit {
+                width: 100%;
+            }
         }
     }
 }

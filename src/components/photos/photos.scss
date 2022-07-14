@@ -60,7 +60,8 @@
                 width: 100%;
                 height: 0;
                 font-size: 15px;
-                background-color: rgba($color: $mainColor, $alpha: 0.7);
+                background-color: rgba($color: $disableColor, $alpha: 0.7);
+                font-weight: 600;
                 @include font('content');
             }
         }
@@ -73,7 +74,8 @@
             bottom: 0;
             color: $mainColor;
             @include font ('content');
-            font-size: 20px;
+            font-size: 17px;
+            font-weight: 600;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -147,8 +149,7 @@
             &Close {
                 background-color: $whiteColor;
                 color: $mainColor;
-                border-radius: 5px;
-                padding: 0px 10px;
+                border-radius: 2px;
                 &:hover {
                     background-color: $mainColor;
                     color: $blackColor;
@@ -185,8 +186,7 @@
             &Close {
                 background-color: $whiteColor;
                 color: $mainColor;
-                border-radius: 5px;
-                padding: 0px 10px;
+                border-radius: 2px;
                 &:hover {
                     background-color: $mainColor;
                     color: $blackColor;

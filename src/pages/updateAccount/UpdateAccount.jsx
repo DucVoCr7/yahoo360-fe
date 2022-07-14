@@ -24,7 +24,7 @@ const userInfo = useSelector(state => state.user.userInfo)
                     <label className="updateAccountContentItemLabel">
                         Name
                         <div className="updateAccountContentItemLabelInfo">
-                            {userInfo.name} --Old data
+                            {userInfo.name}
                         </div>
                     </label>
                     <input type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
@@ -33,16 +33,20 @@ const userInfo = useSelector(state => state.user.userInfo)
                     <label className="updateAccountContentItemLabel">
                         Gender
                         <div className="updateAccountContentItemLabelInfo">
-                            {userInfo.gender} --Old data
+                            {userInfo.gender}
                         </div>
                     </label>
-                    <input type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
+                    <select className='updateAccountContentItemInput'>
+                        <option value="" disabled selected>Choice gender...</option>
+                        <option value="G0">Male</option>
+                        <option value="G1">Female</option>
+                    </select>
                 </div>
                 <div className="updateAccountContentItem">
                     <label className="updateAccountContentItemLabel">
                         Email
                         <div className="updateAccountContentItemLabelInfo">
-                            {userInfo.email} --Old data
+                            {userInfo.email}
                         </div>
                     </label>
                     <input type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
@@ -51,7 +55,7 @@ const userInfo = useSelector(state => state.user.userInfo)
                     <label className="updateAccountContentItemLabel">
                         Phone Number
                         <div className="updateAccountContentItemLabelInfo">
-                            {userInfo.phoneNumber} --Old data
+                            {userInfo.phoneNumber}
                         </div>
                     </label>
                     <input type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
@@ -60,7 +64,7 @@ const userInfo = useSelector(state => state.user.userInfo)
                     <label className="updateAccountContentItemLabel">
                         Address
                         <div className="updateAccountContentItemLabelInfo">
-                            {userInfo.address} --Old data
+                            {userInfo.address}
                         </div>
                     </label>
                     <input type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />

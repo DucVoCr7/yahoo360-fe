@@ -61,7 +61,7 @@
             }
         }
         &Title {
-            box-shadow: $shadowLine;
+            border: 1px solid $disableColor;
             width: calc(100% - $sizeAlignPagePC*2);
             margin-bottom: $sizeAlignElementPC;
             border-radius: 3px;
@@ -133,7 +133,7 @@
             width: calc(100% - $sizeAlignPagePC*2);
             margin-bottom: $sizeAlignElementPC;
             flex: 1;
-            box-shadow: $shadowLine;
+            border: 1px solid $disableColor;
             border-radius: 3px;
             overflow: hidden;
             // Custom ckEditor
@@ -233,7 +233,7 @@
             }
         }
         &Title {
-            box-shadow: $shadowLine;
+            border: 1px solid $disableColor;
             width: calc(100% - $sizeAlignPageTabletMobile*2); //
             margin-bottom: $sizeAlignElementTabletMobile;
             border-radius: 3px;
@@ -305,7 +305,7 @@
             margin-bottom: $sizeAlignElementTabletMobile;
             flex: 1;
             font-size: 15px;
-            box-shadow: $shadowLine;
+            border: 1px solid $disableColor;
             border-radius: 3px;
             overflow: hidden;
             // Custom ckEditor
@@ -406,7 +406,7 @@
             }
         }
         &Title {
-            box-shadow: $shadowLine;
+            border: 1px solid $disableColor;
             width: calc(100% - $sizeAlignPageTabletMobile*2); //
             margin-bottom: $sizeAlignElementTabletMobile;
             border-radius: 3px;
@@ -454,7 +454,7 @@
                 }
                 width: 100%; ///
                 border-radius: 10px; //
-                box-shadow: $shadowLine;
+                border: 1px solid $disableColor;
                 background-color: $mainColor; ///
                 display: none;
                 position: absolute;
@@ -483,7 +483,7 @@
             width: calc(100% - $sizeAlignPageTabletMobile*2); //
             margin-bottom: $sizeAlignElementTabletMobile;
             flex: 1;
-            box-shadow: $shadowLine;
+            border: 1px solid $disableColor;
             border-radius: 3px;
             overflow: hidden;
             // Custom ckEditor

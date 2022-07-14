@@ -44,11 +44,16 @@ h4 {
     border-radius: 10px;
 }
 
-input {
+input, select {
     border: none;
     outline: none;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
