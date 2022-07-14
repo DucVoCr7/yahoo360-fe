@@ -13,28 +13,133 @@
         padding: 5px 10px;
         &Icon {
             margin-right: $sizeAlignElementPC;
+            font-size: 20px;
         }
     }
     &Content {
         flex: 1;
         display: flex;
-        flex-wrap: wrap;
-        background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
-        border-radius: 10px;
-        &Item {
-            width: 50%;
-            height: 50%;
-            @include font('content');
-            font-size: 15px;
-            line-height: 1;
-            border-radius: 10px;
+        flex-direction: column;
+        &Top {
+            flex: 1;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            &Icon {
-                font-size: 20px;
-                margin-bottom: 5px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            &Item {
+                @include font('title');
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &Icon {
+                    font-size: 20px;
+                    margin-right: 5px;
+                }
+            }
+        }
+        &Bottom {
+            &Item {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .removeFriend {
+                    &:active {
+                        background-color: $clickColor;
+                    }
+                    font-size: 17px;
+                    min-width: unset;
+                    width: 48%;
+                    background-color: rgb(197, 18, 18);
+                    height: 35px;
+                    box-shadow: none;
+                    &Icon {
+                        margin-left: 5px;
+                        font-size: 20px;
+                    }
+                }
+                .isFriend {
+                    font-size: 17px;
+                    min-width: unset;
+                    width: 48%;
+                    background-color: rgb(186, 193, 228);
+                    height: 35px;
+                    box-shadow: none;
+                    cursor: default;
+                    &Icon {
+                        margin-left: 5px;
+                        font-size: 20px;
+                    }
+                }
+                .removeRequestFriend {
+                    &:active {
+                        background-color: $clickColor;
+                    }
+                    font-size: 17px;
+                    min-width: unset;
+                    width: 48%;
+                    background-color: rgb(197, 18, 18);
+                    height: 35px;
+                    box-shadow: none;
+                    &Icon {
+                        margin-left: 5px;
+                        font-size: 20px;
+                    }
+                }
+                .requestFriend {
+                    font-size: 17px;
+                    min-width: unset;
+                    width: 48%;
+                    background-color: rgb(186, 193, 228);
+                    height: 35px;
+                    box-shadow: none;
+                    cursor: default;
+                    &Icon {
+                        margin-left: 5px;
+                        font-size: 20px;
+                    }
+                }
+                .removeFriendRequest {
+                    &:active {
+                        background-color: $clickColor;
+                    }
+                    font-size: 17px;
+                    min-width: unset;
+                    width: 48%;
+                    background-color: rgb(197, 18, 18);
+                    height: 35px;
+                    box-shadow: none;
+                    &Icon {
+                        margin-left: 5px;
+                        font-size: 20px;
+                    }
+                }
+                .friendRequest {
+                    font-size: 17px;
+                    min-width: unset;
+                    width: 48%;
+                    background-color: rgb(186, 193, 228);
+                    height: 35px;
+                    box-shadow: none;
+                    cursor: default;
+                    &Icon {
+                        margin-left: 5px;
+                        font-size: 20px;
+                    }
+                }
+                .notFriend {
+                    &:active {
+                        background-color: $clickColor;
+                    }
+                    font-size: 17px;
+                    min-width: unset;
+                    width: 100%;
+                    background-color: rgb(186, 193, 228);
+                    height: 35px;
+                    box-shadow: none;
+                    &Icon {
+                        margin-left: 5px;
+                        font-size: 20px;
+                    }
+                }
             }
         }
     }

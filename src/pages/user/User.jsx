@@ -4,9 +4,13 @@ import HeaderOfUser from '../../components/headerOfUser/HeaderOfUser'
 import PostsSummary from '../../components/postsSummary/PostsSummary'
 import Sidebar from '../../components/sidebar/Sidebar'
 import { publicRequest } from '../../utils/requestMethods'
+import { useSelector } from 'react-redux'
 import './user.scss'
+import checkStatusFriend from '../../utils/checkStatusFriend'
 
 export default function User() {
+
+  
 
   const [image, setImage] = useState()
   const [posts, setPosts] = useState()
@@ -18,7 +22,13 @@ export default function User() {
   const [gender, setGender] = useState()
   const [position, setPosition] = useState()
   const [address, setAddress] = useState()
+
+  const userId = useSelector(state=> state.user.userInfo?.id)
+  const friendsRequest = useSelector(state=> state.user.friendsRequest)
+  const [statusFriend, setStatusFriend] = useState()
+
   const params = useParams()
+
   useEffect(() => {
     (async () => {
       try {
@@ -33,6 +43,16 @@ export default function User() {
         setGender(response.data.dataUser.gender)
         setPosition(response.data.dataUser.position)
         setAddress(response.data.dataUser.address)
+        console.log(response.data)
+
+        setStatusFriend(checkStatusFriend(
+          response.data.dataUser.friends,
+          response.data.dataUser.friendsRequest,
+          response.data.dataUser.id,
+          friendsRequest,
+          userId
+        ))
+
       } catch (error) {
         console.log(error)
       }
@@ -54,6 +74,7 @@ export default function User() {
             gender={gender}
             position={position}
             address={address}
+            statusFriend={statusFriend}
             />
           <PostsSummary posts={posts} />
         </div>

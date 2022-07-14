@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
 import { userRequest } from '../../utils/requestMethods'
 import HeaderOfUser from '../../components/headerOfUser/HeaderOfUser'
 import PostsSummary from '../../components/postsSummary/PostsSummary'
 import Sidebar from '../../components/sidebar/Sidebar'
+import { useDispatch, useSelector } from 'react-redux'
 import './home.scss'
+import { setFriendsRequest } from '../../redux/userSlice'
 export default function Home() {
+
+const dispatch = useDispatch();
 
 const [image, setImage] = useState()
 const [posts, setPosts] = useState()
@@ -34,6 +37,9 @@ useEffect(()=> {
       setGender(response.data.dataUser.gender)
       setPosition(response.data.dataUser.position)
       setAddress(response.data.dataUser.address)
+      
+      dispatch(setFriendsRequest(response.data.dataUser.friendsRequest))
+
     } catch (error) {
       console.log(error)
     }

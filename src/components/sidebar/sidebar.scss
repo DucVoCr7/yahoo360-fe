@@ -1,36 +1,86 @@
 @use '/src/assets/scss' as *;
-.sidebar {
-    width: calc(100% - $sizeAlignPagePC*2);
-    padding: $sizeAlignElementPC 0;
-    border-bottom: 4px double $blackColor;
-    margin-bottom: $sizeAlignElementPC;
-    box-sizing: border-box;
-    height: 200px;
-    display: flex;
-    > :nth-child(n) {
-        flex: 1;
-        padding-left: 15px;
-        margin-left: 15px;
-        border-left: 1px solid $disableColor;
-    }
-    > :first-child {
-        flex: none;
-        width: 200px;
-        padding: 0;
-        margin: 0;
-        border: none;
+@media (min-width: 1240px) { 
+
+    .sidebar {
+        width: calc(100% - $sizeAlignPagePC*2);
+        padding: $sizeAlignElementPC 0;
+        border-bottom: 4px double $blackColor;
+        margin-bottom: $sizeAlignElementPC;
+        box-sizing: border-box;
+        height: 200px;
+        display: flex;
+        > :nth-child(n) {
+            flex: 1;
+            padding-left: $sizeAlignElementPC;
+            margin-left: $sizeAlignElementPC;
+            border-left: 1px solid $disableColor;
+        }
+        > :first-child {
+            flex: none;
+            width: 200px;
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
     }
 }
 
 //* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
-@media (min-width: 1024px) and (max-width: 1239px) {
-
+@media (min-width: 901px) and (max-width: 1239px) {
+    .sidebar {
+        width: calc(100% - $sizeAlignPagePC*2);
+        padding: $sizeAlignElementPC 0;
+        border-bottom: 4px double $blackColor;
+        margin-bottom: $sizeAlignElementPC;
+        box-sizing: border-box;
+        height: 200px;
+        display: flex;
+        overflow: scroll; //
+        &::-webkit-scrollbar { ///
+            display: none; //
+        }
+        > :nth-child(n) {
+            flex: none;
+            width: 240px;
+            padding-left: $sizeAlignElementPC;
+            margin-left: $sizeAlignElementPC;
+            border-left: 1px solid $disableColor;
+        }
+        > :first-child {
+            flex: none;
+            width: 200px;
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+    }
 }
-/* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
-@media (min-width: 740px) and (max-width: 1023px) {
-
-}
-/* OPEN - MOBILE độ phân giải <= 739px */
-@media (max-width: 739px) {
-
+@media (max-width: 900px) {
+    .sidebar {
+        width: calc(100% - $sizeAlignPageTabletMobile*2);
+        padding: $sizeAlignElementTabletMobile 0;
+        border-bottom: 4px double $blackColor;
+        margin-bottom: $sizeAlignElementTabletMobile;
+        box-sizing: border-box;
+        height: 200px;
+        display: flex;
+        overflow: scroll; //
+        &::-webkit-scrollbar { ///
+            display: none; //
+        }
+        > :nth-child(n) {
+            flex: none;
+            width: 240px;
+            padding-left: $sizeAlignElementTabletMobile;
+            margin-left: $sizeAlignElementTabletMobile;
+            border-left: 1px solid $disableColor;
+        }
+        > :first-child {
+            flex: none;
+            width: 200px;
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+    }
 }

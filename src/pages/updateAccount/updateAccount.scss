@@ -1,17 +1,133 @@
 @use '/src/assets/scss' as *;
-.updateAccount {
-
-}
 
 //* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
-@media (min-width: 1024px) and (max-width: 1239px) {
+@media (min-width: 901px){
+    .updateAccount {
+        width: 100%;
+        min-height: calc(100vh - $heightTopbar - $heightFooter);
+        background-image: url('../../assets/image/background-update.jpg');
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &Title {
+            @include font('title');
+            width: calc(100% - $sizeAlignPagePC*2);
+            font-size: 30px;
+            line-height: 1;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: $sizeAlignElementPC 0;
+            border-bottom: 4px double $blackColor;
+            margin-bottom: $sizeAlignElementPC;
+        }
+        &Content {
+            min-width: 500px;
+            background-color: rgba($whiteColor, 0.85);
+            padding: 15px 25px;
+            border-radius: 20px;
+            margin-bottom: $sizeAlignElementPC;
+            &Item {
+                // &:last-child {
+                //     padding-bottom: 0;
+                //     border: none;
+                // }
+                &:first-child &Label {
+                    height: 30px;
+                    width: unset;
+                    justify-content: center;
+                    background-color: $mainColor;
+                    padding: 0 10px;
+                    border-radius: 10px;
+                    &Info {
+                        font-size: 20px;
+                        margin-left: 10px;
+                        line-height: 1;
+                    }
+                }
+                margin-bottom: $sizeAlignElementPC;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                @include font('title');
+                &Img {
+                    width: 200px;
+                    height: 160px;
+                    margin-bottom: $sizeAlignElementPC;
+                    border-radius: 10px;
+                    border: 3px solid $mainColor;
+                    object-fit: cover;
+                }
+                &Label {
+                    width: 100%;
+                    line-height: 1;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    &Info {
 
+                    }
+                }
+                &Input {
+                    &:focus {
+                        border-color: $mainColor;
+                    }
+                    @include font('title');
+                    margin-top: $sizeAlignElementPC;
+                    width: 100%;
+                    padding: 5px 0;
+                    background-color: transparent;
+                    border-bottom: 1px solid $blackColor;
+                }
+
+            }
+            &Submit {
+                width: 100%;
+            }
+        }
+    }
+    
 }
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
-@media (min-width: 740px) and (max-width: 1023px) {
-
+@media (min-width: 740px) and (max-width: 900px) {
+    .updateAccount {
+        width: 100%;
+        min-height: calc(100vh - $heightTopbar - $heightFooter);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &Title {
+            @include font('title');
+            width: calc(100% - $sizeAlignPageTabletMobile*2);
+            font-size: 30px;
+            line-height: 1;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: $sizeAlignElementTabletMobile 0;
+            border-bottom: 4px double $blackColor;
+            margin-bottom: $sizeAlignElementTabletMobile;
+        }
+    }
+    
 }
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
-
+    .updateAccount {
+        width: 100%;
+        min-height: calc(100vh - $heightTopbar - $heightFooterM);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &Title {
+            @include font('title');
+            width: calc(100% - $sizeAlignPageTabletMobile*2);
+            font-size: 30px;
+            line-height: 1;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: $sizeAlignElementTabletMobile 0;
+            border-bottom: 4px double $blackColor;
+            margin-bottom: $sizeAlignElementTabletMobile;
+        }
+    }
 }

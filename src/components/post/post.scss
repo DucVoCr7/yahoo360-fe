@@ -1,6 +1,5 @@
 @use '/src/assets/scss' as *;
-@media (min-width: 740px) {
-
+@media (min-width: 901px) {
     .post {
         display: flex;
         flex-direction: column;
@@ -17,12 +16,12 @@
             font-size: 35px;
             font-weight: 600;
             margin: 0;
-            padding: $sizeAlignElementPC 0;
+            padding: calc($sizeAlignElementPC*2) 0;
         }
     
         .postActions {
             @include font('title');
-            padding-bottom: $sizeAlignElementPC;
+            padding-bottom: calc($sizeAlignElementPC*2);
             display: flex;
             &Child {
                 &:first-child {
@@ -92,11 +91,107 @@
         }
     
         .postComments {
-            margin: $sizeAlignElementPC 0 $sizeAlignPagePC 0;
+            margin: $sizeAlignPagePC 0;
         }
     }
 }
 
+@media (min-width: 740px) and (max-width: 900px) {
+    .post {
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+    
+        .postImg {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+    
+        .postTitle {
+            @include font('title');
+            font-size: 35px;
+            font-weight: 600;
+            margin: 0;
+            padding: calc($sizeAlignElementTabletMobile*2) 0;
+        }
+    
+        .postActions {
+            @include font('title');
+            padding-bottom: calc($sizeAlignElementTabletMobile*2);
+            display: flex;
+            &Child {
+                &:first-child {
+                    background-color: $mainColor;
+    
+                    &:hover {
+                        background-color: $clickColor;
+                    }
+                }
+    
+                &:hover {
+                    background-color: $mainColor;
+                }
+    
+                border: 1px solid $disableColor;
+                border-radius: 5px;
+                box-shadow: $shadowFull;
+                padding: 5px 10px;
+                margin-right: 20px;
+                text-decoration: none;
+                color: $blackColor;
+                &Icon {
+                    margin-right: 5px;
+                }
+            }
+        }
+    
+        .postAuthorTime {
+            display: flex;
+            align-items: center;
+            padding-bottom: calc($sizeAlignElementTabletMobile * 2);
+            .postAuthor {
+                &:hover {
+                    color: $mainColor;
+                    text-shadow: $shadowFull;
+                }
+                color: $blackColor;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+    
+                &Img {
+                    width: 40px;
+                    height: 40px;
+                    box-shadow: $shadowFull;
+                    border-radius: 50%;
+                }
+    
+                &Name {
+                    @include font('title');
+                    font-weight: 600;
+                    margin-left: 10px
+                }
+            }
+            .postTime {
+                @include font('title');
+                font-weight: 500;
+                padding-left: 10px;
+                border-left: 1px solid $disableColor;
+                margin-left: 10px
+            }
+        }
+    
+        .postContent {
+            @include font('content');
+            text-align: justify;
+        }
+    
+        .postComments {
+            margin: $sizeAlignPageTabletMobile 0;
+        }
+    }
+}
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
     .post {
@@ -117,14 +212,14 @@
             font-size: 35px;
             font-weight: 600;
             margin: 0;
-            padding: $sizeAlignElementTabletMobile 0;
+            padding: calc($sizeAlignPageTabletMobile * 2) 0;
             
         }
     
         .postActions {
             width: calc(100% - $sizeAlignPageTabletMobile * 2);//
             @include font('title');
-            padding-bottom: $sizeAlignElementTabletMobile;
+            padding-bottom: calc($sizeAlignPageTabletMobile * 2);
             display: flex;
             &Child {
                 &:first-child {
@@ -155,7 +250,7 @@
             width: calc(100% - $sizeAlignPageTabletMobile * 2);//
             display: flex;
             align-items: center;
-            padding-bottom: $sizeAlignElementTabletMobile;
+            padding-bottom: calc($sizeAlignPageTabletMobile * 2);
             .postAuthor {
                 &:hover {
                     color: $mainColor;
@@ -196,7 +291,7 @@
     
         .postComments {
             width: calc(100% - $sizeAlignPageTabletMobile * 2);//
-            margin: $sizeAlignElementTabletMobile 0 $sizeAlignPageTabletMobile 0;
+            margin: $sizeAlignPageTabletMobile 0;
         }
     }
 }

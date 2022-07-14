@@ -30,9 +30,14 @@ export const userSlice = createSlice({
         pending: null,
         error: null,
         accessToken: null,
-        refreshToken: null
+        refreshToken: null,
+        friendsRequest: null
     },
-    reducers: {},
+    reducers: {
+        setFriendsRequest: (state, action)=> {
+            state.friendsRequest = action.payload
+        }
+    },
     extraReducers: {
 
         // Login
@@ -74,9 +79,10 @@ export const userSlice = createSlice({
             state.userInfo = null
             state.accessToken = null
             state.refreshToken = null
+            state.friendsRequest = null
         }
     },
 })
-
+export const {setFriendsRequest} = userSlice.actions
 const userReducer = userSlice.reducer
 export default userReducer
