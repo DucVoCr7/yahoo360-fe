@@ -142,7 +142,7 @@ function Photos({ setPhotos, name, photos, isHomePage = false }) {
         <div className="photosGallery">
           <div className="photosGalleryTitle">
             {name}'s photos
-            <i className="photosGalleryTitleClose bi bi-x" onClick={() => setOpenGallery(false)}></i>
+            <i className="photosGalleryTitleClose bi bi-box-arrow-right" onClick={() => setOpenGallery(false)}></i>
           </div>
           <Gallery photos={photosGallery} onClick={(event, { photo, index }) => handleOpenSlider(index)} />
         </div>
@@ -157,7 +157,7 @@ function Photos({ setPhotos, name, photos, isHomePage = false }) {
           <span className="photosSliderTitleNumber">
             {slideActive}/{photos.length}
           </span>
-          <i className="photosSliderTitleClose bi bi-x" onClick={() => setOpenSlider(false)}></i>
+          <i className="photosSliderTitleClose bi bi-box-arrow-right" onClick={() => setOpenSlider(false)}></i>
         </div>
         <Slider {...settings} ref={refSlider}>
           {photos.map((element, index) =>

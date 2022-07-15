@@ -1,0 +1,75 @@
+@use '/src/assets/scss' as *;
+.comments {
+    &.loading {
+        &::after{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            display: block;
+            content: '';
+            background-image: url('../../assets/image/loading.gif');
+            background-size: cover;
+            width: 70px;
+            height: 70px;
+        }
+    }
+    width: 50%;
+    height: calc(100vh - $heightTopbar);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    box-shadow: $shadowFull;
+    transform: translateX(50%);
+    padding: $sizeAlignPagePC;
+    overflow: scroll;
+    @include slideLeft;
+    &Top {
+        border-bottom: 4px double $blackColor;
+        padding-bottom: $sizeAlignElementPC;
+        margin-bottom: $sizeAlignElementPC;
+        &Title {
+            @include font('title');
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            line-height: 1;
+            &Close {
+                font-size: 22px;
+                cursor: pointer;
+                &:hover {
+                    color: $mainColor;
+                }
+            }
+        }
+        &Content {
+            &:focus {
+                border-color: $mainColor
+            }
+            @include font('content');
+            font-size: 16px;
+            line-height: 1.2;
+            resize: inherit;
+            width: 100%;
+            height: 100px;
+            margin: $sizeAlignElementPC 0;
+            border: 1px solid $blackColor;
+            border-radius: 2px;
+            padding: 10px;
+            outline: none;
+        }
+        &Submit {
+            &:active {
+                background-color: $clickColor;
+            }
+            font-size: 17px;
+            min-width: unset;
+            width: 120px;
+            background-color: rgb(138, 156, 245);
+            height: 35px;
+        }
+    }
+}

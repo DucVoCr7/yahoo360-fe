@@ -1,0 +1,62 @@
+@use '/src/assets/scss' as *;
+.reply {
+    &:last-child {
+        padding-bottom: 0;
+    }
+    width: 100%;
+    display: flex;
+    padding-bottom: 15px;
+
+    &Left {
+        text-decoration: none;
+        color: black;
+        width: 30px;
+        height: 30px;
+        &Img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+    &Right {
+        margin-left: 15px;
+        &Content {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            background-color: rgb(228, 230, 238);
+            border-radius: 15px;
+            &Name {
+                @include font('title');
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 1;
+                text-decoration: none;
+                color: black;
+                margin-bottom: 10px;
+            }
+            &Text {
+                @include font('content');
+                font-size: 16px;
+                line-height: 1.2;
+            }
+        }
+        &Action {
+            @include font('title');
+            padding-left: 10px;
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1;
+            &Item {
+                &:first-child {
+                    font-weight: 500;
+                    color: $greyColor;
+                }
+                margin-right: 15px;
+                cursor: pointer;
+            }
+        }
+    }
+}

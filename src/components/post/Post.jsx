@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useState }  from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import './post.scss'
 import convertDate from '../../utils/convertDate'
+import Comments from '../comments/Comments'
 export default function Post({post}) {
     /// Chỗ này dùng tạm từ từ fix sau.
     const valueCategory = useSelector(state => state.app.category.find(element => element.key === post.category).value)
     ////
     ////
+    const [openComments, setOpenComments] = useState()
     return (
+        <>
         <div className='post'>
             <img src={post.image} alt="postImg" className="postImg" />
             <h1 className="postTitle">{post.title}</h1>
@@ -21,7 +24,7 @@ export default function Post({post}) {
                     <i className="postActionsChildIcon bi bi-hand-thumbs-up"></i>
                     {post.likesNumber}
                 </span>
-                <span className="postActionsChild">
+                <span className="postActionsChild" onClick={()=> setOpenComments(true)}>
                     <i className="postActionsChildIcon bi bi-chat-left"></i>
                     {post.commentsNumber}
                 </span>
@@ -36,7 +39,11 @@ export default function Post({post}) {
                 <span className="postTime">{convertDate(post.updatedAt)}</span>
             </div>
             <div className="postContent">{post.content}</div>
-            <button className="postComments">Read {post.commentsNumber} Comments</button>
+            <button className="postComments" onClick={()=> setOpenComments(true)}>Read {post.commentsNumber} Comments</button>
         </div>
+        {openComments && 
+            <Comments postId={post.id} setOpenComments={setOpenComments}/>
+        }
+        </>
     )
 }

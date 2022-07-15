@@ -147,12 +147,9 @@
             align-items: center;
             justify-content: space-between;
             &Close {
-                background-color: $whiteColor;
-                color: $mainColor;
-                border-radius: 2px;
+                color: $whiteColor;
                 &:hover {
-                    background-color: $mainColor;
-                    color: $blackColor;
+                    color: $mainColor;
                 }
             }
         }
@@ -184,12 +181,9 @@
             align-items: center;
             justify-content: space-between;
             &Close {
-                background-color: $whiteColor;
-                color: $mainColor;
-                border-radius: 2px;
+                color: $whiteColor;
                 &:hover {
-                    background-color: $mainColor;
-                    color: $blackColor;
+                    color: $mainColor;
                 }
             }
         }

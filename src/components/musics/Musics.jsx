@@ -71,7 +71,7 @@ function Musics({ musics, setMusics, isHomePage = false }) {
         <div className="musicsAdd">
           <div className="musicsAddTitle">
             Paste the youtube link:
-            <i className="musicsAddTitleClose bi bi-x" onClick={() => setOpenAddMusic(false)}></i>
+            <i className="musicsAddTitleClose bi bi-box-arrow-right" onClick={() => setOpenAddMusic(false)}></i>
           </div>
           <textarea type="text" className="musicsAddInput" placeholder='Example: https://www.youtube.com/watch?v=YQHsXMglC9A'
             onChange={(event) => setCodeMusic(event.target.value.trim().replace('https://www.youtube.com/watch?v=', ''))}

@@ -89,14 +89,9 @@
             align-items: center;
             cursor: pointer;
             &Close {
-                font-size: 22px;
-                display: flex;
-                align-items: center;
-                background-color: $mainColor;
-                border-radius: 5px;
-                padding: 0px 10px;
+                font-size: 20px;
                 &:hover {
-                    background-color: $clickColor;
+                    color: $mainColor;
                 }
             }
         }
