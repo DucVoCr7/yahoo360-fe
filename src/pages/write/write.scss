@@ -61,16 +61,15 @@
             }
         }
         &Title {
-            border: 1px solid $disableColor;
+            border-bottom: 1px solid $blackColor;
             width: calc(100% - $sizeAlignPagePC*2);
             margin-bottom: $sizeAlignElementPC;
-            border-radius: 3px;
             display: flex;
             align-items: center;
             &Icon {
                 font-size: 28px;
                 line-height: 1;
-                padding: 7px;
+                margin-right: 10px;
             }
             &Input {
                 font-size: 20px;
@@ -233,16 +232,15 @@
             }
         }
         &Title {
-            border: 1px solid $disableColor;
+            border-bottom: 1px solid $blackColor;
             width: calc(100% - $sizeAlignPageTabletMobile*2); //
             margin-bottom: $sizeAlignElementTabletMobile;
-            border-radius: 3px;
             display: flex;
             align-items: center;
             &Icon {
                 font-size: 22px;
                 line-height: 1;
-                padding: 7px;
+                margin-right: 10px;
             }
             &Input {
                 font-size: 18px;
@@ -406,16 +404,15 @@
             }
         }
         &Title {
-            border: 1px solid $disableColor;
+            border-bottom: 1px solid $blackColor;
             width: calc(100% - $sizeAlignPageTabletMobile*2); //
             margin-bottom: $sizeAlignElementTabletMobile;
-            border-radius: 3px;
             display: flex;
             align-items: center;
             &Icon {
                 font-size: 18px;
                 line-height: 1;
-                padding: 5px;
+                margin-right: 10px;
             }
             &Input {
                 font-size: 16px;

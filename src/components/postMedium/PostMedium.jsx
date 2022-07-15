@@ -15,7 +15,7 @@ export default function PostMedium({ post, isPostsCategory = false }) {
                     isPostsCategory &&
                 <div className="postMediumAuthor">
                     <img src={post.user.image} alt="postImg" className="postMediumAuthorImg"/>
-                    <span className="postMediumAuthorName">by {post.user.name}</span>
+                    <span className="postMediumAuthorName">{post.user.name}</span>
                 </div>
                 }
                 <div className="postMediumOther">

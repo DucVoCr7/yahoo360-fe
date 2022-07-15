@@ -34,7 +34,7 @@ export default function Post({post}) {
             <div className="postAuthorTime">
                 <Link to={`/users/${post.userId}`} className="postAuthor">
                     <img src={post.user.image} alt="postImg" className="postAuthorImg"/>
-                    <span className="postAuthorName">by {post.user.name}</span>
+                    <span className="postAuthorName">{post.user.name}</span>
                 </Link>
                 <span className="postTime">{convertDate(post.updatedAt)}</span>
             </div>
