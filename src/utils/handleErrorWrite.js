@@ -1,13 +1,16 @@
-export const handleErrorWrite = (postInfo)=> {
+export default function handleErrorWrite(postInfo) {
     const error = {}
-    if(!postInfo.title?.trim()) {
-        error.title = 'Enter your post title'
+    if(!postInfo?.title?.trim()) {
+        error.title = 'Enter your post title!'
     }
-    if(!postInfo.content?.trim()) {
-        error.content = 'Enter your post content'
+    if(!postInfo?.content?.trim()) {
+        error.content = 'Enter your post content!'
     }
-    if(!postInfo.category?.trim()) {
-        error.category = 'You have not selected the post category'
+    if(!postInfo?.category?.trim()) {
+        error.category = 'Choice post category!'
+    }
+    if(!postInfo?.image) {
+        error.image = 'Please upload post image!'
     }
     return error
 }

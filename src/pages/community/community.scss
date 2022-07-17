@@ -58,9 +58,6 @@
             padding-top: $sizeAlignElementPC;
         }
         &Name {
-            &:hover {
-                background-color: $clickColor;
-            }
             display: inline-block;
             @include font('title');
             background-color: $mainColor;
@@ -139,9 +136,6 @@
             padding-top: $sizeAlignElementTabletMobile;
         }
         &Name {
-            &:hover {
-                background-color: $clickColor;
-            }
             display: inline-block;
             @include font('title');
             background-color: $mainColor;
@@ -220,9 +214,6 @@
             padding-top: $sizeAlignElementTabletMobile;
         }
         &Name {
-            &:hover {
-                background-color: $clickColor;
-            }
             display: inline-block;
             @include font('title');
             background-color: $mainColor;

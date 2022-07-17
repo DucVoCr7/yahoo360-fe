@@ -12,18 +12,19 @@
         background-color: $mainColor;
         padding: 5px 10px;
         display: flex;
+        line-height: 1;
         justify-content: space-between;
         &Content {
             cursor: pointer;
             &Icon {
                 margin-right: $sizeAlignElementPC;
-                font-size: 20px;
+                font-size: 18px;
             }
         }
         &Add {
             cursor: pointer;
             &Icon {
-                font-size: 20px;
+                font-size: 18px;
             }
         }
     }
@@ -91,9 +92,6 @@
         border-radius: 10px;
         background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
         &Icon {
-            &:hover {
-                color: $mainColor;
-            }
             position: absolute;
             bottom: 50%;
             left: 50%;
@@ -148,9 +146,6 @@
             justify-content: space-between;
             &Close {
                 color: $whiteColor;
-                &:hover {
-                    color: $mainColor;
-                }
             }
         }
     }
@@ -182,9 +177,6 @@
             justify-content: space-between;
             &Close {
                 color: $whiteColor;
-                &:hover {
-                    color: $mainColor;
-                }
             }
         }
         &Item {

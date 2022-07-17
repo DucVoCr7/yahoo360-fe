@@ -24,18 +24,6 @@
             padding-bottom: calc($sizeAlignElementPC*2);
             display: flex;
             &Child {
-                &:first-child {
-                    background-color: $mainColor;
-    
-                    &:hover {
-                        background-color: $clickColor;
-                    }
-                }
-    
-                &:hover {
-                    background-color: $mainColor;
-                }
-    
                 border: 1px solid $disableColor;
                 border-radius: 5px;
                 box-shadow: $shadowFull;
@@ -45,6 +33,9 @@
                 color: $blackColor;
                 cursor: pointer;
                 &Icon {
+                    &.active {
+                        color: $mainColor;
+                    }
                     margin-right: 5px;
                 }
             }
@@ -55,10 +46,6 @@
             align-items: center;
             padding-bottom: calc($sizeAlignElementPC * 2);
             .postAuthor {
-                &:hover {
-                    color: $mainColor;
-                    text-shadow: $shadowFull;
-                }
                 color: $blackColor;
                 text-decoration: none;
                 display: flex;
@@ -122,18 +109,6 @@
             padding-bottom: calc($sizeAlignElementTabletMobile*2);
             display: flex;
             &Child {
-                &:first-child {
-                    background-color: $mainColor;
-    
-                    &:hover {
-                        background-color: $clickColor;
-                    }
-                }
-    
-                &:hover {
-                    background-color: $mainColor;
-                }
-    
                 border: 1px solid $disableColor;
                 border-radius: 5px;
                 box-shadow: $shadowFull;
@@ -143,6 +118,9 @@
                 color: $blackColor;
                 cursor: pointer;
                 &Icon {
+                    &.active {
+                        color: $mainColor;
+                    }
                     margin-right: 5px;
                 }
             }
@@ -153,10 +131,6 @@
             align-items: center;
             padding-bottom: calc($sizeAlignElementTabletMobile * 2);
             .postAuthor {
-                &:hover {
-                    color: $mainColor;
-                    text-shadow: $shadowFull;
-                }
                 color: $blackColor;
                 text-decoration: none;
                 display: flex;
@@ -224,26 +198,18 @@
             padding-bottom: calc($sizeAlignPageTabletMobile * 2);
             display: flex;
             &Child {
-                &:first-child {
-                    background-color: $mainColor;
-    
-                    &:hover {
-                        background-color: $clickColor;
-                    }
-                }
-    
-                &:hover {
-                    background-color: $mainColor;
-                }
                 border: 1px solid $disableColor;
                 border-radius: 5px;
                 box-shadow: $shadowFull;
                 padding: 5px 10px;
-                margin-right: 10px; //
+                margin-right: 10px;
                 text-decoration: none;
                 color: $blackColor;
                 cursor: pointer;
                 &Icon {
+                    &.active {
+                        color: $mainColor;
+                    }
                     margin-right: 5px;
                 }
             }
@@ -255,10 +221,6 @@
             align-items: center;
             padding-bottom: calc($sizeAlignPageTabletMobile * 2);
             .postAuthor {
-                &:hover {
-                    color: $mainColor;
-                    text-shadow: $shadowFull;
-                }
                 color: $blackColor;
                 text-decoration: none;
                 display: flex;

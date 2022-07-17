@@ -11,19 +11,20 @@
         border-radius: 5px;
         background-color: $mainColor;
         padding: 5px 10px;
+        line-height: 1;
         display: flex;
         justify-content: space-between;
         &Content {
             cursor: pointer;
             &Icon {
                 margin-right: $sizeAlignElementPC;
-                font-size: 20px;
+                font-size: 18px;
             }
         }
         &Add {
             cursor: pointer;
             &Icon {
-                font-size: 20px;
+                font-size: 18px;
             }
         }
     }
@@ -43,9 +44,6 @@
         border-radius: 10px;
         background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
         &Icon {
-            &:hover {
-                color: $mainColor;
-            }
             position: absolute;
             bottom: 50%;
             left: 50%;
@@ -90,9 +88,6 @@
             cursor: pointer;
             &Close {
                 font-size: 20px;
-                &:hover {
-                    color: $mainColor;
-                }
             }
         }
         &Input {
@@ -102,8 +97,9 @@
             font-size: 15px;
         }
         &Submit {
-            font-size: 15px;
+            font-size: 16px;
             height: 30px;
+            background-color: rgb(138, 156, 245);
         }
     }
 }

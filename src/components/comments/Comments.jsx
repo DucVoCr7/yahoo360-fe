@@ -1,40 +1,79 @@
 import React, { useState, useEffect }  from 'react'
-import { publicRequest } from '../../utils/requestMethods'
+import { useCallback } from 'react'
+import { memo } from 'react'
+import { useReduxUserId } from '../../utils/reduxMethods'
+import { publicRequest, userRequest } from '../../utils/requestMethods'
 import Comment from '../comment/Comment'
 import './comments.scss'
-function Comments({postId, setOpenComments}) {
+
+function Comments({postId, setOpenComments, setCommentsNumber}) {
+
     const [comments, setComments] = useState()
+    const [content, setContent] = useState('')
+    const userId = useReduxUserId()
+
+    const handleComment = useCallback(async()=> {
+      if(content.trim()) {
+        try {
+          const data = {postId, userId, content}
+          const response = await userRequest.post('/comments', data)
+          setComments(prev => [response.data.comment, ...prev])
+          setCommentsNumber(prev => prev + 1)
+          setContent('')
+        } catch (error) {
+          console.log(error)
+        }
+      }
+    })
+    console.log(comments)
     useEffect(()=> {
       (async()=> {
         try {
           const response = await publicRequest.get(`/comments?postId=${postId}`)
           setComments(response.data.dataCommentsOfPost)
-          console.log(response.data.dataCommentsOfPost)
         } catch (error) {
           console.log(error)
         }
       })()
     }, [postId])
+
+    console.log('render Comments')
   return (
     comments ?
     <div className='comments'>
         <div className="commentsTop">
             <div className="commentsTopTitle">
                 Write comments
-                <i className="commentsTopTitleClose bi bi-box-arrow-right" onClick={() => setOpenComments(false)}></i>
+                <i className="commentsTopTitleClose bi bi-box-arrow-right" 
+                  onClick={() => setOpenComments(false)}
+                />
             </div>
-            <textarea className='commentsTopContent'></textarea>
-            <button className='commentsTopSubmit'>POST</button>
+            <textarea 
+              className='commentsTopContent'
+              placeholder='Write comment...' 
+              value={content} 
+              onChange={(event)=> setContent(event.target.value)}/>
+            <button className='commentsTopSubmit'
+              onClick={handleComment}
+            >
+              POST
+            </button>
         </div>
         <div className="commentsBottom">
-            {comments.map((comment, index)=> (
-              <Comment comment={comment} key ={index}/>
+            {comments.map((comment)=> (
+              <Comment 
+                key ={comment.id} 
+                setComments={setComments}
+                comment={comment} 
+                setCommentsNumber={setCommentsNumber} 
+                postId={postId}
+              />
             ))}
         </div>
     </div>
     :
-    <div className='comments loading'></div>
+    <div className='comments loading'/>
   )
 }
 
-export default Comments
+export default memo(Comments)

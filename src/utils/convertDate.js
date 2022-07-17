@@ -6,7 +6,6 @@ const convertDate = (timeStamp, typeFull = true)=> {
     let date = dateObj.getDate();
     // let day = dateObj.getDay()
     let hours = dateObj.getHours();
-    console.log(hours)
     hours = ("0" + hours).slice(-2);
     let minutes = dateObj.getMinutes();
     minutes = ("0" + minutes).slice(-2);

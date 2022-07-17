@@ -1,38 +1,56 @@
-import React from 'react'
+import React, { memo, useState } from 'react'
 import convertDate from '../../utils/convertDate'
 import { Link } from 'react-router-dom'
-import './reply.scss'
-import { useSelector } from 'react-redux'
-import { useState } from 'react'
 import ReplyRepair from '../replyRepair/ReplyRepair'
-function Reply({ reply }) {
+import avatar from '../../assets/image/avatar.jpg'
+import './reply.scss'
+import { useReduxUserId } from '../../utils/reduxMethods'
+import { useCallback } from 'react'
+import { userRequest } from '../../utils/requestMethods'
+
+function Reply({ reply, setReplies, setCommentsNumber }) {
+
+  const [replyContent, setReplyContent] = useState(reply.content)
+  const userId = useReduxUserId()
+
   const [openRepair, setOpenRepair] = useState(false)
-  const userId = useSelector(state => state.user.userInfo?.id)
+
+  const handleRemoveReply = useCallback(async()=> {
+    try {
+      const response = await userRequest.delete(`/replies/${reply.id}`)
+      setReplies(prev => prev.filter(item => item.id !== reply.id))
+      setCommentsNumber(prev => prev - 1)
+    } catch (error) {
+      console.log(error)
+    }
+  })
+
+  console.log('render Reply')
   return (
     <div className='reply'>
-      <Link to={`/users/${reply.user.id}`} className='replyLeft'>
-        <img src={reply.user.image} alt="userImg" className="replyLeftImg" />
+      <Link to={`/users/${reply.userId}`} className='replyLeft'>
+        <img src={reply.user.image ? reply.user.image : avatar} alt="userImg" className="replyLeftImg" />
       </Link>
       {!openRepair ?
         <div className="replyRight">
           <div className="replyRightContent">
-            <Link to={`/users/${reply.user.id}`} className="replyRightContentName">
+            <Link to={`/users/${reply.userId}`} className="replyRightContentName">
               {reply.user.name}
             </Link>
             <span className="replyRightContentText">
-              {reply.content}
+              {replyContent}
             </span>
           </div>
           <div className="replyRightAction">
             <span className="replyRightActionItem">
               {convertDate(reply.createdAt, false)}
             </span>
-            {!(userId === reply.userId) &&
+            {userId === reply.userId &&
               <>
-                <span className="replyRightActionItem" onClick={()=> setOpenRepair(true)}>
+                <label className="replyRightActionItem" onClick={()=> setOpenRepair(true)}>
                   Repair
-                </span>
-                <span className="replyRightActionItem">
+                </label>
+                <span className="replyRightActionItem" onClick={handleRemoveReply}>
                   Remove
                 </span>
               </>
@@ -41,10 +59,14 @@ function Reply({ reply }) {
         </div>
         :
         <div className="replyRightRepair">
-          <ReplyRepair replyContent={reply.content} setOpenRepair={setOpenRepair}/>
+          <ReplyRepair 
+            replyId={reply.id}
+            replyContent={replyContent} 
+            setReplyContent={setReplyContent} 
+            setOpenRepair={setOpenRepair}/>
         </div>
       }
     </div>
   )
 }
-export default Reply
+export default memo(Reply)

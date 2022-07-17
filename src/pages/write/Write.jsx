@@ -1,67 +1,51 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './write.scss'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { useSelector } from 'react-redux';
-
+import handleErrorWrite from '../../utils/handleErrorWrite';
+import { useReduxCategoryList, useReduxUserId, useReduxValueCategory } from '../../utils/reduxMethods';
+import {userRequest} from '../../utils/requestMethods'
+import { useNavigate } from 'react-router-dom';
 export default function Write() {
     const [openCategory, setOpenCategory] = useState(false)
-    const [postInfo, setPostInfo] = useState()
-    const [error, setError] = useState()
-    const [isSubmit, setIsSubmit] = useState(false)
-    const {category} = useSelector(state => state.app)
+    const [postInfo, setPostInfo] = useState({})
+    const [error, setError] = useState({})
+    const categoryList = useReduxCategoryList()
+    const userId = useReduxUserId()
+    const valueCategory = useReduxValueCategory(postInfo?.category)
+    const navigate = useNavigate()
     const handlePreview = (event) => {
         const file = event.target.files[0]
         file.preview = URL.createObjectURL(file)
         setPostInfo({...postInfo, image: file})
+        setError({...error, image: ''})
     }
 
-    const handleChange = (event) => setPostInfo({ ...postInfo, [event.target.name]: event.target.value })
+    const handleChange = (event) => {
+        setPostInfo({ ...postInfo, [event.target.name]: event.target.value })
+        setError({...error, [event.target.name]: ''})
+    }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault()
-        // setError(handleErrorWrite(postInfo))
-        setIsSubmit(true)
-        setError({...error,
-            title: 'Title not found',
-            category: 'isdfbsdjf',
-            image: 'ashgdjuhasgdsa',
-            content: 'sdsdsd'
-        })
+        const result = handleErrorWrite(postInfo)
+        if(Object.keys(result).length === 0) {
+            const data = new FormData()
+            data.append('userId', userId)
+            Object.keys(postInfo).forEach(key=> data.append(key, postInfo[key]))
+            try {
+                const response = await userRequest.post('/posts', data)
+                navigate(`/posts/${response.data.post.id}`)
+            } catch (error) {
+                console.log(error)
+            }
+        } else {
+            setError(result)
+        }
     }
-    // useEffect(() => {
-    //     if (Object.keys(error).length === 0 && isSubmit) {
-    //         (async () => {
-    //             const newPost = {
-    //                 title: postInfo.title,
-    //                 category: postInfo.category,
-    //                 content: postInfo.content,
-    //                 userId: user.id,
-    //                 thumbnail: "https://image.thanhnien.vn/w1024/Uploaded/2022/ifyiy/2021_02_28/lay10_jozk.jpg",
-    //                 likes: 0
-    //             }
-    //             if (file) {
-    //                 const data = new FormData()
-    //                 data.append('file', file)
-    //                 const res = await axios.post('https://server-yahoo360v1.herokuapp.com/upload-file', data)
-    //                 newPost.thumbnail = res.data.path
-    //             } else {
-    //                 newPost.thumbnail = "https://image.thanhnien.vn/w1024/Uploaded/2022/ifyiy/2021_02_28/lay10_jozk.jpg"
-    //             }
-    //             try {
-    //                 const res = await axios.post('https://server-yahoo360v1.herokuapp.com/posts', newPost, {
-    //                     headers: { "authorization": `Bearer ${user.token}` }
-    //                 })
-    //                 navigate(`/post/${res.data.id}`)
-    //             } catch (error) {
-    //                 alert(error?.response.data.message)
-    //                 dispatch(actions.setUser(null))
-    //                 navigate('/login');
-    //             }
-    //         })()
-    //     }
-    //     return () => file && URL.revokeObjectURL(file.preview)
-    // }, [error, file])
+    useEffect(() => {
+        return () => postInfo?.image && URL.revokeObjectURL(postInfo?.image.preview)
+    }, [postInfo?.image])
     return (
         <div className='write'>
 
@@ -90,11 +74,14 @@ export default function Write() {
             <div className="writeCategory" onClick={()=> setOpenCategory(!openCategory)}>
                 {postInfo?.category ? 'Change category' : 'Choose category'}
                 <i className={postInfo?.category ? "writeCategoryIcon bi bi-arrow-repeat" :"writeCategoryIcon bi bi-ui-checks-grid"}></i>
-                {postInfo?.category && <span className="writeCategoryContent" name='category' onChange={handleChange}>{postInfo.category}</span>}
+                {postInfo?.category && <span className="writeCategoryContent" name='category'>{valueCategory}</span>}
                 <ul className={openCategory ? "writeCategoryList active" : "writeCategoryList"}>
-                    {category.map((categoryItem, index) => (
+                    {categoryList.map((categoryItem, index) => (
                         <li className="writeCategoryItem" key={index}
-                            onClick={(event) => setPostInfo({ ...postInfo, category: event.target.innerText })}
+                            onClick={(event) => {
+                                setPostInfo({ ...postInfo, category: categoryItem.key})
+                                setError({...error, category:''})
+                            }}
                         >
                             {categoryItem.value}
                         </li>
@@ -110,6 +97,8 @@ export default function Write() {
                 data="<p>Enter content post....</p>"
                 onChange={(event, editor) => {
                     const data = editor.getData();
+                    setPostInfo({...postInfo, content: data})
+                    setError({...error, content:''})
                 }}
             />
             </div>

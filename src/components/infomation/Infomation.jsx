@@ -1,9 +1,9 @@
 import React, { memo } from 'react'
 import './infomation.scss'
-import { useSelector } from 'react-redux'
+import { useReduxValueGender, useReduxValuePosition } from '../../utils/reduxMethods'
 function Infomation({gender, position, postsNumber, address, statusFriend, isHomePage = false}) {
-    const valueGender = useSelector(state => state.app.gender.find(item => item.key === gender)?.value)
-    const valuePosition = useSelector(state => state.app.position.find(item => item.key === position)?.value)
+    const valueGender = useReduxValueGender(gender)
+    const valuePosition = useReduxValuePosition(position)
     console.log('re-render: Infomation')
   return (
     <div className='infomation'>

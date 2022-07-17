@@ -6,7 +6,7 @@ export default function PostBrief({post, type}) {
         <Link to={`/posts/${post.id}`} className={`postBrief ${type}`}>
             <img src={post.image} alt="postImg" className="postImg" />
             <h1 className="postTitle">{post.title}</h1>
-            <div className="postContent">{post.content}</div>
+            <div className="postContent" dangerouslySetInnerHTML={{__html: post.content}}></div>
         </Link>
     )
 }

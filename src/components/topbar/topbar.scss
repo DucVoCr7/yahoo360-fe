@@ -25,9 +25,6 @@
     
             // Item
             .topbarItem {
-                &:hover {
-                    color: $mainColor;
-                }
                 &:last-child {
                     margin-right: 0;
                 }
@@ -39,6 +36,9 @@
                 cursor: pointer;
     
                 // Search
+                &:focus-within .topbarSearchIcon {
+                    color: $mainColor;
+                }
                 .topbarSearchIcon {
     
                 }
@@ -83,7 +83,7 @@
                     top: calc(100% + 1px);
                     right: $sizeAlignPagePC;
                     background-color: $whiteColor;
-                    box-shadow: $shawdowNotTop;
+                    box-shadow: $shadowNotTop;
                     max-height: calc(($heightChildTopbar + 10px) * 4);
                     overflow-y: auto;
                     border-bottom-left-radius: 4px;
@@ -138,7 +138,7 @@
                     top: calc(100% + 1px);
                     right: $sizeAlignPagePC;
                     background-color: $whiteColor;
-                    box-shadow: $shawdowNotTop;
+                    box-shadow: $shadowNotTop;
                     border-bottom-left-radius: 4px;
                     border-bottom-right-radius: 4px;
                     overflow: hidden;
@@ -197,9 +197,6 @@
     
             // Item
             .topbarItem {
-                &:hover {
-                    color: $mainColor;
-                }
                 &:last-child {
                     margin-right: 0;
                 }
@@ -211,6 +208,9 @@
                 cursor: pointer;
     
                 // Search
+                &:focus-within .topbarSearchIcon {
+                    color: $mainColor;
+                }
                 .topbarSearchIcon {
     
                 }
@@ -255,7 +255,7 @@
                     top: calc(100% + 1px);
                     right: $sizeAlignPageTabletMobile; //
                     background-color: $whiteColor;
-                    box-shadow: $shawdowNotTop;
+                    box-shadow: $shadowNotTop;
                     max-height: calc(($heightChildTopbar + 10px) * 4);
                     overflow-y: auto;
                     border-bottom-left-radius: 4px;
@@ -310,7 +310,7 @@
                     top: calc(100% + 1px);
                     right: $sizeAlignPageTabletMobile; //
                     background-color: $whiteColor;
-                    box-shadow: $shawdowNotTop;
+                    box-shadow: $shadowNotTop;
                     border-bottom-left-radius: 4px;
                     border-bottom-right-radius: 4px;
                     overflow: hidden;
@@ -371,9 +371,6 @@
             color: $blackColor;
             // Item
             .topbarItem {
-                &:hover {
-                    color: $mainColor;
-                }
                 display: flex;
                 align-items: center;
                 text-decoration: none;
@@ -418,7 +415,7 @@
                 padding: $sizeAlignElementTabletMobile;
                 font-weight: 600;
                 &Item {
-                    padding: $sizeAlignElementTabletMobile 0;
+                    margin: $sizeAlignElementTabletMobile 0;
                     text-decoration: none;
                     color: $blackColor;
                     display: flex;
@@ -432,23 +429,23 @@
                         padding: 0 $sizeAlignElementTabletMobile;
                         border-right: 1px solid $disableColor;
                     }
-                    .topbarMenuSearchInput {
-                        &:focus {
+                    // Search
+                    &:first-child {
+                        &:focus-within {
                             border-color: $mainColor;
                         }
+                        &:focus-within .topbarMenuSearchIcon {
+                            color: $mainColor;
+                        }
                         border-bottom: 1px solid $blackColor;
-                        padding: 0;
-                        max-width: 300px;
                         font-size: 20px;
-                    }
-                    .topbarMenuSearchIcon {
-                        margin-left: $sizeAlignElementTabletMobile;
-                        display: flex;
-                        align-items: center;
-                        padding: 0 15px;
-                        background-color: $mainColor;
-                        border-radius: 5px;
-                        font-size: 20px;
+                        .topbarMenuSearchInput {
+                            max-width: 300px;
+                            padding-bottom: 2px;
+                        }
+                        .topbarMenuSearchIcon {
+                            margin-left: $sizeAlignElementTabletMobile;
+                        }
                     }
                     .topbarMenuImg {
                         width: 100px;

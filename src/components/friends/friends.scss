@@ -13,9 +13,10 @@
         border-radius: 5px;
         background-color: $mainColor;
         padding: 5px 10px;
+        line-height: 1;
         &Icon {
             margin-right: $sizeAlignElementPC;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         cursor: pointer;
@@ -131,9 +132,6 @@
 
             &Close {
                 color: $whiteColor;
-                &:hover {
-                    color: $mainColor;
-                }
             }
         }
 
@@ -180,7 +178,7 @@
                     bottom: 0;
                     left: 0;
                     width: 100%;
-                    background-color: rgba($color: $mainColor, $alpha: 0.7);
+                    background-color: rgba($color: $disableColor, $alpha: 0.7);
                     @include font('content');
                     font-size: 14px;
                     padding: 5px;

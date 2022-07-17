@@ -1,21 +1,32 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
+import { userRequest } from '../../utils/requestMethods'
 import './replyRepair.scss'
-function ReplyRepair({replyContent, setOpenRepair}) {
-    const handleRepairReply = async (event) => {
-        try {
+function ReplyRepair({replyId, replyContent, setReplyContent, setOpenRepair}) {
+    const [contentRepair, setContentRepair] = useState(replyContent)
+    const handleRepairReply = useCallback(async (event) => {
+        if(contentRepair === replyContent || contentRepair.trim() === '') {
             setOpenRepair(false)
-        } catch (error) {
-            console.log(error)
+        } else {
+            try {
+                const response = await userRequest.patch(`/replies/${replyId}`, {
+                    content: contentRepair
+                })
+                setReplyContent(response.data.reply.content)
+                setOpenRepair(false)
+            } catch (error) {
+                console.log(error)
+            }
         }
-    }
+    })
   return (
     <div className='replyRepair'>
-        <textarea className="replyRepairContent">
-            {replyContent }
-        </textarea>
+        <textarea className="replyRepairContent"
+            onChange={(event)=> setContentRepair(event.target.value)}
+            value={contentRepair}
+        />
         <div className="replyRepairAction">
             <button className="replyRepairActionItem" onClick={()=> setOpenRepair(false)}>
-                Cancle
+                Cancel
             </button>
             <button className="replyRepairActionItem" onClick={handleRepairReply}>
                 Repair

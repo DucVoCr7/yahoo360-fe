@@ -50,10 +50,6 @@
             background: linear-gradient(rgba(255, 255, 255, 0), white);
 
             &Item {
-                &:hover {
-                    color: $mainColor
-                }
-
                 @include font('title');
                 text-transform: uppercase;
                 text-decoration: none;
@@ -136,9 +132,6 @@
                 }
 
                 //
-                &:hover {
-                    color: $mainColor
-                }
 
                 @include font('title');
                 text-transform: uppercase;

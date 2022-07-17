@@ -25,7 +25,6 @@
                     left: $sizeAlignPagePC;
                     font-size: 18px;
                     transform: translateX(0%) translateY(0%);
-                    color: $mainColor;
                     transition: bottom 1s linear, left 1s linear;
                     .writeImageIconChild {
                         &:last-child {
@@ -61,6 +60,12 @@
             }
         }
         &Title {
+            &:focus-within {
+                border-color: $mainColor;
+            }
+            &:focus-within &Icon {
+                color: $mainColor;
+            }
             border-bottom: 1px solid $blackColor;
             width: calc(100% - $sizeAlignPagePC*2);
             margin-bottom: $sizeAlignElementPC;
@@ -196,7 +201,6 @@
                     left: $sizeAlignPageTabletMobile;
                     font-size: 18px;
                     transform: translateX(0%) translateY(0%);
-                    color: $mainColor;
                     transition: bottom 1s linear, left 1s linear;
                     .writeImageIconChild {
                         &:last-child {
@@ -232,6 +236,12 @@
             }
         }
         &Title {
+            &:focus-within {
+                border-color: $mainColor;
+            }
+            &:focus-within &Icon {
+                color: $mainColor;
+            }
             border-bottom: 1px solid $blackColor;
             width: calc(100% - $sizeAlignPageTabletMobile*2); //
             margin-bottom: $sizeAlignElementTabletMobile;
@@ -368,7 +378,6 @@
                     left: $sizeAlignPageTabletMobile;
                     font-size: 18px;
                     transform: translateX(0%) translateY(0%);
-                    color: $mainColor;
                     transition: bottom 1s linear, left 1s linear;
                     .writeImageIconChild {
                         &:last-child {
@@ -404,6 +413,12 @@
             }
         }
         &Title {
+            &:focus-within {
+                border-color: $mainColor;
+            }
+            &:focus-within &Icon {
+                color: $mainColor;
+            }
             border-bottom: 1px solid $blackColor;
             width: calc(100% - $sizeAlignPageTabletMobile*2); //
             margin-bottom: $sizeAlignElementTabletMobile;

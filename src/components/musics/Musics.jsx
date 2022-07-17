@@ -1,7 +1,7 @@
 import React from 'react'
 import { memo } from 'react';
 import { useState } from 'react'
-import { useSelector } from 'react-redux';
+import { useReduxUserId } from '../../utils/reduxMethods';
 import { userRequest } from '../../utils/requestMethods';
 import './musics.scss'
 function Musics({ musics, setMusics, isHomePage = false }) {
@@ -10,7 +10,7 @@ function Musics({ musics, setMusics, isHomePage = false }) {
 
   // Add music
   const [codeMusic, setCodeMusic] = useState()
-  const userId = useSelector(state => state.user.userInfo?.id)
+  const userId = useReduxUserId()
   const handleAddMusic = async (event) => {
     if (codeMusic) {
       try {
@@ -76,7 +76,7 @@ function Musics({ musics, setMusics, isHomePage = false }) {
           <textarea type="text" className="musicsAddInput" placeholder='Example: https://www.youtube.com/watch?v=YQHsXMglC9A'
             onChange={(event) => setCodeMusic(event.target.value.trim().replace('https://www.youtube.com/watch?v=', ''))}
           />
-          <button className="musicsAddSubmit" onClick={handleAddMusic}>ADD MUSIC</button>
+          <button className="musicsAddSubmit" onClick={handleAddMusic}>Add music</button>
         </div>
       }
     </div>

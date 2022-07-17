@@ -61,7 +61,13 @@
                     flex: 1;
                 }
                 &Search {
-                    border: 1px solid;
+                    &:focus-within {
+                        border-color: $mainColor;
+                    }
+                    &:focus-within &Icon {
+                        color: $mainColor;
+                    }
+                    border: 1px solid $blackColor;
                     border-radius: 10px;
                     overflow: hidden;
                     background-color: $whiteColor;
@@ -123,7 +129,13 @@
                 flex: 1;
             }
             &Search {
-                border: 1px solid;
+                &:focus-within {
+                    border-color: $mainColor;
+                }
+                &:focus-within &Icon {
+                    color: $mainColor;
+                }
+                border: 1px solid $blackColor;
                 border-radius: 10px;
                 overflow: hidden;
                 background-color: $whiteColor;
