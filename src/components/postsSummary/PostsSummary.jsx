@@ -1,5 +1,6 @@
 import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
+import empty from '../../assets/image/empty.png'
 import './postsSummary.scss'
 import PostMedium from '../postMedium/PostMedium'
 function PostsSummary({posts, isHomePage = false, isPostsCategory = false}) {
@@ -14,17 +15,15 @@ function PostsSummary({posts, isHomePage = false, isPostsCategory = false}) {
                 </div>
                 :
                 <div className="postsSummaryNoContent">
-                    {isHomePage ?
-                        <Link to={'/write'} className='postsSummaryNoContentIcon'>
-                        Write <br /> post
-                        <i className="postsSummaryNoContentIconChild bi bi-file-earmark-richtext"></i>
-                        <i className="postsSummaryNoContentIconChild bi bi-plus-circle"></i>
-                        </Link>
-                        :
-                        <div className="postsSummaryNoContentContent">
-                        Post have not been writed yet!
-                        </div>
-                    }
+                                                    {isHomePage ?
+              <Link to={'/write'} className="postsSummaryNoContentContent">
+                <img src={empty} alt='emptyIcon' className="postsSummaryNoContentContentIcon"/>
+                </Link>
+              :
+              <div className="postsSummaryNoContentContent">
+                <img src={empty} alt='emptyIcon' className="postsSummaryNoContentContentIcon"/>
+              </div>
+            }
                 </div>
             }
         </div>

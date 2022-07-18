@@ -1,6 +1,7 @@
 import React from 'react'
 import './headerOfUser.scss'
 import Slider from 'react-slick';
+import empty from '../../assets/image/empty.png'
 import { memo } from 'react';
 function HeaderOfUser({ photos, isHomePage = false }) {
     const settings = {
@@ -16,17 +17,14 @@ function HeaderOfUser({ photos, isHomePage = false }) {
         <div className='headerOfUser'>
             {photos.length === 0 ?
                 <div className="headerOfUserNoPhoto">
-                    {
-                        isHomePage ?
-                            <label className='headerOfUserNoPhotoIcon' htmlFor='photosId'>
-                                Add <br /> photo
-                                <i className="headerOfUserNoPhotoIconChild bi bi-image"></i>
-                                <i className="headerOfUserNoPhotoIconChild bi bi-plus-circle"></i>
-                            </label>
-                            :
-                            <div className="headerOfUserNoPhotoContent">
-                                Photos have not been added yet!
-                            </div>
+                    {isHomePage ?
+                        <label className="headerOfUserNoPhotoContent" htmlFor='photosId'>
+                            <img src={empty} alt='emptyIcon' className="headerOfUserNoPhotoContentIcon" />
+                        </label>
+                        :
+                        <div className="headerOfUserNoPhotoContent">
+                            <img src={empty} alt='emptyIcon' className="headerOfUserNoPhotoContentIcon" />
+                        </div>
                     }
                 </div>
                 :

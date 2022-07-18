@@ -5,7 +5,7 @@ export const useReduxUserId = () => {
   return userId
 }
 export const useReduxValueGender = (key) => {
-    const valueGender = useSelector(state=> state.app.gender.find(item => item.key === key).value)
+    const valueGender = useSelector(state=> state.app.gender.find(item => item.key === key)?.value)
     return valueGender
 }
 export const useReduxValueCategory = (key) => {
@@ -13,7 +13,7 @@ export const useReduxValueCategory = (key) => {
     return valueCategory
 }
 export const useReduxValuePosition = (key) => {
-    const valuePosition = useSelector(state=> state.app.position.find(item => item.key === key).value)
+    const valuePosition = useSelector(state=> state.app.position.find(item => item.key === key)?.value)
     return valuePosition
 }
 export const useReduxCategoryList = ()=> {

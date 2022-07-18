@@ -1,5 +1,6 @@
 import React, { memo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import empty from '../../assets/image/empty.png'
 import './friends.scss'
 
 
@@ -12,9 +13,11 @@ function Friends({ name, friends }) {
   return (
     <div className='friends'>
 
-      <title className='friendsTitle' onClick={() => setOpenFriends(true)}>
-        <i className="friendsTitleIcon bi bi-person-plus-fill"></i>
-        FRIENDS ({friends.length})
+      <title className='friendsTitle'>
+        <span className="friendsTitleContent" onClick={() => setOpenFriends(true)}>
+        <i className="friendsTitleContentIcon bi bi-person-plus-fill"></i>
+          FRIENDS ({friends.length})
+        </span>
       </title>
 
       {
@@ -23,7 +26,7 @@ function Friends({ name, friends }) {
         <div className="friendsContent">
           {friends.map((friend, index) => (
             index < 4 &&
-            <Link to={`/users/${friend.dataFriend.id}`} className="friendsContentItem" key={index}>
+            <Link to={`/users/${friend.friendId}`} className="friendsContentItem" key={index}>
               <img src={friend.dataFriend.image} alt="friendImg" className="friendsContentItemImg" />
               <span className="friendsContentItemName">{friend.dataFriend.name}</span>
             </Link>
@@ -32,9 +35,9 @@ function Friends({ name, friends }) {
         </div>
         :
         <div className="friendsNoContent">
-          <div className="friendsNoContentContent">
-            Friend have not been added yet!
-          </div>
+            <div className="friendsNoContentContent">
+              <img src={empty} alt='emptyIcon' className="friendsNoContentContentIcon"/>
+            </div>
         </div>
       }
 
@@ -48,7 +51,7 @@ function Friends({ name, friends }) {
           </div>
           <div className="friendsListContent">
             {friends.map((friend, index) => (
-              <Link to={`/users/${friend.dataFriend.id}`} onClick={() => setOpenFriends(false)} className="friendsListContentItem" key={index}>
+              <Link to={`/users/${friend.friendId}`} onClick={() => setOpenFriends(false)} className="friendsListContentItem" key={index}>
                 <img src={friend.dataFriend.image} alt="friendImg" className="friendsListContentItemImg" />
                 <span className="friendsListContentItemName">{friend.dataFriend.name}</span>
               </Link>

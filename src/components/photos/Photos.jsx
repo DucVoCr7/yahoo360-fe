@@ -4,6 +4,7 @@ import Gallery from 'react-photo-gallery'
 import { useSelector } from 'react-redux';
 import Slider from "react-slick";
 import { userRequest } from '../../utils/requestMethods';
+import empty from '../../assets/image/empty.png'
 import './photos.scss'
 
 
@@ -110,7 +111,6 @@ function Photos({ setPhotos, name, photos, isHomePage = false }) {
             index < 4 &&
             <div className="photosContentItem" key={index} onClick={() => handleOpenSlider(index)}>
               <img src={item.photo} alt="friendImg" className="photosContentItemImg" />
-              <span className="photosContentItemView">View</span>
             </div>
           ))}
           {photosHiddenNumber > 0 &&
@@ -122,14 +122,12 @@ function Photos({ setPhotos, name, photos, isHomePage = false }) {
         :
         <div className="photosNoContent">
           {isHomePage ?
-            <label className='photosNoContentIcon' htmlFor='photosId'>
-              Add <br /> photo
-              <i className="photosNoContentIconChild bi bi bi-image"></i>
-              <i className="photosNoContentIconChild  bi bi-plus-circle"></i>
+            <label className="photosNoContentContent" htmlFor='photosId'>
+              <img src={empty} alt='emptyIcon' className="photosNoContentContentIcon"/>
             </label>
             :
             <div className="photosNoContentContent">
-              Photo have not been added yet!
+              <img src={empty} alt='emptyIcon' className="photosNoContentContentIcon"/>
             </div>
           }
         </div>
@@ -159,11 +157,13 @@ function Photos({ setPhotos, name, photos, isHomePage = false }) {
           </span>
           <i className="photosSliderTitleClose bi bi-box-arrow-right" onClick={() => setOpenSlider(false)}></i>
         </div>
-        <Slider {...settings} ref={refSlider}>
-          {photos.map((element, index) =>
-            <img src={element.photo} alt='headerImg' className="photosSliderItem" key={index} />
-          )}
-        </Slider>
+        <div className="photosSliderContent">
+          <Slider {...settings} ref={refSlider}>
+            {photos.map((element, index) =>
+              <img src={element.photo} alt='headerImg' className="photosSliderContentItem" key={index} />
+            )}
+          </Slider>
+        </div>
       </div>
     </div>
   )

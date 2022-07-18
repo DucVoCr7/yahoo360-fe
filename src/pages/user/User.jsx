@@ -5,12 +5,13 @@ import PostsSummary from '../../components/postsSummary/PostsSummary'
 import Sidebar from '../../components/sidebar/Sidebar'
 import { publicRequest } from '../../utils/requestMethods'
 import { useSelector } from 'react-redux'
-import './user.scss'
 import checkStatusFriend from '../../utils/checkStatusFriend'
+import './user.scss'
+import { useReduxUserId } from '../../utils/reduxMethods'
 
 export default function User() {
 
-  
+  const userId = useReduxUserId()
 
   const [image, setImage] = useState()
   const [posts, setPosts] = useState()
@@ -23,7 +24,6 @@ export default function User() {
   const [position, setPosition] = useState()
   const [address, setAddress] = useState()
 
-  const userId = useSelector(state=> state.user.userInfo?.id)
   const friendsRequest = useSelector(state=> state.user.friendsRequest)
   const [statusFriend, setStatusFriend] = useState()
 

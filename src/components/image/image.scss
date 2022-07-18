@@ -1,37 +1,104 @@
 @use '/src/assets/scss' as *;
-.image {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    &Content {
-        border-radius: 10px;
-        border: 3px solid $mainColor;
-        width: inherit;
+@media (min-width: 740px) {
+    .image {
+        width: 100%;
         height: 100%;
-        object-fit: cover;
-    }
-    .userName {
-        position: absolute;
-        bottom: 15px;
-        right: 0;
-        height: 30px;
-        max-width: 90%;
-        padding: 0 10px;
         display: flex;
-        align-items: center;
-        @include font('title');
-        font-weight: 600;
-        font-size: 16px;
-        background-color: $mainColor;
-        &::before {
-            position: absolute;
-            content: ""; /* Không có display block vì chỉ lấy border */
-            border-width: 15px 6px; /* Trừ 4px ở bottom trên để nó nhảy đúng chiều cao vì ở đây cao 4px */
-            border-style: solid;
-            border-color: $mainColor $mainColor $mainColor transparent;
-            bottom: 0;
-            left: 0;
-            transform: translateX(-70%);
+        flex-direction: column;
+        &Top {
+            flex: 1;
+            overflow: hidden;
+            &Img {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                border: 2px solid $mainColor;
+                object-fit: cover;
+            }
+        }
+        &Bottom {
+            margin-top: 10px;
+            padding: 0 10px;
+            position: relative;
+            &Name {
+                @include font('title');
+                font-weight: 600;
+                background-color: $mainColor;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &::before {
+                position: absolute;
+                content: ""; /* Không có display block vì chỉ lấy border */
+                border-width: 15px 8px; /* Trừ 4px ở bottom trên để nó nhảy đúng chiều cao vì ở đây cao 4px */
+                border-style: solid;
+                border-color: $mainColor $mainColor $mainColor transparent;
+                bottom: 0;
+                left: 0;
+            }
+            &::after {
+                position: absolute;
+                content: ""; /* Không có display block vì chỉ lấy border */
+                border-width: 15px 8px;  /* Trừ 4px ở bottom trên để nó nhảy đúng chiều cao vì ở đây cao 4px */
+                border-style: solid;
+                border-color: $mainColor transparent $mainColor $mainColor ;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+}
+@media (max-width: 739px) {
+    .image {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        &Top {
+            flex: 1;
+            overflow: hidden;
+            &Img {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                border: 2px solid $mainColor;
+                object-fit: cover;
+            }
+        }
+        &Bottom {
+            margin-top: 5px;
+            padding: 0 10px;
+            position: relative;
+            &Name {
+                @include font('title');
+                font-size: 16px;
+                font-weight: 600;
+                background-color: $mainColor;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &::before {
+                position: absolute;
+                content: ""; /* Không có display block vì chỉ lấy border */
+                border-width: 15px 8px; /* Trừ 4px ở bottom trên để nó nhảy đúng chiều cao vì ở đây cao 4px */
+                border-style: solid;
+                border-color: $mainColor $mainColor $mainColor transparent;
+                bottom: 0;
+                left: 0;
+            }
+            &::after {
+                position: absolute;
+                content: ""; /* Không có display block vì chỉ lấy border */
+                border-width: 15px 8px;  /* Trừ 4px ở bottom trên để nó nhảy đúng chiều cao vì ở đây cao 4px */
+                border-style: solid;
+                border-color: $mainColor transparent $mainColor $mainColor ;
+                bottom: 0;
+                right: 0;
+            }
         }
     }
 }

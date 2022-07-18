@@ -1,230 +1,371 @@
 @use '/src/assets/scss' as *;
-.photos {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    &Title {
-        @include font('title');
-        display: block;
-        margin-bottom: 7px;
-        border-radius: 5px;
-        background-color: $mainColor;
-        padding: 5px 10px;
+
+@media (min-width: 740px) {
+    .photos {
+        width: 100%;
+        height: 100%;
         display: flex;
-        line-height: 1;
-        justify-content: space-between;
+        flex-direction: column;
+
+        &Title {
+            @include font('title');
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+
+            &Content {
+                cursor: pointer;
+
+                &Icon {
+                    margin-right: 10px;
+                }
+            }
+
+            &Add {
+                cursor: pointer;
+
+                &Icon {}
+            }
+        }
+
         &Content {
-            cursor: pointer;
-            &Icon {
-                margin-right: $sizeAlignElementPC;
-                font-size: 18px;
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            position: relative;
+
+            &Item {
+                width: 50%;
+                height: 50%;
+                border-radius: 10px;
+                overflow: hidden;
+                cursor: pointer;
+
+                &Img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
-        }
-        &Add {
-            cursor: pointer;
-            &Icon {
-                font-size: 18px;
-            }
-        }
-    }
-    &Content {
-        flex: 1;
-        display: flex;
-        flex-wrap: wrap;
-        overflow: hidden;
-        position: relative;
-        &Item {
-            &:hover &View {
-                height: 100%;
+
+            &Hidden {
+                cursor: pointer;
+                position: absolute;
+                width: 50%;
+                height: 50%;
+                right: 0;
+                bottom: 0;
+                color: $mainColor;
+                @include font ('title');
+                font-weight: 600;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                @include slideTop;
-                
-            }
-            width: 50%;
-            height: 50%;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            &Img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-            &View {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 0;
-                font-size: 15px;
-                background-color: rgba($color: $disableColor, $alpha: 0.7);
-                font-weight: 600;
-                @include font('content');
+                background-color: rgba($color: #000000, $alpha: 0.6);
+                border-radius: 10px;
             }
         }
-        &Hidden {
-            cursor: pointer;
-            position: absolute;
-            width: 50%;
-            height: 50%;
-            right: 0;
-            bottom: 0;
-            color: $mainColor;
-            @include font ('content');
-            font-size: 17px;
-            font-weight: 600;
+
+        &NoContent {
+            width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: rgba($color: #000000, $alpha: 0.6);
             border-radius: 10px;
+            background-image: linear-gradient(to left, #dce8eb, #f8e8dc);
+
+            &Content {
+                &Icon {
+                    display: block;
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        }
+
+        &Gallery {
+            @include fadeIn;
+            position: fixed;
+            width: 100%;
+            height: calc(100% - $heightTopbar);
+            top: $heightTopbar;
+            z-index: 2;
+            left: 0;
+            background-color: $blackColor;
+            padding: $sizeAlignPagePC;
+            overflow-y: scroll;
+
+            &Title {
+                @include font('title');
+                font-size: 20px;
+                padding-bottom: $sizeAlignElementPC;
+                border-bottom: 1px solid $mainColor;
+                margin-bottom: $sizeAlignElementPC;
+                color: $whiteColor;
+                display: flex;
+                justify-content: space-between;
+                &Close {}
+            }
+        }
+
+        &Slider {
+            &.active {
+                display: flex;
+                flex-direction: column;
+            }
+
+            display: none;
+            @include fadeIn;
+            position: fixed;
+            width: 100%;
+            height: calc(100% - $heightTopbar);
+            top: $heightTopbar;
+            z-index: 2;
+            left: 0;
+            background-color: $blackColor;
+            padding: $sizeAlignPagePC;
+
+            &Title {
+                @include font('title');
+                font-size: 20px;
+                padding-bottom: $sizeAlignElementPC;
+                border-bottom: 1px solid $mainColor;
+                margin-bottom: $sizeAlignElementPC;
+                color: $whiteColor;
+                display: flex;
+                justify-content: space-between;
+
+                &Number {
+                }
+                &Close {}
+            }
+
+            &Content {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                .slick-slider {
+                    width: 100%;
+                    height: auto;
+                     // Custom Slider 
+                    .slick-next {
+                        z-index: 3;
+                        &::before {
+                            content: none;
+                        }
+                        right: 0;
+                        > i {
+                            &:active {
+                                color: $mainColor;
+                            }
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            font-size: 40px;
+                            text-shadow: $shadowFull;
+                            color: $whiteColor;
+                        }
+                    }
+                    .slick-prev {
+                        z-index: 3;
+                        &::before {
+                            content: none;
+                        }
+                        left: 0;
+                        > i {
+                            &:active {
+                                color: $mainColor;
+                            }
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            font-size: 40px;
+                            text-shadow: $shadowFull;
+                            color: $whiteColor;
+                        }
+                    }
+                    .slick-dots {
+                        display: none !important;
+                    }
+                }
+            }
         }
     }
-    &NoContent {
-        @include font('title');
+}
+
+@media (max-width: 739px) {
+    .photos {
         width: 100%;
         height: 100%;
-        position: relative;
-        border-radius: 10px;
-        background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
-        &Icon {
-            position: absolute;
-            bottom: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(50%);
-            font-size: 17px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            &Child {
-                &:last-child {
-                    position: absolute;
-                    font-size: 17px;
-                    bottom: -2px;
-                    right: -5px;
-                    background-color: $whiteColor;
-                    line-height: 1;
-                    border-radius: 50%;
-                }
-                margin-left: 10px;
-                font-size: 34px;
-            }
-        }
-        &Content {
-            position: absolute;
-            bottom: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(50%);
-            font-size: 17px;
-        }
-    }
-    &Gallery {
-        @include fadeIn;
-        position: fixed;
-        width: 100%;
-        height: calc(100% - $heightTopbar);
-        top: $heightTopbar;
-        z-index: 2;
-        left: 0;
-        background-color: rgba($color: #000000, $alpha: 0.9);
-        padding: $sizeAlignPagePC;
-        overflow-y: scroll;
-        &Title {
-            @include font('title');
-            font-size: 25px;
-            line-height: 1;
-            padding-bottom: $sizeAlignElementPC;
-            border-bottom: 1px solid $mainColor;
-            margin-bottom: $sizeAlignElementPC;
-            color: $whiteColor;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            &Close {
-                color: $whiteColor;
-            }
-        }
-    }
-    &Slider {
-        &.active {
-            display: block;
-        }
-        display: none;
-        @include fadeIn;
-        position: fixed;
-        width: 100%;
-        height: calc(100% - $heightTopbar);
-        top: $heightTopbar;
-        z-index: 2;
-        left: 0;
-        background-color: rgba($color: #000000, $alpha: 0.9);
-        padding: $sizeAlignPagePC;
-        overflow-y: scroll;
-        &Title {
-            @include font('title');
-            font-size: 25px;
-            line-height: 1;
-            padding-bottom: $sizeAlignElementPC;
-            border-bottom: 1px solid $mainColor;
-            margin-bottom: $sizeAlignElementPC;
-            color: $whiteColor;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            &Close {
-                color: $whiteColor;
-            }
-        }
-        &Item {
-                // width: auto !important;
-                // height: 100%;
-            // height: 50%;
-            // object-fit: contain;
-        }
-    }
+        display: flex;
+        flex-direction: column;
 
-    // Custom Slider
-    .slick-next {
-        z-index: 3;
-        &::before {
-            content: none;
-        }
-        right: 0;
-        > i {
-            &:active {
-                color: $mainColor;;
+        &Title {
+            @include font('title');
+            font-size: 16px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+
+            &Content {
+                cursor: pointer;
+
+                &Icon {
+                    margin-right: 10px;
+                }
             }
-            position: absolute;
-            top: 0;
-            right: 0;
-            font-size: 60px;
-            text-shadow: $shadowFull;
-            color: $whiteColor;
-        }
-    }
-    .slick-prev {
-        z-index: 3;
-        &::before {
-            content: none;
-        }
-        left: 0;
-        > i {
-            &:active {
-                color: $mainColor;;
+
+            &Add {
+                cursor: pointer;
+
+                &Icon {}
             }
-            position: absolute;
-            top: 0;
+        }
+
+        &Content {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            position: relative;
+
+            &Item {
+                width: 50%;
+                height: 50%;
+                border-radius: 10px;
+                overflow: hidden;
+                cursor: pointer;
+
+                &Img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &Hidden {
+                cursor: pointer;
+                position: absolute;
+                width: 50%;
+                height: 50%;
+                right: 0;
+                bottom: 0;
+                color: $mainColor;
+                @include font ('title');
+                font-size: 16px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba($color: #000000, $alpha: 0.6);
+                border-radius: 10px;
+            }
+        }
+
+        &NoContent {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background-image: linear-gradient(to left, #dce8eb, #f8e8dc);
+
+            &Content {
+                &Icon {
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+
+        &Gallery {
+            @include fadeIn;
+            position: fixed;
+            width: 100%;
+            height: calc(100% - $heightTopbar);
+            top: $heightTopbar;
+            z-index: 2;
             left: 0;
-            font-size: 60px;
-            text-shadow: $shadowFull;
-            color: $whiteColor;
+            background-color: $blackColor;
+            padding: $sizeAlignPagePC;
+            overflow-y: scroll;
+
+            &Title {
+                @include font('title');
+                padding-bottom: $sizeAlignElementTabletMobile;
+                border-bottom: 1px solid $mainColor;
+                margin-bottom: $sizeAlignElementTabletMobile;
+                color: $whiteColor;
+                display: flex;
+                justify-content: space-between;
+                &Close {}
+            }
         }
-    }
-    .slick-dots {
-        display: none !important;
+
+        &Slider {
+            &.active {
+                display: flex;
+                flex-direction: column;
+            }
+            display: none;
+            @include fadeIn;
+            position: fixed;
+            width: 100%;
+            height: calc(100% - $heightTopbar);
+            top: $heightTopbar;
+            z-index: 2;
+            left: 0;
+            background-color: $blackColor;
+            padding: $sizeAlignPageTabletMobile;
+            &Title {
+                @include font('title');
+                padding-bottom: $sizeAlignElementTabletMobile;
+                border-bottom: 1px solid $mainColor;
+                margin-bottom: $sizeAlignElementTabletMobile;
+                color: $whiteColor;
+                display: flex;
+                justify-content: space-between;
+                &Number {}
+                &Close {}
+            }
+
+            &Content {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                .slick-slider {
+                    width: 100%;
+                    height: auto;
+                     // Custom Slider 
+                    .slick-next {
+                        z-index: 3;
+                        &::before {
+                            content: none;
+                        }
+                        right: 0;
+                        > i {
+                            display: none !important;
+                        }
+                    }
+                    .slick-prev {
+                        z-index: 3;
+                        &::before {
+                            content: none;
+                        }
+                        left: 0;
+                        > i {
+                            display: none !important;
+                        }
+                    }
+                    .slick-dots {
+                        display: none !important;
+                    }
+                }
+            }
+        }
     }
 }

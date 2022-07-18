@@ -5,8 +5,14 @@ function Image({name, image}) {
   console.log('re-render: Image')
   return (
     <div className='image'>
-      <img src={image ? image : avatar} alt="userImage" className="imageContent"/>
-      <span className="userName">{name}</span>
+      <div className="imageTop">
+        <img src={image ? image : avatar} alt="userImage" className="imageTopImg"/>
+      </div>
+      <div className="imageBottom">
+        <div className="imageBottomName">
+          {name}
+        </div>
+      </div>
     </div>
   )
 }

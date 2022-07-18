@@ -3,6 +3,7 @@ import { memo } from 'react';
 import { useState } from 'react'
 import { useReduxUserId } from '../../utils/reduxMethods';
 import { userRequest } from '../../utils/requestMethods';
+import empty from '../../assets/image/empty.png'
 import './musics.scss'
 function Musics({ musics, setMusics, isHomePage = false }) {
 
@@ -53,17 +54,14 @@ function Musics({ musics, setMusics, isHomePage = false }) {
             </div>
             :
             <div className="musicsNoContent">
-              {
-                isHomePage ?
-                  <div className='musicsNoContentIcon' onClick={() => setOpenAddMusic(true)}>
-                    Add <br /> music
-                    <i className="musicsNoContentIconChild bi bi-file-earmark-music"></i>
-                    <i className="musicsNoContentIconChild  bi bi-plus-circle"></i>
-                  </div>
-                  :
-                  <div className="musicsNoContentContent">
-                    Music have not been added yet!
-                  </div>
+              {isHomePage ?
+                <div className="musicsNoContentContent" onClick={() => setOpenAddMusic(true)}>
+                  <img src={empty} alt='emptyIcon' className="musicsNoContentContentIcon" />
+                </div>
+                :
+                <div className="musicsNoContentContent">
+                  <img src={empty} alt='emptyIcon' className="musicsNoContentContentIcon" />
+                </div>
               }
             </div>
         )

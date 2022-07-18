@@ -24,7 +24,6 @@ function Post({post}) {
                 postId: post.id,
                 userId: userId
             })
-            console.log(response.data)
             if(isLike) {
                 setLikesNumber(prev => prev -1)
                 setIsLike(false)

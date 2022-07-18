@@ -1,6 +1,5 @@
 @use '/src/assets/scss' as *;
-@media (min-width: 1240px) { 
-
+@media (min-width: 1024px) { 
     .sidebar {
         width: calc(100% - $sizeAlignPagePC*2);
         padding: $sizeAlignElementPC 0;
@@ -24,38 +23,7 @@
         }
     }
 }
-
-//* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
-@media (min-width: 901px) and (max-width: 1239px) {
-    .sidebar {
-        width: calc(100% - $sizeAlignPagePC*2);
-        padding: $sizeAlignElementPC 0;
-        border-bottom: 4px double $blackColor;
-        margin-bottom: $sizeAlignElementPC;
-        box-sizing: border-box;
-        height: 200px;
-        display: flex;
-        overflow: scroll; //
-        &::-webkit-scrollbar { ///
-            display: none; //
-        }
-        > :nth-child(n) {
-            flex: none;
-            width: 240px;
-            padding-left: $sizeAlignElementPC;
-            margin-left: $sizeAlignElementPC;
-            border-left: 1px solid $disableColor;
-        }
-        > :first-child {
-            flex: none;
-            width: 200px;
-            padding: 0;
-            margin: 0;
-            border: none;
-        }
-    }
-}
-@media (max-width: 900px) {
+@media (min-width: 901px) and (max-width: 1023px) {
     .sidebar {
         width: calc(100% - $sizeAlignPageTabletMobile*2);
         padding: $sizeAlignElementTabletMobile 0;
@@ -70,7 +38,7 @@
         }
         > :nth-child(n) {
             flex: none;
-            width: 240px;
+            width: 220px;
             padding-left: $sizeAlignElementTabletMobile;
             margin-left: $sizeAlignElementTabletMobile;
             border-left: 1px solid $disableColor;
@@ -84,3 +52,62 @@
         }
     }
 }
+@media (min-width: 740px) and (max-width: 900px) {
+    .sidebar {
+        width: calc(100% - $sizeAlignPageTabletMobile*2);
+        padding: $sizeAlignElementTabletMobile 0;
+        border-bottom: 4px double $blackColor;
+        margin-bottom: $sizeAlignElementTabletMobile;
+        box-sizing: border-box;
+        height: 200px;
+        display: flex;
+        overflow: scroll; //
+        &::-webkit-scrollbar { ///
+            display: none; //
+        }
+        > :nth-child(n) {
+            flex: none;
+            width: 220px;
+            padding-left: $sizeAlignElementTabletMobile;
+            margin-left: $sizeAlignElementTabletMobile;
+            border-left: 1px solid $disableColor;
+        }
+        > :first-child {
+            flex: none;
+            width: 200px;
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+    }
+}
+@media (max-width: 739px) {
+    .sidebar {
+        width: calc(100% - $sizeAlignPageTabletMobile*2);
+        padding: $sizeAlignElementTabletMobile 0;
+        border-bottom: 4px double $blackColor;
+        margin-bottom: $sizeAlignElementTabletMobile;
+        box-sizing: border-box;
+        height: 180px;
+        display: flex;
+        overflow: scroll; //
+        &::-webkit-scrollbar { ///
+            display: none; //
+        }
+        > :nth-child(n) {
+            flex: none;
+            width: 200px;
+            padding-left: $sizeAlignElementTabletMobile;
+            margin-left: $sizeAlignElementTabletMobile;
+            border-left: 1px solid $disableColor;
+        }
+        > :first-child {
+            flex: none;
+            width: 180px;
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+    }
+}
+

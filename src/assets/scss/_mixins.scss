@@ -2,20 +2,22 @@
 @mixin font($type) {
     @if ($type == 'part') {
         font-size: 20px;
+        line-height: 1;
         font-family: 'M PLUS Rounded 1c', sans-serif;
     }
     @if ($type == 'title') {
       font-size: 17px;
-      font-weight: 300;
+      line-height: 1;
       font-family: 'title';
     }
     @if ($type == 'content') {
-      font-size: 18px;
-      line-height: 2;
-      font-family: content;
+      line-height: 1;
+      font-size: 14px;
+      font-family: 'content';
     }
     @if ($type == 'logo') {
       font-size: 30px;
+      line-height: 1;
       font-family: 'logo';
     }
 }

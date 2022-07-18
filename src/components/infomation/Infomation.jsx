@@ -8,14 +8,16 @@ function Infomation({gender, position, postsNumber, address, statusFriend, isHom
   return (
     <div className='infomation'>
         <title className='infomationTitle'>
-            <i className="infomationTitleIcon bi bi-person-lines-fill"></i>
-            INFOMATION
+            <span className="infomationTitleContent">
+            <i className="infomationTitleContentIcon bi bi-person-lines-fill"></i>
+                INFOMATION
+            </span>
         </title>
         <div className="infomationContent">
             <div className="infomationContentTop">
             <div className="infomationContentTopItem">
                 <i className="infomationContentTopItemIcon bi-file-person-fill"></i>
-                {valueGender ? valueGender : 'Gender'}
+                {valueGender ? valueGender : 'No Info'}
             </div>
             <div className="infomationContentTopItem">
                 <i className="infomationContentTopItemIcon bi-bookmark-star-fill"></i>
@@ -27,14 +29,14 @@ function Infomation({gender, position, postsNumber, address, statusFriend, isHom
             </div>
             <div className="infomationContentTopItem">
                 <i className="infomationContentTopItemIcon bi-house-fill"></i>
-                {address ? address : 'Address'}
+                {address ? address : 'No Info'}
             </div>
             </div>
             {!isHomePage && 
                 <div className="infomationContentBottom">
                     {
                         // La ban be cua nhau
-                        statusFriend === 3 &&
+                        statusFriend === 4 &&
                         <div className="infomationContentBottomItem">
                             <button className="removeFriend">
                                 Remove
@@ -48,7 +50,7 @@ function Infomation({gender, position, postsNumber, address, statusFriend, isHom
                     }
                     {   
                         // Minh da gui yeu cau ket ban cho no
-                        statusFriend === 2 &&
+                        statusFriend === 9 &&
                         <div className="infomationContentBottomItem">
                             <button className="removeRequestFriend">
                                 Remove
@@ -62,7 +64,7 @@ function Infomation({gender, position, postsNumber, address, statusFriend, isHom
                     }
                     {
                         // No da gui yeu cau ket ban cho minh
-                        statusFriend === 1 &&
+                        statusFriend === 2 &&
                         <div className="infomationContentBottomItem">
                             <button className="removeFriendRequest">
                                 Refuse
