@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './write.scss'
+import addImage from '../../assets/image/addImage.png'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import handleErrorWrite from '../../utils/handleErrorWrite';
@@ -28,8 +29,8 @@ export default function Write() {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const result = handleErrorWrite(postInfo)
-        if(Object.keys(result).length === 0) {
+        const resultError = handleErrorWrite(postInfo)
+        if(Object.keys(resultError).length === 0) {
             const data = new FormData()
             data.append('userId', userId)
             Object.keys(postInfo).forEach(key=> data.append(key, postInfo[key]))
@@ -40,7 +41,7 @@ export default function Write() {
                 console.log(error)
             }
         } else {
-            setError(result)
+            setError(resultError)
         }
     }
     useEffect(() => {
@@ -51,12 +52,10 @@ export default function Write() {
 
             {/* Image */}
             <div className="writeImage">
-                <label className={postInfo?.image ? 'writeImageIcon active' : 'writeImageIcon'} htmlFor="writeImage">
-                    {postInfo?.image ? 'Change' : 'Choose'} <br/> image
-                    <i className="writeImageIconChild bi bi-image"></i>
-                    <i className={postInfo?.image ? "writeImageIconChild bi bi-arrow-repeat" : "writeImageIconChild bi bi-plus-circle"}></i>
+                <label className={postInfo?.image ? 'writeImageLabel active' : 'writeImageLabel'} htmlFor="writeImageId">
+                    <img src={addImage} alt="imgLabel" className="writeImageLabelContent" />
                 </label>
-                <input type="file" id="writeImage" onChange={handlePreview} hidden/>
+                <input type="file" id="writeImageId" onChange={handlePreview} hidden/>
                 {postInfo?.image &&
                     <img src={postInfo.image.preview} className="writeImageContent" name='image' alt="writeImage"/>
                 }
@@ -74,7 +73,7 @@ export default function Write() {
             <div className="writeCategory" onClick={()=> setOpenCategory(!openCategory)}>
                 {postInfo?.category ? 'Change category' : 'Choose category'}
                 <i className={postInfo?.category ? "writeCategoryIcon bi bi-arrow-repeat" :"writeCategoryIcon bi bi-ui-checks-grid"}></i>
-                {postInfo?.category && <span className="writeCategoryContent" name='category'>{valueCategory}</span>}
+                {postInfo?.category && <span className="writeCategoryContent">{valueCategory}</span>}
                 <ul className={openCategory ? "writeCategoryList active" : "writeCategoryList"}>
                     {categoryList.map((categoryItem, index) => (
                         <li className="writeCategoryItem" key={index}

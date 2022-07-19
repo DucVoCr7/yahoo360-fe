@@ -1,16 +1,16 @@
 export default function handleErrorWrite(postInfo) {
-    const error = {}
+    const resultError = {}
     if(!postInfo?.title?.trim()) {
-        error.title = 'Enter your post title!'
+        resultError.title = 'Enter your post title!'
     }
     if(!postInfo?.content?.trim()) {
-        error.content = 'Enter your post content!'
+        resultError.content = 'Enter your post content!'
     }
     if(!postInfo?.category?.trim()) {
-        error.category = 'Choice post category!'
+        resultError.category = 'Choice post category!'
     }
     if(!postInfo?.image) {
-        error.image = 'Please upload post image!'
+        resultError.image = 'Please upload post image!'
     }
-    return error
+    return resultError
 }

@@ -20,7 +20,7 @@ export default function Single() {
     return (
         post ?
         <div className='single'>
-           <Post post = {post}/>
+           <Post post = {post} setPost={setPost}/>
         </div>
         :
         <div className='single loading'></div>

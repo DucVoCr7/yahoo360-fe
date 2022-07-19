@@ -8,5 +8,9 @@
 }
 @font-face {
     font-family: 'content';
-    src: local('content'), url(../font/contentFont.woff2) format('woff2');
+    src: local('content'), url(../font/contentFont.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'part';
+    src: local('part'), url(../font/partFont.ttf) format('truetype');
 }

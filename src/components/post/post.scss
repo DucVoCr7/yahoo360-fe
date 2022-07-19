@@ -75,7 +75,7 @@
     
         .postContent {
             @include font('content');
-            font-size: 17px;
+            font-size: 18px;
             line-height: 2;
             text-align: justify;
         }
@@ -162,7 +162,7 @@
     
         .postContent {
             @include font('content');
-            font-size: 17px;
+            font-size: 18px;
             line-height: 2;
             text-align: justify;
         }
@@ -255,7 +255,7 @@
         .postContent {
             width: calc(100% - $sizeAlignPageTabletMobile * 2);//
             @include font('content');
-            font-size: 17px;
+            font-size: 18px;
             line-height: 2;
             text-align: justify;
         }

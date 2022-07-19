@@ -13,7 +13,7 @@ function ReplyAwait({commentId, setOpenReply, postId, setCommentsNumber, setRepl
                 const response = await userRequest.post('/replies', data)
                 setOpenReply(false)
                 setCommentsNumber(prev => prev + 1)
-                setReplies(prev => [response.data.reply, ...prev])
+                setReplies(prev => [{...response.data.reply}, ...prev])
             } catch (error) {
                 console.log(error)
             }

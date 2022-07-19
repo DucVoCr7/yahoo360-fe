@@ -160,7 +160,9 @@ function Photos({ setPhotos, name, photos, isHomePage = false }) {
         <div className="photosSliderContent">
           <Slider {...settings} ref={refSlider}>
             {photos.map((element, index) =>
-              <img src={element.photo} alt='headerImg' className="photosSliderContentItem" key={index} />
+              <div className="photosSliderContentSlide">
+                <img src={element.photo} alt='SlideImg' className="photosSliderContentSlideImg" key={index} />
+              </div>
             )}
           </Slider>
         </div>
