@@ -14,12 +14,12 @@ export default function PostMedium({ post, isPostsCategory = false }) {
                 <h1 className="postMediumTitle">{post.title}</h1>
                 {
                     isPostsCategory &&
-                <div className="postMediumAuthor">
+                <span className="postMediumAuthor">
                     <img src={post.user.image ? post.user.image : avatar} alt="postImg" className="postMediumAuthorImg"/>
                     <span className="postMediumAuthorName">{post.user.name}</span>
-                </div>
+                </span>
                 }
-                <div className="postMediumOther">
+                <span className="postMediumOther">
                     {
                         !isPostsCategory &&
                         <span className="postMediumOtherChild">
@@ -37,8 +37,8 @@ export default function PostMedium({ post, isPostsCategory = false }) {
                         {post.commentsNumber}
                     </span>
                     <span className="postMediumOtherChild">{convertDate(post.updatedAt)}</span>
-                </div>
-                <div className="postMediumContent" dangerouslySetInnerHTML={{__html: post.content}}/>
+                </span>
+                <span className="postMediumContent" dangerouslySetInnerHTML={{__html: post.content}}/>
             </div>
             <div className="postMediumRight">
                 <img src={post.image} alt="postMediumImg" className="postMediumImg" />

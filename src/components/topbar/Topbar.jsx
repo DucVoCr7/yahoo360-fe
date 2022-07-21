@@ -64,7 +64,7 @@ export default function Topbar() {
                     <div className='topbarItem' onClick={() => setOpenNotify(!openNotify)} ref={refNotify}>
                         <i className={openNotify ? 'topbarNotifyIcon bi bi-bell-fill active' : 'topbarNotifyIcon bi bi-bell'} ></i>
                         <span className={openNotify ? 'topbarNotifyNumber active' : "topbarNotifyNumber"} >1</span>
-                        <ul className={openNotify ? 'topbarNotifyList active' : 'topbarNotifyList'}>
+                        <div className={openNotify ? 'topbarNotifyList active' : 'topbarNotifyList'}>
                             <Link className='topbarNotifyItem' to='/notify'>
                                 <img src={avatar} className="topbarNotifyImg" alt='avatar' />
                                 <span className="topbarNotifyContent">
@@ -95,7 +95,7 @@ export default function Topbar() {
                                     Hello thích bài viết của bạn.
                                 </span>
                             </Link>
-                        </ul>
+                        </div>
                     </div>
                 }
                 {userInfo &&
@@ -106,10 +106,10 @@ export default function Topbar() {
                 {userInfo &&
                     <div className='topbarItem' onClick={() => setOpenSetting(!openSetting)} ref={refSetting}>
                         <i className={openSetting ? 'topbarSettingIcon bi bi-gear-fill active' : 'topbarSettingIcon bi bi-gear'} ></i>
-                        <ul className={openSetting ? 'topbarSettingList active' : 'topbarSettingList'}>
+                        <div className={openSetting ? 'topbarSettingList active' : 'topbarSettingList'}>
                             <Link className='topbarSettingItem' to='/updateAccount'>Update Account</Link>
                             <Link className='topbarSettingItem' to='/' onClick={handleLogout}>Logout</Link>
-                        </ul>
+                        </div>
                     </div>
                 }
                 {!userInfo && <Link className='topbarItem' to='/login'>LOGIN</Link>}

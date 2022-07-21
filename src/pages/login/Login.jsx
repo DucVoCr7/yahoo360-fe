@@ -19,7 +19,7 @@ export default function Login() {
   return (
     <div className='login'>
       <form className='loginForm' onSubmit={handleLogin}>
-        <div className="loginLogo">YAHOO 360</div>
+        <span className="loginLogo">YAHOO 360</span>
         <label className='loginLabel' htmlFor='loginEmail'>
           Email
           {error && <span className='loginError'>{error.email}</span>}
@@ -37,9 +37,9 @@ export default function Login() {
         <button className={pending ? 'loginSubmit active btnBig btnMain' : 'loginSubmit btnBig btnMain'}  type='submit'>
           {!pending && 'LOGIN'}
         </button>
-        <div className='loginToRegister'>
+        <span className='loginToRegister'>
           New to Yahoo! 360°? <Link to='/register' className='loginToRegisterLink'>REGISTER</Link>
-        </div>
+        </span>
       </form>
     </div>
   )

@@ -21,7 +21,7 @@ export default function Register() {
   return (
     <div className='register'>
       <form className="registerForm" onSubmit={handleSubmit}>
-      <div className="registerLogo">YAHOO 360</div>
+      <span className="registerLogo">YAHOO 360</span>
         <label className='registerLabel'>
           Name
           {error?.name && <span className="registerError">{error.name}</span>}
@@ -46,12 +46,12 @@ export default function Register() {
         <button className={pending ? 'registerSubmit btnBig btnMain active' : 'registerSubmit btnBig btnMain'}  type='submit'>
           {!pending && 'REGISTER'}
         </button>
-        <div className="registerRules">
+        <span className="registerRules">
         Learn about&nbsp;
           <Link to='/about' className='registerRulesLink'>Terms of Service</Link>&nbsp;
           & &nbsp;
           <Link to='/about' className='registerRulesLink'>Privacy Policy</Link>.
-        </div>
+        </span>
       </form>
     </div>
   )

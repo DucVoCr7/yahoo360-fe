@@ -20,9 +20,9 @@ function PostsSummary({posts, isHomePage = false, isPostsCategory = false}) {
                 <img src={empty} alt='emptyIcon' className="postsSummaryNoContentContentIcon"/>
                 </Link>
               :
-              <div className="postsSummaryNoContentContent">
+              <span className="postsSummaryNoContentContent">
                 <img src={empty} alt='emptyIcon' className="postsSummaryNoContentContentIcon"/>
-              </div>
+              </span>
             }
                 </div>
             }

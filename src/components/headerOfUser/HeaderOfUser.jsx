@@ -22,9 +22,9 @@ function HeaderOfUser({ photos, isHomePage = false }) {
                             <img src={empty} alt='emptyIcon' className="headerOfUserNoPhotoContentIcon" />
                         </label>
                         :
-                        <div className="headerOfUserNoPhotoContent">
+                        <span className="headerOfUserNoPhotoContent">
                             <img src={empty} alt='emptyIcon' className="headerOfUserNoPhotoContentIcon" />
-                        </div>
+                        </span>
                     }
                 </div>
                 :

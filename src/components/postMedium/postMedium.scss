@@ -4,7 +4,7 @@
         width: 100%;
         height: 100%;
         display: flex;
-        color: $blackColor;
+        
         
         &:hover {
             color: $contentBriefColor;
@@ -28,9 +28,10 @@
                 display: flex;
                 align-items: center;
                 padding-top: $sizeAlignElementPC;
-                background-color: $whiteColor;
+                
     
                 &Img {
+                    box-shadow: $shadowFull;
                     width: 25px;
                     height: 25px;
                     border-radius: 50%;
@@ -46,7 +47,7 @@
                 @include font('title');
                 padding: $sizeAlignElementPC 0;
                 font-size: 15px;
-                background-color: $whiteColor;
+                
                 &Child {
                     &:first-child {
                         padding: 0;
@@ -86,7 +87,7 @@
         width: 100%;
         height: 100%;
         display: flex;
-        color: $blackColor;
+        
         
         &:hover {
             color: $contentBriefColor;
@@ -112,9 +113,10 @@
                 display: flex;
                 align-items: center;
                 padding-top: $sizeAlignElementTM; //
-                background-color: $whiteColor;
+                
     
                 &Img {
+                    box-shadow: $shadowFull;
                     width: 25px;
                     height: 25px;
                     border-radius: 50%;
@@ -129,7 +131,7 @@
             .postMediumOther {
                 @include font('title');
                 padding: $sizeAlignElementTM 0; //
-                background-color: $whiteColor;
+                
                 font-size: 15px;
                 &Child {
                     &:first-child {
@@ -172,7 +174,7 @@
         width: 100%;
         height: 100%;
         display: flex;
-        color: $blackColor;
+        
         
         &:hover {
             color: $contentBriefColor;
@@ -196,9 +198,10 @@
                 display: flex;
                 align-items: center;
                 padding-top: $sizeAlignElementTM; //
-                background-color: $whiteColor;
+                
     
                 &Img {
+                    box-shadow: $shadowFull;
                     width: 25px;
                     height: 25px;
                     border-radius: 50%;
@@ -215,7 +218,7 @@
                 @include font('title');
                 padding: $sizeAlignElementTM 0 0 0; //
                 font-size: 15px;
-                background-color: $whiteColor;
+                
                 &Child {
                     &:first-child {
                         padding: 0;

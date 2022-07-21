@@ -51,7 +51,6 @@
             display: flex;
             flex-direction: column;
             @include font('title');
-            font-size: 17px;
             width: 100%;
             &Title {
                 display: flex;
@@ -59,17 +58,19 @@
                 align-items: center;
                 cursor: pointer;
                 &Close {
-                    font-size: 20px;
+
                 }
             }
             &Input {
                 flex: 1;
-                margin: 5px 0;
+                margin: 10px 0;
+                border-radius: 2px;
                 padding: 5px;
                 font-size: 15px;
+                border: 1px solid $blackBorder;
             }
             &Submit {
-
+                width: 100% !important;
             }
         }
     }
@@ -127,7 +128,6 @@
             display: flex;
             flex-direction: column;
             @include font('title');
-            font-size: 15px;
             width: 100%;
             &Title {
                 display: flex;
@@ -135,17 +135,19 @@
                 align-items: center;
                 cursor: pointer;
                 &Close {
-                    font-size: 16px;
+
                 }
             }
             &Input {
                 flex: 1;
-                margin: 5px 0;
+                margin: 10px 0;
+                border-radius: 2px;
                 padding: 5px;
-                font-size: 14px;
+                font-size: 15px;
+                border: 1px solid $blackBorder;
             }
             &Submit {
-
+                width: 100% !important;
             }
         }
     }

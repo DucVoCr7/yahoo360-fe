@@ -35,9 +35,9 @@ function Friends({ name, friends }) {
         </div>
         :
         <div className="friendsNoContent">
-            <div className="friendsNoContentContent">
+            <span className="friendsNoContentContent">
               <img src={empty} alt='emptyIcon' className="friendsNoContentContentIcon"/>
-            </div>
+            </span>
         </div>
       }
 

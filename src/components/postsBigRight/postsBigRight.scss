@@ -12,7 +12,7 @@
             display: flex;
             &Left {
                 flex: 4;
-@include paddingMarginBorder('PC', 'left');
+@include paddingMarginBorder('PC', 'right');
                 display: flex;
                 flex-direction: column;
                 > :nth-child(n) {

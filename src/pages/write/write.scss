@@ -129,6 +129,7 @@
             overflow: hidden;
             // Custom ckEditor
             .ck-toolbar {
+                background-color: transparent;
                 border: none !important;
             }
             .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
@@ -138,8 +139,9 @@
                 box-shadow: none;
                 border: none !important;
             }
-            .ck.ck-toolbar.ck-toolbar_grouping>.ck-toolbar__items {
-                background-color: white;
+            .ck.ck-toolbar.ck-toolbar_grouping>.ck-toolbar__items,
+            .ck.ck-editor__main>.ck-editor__editable {
+                background-color: transparent;
             }
             .ck.ck-button {
                 border-color: $disableColor;
@@ -292,6 +294,7 @@
             overflow: hidden;
             // Custom ckEditor
             .ck-toolbar {
+                background-color: transparent;
                 border: none !important;
             }
             .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
@@ -301,8 +304,9 @@
                 box-shadow: none;
                 border: none !important;
             }
-            .ck.ck-toolbar.ck-toolbar_grouping>.ck-toolbar__items {
-                background-color: white;
+            .ck.ck-toolbar.ck-toolbar_grouping>.ck-toolbar__items,
+            .ck.ck-editor__main>.ck-editor__editable {
+                background-color: transparent;
             }
             .ck.ck-button {
                 border-color: $disableColor;
@@ -461,6 +465,7 @@
             overflow: hidden;
             // Custom ckEditor
             .ck-toolbar {
+                background-color: transparent;
                 border: none !important;
             }
             .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
@@ -470,8 +475,9 @@
                 box-shadow: none;
                 border: none !important;
             }
-            .ck.ck-toolbar.ck-toolbar_grouping>.ck-toolbar__items {
-                background-color: white;
+            .ck.ck-toolbar.ck-toolbar_grouping>.ck-toolbar__items,
+            .ck.ck-editor__main>.ck-editor__editable {
+                background-color: transparent;
             }
             .ck.ck-button {
                 border-color: $disableColor;

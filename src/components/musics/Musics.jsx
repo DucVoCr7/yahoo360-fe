@@ -55,13 +55,13 @@ function Musics({ musics, setMusics, isHomePage = false }) {
             :
             <div className="musicsNoContent">
               {isHomePage ?
-                <div className="musicsNoContentContent" onClick={() => setOpenAddMusic(true)}>
+                <span className="musicsNoContentContent" onClick={() => setOpenAddMusic(true)}>
                   <img src={empty} alt='emptyIcon' className="musicsNoContentContentIcon" />
-                </div>
+                </span>
                 :
-                <div className="musicsNoContentContent">
+                <span className="musicsNoContentContent">
                   <img src={empty} alt='emptyIcon' className="musicsNoContentContentIcon" />
-                </div>
+                </span>
               }
             </div>
         )

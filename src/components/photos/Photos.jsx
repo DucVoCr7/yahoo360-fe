@@ -126,9 +126,9 @@ function Photos({ setPhotos, name, photos, isHomePage = false }) {
               <img src={empty} alt='emptyIcon' className="photosNoContentContentIcon"/>
             </label>
             :
-            <div className="photosNoContentContent">
+            <span className="photosNoContentContent">
               <img src={empty} alt='emptyIcon' className="photosNoContentContentIcon"/>
-            </div>
+            </span>
           }
         </div>
       }

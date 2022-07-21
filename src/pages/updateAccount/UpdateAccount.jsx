@@ -11,67 +11,67 @@ const handleUpdate = async()=> {
 const userInfo = useSelector(state => state.user.userInfo)
     return (
         <div className='updateAccount'>
-            <div className="updateAccountTitle">
+            <span className="updateAccountTitle">
                 UPDATE ACCOUNT
-            </div>
+            </span>
             <div className="updateAccountContent">
-                <div className="updateAccountContentItem">
+                <span className="updateAccountContentItem">
                     <img src={userInfo.image ? userInfo.image : avatar} alt="" className="updateAccountContentItemImg" />
                     <label className="updateAccountContentItemLabel" htmlFor='updateAccountImgId'>
                         Change Avatar
                         <i className="updateAccountContentItemLabelInfo bi bi-cloud-arrow-up-fill"></i>
                     </label>
                     <input type="file" id='updateAccountImgId' hidden/>
-                </div>
-                <div className="updateAccountContentItem">
+                </span>
+                <span className="updateAccountContentItem">
                     <label className="updateAccountContentItemLabel">
                         Name
-                        <div className="updateAccountContentItemLabelInfo">
+                        <span className="updateAccountContentItemLabelInfo">
                             {userInfo.name}
-                        </div>
+                        </span>
                     </label>
                     <input type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
-                </div>
-                <div className="updateAccountContentItem">
+                </span>
+                <span className="updateAccountContentItem">
                     <label className="updateAccountContentItemLabel">
                         Gender
-                        <div className="updateAccountContentItemLabelInfo">
+                        <span className="updateAccountContentItemLabelInfo">
                             {userInfo.gender}
-                        </div>
+                        </span>
                     </label>
                     <select className='updateAccountContentItemInput'>
                         <option value="" disabled selected>Choice gender...</option>
                         <option value="G0">Male</option>
                         <option value="G1">Female</option>
                     </select>
-                </div>
-                <div className="updateAccountContentItem">
+                </span>
+                <span className="updateAccountContentItem">
                     <label className="updateAccountContentItemLabel">
                         Email
-                        <div className="updateAccountContentItemLabelInfo">
+                        <span className="updateAccountContentItemLabelInfo">
                             {userInfo.email}
-                        </div>
+                        </span>
                     </label>
                     <input type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
-                </div>
-                <div className="updateAccountContentItem">
+                </span>
+                <span className="updateAccountContentItem">
                     <label className="updateAccountContentItemLabel">
                         Phone Number
-                        <div className="updateAccountContentItemLabelInfo">
+                        <span className="updateAccountContentItemLabelInfo">
                             {userInfo.phoneNumber}
-                        </div>
+                        </span>
                     </label>
                     <input type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
-                </div>
-                <div className="updateAccountContentItem">
+                </span>
+                <span className="updateAccountContentItem">
                     <label className="updateAccountContentItemLabel">
                         Address
-                        <div className="updateAccountContentItemLabelInfo">
+                        <span className="updateAccountContentItemLabelInfo">
                             {userInfo.address}
-                        </div>
+                        </span>
                     </label>
                     <input type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
-                </div>
+                </span>
                 <button className='updateAccountContentSubmit btnBig btnMain' onClick={handleUpdate}> SUBMIT </button>
             </div>
         </div>

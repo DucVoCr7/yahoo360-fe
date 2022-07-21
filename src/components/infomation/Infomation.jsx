@@ -15,22 +15,22 @@ function Infomation({gender, position, postsNumber, address, statusFriend, isHom
         </title>
         <div className="infomationContent">
             <div className="infomationContentTop">
-            <div className="infomationContentTopItem">
+            <span className="infomationContentTopItem">
                 <i className="infomationContentTopItemIcon bi-file-person-fill"></i>
                 {valueGender ? valueGender : 'No Info'}
-            </div>
-            <div className="infomationContentTopItem">
+            </span>
+            <span className="infomationContentTopItem">
                 <i className="infomationContentTopItemIcon bi-bookmark-star-fill"></i>
                 {valuePosition}
-            </div>
-            <div className="infomationContentTopItem">
+            </span>
+            <span className="infomationContentTopItem">
                 <i className="infomationContentTopItemIcon bi bi-file-earmark-richtext-fill"></i>
                 {postsNumber}
-            </div>
-            <div className="infomationContentTopItem">
+            </span>
+            <span className="infomationContentTopItem">
                 <i className="infomationContentTopItemIcon bi-house-fill"></i>
                 {address ? address : 'No Info'}
-            </div>
+            </span>
             </div>
             {!isHomePage && 
                 <div className="infomationContentBottom">

@@ -17,7 +17,7 @@ function Header() {
     return (
         <div className='header'>
           <Link to='/' className="headerLogo">YAHOO 360</Link>
-          <div className="headerTitle">Store the experience your way!</div>
+          <span className="headerTitle">Store the experience your way!</span>
           <Slider {...settings}>
             {slideShow.map((item, index)=> 
                 <img src={item.img} alt='headerImg' className="headerSlide" key={index}/>

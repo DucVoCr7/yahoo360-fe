@@ -93,17 +93,15 @@
             top: $heightTopbar;
             z-index: 2;
             left: 0;
-            background-color: $blackColor;
+            
             padding: $sizeAlignPagePC;
             overflow-y: scroll;
 
             &Title {
                 @include font('title');
                 font-size: 20px;
-                padding-bottom: $sizeAlignElementPC;
-                border-bottom: 1px solid $mainColor;
-                margin-bottom: $sizeAlignElementPC;
-                color: $whiteColor;
+@include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double);
+                
                 display: flex;
                 justify-content: space-between;
                 &Close {}
@@ -124,16 +122,14 @@
             top: $heightTopbar;
             z-index: 2;
             left: 0;
-            background-color: $blackColor;
+            
             padding: $sizeAlignPagePC;
 
             &Title {
                 @include font('title');
                 font-size: 20px;
-                padding-bottom: $sizeAlignElementPC;
-                border-bottom: 1px solid $mainColor;
-                margin-bottom: $sizeAlignElementPC;
-                color: $whiteColor;
+@include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double);
+                
                 display: flex;
                 justify-content: space-between;
 
@@ -288,8 +284,8 @@
             top: $heightTopbar;
             z-index: 2;
             left: 0;
-            background-color: $blackColor;
-            padding: $sizeAlignPagePC;
+            
+            padding: $sizeAlignPageTM;
             overflow-y: scroll;
 
             &Title {
@@ -297,7 +293,7 @@
                 padding-bottom: $sizeAlignElementTM;
                 border-bottom: 1px solid $mainColor;
                 margin-bottom: $sizeAlignElementTM;
-                color: $whiteColor;
+                
                 display: flex;
                 justify-content: space-between;
                 &Close {}
@@ -317,14 +313,14 @@
             top: $heightTopbar;
             z-index: 2;
             left: 0;
-            background-color: $blackColor;
+            
             padding: $sizeAlignPageTM;
             &Title {
                 @include font('title');
                 padding-bottom: $sizeAlignElementTM;
                 border-bottom: 1px solid $mainColor;
                 margin-bottom: $sizeAlignElementTM;
-                color: $whiteColor;
+                
                 display: flex;
                 justify-content: space-between;
                 &Number {}
