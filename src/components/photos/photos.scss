@@ -74,7 +74,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 10px;
-            background-image: linear-gradient(to left, #dce8eb, #f8e8dc);
+            background-image: $backGroundEmpty;
 
             &Content {
                 &Icon {
@@ -269,7 +269,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 10px;
-            background-image: linear-gradient(to left, #dce8eb, #f8e8dc);
+            background-image: $backGroundEmpty;
 
             &Content {
                 &Icon {
@@ -294,9 +294,9 @@
 
             &Title {
                 @include font('title');
-                padding-bottom: $sizeAlignElementTabletMobile;
+                padding-bottom: $sizeAlignElementTM;
                 border-bottom: 1px solid $mainColor;
-                margin-bottom: $sizeAlignElementTabletMobile;
+                margin-bottom: $sizeAlignElementTM;
                 color: $whiteColor;
                 display: flex;
                 justify-content: space-between;
@@ -318,12 +318,12 @@
             z-index: 2;
             left: 0;
             background-color: $blackColor;
-            padding: $sizeAlignPageTabletMobile;
+            padding: $sizeAlignPageTM;
             &Title {
                 @include font('title');
-                padding-bottom: $sizeAlignElementTabletMobile;
+                padding-bottom: $sizeAlignElementTM;
                 border-bottom: 1px solid $mainColor;
-                margin-bottom: $sizeAlignElementTabletMobile;
+                margin-bottom: $sizeAlignElementTM;
                 color: $whiteColor;
                 display: flex;
                 justify-content: space-between;

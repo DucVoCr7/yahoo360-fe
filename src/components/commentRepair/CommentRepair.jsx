@@ -29,10 +29,10 @@ function CommentRepair({commentId, commentContent, setCommentContent, setOpenRep
             onChange={event => setContentRepair(event.target.value)}
         />
         <div className="commentRepairAction">
-            <button className="commentRepairActionItem" onClick={()=> setOpenRepair(false)}>
+            <button className="commentRepairActionItem btnSmall btnGrey" onClick={()=> setOpenRepair(false)}>
                 Cancel
             </button>
-            <button className="commentRepairActionItem" onClick={handleRepairComment}>
+            <button className="commentRepairActionItem btnSmall btnBlue" onClick={handleRepairComment}>
                 Repair
             </button>
         </div>

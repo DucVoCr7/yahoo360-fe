@@ -11,7 +11,7 @@
             width: 100%;
             min-height: 200px;
             position: relative;
-            background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
+            background-image: $backGroundEmpty;
             margin-bottom: $sizeAlignElementPC;
             &Content {
                 display: block;
@@ -53,14 +53,14 @@
             &:focus-within &Icon {
                 color: $mainColor;
             }
-            border-bottom: 1px solid $blackColor;
+            border-bottom: 1px solid $blackBorder;
             width: calc(100% - $sizeAlignPagePC*2);
             margin-bottom: $sizeAlignElementPC;
             display: flex;
             align-items: center;
             &Icon {
                 font-size: 28px;
-                line-height: 1;
+                
                 margin-right: 10px;
             }
             &Input {
@@ -105,7 +105,7 @@
                 font-size: 15px;
                 .writeCategoryItem {
                     &:hover {
-                        background-color: $clickColor;
+                        background-color: $clickBtnColor;
                     }
                     width: 80px;
                     margin-left: 10px;
@@ -174,8 +174,8 @@
             width: 100%;
             min-height: 200px;
             position: relative;
-            background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
-            margin-bottom: $sizeAlignElementTabletMobile;
+            background-image: $backGroundEmpty;
+            margin-bottom: $sizeAlignElementTM;
             &Content {
                 display: block;
                 width: 100%;
@@ -184,8 +184,8 @@
             }
             &Label {
                 &.active {
-                    bottom: $sizeAlignPageTabletMobile;
-                    left: $sizeAlignPageTabletMobile;
+                    bottom: $sizeAlignPageTM;
+                    left: $sizeAlignPageTM;
                     transform: translateX(0%) translateY(0%);
                     transition: bottom 1s linear, left 1s linear;
                     padding: 5px 3px 3px 5px;
@@ -216,14 +216,14 @@
             &:focus-within &Icon {
                 color: $mainColor;
             }
-            border-bottom: 1px solid $blackColor;
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
-            margin-bottom: $sizeAlignElementTabletMobile;
+            border-bottom: 1px solid $blackBorder;
+            width: calc(100% - $sizeAlignPageTM*2); //
+            margin-bottom: $sizeAlignElementTM;
             display: flex;
             align-items: center;
             &Icon {
                 font-size: 22px;
-                line-height: 1;
+                
                 margin-right: 10px;
             }
             &Input {
@@ -234,12 +234,12 @@
             }
         }
         &Category {
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
+            width: calc(100% - $sizeAlignPageTM*2); //
             position: relative;
             height: 30px;
             display: flex;
             align-items: center;
-            margin-bottom: $sizeAlignElementTabletMobile;
+            margin-bottom: $sizeAlignElementTM;
             &Icon{
                 cursor: pointer;
                 padding: 0 10px;
@@ -268,7 +268,7 @@
                 font-size: 15px;
                 .writeCategoryItem {
                     &:hover {
-                        background-color: $clickColor;
+                        background-color: $clickBtnColor;
                     }
                     width: 55px; //
                     margin-left: 5px; //
@@ -283,8 +283,8 @@
         }
         &Content {
             @include font('content');
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
-            margin-bottom: $sizeAlignElementTabletMobile;
+            width: calc(100% - $sizeAlignPageTM*2); //
+            margin-bottom: $sizeAlignElementTM;
             flex: 1;
             font-size: 15px;
             border: 1px solid $disableColor;
@@ -316,11 +316,11 @@
             }
         }
         &Submit {
-            margin-bottom: $sizeAlignPageTabletMobile;
+            margin-bottom: $sizeAlignPageTM;
         }
         &Error {
-            margin-bottom: $sizeAlignElementTabletMobile;
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
+            margin-bottom: $sizeAlignElementTM;
+            width: calc(100% - $sizeAlignPageTM*2); //
             color: $errorColor;
         }
     }
@@ -338,8 +338,8 @@
             width: 100%;
             min-height: 100px; //
             position: relative;
-            background-image: linear-gradient(to left, #dce8eb , #f8e8dc);
-            margin-bottom: $sizeAlignElementTabletMobile;
+            background-image: $backGroundEmpty;
+            margin-bottom: $sizeAlignElementTM;
             &Content {
                 display: block;
                 width: 100%;
@@ -348,8 +348,8 @@
             }
             &Label {
                 &.active {
-                    bottom: $sizeAlignPageTabletMobile;
-                    left: $sizeAlignPageTabletMobile;
+                    bottom: $sizeAlignPageTM;
+                    left: $sizeAlignPageTM;
                     transform: translateX(0%) translateY(0%);
                     transition: bottom 1s linear, left 1s linear;
                     padding: 5px 3px 3px 5px;
@@ -380,14 +380,14 @@
             &:focus-within &Icon {
                 color: $mainColor;
             }
-            border-bottom: 1px solid $blackColor;
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
-            margin-bottom: $sizeAlignElementTabletMobile;
+            border-bottom: 1px solid $blackBorder;
+            width: calc(100% - $sizeAlignPageTM*2); //
+            margin-bottom: $sizeAlignElementTM;
             display: flex;
             align-items: center;
             &Icon {
                 font-size: 18px;
-                line-height: 1;
+                
                 margin-right: 10px;
             }
             &Input {
@@ -398,12 +398,12 @@
             }
         }
         &Category {
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
+            width: calc(100% - $sizeAlignPageTM*2); //
             position: relative;
             height: 30px;
             display: flex;
             align-items: center;
-            margin-bottom: $sizeAlignElementTabletMobile;
+            margin-bottom: $sizeAlignElementTM;
             &Icon{
                 cursor: pointer;
                 padding: 0 10px;
@@ -437,7 +437,7 @@
                 font-size: 16px; ///
                 .writeCategoryItem {
                     &:hover {
-                        background-color: $clickColor;
+                        background-color: $clickBtnColor;
                     }
                     width: unset; //
                     margin-left: 0px; //
@@ -453,8 +453,8 @@
         &Content {
             @include font('content');
             font-size: 15px; //
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
-            margin-bottom: $sizeAlignElementTabletMobile;
+            width: calc(100% - $sizeAlignPageTM*2); //
+            margin-bottom: $sizeAlignElementTM;
             flex: 1;
             border: 1px solid $disableColor;
             border-radius: 3px;
@@ -485,11 +485,11 @@
             }
         }
         &Submit {
-            margin-bottom: $sizeAlignPageTabletMobile;
+            margin-bottom: $sizeAlignPageTM;
         }
         &Error {
-            margin-bottom: $sizeAlignElementTabletMobile;
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
+            margin-bottom: $sizeAlignElementTM;
+            width: calc(100% - $sizeAlignPageTM*2); //
             color: $errorColor;
         }
     }

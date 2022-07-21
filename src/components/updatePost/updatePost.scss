@@ -40,14 +40,14 @@
             &:focus-within &Icon {
                 color: $mainColor;
             }
-            border-bottom: 1px solid $blackColor;
+            border-bottom: 1px solid $blackBorder;
             width: calc(100% - $sizeAlignPagePC*2);
             margin-bottom: $sizeAlignElementPC;
             display: flex;
             align-items: center;
             &Icon {
                 font-size: 28px;
-                line-height: 1;
+                
                 margin-right: 10px;
             }
             &Input {
@@ -92,7 +92,7 @@
                 font-size: 15px;
                 .updatePostCategoryItem {
                     &:hover {
-                        background-color: $clickColor;
+                        background-color: $clickBtnColor;
                     }
                     width: 80px;
                     margin-left: 10px;
@@ -146,7 +146,6 @@
             }
             &Cancel {
                 margin-right: 10px;
-                background-color: $disableColor;
             }
             margin-bottom: $sizeAlignElementPC;
         }
@@ -168,7 +167,7 @@
         &Image {
             width: 100%;
             position: relative;
-            margin-bottom: $sizeAlignElementTabletMobile;
+            margin-bottom: $sizeAlignElementTM;
             &Content {
                 display: block;
                 width: 100%;
@@ -197,14 +196,14 @@
             &:focus-within &Icon {
                 color: $mainColor;
             }
-            border-bottom: 1px solid $blackColor;
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
-            margin-bottom: $sizeAlignElementTabletMobile;
+            border-bottom: 1px solid $blackBorder;
+            width: calc(100% - $sizeAlignPageTM*2); //
+            margin-bottom: $sizeAlignElementTM;
             display: flex;
             align-items: center;
             &Icon {
                 font-size: 22px;
-                line-height: 1;
+                
                 margin-right: 10px;
             }
             &Input {
@@ -215,12 +214,12 @@
             }
         }
         &Category {
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
+            width: calc(100% - $sizeAlignPageTM*2); //
             position: relative;
             height: 30px;
             display: flex;
             align-items: center;
-            margin-bottom: $sizeAlignElementTabletMobile;
+            margin-bottom: $sizeAlignElementTM;
             &Icon{
                 cursor: pointer;
                 padding: 0 10px;
@@ -249,7 +248,7 @@
                 font-size: 15px;
                 .updatePostCategoryItem {
                     &:hover {
-                        background-color: $clickColor;
+                        background-color: $clickBtnColor;
                     }
                     width: 55px; //
                     margin-left: 5px; //
@@ -264,8 +263,8 @@
         }
         &Content {
             @include font('content');
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
-            margin-bottom: $sizeAlignElementTabletMobile;
+            width: calc(100% - $sizeAlignPageTM*2); //
+            margin-bottom: $sizeAlignElementTM;
             flex: 1;
             font-size: 15px;
             border: 1px solid $disableColor;
@@ -303,13 +302,12 @@
             }
             &Cancel {
                 margin-right: 10px;
-                background-color: $disableColor;
             }
-            margin-bottom: $sizeAlignPageTabletMobile;
+            margin-bottom: $sizeAlignPageTM;
         }
         &Error {
-            margin-bottom: $sizeAlignElementTabletMobile;
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
+            margin-bottom: $sizeAlignElementTM;
+            width: calc(100% - $sizeAlignPageTM*2); //
             color: $errorColor;
         }
     }
@@ -326,7 +324,7 @@
         &Image {
             width: 100%;//
             position: relative;
-            margin-bottom: $sizeAlignElementTabletMobile;
+            margin-bottom: $sizeAlignElementTM;
             &Content {
                 display: block;
                 width: 100%;
@@ -355,14 +353,14 @@
             &:focus-within &Icon {
                 color: $mainColor;
             }
-            border-bottom: 1px solid $blackColor;
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
-            margin-bottom: $sizeAlignElementTabletMobile;
+            border-bottom: 1px solid $blackBorder;
+            width: calc(100% - $sizeAlignPageTM*2); //
+            margin-bottom: $sizeAlignElementTM;
             display: flex;
             align-items: center;
             &Icon {
                 font-size: 18px;
-                line-height: 1;
+                
                 margin-right: 10px;
             }
             &Input {
@@ -373,12 +371,12 @@
             }
         }
         &Category {
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
+            width: calc(100% - $sizeAlignPageTM*2); //
             position: relative;
             height: 30px;
             display: flex;
             align-items: center;
-            margin-bottom: $sizeAlignElementTabletMobile;
+            margin-bottom: $sizeAlignElementTM;
             &Icon{
                 cursor: pointer;
                 padding: 0 10px;
@@ -412,7 +410,7 @@
                 font-size: 16px; ///
                 .updatePostCategoryItem {
                     &:hover {
-                        background-color: $clickColor;
+                        background-color: $clickBtnColor;
                     }
                     width: unset; //
                     margin-left: 0px; //
@@ -428,8 +426,8 @@
         &Content {
             @include font('content');
             font-size: 15px; //
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
-            margin-bottom: $sizeAlignElementTabletMobile;
+            width: calc(100% - $sizeAlignPageTM*2); //
+            margin-bottom: $sizeAlignElementTM;
             flex: 1;
             border: 1px solid $disableColor;
             border-radius: 3px;
@@ -466,13 +464,12 @@
             }
             &Cancel {
                 margin-right: 10px;
-                background-color: $disableColor;
             }
-            margin-bottom: $sizeAlignPageTabletMobile;
+            margin-bottom: $sizeAlignPageTM;
         }
         &Error {
-            margin-bottom: $sizeAlignElementTabletMobile;
-            width: calc(100% - $sizeAlignPageTabletMobile*2); //
+            margin-bottom: $sizeAlignElementTM;
+            width: calc(100% - $sizeAlignPageTM*2); //
             color: $errorColor;
         }
     }

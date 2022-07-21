@@ -30,9 +30,8 @@
             line-height: 1;
             text-transform: uppercase;
             font-weight: 600;
-            padding: $sizeAlignElementPC 0;
-            border-bottom: 4px double $blackColor;
-            margin-bottom: $sizeAlignElementPC;
+            padding-top: $sizeAlignElementPC;
+            @include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double)
         }
     }
 }
@@ -61,14 +60,13 @@
         align-items: center;
         &Title {
             @include font('title');
-            width: calc(100% - $sizeAlignPageTabletMobile*2);
+            width: calc(100% - $sizeAlignPageTM*2);
             font-size: 30px;
             line-height: 1;
             text-transform: uppercase;
             font-weight: 600;
-            padding: $sizeAlignElementPC 0;
-            border-bottom: 4px double $blackColor;
-            margin-bottom: $sizeAlignElementTabletMobile;
+            padding-top: $sizeAlignElementTM;
+            @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double)
         }
     }
 }
@@ -98,14 +96,13 @@
             align-items: center;
             &Title {
                 @include font('title');
-                width: calc(100% - $sizeAlignPageTabletMobile*2);
+                width: calc(100% - $sizeAlignPageTM*2);
                 font-size: 20px;
                 text-transform: uppercase;
                 line-height: 1;
                 font-weight: 600;
-                padding: $sizeAlignElementTabletMobile 0;
-                border-bottom: 4px double $blackColor;
-                margin-bottom: $sizeAlignElementTabletMobile;
+                padding-top: $sizeAlignElementTM;
+                @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double)
             }
         }
 }

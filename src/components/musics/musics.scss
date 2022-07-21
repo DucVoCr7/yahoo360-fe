@@ -37,7 +37,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 10px;
-            background-image: linear-gradient(to left, #dce8eb, #f8e8dc);
+            background-image: $backGroundEmpty;
             &Content {
                 &Icon {
                     display: block;
@@ -69,9 +69,7 @@
                 font-size: 15px;
             }
             &Submit {
-                font-size: 16px;
-                height: 30px;
-                background-color: rgb(138, 156, 245);
+
             }
         }
     }
@@ -115,7 +113,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 10px;
-            background-image: linear-gradient(to left, #dce8eb, #f8e8dc);
+            background-image: $backGroundEmpty;
             &Content {
                 &Icon {
                     display: block;
@@ -147,9 +145,7 @@
                 font-size: 14px;
             }
             &Submit {
-                font-size: 15px;
-                height: 30px;
-                background-color: rgb(138, 156, 245);
+
             }
         }
     }

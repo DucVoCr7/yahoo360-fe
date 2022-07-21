@@ -25,10 +25,10 @@ function ReplyRepair({replyId, replyContent, setReplyContent, setOpenRepair}) {
             value={contentRepair}
         />
         <div className="replyRepairAction">
-            <button className="replyRepairActionItem" onClick={()=> setOpenRepair(false)}>
+            <button className="replyRepairActionItem btnSmall btnGrey" onClick={()=> setOpenRepair(false)}>
                 Cancel
             </button>
-            <button className="replyRepairActionItem" onClick={handleRepairReply}>
+            <button className="replyRepairActionItem btnSmall btnBlue" onClick={handleRepairReply}>
                 Repair
             </button>
         </div>

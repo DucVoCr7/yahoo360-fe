@@ -9,8 +9,6 @@
         display: flex;
         margin-bottom: 15px;
         &Left {
-            text-decoration: none;
-            color: black;
             width: 30px;
             height: 30px;
             &Img {
@@ -32,8 +30,6 @@
                     @include font('title');
                     font-size: 14px;
                     font-weight: 600;
-                    text-decoration: none;
-                    color: black;
                     margin-bottom: 5px;
                 }
                 &Text {
@@ -64,8 +60,6 @@
         }
     }
     &Bottom {
-        padding-left: 15px;
-        border-left: 1px solid $disableColor;
-        margin-left: 30px;
+        @include paddingMarginBorder('PC', 'left')
     }
 }

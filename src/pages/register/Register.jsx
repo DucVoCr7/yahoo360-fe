@@ -43,7 +43,7 @@ export default function Register() {
         <input className='registerInput' type="password" name='password' placeholder='Enter your password....'
           onChange={handleChange}
         />
-        <button className={pending ? 'registerSubmit active' : 'registerSubmit'}  type='submit'>
+        <button className={pending ? 'registerSubmit btnBig btnMain active' : 'registerSubmit btnBig btnMain'}  type='submit'>
           {!pending && 'REGISTER'}
         </button>
         <div className="registerRules">

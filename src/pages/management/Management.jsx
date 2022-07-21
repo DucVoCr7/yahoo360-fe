@@ -33,7 +33,7 @@ export default function Management() {
                                 <i className="managementTopItemTitleViewIcon active bi bi-file-earmark-bar-graph"></i>
                                 <i className="managementTopItemTitleViewIcon bi bi-filetype-exe"></i>
                             </div>
-                            <button className="managementTopItemTitleExport">
+                            <button className="managementTopItemTitleExport btnSmall btnMain">
                                 Export
                             </button>
                         </div>
@@ -52,7 +52,7 @@ export default function Management() {
                                 <i className="managementTopItemTitleViewIcon active bi bi-file-earmark-bar-graph"></i>
                                 <i className="managementTopItemTitleViewIcon bi bi-filetype-exe"></i>
                             </div>
-                            <button className="managementTopItemTitleExport">
+                            <button className="managementTopItemTitleExport btnSmall btnMain">
                                 Export
                             </button>
                         </div>
@@ -73,7 +73,7 @@ export default function Management() {
                                 <i className="managementTopItemTitleViewIcon active bi bi-file-earmark-bar-graph"></i>
                                 <i className="managementTopItemTitleViewIcon bi bi-filetype-exe"></i>
                             </div>
-                            <button className="managementTopItemTitleExport">
+                            <button className="managementTopItemTitleExport btnSmall btnMain">
                                 Export
                             </button>
                         </div>
@@ -92,7 +92,7 @@ export default function Management() {
                                 <i className="managementTopItemTitleViewIcon active bi bi-file-earmark-bar-graph"></i>
                                 <i className="managementTopItemTitleViewIcon bi bi-filetype-exe"></i>
                             </div>
-                            <button className="managementTopItemTitleExport">
+                            <button className="managementTopItemTitleExport btnSmall btnMain">
                                 Export
                             </button>
                         </div>
@@ -124,10 +124,10 @@ export default function Management() {
                                     <td className='managementTableData'>{user.name}</td>
                                     <td className='managementTableData'>{user.email}</td>
                                     <td className='managementTableData'>
-                                        <button className='managementTableDataButton'>Details</button>
-                                        <button className='managementTableDataButton'>Logout</button>
-                                        <button className='managementTableDataButton'>Block</button>
-                                        <button className='managementTableDataButton'>Delete</button>
+                                        <button className='managementTableDataButton btnSmall'>Details</button>
+                                        <button className='managementTableDataButton btnSmall'>Logout</button>
+                                        <button className='managementTableDataButton btnSmall'>Block</button>
+                                        <button className='managementTableDataButton btnSmall'>Delete</button>
                                     </td>
                                 </tr>
                             )}

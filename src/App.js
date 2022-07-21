@@ -8,7 +8,6 @@ import Register from "./pages/register/Register";
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
 import { useSelector } from "react-redux/es/exports";
-import './assets/scss/reset.scss'
 import './assets/scss/fontFace.scss'
 import './assets/scss/customStyle.scss'
 import "slick-carousel/slick/slick.css";

@@ -7,16 +7,12 @@
         flex-direction: column;
         &Top {
             flex: 8;
-            padding-bottom: $sizeAlignElementPC;
-            border-bottom: 1px solid $disableColor;
-            margin-bottom: $sizeAlignElementPC;
+           @include paddingMarginBorder('PC', 'bottom');
             overflow: hidden;
             display: flex;
             &Left {
                 flex: 4;
-                padding-right: $sizeAlignElementPC;
-                border-right: 1px solid $disableColor;
-                margin-right: $sizeAlignElementPC;
+@include paddingMarginBorder('PC', 'left');
                 display: flex;
                 flex-direction: column;
                 > :nth-child(n) {
@@ -24,9 +20,7 @@
                     height: 50%;
                 }
                 > :first-child {
-                    padding-bottom: $sizeAlignElementPC;
-                    border-bottom: 1px solid $disableColor;
-                    // margin-bottom: $sizeAlignElementPC;
+                    @include paddingMarginBorder('PC', 'bottom');
                 }
                 > :last-child {
                     padding-top: $sizeAlignElementPC;
@@ -44,9 +38,7 @@
                 flex: 1;
             }
             > :first-child {
-                padding-right: $sizeAlignElementPC;
-                border-right: 1px solid $disableColor;
-                margin-right: $sizeAlignElementPC;
+@include paddingMarginBorder('PC', 'right');
             }
         }
     }
@@ -61,16 +53,12 @@
         flex-direction: column;
         &Top {
             flex: 8;
-            padding-bottom: $sizeAlignElementTabletMobile; //
-            border-bottom: 1px solid $disableColor;
-            margin-bottom: $sizeAlignElementTabletMobile; //
+@include paddingMarginBorder('TM', 'bottom');
             overflow: hidden;
             display: flex;
             &Left {
                 flex: 4;
-                padding-right: $sizeAlignElementTabletMobile; //
-                border-right: 1px solid $disableColor;
-                margin-right: $sizeAlignElementTabletMobile; //
+@include paddingMarginBorder('TM', 'right');
                 display: flex;
                 flex-direction: column;
                 > :nth-child(n) {
@@ -78,12 +66,10 @@
                     height: 50%;
                 }
                 > :first-child {
-                    padding-bottom: $sizeAlignElementTabletMobile; //
-                    border-bottom: 1px solid $disableColor;
-                    // margin-bottom: $sizeAlignElementTabletMobile; //
+                    @include paddingMarginBorder('TM', 'bottom');
                 }
                 > :last-child {
-                    padding-top: $sizeAlignElementTabletMobile; //
+                    padding-top: $sizeAlignElementTM; 
                 }
             }
             &Right {
@@ -98,9 +84,7 @@
                 flex: 1;
             }
             > :first-child {
-                padding-right: $sizeAlignElementTabletMobile; //
-                border-right: 1px solid $disableColor;
-                margin-right: $sizeAlignElementTabletMobile; //
+@include paddingMarginBorder('TM', 'right');
             }
         }
     }
@@ -109,71 +93,54 @@
 @media (max-width: 739px) {
     .postsBigRight {
         width: 100%;
-        height: auto; //
+        height: auto; 
         display: flex;
         flex-direction: column;
         &Top {
-            flex: none; //
-            padding-bottom: $sizeAlignElementTabletMobile; //
-            border-bottom: 1px solid $disableColor;
-            margin-bottom: $sizeAlignElementTabletMobile; //
+            flex: none; 
+@include paddingMarginBorder('TM', 'bottom');
             overflow: hidden;
             display: flex;
-            flex-direction: column; //
+            flex-direction: column; 
             &Left {
-                flex: none; //
-                padding-right: 0; //
+                flex: none; 
+                padding-right: 0; 
                 border-right: none;
-                margin-right: 0; //
+                margin-right: 0; 
                 display: flex;
                 flex-direction: column;
                 > :nth-child(n) {
-                    flex: none; //
-                    box-sizing: content-box; //
-                    height: 200px; //
+                    flex: none; 
+                    box-sizing: content-box; 
+                    height: 200px; 
                     padding: 0;
                     margin: 0;
                     border: none;
-                    padding-bottom: $sizeAlignElementTabletMobile;
-                    margin-bottom: $sizeAlignElementTabletMobile;
-                    border-bottom: 1px solid $disableColor;
+                    @include paddingMarginBorder('TM', 'bottom');
                 }
-                // > :first-child {
-                //     padding-bottom: $sizeAlignElementTabletMobile;
-                //     margin-bottom: $sizeAlignElementTabletMobile;
-                //     border-bottom: 1px solid $disableColor;
-                // }
-                // > :last-child {
-                //     padding-top: 0; //
-                //     padding-bottom: $sizeAlignElementTabletMobile;
-                //     margin-bottom: $sizeAlignElementTabletMobile;
-                //     border-bottom: 1px solid $disableColor;
-                // }
             }
             &Right {
-                flex: none; //
+                flex: none; 
             }
         }
         &Bottom {
-            flex: none; //
+            flex: none; 
             overflow: hidden;
             display: flex;
-            flex-direction: column; //
+            flex-direction: column; 
             > :nth-child(n) {
-                flex: none; //
-                height: 200px; //
+                flex: none; 
+                height: 200px; 
                 box-sizing: content-box;
-                padding: 0; //
-                border: none; //
-                margin: 0; //
-                padding-bottom: $sizeAlignElementTabletMobile; //
-                border-bottom: 1px solid $disableColor; //
-                margin-bottom: $sizeAlignElementTabletMobile; //
+                padding: 0; 
+                border: none; 
+                margin: 0; 
+                @include paddingMarginBorder('TM', 'bottom');
             }
             > :last-child {
-                padding: 0; //
-                border: none; //
-                margin: 0; //
+                padding: 0; 
+                border: none; 
+                margin: 0; 
             }
         }
     }

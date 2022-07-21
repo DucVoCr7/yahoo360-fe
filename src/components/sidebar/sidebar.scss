@@ -1,19 +1,19 @@
 @use '/src/assets/scss' as *;
-@media (min-width: 1024px) { 
+
+@media (min-width: 1024px) {
     .sidebar {
         width: calc(100% - $sizeAlignPagePC*2);
-        padding: $sizeAlignElementPC 0;
-        border-bottom: 4px double $blackColor;
-        margin-bottom: $sizeAlignElementPC;
+        padding-top: $sizeAlignElementPC;
+        @include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double);
         box-sizing: border-box;
         height: 200px;
         display: flex;
+
         > :nth-child(n) {
             flex: 1;
-            padding-left: $sizeAlignElementPC;
-            margin-left: $sizeAlignElementPC;
-            border-left: 1px solid $disableColor;
+            @include paddingMarginBorder('PC', 'left');
         }
+
         > :first-child {
             flex: none;
             width: 200px;
@@ -23,26 +23,28 @@
         }
     }
 }
+
 @media (min-width: 901px) and (max-width: 1023px) {
     .sidebar {
-        width: calc(100% - $sizeAlignPageTabletMobile*2);
-        padding: $sizeAlignElementTabletMobile 0;
-        border-bottom: 4px double $blackColor;
-        margin-bottom: $sizeAlignElementTabletMobile;
+        width: calc(100% - $sizeAlignPageTM*2);
+        padding-top: $sizeAlignElementTM;
+        @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
         box-sizing: border-box;
         height: 200px;
         display: flex;
         overflow: scroll; //
-        &::-webkit-scrollbar { ///
+
+        &::-webkit-scrollbar {
+            ///
             display: none; //
         }
+
         > :nth-child(n) {
             flex: none;
             width: 220px;
-            padding-left: $sizeAlignElementTabletMobile;
-            margin-left: $sizeAlignElementTabletMobile;
-            border-left: 1px solid $disableColor;
+            @include paddingMarginBorder('TM', 'left');
         }
+
         > :first-child {
             flex: none;
             width: 200px;
@@ -52,26 +54,28 @@
         }
     }
 }
+
 @media (min-width: 740px) and (max-width: 900px) {
     .sidebar {
-        width: calc(100% - $sizeAlignPageTabletMobile*2);
-        padding: $sizeAlignElementTabletMobile 0;
-        border-bottom: 4px double $blackColor;
-        margin-bottom: $sizeAlignElementTabletMobile;
+        width: calc(100% - $sizeAlignPageTM*2);
+        padding-top: $sizeAlignElementTM;
+        @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
         box-sizing: border-box;
         height: 200px;
         display: flex;
         overflow: scroll; //
-        &::-webkit-scrollbar { ///
+
+        &::-webkit-scrollbar {
+            ///
             display: none; //
         }
+
         > :nth-child(n) {
             flex: none;
             width: 220px;
-            padding-left: $sizeAlignElementTabletMobile;
-            margin-left: $sizeAlignElementTabletMobile;
-            border-left: 1px solid $disableColor;
+            @include paddingMarginBorder('TM', 'left');
         }
+
         > :first-child {
             flex: none;
             width: 200px;
@@ -81,26 +85,28 @@
         }
     }
 }
+
 @media (max-width: 739px) {
     .sidebar {
-        width: calc(100% - $sizeAlignPageTabletMobile*2);
-        padding: $sizeAlignElementTabletMobile 0;
-        border-bottom: 4px double $blackColor;
-        margin-bottom: $sizeAlignElementTabletMobile;
+        width: calc(100% - $sizeAlignPageTM*2);
+        padding-top: $sizeAlignElementTM;
+        @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
         box-sizing: border-box;
         height: 180px;
         display: flex;
         overflow: scroll; //
-        &::-webkit-scrollbar { ///
+
+        &::-webkit-scrollbar {
+            ///
             display: none; //
         }
+
         > :nth-child(n) {
             flex: none;
             width: 200px;
-            padding-left: $sizeAlignElementTabletMobile;
-            margin-left: $sizeAlignElementTabletMobile;
-            border-left: 1px solid $disableColor;
+            @include paddingMarginBorder('TM', 'left');
         }
+
         > :first-child {
             flex: none;
             width: 180px;
@@ -110,4 +116,3 @@
         }
     }
 }
-

@@ -5,14 +5,12 @@
         height: 100%;
         display: flex;
         color: $blackColor;
-        text-decoration: none;
+        
         &:hover {
             color: $contentBriefColor;
         }
         &Left {
             flex: 8;
-            // padding-right: $sizeAlignElementPC;
-            // border-right: 1px solid $disableColor;
             margin-right: $sizeAlignElementPC;
             display: flex;
             flex-direction: column;
@@ -55,9 +53,7 @@
                         margin: 0;
                         border: none;
                     }
-                    border-left: 1px solid $disableColor;
-                    padding-left: $sizeAlignElementPC;
-                    margin-left: $sizeAlignElementPC;
+@include paddingMarginBorder('PC', 'left');
                     &Icon {
                         margin-right: 5px;
                     }
@@ -91,15 +87,15 @@
         height: 100%;
         display: flex;
         color: $blackColor;
-        text-decoration: none;
+        
         &:hover {
             color: $contentBriefColor;
         }
         &Left {
             flex: 7; //
-            // padding-right: $sizeAlignElementTabletMobile; //
+            // padding-right: $sizeAlignElementTM; //
             // border-right: 1px solid $disableColor;
-            margin-right: $sizeAlignElementTabletMobile; //
+            margin-right: $sizeAlignElementTM; //
             display: flex;
             flex-direction: column;
             .postMediumTitle {
@@ -115,7 +111,7 @@
             .postMediumAuthor {
                 display: flex;
                 align-items: center;
-                padding-top: $sizeAlignElementTabletMobile; //
+                padding-top: $sizeAlignElementTM; //
                 background-color: $whiteColor;
     
                 &Img {
@@ -132,7 +128,7 @@
             }
             .postMediumOther {
                 @include font('title');
-                padding: $sizeAlignElementTabletMobile 0; //
+                padding: $sizeAlignElementTM 0; //
                 background-color: $whiteColor;
                 font-size: 15px;
                 &Child {
@@ -141,9 +137,7 @@
                         margin: 0;
                         border: none;
                     }
-                    border-left: 1px solid $disableColor;
-                    padding-left: $sizeAlignElementTabletMobile;
-                    margin-left: $sizeAlignElementTabletMobile;
+                    @include paddingMarginBorder('TM', 'left');
                     &Icon {
                         margin-right: 5px;
                     }
@@ -179,15 +173,13 @@
         height: 100%;
         display: flex;
         color: $blackColor;
-        text-decoration: none;
+        
         &:hover {
             color: $contentBriefColor;
         }
         &Left {
             flex: 6; //
-            // padding-right: $sizeAlignElementTabletMobile; //
-            // border-right: 1px solid $disableColor;
-            margin-right: $sizeAlignElementTabletMobile; //
+            margin-right: $sizeAlignElementTM; //
             display: flex;
             flex-direction: column;
             .postMediumTitle {
@@ -203,7 +195,7 @@
             .postMediumAuthor {
                 display: flex;
                 align-items: center;
-                padding-top: $sizeAlignElementTabletMobile; //
+                padding-top: $sizeAlignElementTM; //
                 background-color: $whiteColor;
     
                 &Img {
@@ -221,7 +213,7 @@
             }
             .postMediumOther {
                 @include font('title');
-                padding: $sizeAlignElementTabletMobile 0 0 0; //
+                padding: $sizeAlignElementTM 0 0 0; //
                 font-size: 15px;
                 background-color: $whiteColor;
                 &Child {
@@ -230,9 +222,7 @@
                         margin: 0;
                         border: none;
                     }
-                    border-left: 1px solid $disableColor;
-                    padding-left: $sizeAlignElementTabletMobile; //
-                    margin-left: $sizeAlignElementTabletMobile; //
+                    @include paddingMarginBorder('PC', 'left');
                     &Icon {
                         margin-right: 5px;
                     }

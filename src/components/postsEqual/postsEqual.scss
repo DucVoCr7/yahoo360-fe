@@ -5,9 +5,7 @@
         height: 200px;
         > :nth-child(n) {
             flex: 1;
-            padding-left: $sizeAlignElementPC;
-            border-left: 1px solid $disableColor;
-            margin-left: $sizeAlignElementPC;
+            @include paddingMarginBorder('PC', 'left');
         }
         > :first-child {
             padding: 0;
@@ -33,9 +31,7 @@
             flex: none; //
             width: 200px;
             box-sizing: content-box;
-            padding-left: $sizeAlignElementTabletMobile; //
-            border-left: 1px solid $disableColor;
-            margin-left: $sizeAlignElementTabletMobile; //
+            @include paddingMarginBorder('TM', 'left');
         }
         > :first-child {
             padding: 0;
@@ -50,22 +46,13 @@
         display: flex;
         flex-direction: column; //
         height: auto;
-
-        // overflow-x: scroll; //
-        // overflow-y: hidden;
-        // &::-webkit-scrollbar { ///
-        //     display: none; //
-        // }
-
         > :nth-child(n) {
             flex: none; //
             width: 100%; //
             padding-left: 0; //
             border-left: none;//
             margin-left: 0; //
-            padding-top: $sizeAlignElementTabletMobile; //
-            border-top: 1px solid $disableColor;//
-            margin-top: $sizeAlignElementTabletMobile; //
+            @include paddingMarginBorder('TM', 'top');
         }
         > :first-child {
             padding: 0;

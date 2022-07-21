@@ -94,7 +94,7 @@ function Post({post, setPost}) {
                     <span className="postTime">{convertDate(post.updatedAt)}</span>
                 </div>
                 <div className="postContent" dangerouslySetInnerHTML={{__html: post.content}}/>
-                <button className="postComments" onClick={()=> setOpenComments(true)}>Read {post.commentsNumber} Comments</button>
+                <button className="postComments btnBig btnMain" onClick={()=> setOpenComments(true)}>READ {post.commentsNumber} COMMENTS</button>
             </div>
             {openComments && 
                 <Comments postId={post.id} setOpenComments={setOpenComments} setCommentsNumber={setCommentsNumber}/>

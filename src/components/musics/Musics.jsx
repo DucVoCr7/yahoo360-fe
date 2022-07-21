@@ -74,7 +74,7 @@ function Musics({ musics, setMusics, isHomePage = false }) {
           <textarea type="text" className="musicsAddInput" placeholder='Example: https://www.youtube.com/watch?v=YQHsXMglC9A'
             onChange={(event) => setCodeMusic(event.target.value.trim().replace('https://www.youtube.com/watch?v=', ''))}
           />
-          <button className="musicsAddSubmit" onClick={handleAddMusic}>Add music</button>
+          <button className="musicsAddSubmit btnSmall btnMain" onClick={handleAddMusic}>Add music</button>
         </div>
       }
     </div>

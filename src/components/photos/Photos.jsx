@@ -142,7 +142,7 @@ function Photos({ setPhotos, name, photos, isHomePage = false }) {
             {name}'s photos
             <i className="photosGalleryTitleClose bi bi-box-arrow-right" onClick={() => setOpenGallery(false)}></i>
           </div>
-          <Gallery photos={photosGallery} onClick={(event, { photo, index }) => handleOpenSlider(index)} />
+          <Gallery photos={photosGallery} onClick={(event, { photo, index }) => handleOpenSlider(index)} direction={"column"}/>
         </div>
       }
 

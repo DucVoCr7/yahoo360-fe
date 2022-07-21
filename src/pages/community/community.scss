@@ -4,7 +4,7 @@
         &.loading {
             height: calc(100vh - $heightTopbar - $heightFooter);
             position: relative;
-            &::after{
+            &::after {
                 position: absolute;
                 left: 50%;
                 top: 50%;
@@ -21,18 +21,15 @@
         padding: 5px $sizeAlignPagePC $sizeAlignPagePC $sizeAlignPagePC;
         &Top {
             display: flex;
-            border-bottom: 1px solid $blackColor;
-            border-top: 4px double $blackColor;
+            border-bottom: 1px solid $blackBorder;
+            border-top: 4px double $blackBorder;
             padding: $sizeAlignElementPC 0;
             &Left {
                 flex: 7;
-                padding-right: $sizeAlignElementPC;
-                border-right: 1px solid $blackColor;
-                margin-right: $sizeAlignElementPC;
+                @include paddingMarginBorder('PC', 'right', $blackColor);
                 &Item {
-                    padding-bottom: $sizeAlignElementPC;
-                    border-bottom: 1px solid $blackColor;
-                    margin-bottom: $sizeAlignElementPC;
+                    @include paddingMarginBorder('PC', 'bottom', $blackColor);
+
                     &:last-child {
                         padding: 0;
                         margin: 0;
@@ -43,9 +40,8 @@
             &Right {
                 flex: 3;
                 &Item {
-                    padding-bottom: $sizeAlignElementPC;
-                    border-bottom: 1px solid $blackColor;
-                    margin-bottom: $sizeAlignElementPC;
+                    @include paddingMarginBorder('PC', 'bottom', $blackColor);
+
                     &:last-child {
                         padding: 0;
                         margin: 0;
@@ -65,7 +61,7 @@
             border-radius: 5px;
             box-shadow: $shadowFull;
             padding: 5px 10px;
-            text-decoration: none;
+            
             color: $blackColor;
             margin-bottom: $sizeAlignElementPC;
             &Icon {
@@ -74,14 +70,12 @@
         }
     }
 }
-
-
 @media (min-width: 740px) and (max-width: 900px) {
     .community {
         &.loading {
             height: calc(100vh - $heightTopbar - $heightFooter);
             position: relative;
-            &::after{
+            &::after {
                 position: absolute;
                 left: 50%;
                 top: 50%;
@@ -95,35 +89,27 @@
             }
         }
         width: 100%;
-        padding: 5px $sizeAlignPageTabletMobile $sizeAlignPageTabletMobile $sizeAlignPageTabletMobile; //
+        padding: 5px $sizeAlignPageTM $sizeAlignPageTM $sizeAlignPageTM;
         &Top {
             display: flex;
-            flex-direction: column; //
-            border-bottom: 1px solid $blackColor;
-            border-top: 4px double $blackColor;
-            padding: $sizeAlignElementTabletMobile 0; // 
+            flex-direction: column;
+            border-bottom: 1px solid $blackBorder;
+            border-top: 4px double $blackBorder;
+            padding: $sizeAlignElementTM 0;
             &Left {
                 flex: 7;
-                padding-right: 0px; // 
-                border-right: none; //
-                margin-right: 0px; //
+                padding-right: 0px;
+                border-right: none;
+                margin-right: 0px;
                 &Item {
-                    padding-bottom: $sizeAlignElementTabletMobile; //
-                    border-bottom: 1px solid $blackColor;
-                    margin-bottom: $sizeAlignElementTabletMobile; //
-                    &:last-child {
-                        padding-bottom: $sizeAlignElementTabletMobile; //
-                        border-bottom: 1px solid $blackColor;//
-                        margin-bottom: $sizeAlignElementTabletMobile; //
-                    }
+                    @include paddingMarginBorder('TM', 'bottom', $blackColor);
                 }
             }
             &Right {
                 flex: 3;
-                &Item { 
-                    padding-bottom: $sizeAlignElementTabletMobile; //
-                    border-bottom: 1px solid $blackColor;
-                    margin-bottom: $sizeAlignElementTabletMobile; //
+                &Item {
+                    @include paddingMarginBorder('TM', 'bottom', $blackColor);
+
                     &:last-child {
                         padding: 0;
                         margin: 0;
@@ -133,33 +119,31 @@
             }
         }
         &Bottom {
-            padding-top: $sizeAlignElementTabletMobile;
+            padding-top: $sizeAlignElementTM;
         }
         &Name {
             display: inline-block;
             @include font('title');
             background-color: $mainColor;
             border: 1px solid $disableColor;
-            border-radius: 5px; 
+            border-radius: 5px;
             box-shadow: $shadowFull;
-            padding: 5px 10px; 
-            text-decoration: none;
+            padding: 5px 10px;
+            
             color: $blackColor;
-            margin-bottom: $sizeAlignElementTabletMobile; //
+            margin-bottom: $sizeAlignElementTM;
             &Icon {
                 margin-right: 5px;
             }
         }
     }
 }
-
-
 @media (max-width: 739px) {
     .community {
         &.loading {
             height: calc(100vh - $heightTopbar - $heightFooter);
             position: relative;
-            &::after{
+            &::after {
                 position: absolute;
                 left: 50%;
                 top: 50%;
@@ -173,35 +157,26 @@
             }
         }
         width: 100%;
-        padding: 5px $sizeAlignPageTabletMobile $sizeAlignPageTabletMobile $sizeAlignPageTabletMobile; //
+        padding: 5px $sizeAlignPageTM $sizeAlignPageTM $sizeAlignPageTM;
         &Top {
             display: flex;
-            flex-direction: column; //
+            flex-direction: column;
             border-bottom: 2px solid $blackColor;
-            border-top: 4px double $blackColor;
-            padding: $sizeAlignElementTabletMobile 0; // 
+            border-top: 4px double $blackBorder;
+            padding: $sizeAlignElementTM 0;
             &Left {
                 flex: 7;
-                padding-right: 0px; // 
-                border-right: none; //
-                margin-right: 0px; //
+                padding-right: 0px;
+                border-right: none;
+                margin-right: 0px;
                 &Item {
-                    padding-bottom: $sizeAlignElementTabletMobile; //
-                    border-bottom: 2px solid $blackColor;
-                    margin-bottom: $sizeAlignElementTabletMobile; //
-                    &:last-child {
-                        padding-bottom: $sizeAlignElementTabletMobile; //
-                        border-bottom: 2px solid $blackColor;//
-                        margin-bottom: $sizeAlignElementTabletMobile; //
-                    }
+                    @include paddingMarginBorder('TM', 'bottom', $blackColor, 2px);
                 }
             }
             &Right {
                 flex: 3;
-                &Item { 
-                    padding-bottom: $sizeAlignElementTabletMobile; //
-                    border-bottom: 2px solid $blackColor;
-                    margin-bottom: $sizeAlignElementTabletMobile; //
+                &Item {
+                    @include paddingMarginBorder('TM', 'bottom', $blackColor, 2px);
                     &:last-child {
                         padding: 0;
                         margin: 0;
@@ -211,19 +186,19 @@
             }
         }
         &Bottom {
-            padding-top: $sizeAlignElementTabletMobile;
+            padding-top: $sizeAlignElementTM;
         }
         &Name {
             display: inline-block;
             @include font('title');
             background-color: $mainColor;
             border: 1px solid $disableColor;
-            border-radius: 5px; 
+            border-radius: 5px;
             box-shadow: $shadowFull;
-            padding: 5px 10px; 
-            text-decoration: none;
+            padding: 5px 10px;
+            
             color: $blackColor;
-            margin-bottom: $sizeAlignElementTabletMobile; //
+            margin-bottom: $sizeAlignElementTM;
             &Icon {
                 margin-right: 5px;
             }

@@ -34,7 +34,7 @@ export default function Login() {
         <input className='loginInput' id='loginPassword' type='password' name='password' placeholder='Enter your password....'
           onChange={handleChange}
         />
-        <button className={pending ? 'loginSubmit active' : 'loginSubmit'}  type='submit'>
+        <button className={pending ? 'loginSubmit active btnBig btnMain' : 'loginSubmit btnBig btnMain'}  type='submit'>
           {!pending && 'LOGIN'}
         </button>
         <div className='loginToRegister'>

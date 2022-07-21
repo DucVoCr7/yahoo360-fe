@@ -2,14 +2,20 @@
 /* Private css style of Duc */
 * {
     box-sizing: inherit;
-
 }
 
+body {
+    
+    margin: 0;
+}
 html {
     box-sizing: border-box;
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+}
 // Custom ckEditor
 p {
     line-height: 1;
@@ -81,6 +87,8 @@ input[type="text"],
 input[type="search"] {
     -webkit-appearance: none;
     border-radius: 0;
+    font-family: inherit;
+    font-size: 100%;
 }
 
 ::placeholder {
@@ -97,21 +105,37 @@ li {
 }
 
 button {
-    &:active {
-        background-color: $clickColor;
-    }
-    height: 40px;
-    min-width: 140px;
-    @include font('title');
-    font-size: 20px;
-    line-height: 1;
+    font-family: 'title';
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $mainColor;
     box-shadow: $shadowFull;
-    color: $blackColor;
     border: none;
     border-radius: 10px;
     cursor: pointer;
+}
+button.btnBig {
+    &:active {
+        background-color: $clickBtnColor;
+    }
+    height: 35px;
+    width: 140px;
+    font-size: 17px; 
+}
+button.btnSmall {
+    &:active {
+        background-color: $clickBtnColor;
+    }
+    height: 30px;
+    width: 80px;
+    font-size: 16px;
+}
+button.btnMain {
+    background-color: $mainBtnColor;
+}
+button.btnBlue {
+    background-color: $blueBtnColor;
+}
+button.btnGrey {
+    background-color: $greyBtnColor;
 }

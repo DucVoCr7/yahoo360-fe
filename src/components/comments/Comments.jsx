@@ -1,8 +1,8 @@
 import React, { useState, useEffect }  from 'react'
 import { useCallback } from 'react'
 import { memo } from 'react'
-import { useReduxUserId } from '../../utils/reduxMethods'
 import { publicRequest, userRequest } from '../../utils/requestMethods'
+import { useReduxUserId, useReduxUserImage, useReduxUserName } from '../../utils/reduxMethods'
 import Comment from '../comment/Comment'
 import './comments.scss'
 
@@ -11,13 +11,20 @@ function Comments({postId, setOpenComments, setCommentsNumber}) {
     const [comments, setComments] = useState()
     const [content, setContent] = useState('')
     const userId = useReduxUserId()
+    const userName = useReduxUserName()
+    const userImage = useReduxUserImage()
 
     const handleComment = useCallback(async()=> {
       if(content.trim()) {
         try {
           const data = {postId, userId, content}
           const response = await userRequest.post('/comments', data)
-          setComments(prev => [response.data.comment, ...prev])
+          setComments(prev => [{
+            ...response.data.comment, replies: [], user: {
+              name: userName,
+              image: userImage,
+            }}
+            , ...prev])
           setCommentsNumber(prev => prev + 1)
           setContent('')
         } catch (error) {
@@ -53,7 +60,7 @@ function Comments({postId, setOpenComments, setCommentsNumber}) {
               placeholder='Write comment...' 
               value={content} 
               onChange={(event)=> setContent(event.target.value)}/>
-            <button className='commentsTopSubmit'
+            <button className='commentsTopSubmit btnSmall btnBlue'
               onClick={handleComment}
             >
               POST

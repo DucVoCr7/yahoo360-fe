@@ -31,7 +31,7 @@
                 display: flex;
                 align-items: center;
                 margin-right: 20px;
-                text-decoration: none;
+                
                 color: $blackColor;
                 cursor: pointer;
     
@@ -97,7 +97,7 @@
                         height: calc($heightChildTopbar + 10px);
                         padding: 0 20px;
                         border-bottom: 1px solid $disableColor;
-                        text-decoration: none;
+                        
                         color: $blackColor;
                         &:hover {
                             background-color: $mainColor;
@@ -147,7 +147,7 @@
                             border: none;
                         }
                         padding: 0 20px;
-                        text-decoration: none;
+                        
                         color: $blackColor;
                         height: $heightChildTopbar;
                         display: flex;
@@ -181,7 +181,7 @@
         border-bottom: 1px solid $disableColor;
         @include font('part');
         background-color: $whiteColor;
-        padding: 0 $sizeAlignPageTabletMobile; //
+        padding: 0 $sizeAlignPageTM; //
     
         &Menu {
             display: none;
@@ -203,7 +203,7 @@
                 display: flex;
                 align-items: center;
                 margin-right: 15px; //
-                text-decoration: none;
+                
                 color: $blackColor;
                 cursor: pointer;
     
@@ -253,7 +253,7 @@
                     display: none;
                     position: absolute;
                     top: calc(100% + 1px);
-                    right: $sizeAlignPageTabletMobile; //
+                    right: $sizeAlignPageTM; //
                     background-color: $whiteColor;
                     box-shadow: $shadowNotTop;
                     max-height: calc(($heightChildTopbar + 10px) * 4);
@@ -269,7 +269,7 @@
                         height: calc($heightChildTopbar + 10px);
                         padding: 0 20px;
                         border-bottom: 1px solid $disableColor;
-                        text-decoration: none;
+                        
                         color: $blackColor;
                         &:hover {
                             background-color: $mainColor;
@@ -308,7 +308,7 @@
                     display: none;
                     position: absolute;
                     top: calc(100% + 1px);
-                    right: $sizeAlignPageTabletMobile; //
+                    right: $sizeAlignPageTM; //
                     background-color: $whiteColor;
                     box-shadow: $shadowNotTop;
                     border-bottom-left-radius: 4px;
@@ -319,7 +319,7 @@
                             border: none;
                         }
                         padding: 0 15px; //
-                        text-decoration: none;
+                        
                         color: $blackColor;
                         height: $heightChildTopbar;
                         display: flex;
@@ -352,7 +352,7 @@
         border-bottom: 1px solid $disableColor;
         @include font('part');
         background-color: $whiteColor;
-        padding: 0 $sizeAlignPageTabletMobile; //
+        padding: 0 $sizeAlignPageTM; //
 
         // Tablet PC
         &Group {
@@ -367,13 +367,13 @@
             }
             display: flex;
             align-items: center;
-            text-decoration: none;
+            
             color: $blackColor;
             // Item
             .topbarItem {
                 display: flex;
                 align-items: center;
-                text-decoration: none;
+                
                 color: $blackColor;
                 cursor: pointer;
     
@@ -412,11 +412,11 @@
                 left: 0;
                 width: 100%;
                 background-color: $whiteColor;
-                padding: $sizeAlignElementTabletMobile;
+                padding: $sizeAlignElementTM;
                 font-weight: 600;
                 &Item {
-                    margin: $sizeAlignElementTabletMobile 0;
-                    text-decoration: none;
+                    margin: $sizeAlignElementTM 0;
+                    
                     color: $blackColor;
                     display: flex;
                     font-size: 16px;
@@ -424,9 +424,9 @@
                         &:last-child {
                             border: none;
                         }
-                        text-decoration: none;
+                        
                         color: $blackColor;
-                        padding: 0 $sizeAlignElementTabletMobile;
+                        padding: 0 $sizeAlignElementTM;
                         border-right: 1px solid $disableColor;
                     }
                     // Search
@@ -437,14 +437,14 @@
                         &:focus-within .topbarMenuSearchIcon {
                             color: $mainColor;
                         }
-                        border-bottom: 1px solid $blackColor;
+                        border-bottom: 1px solid $blackBorder;
                         font-size: 20px;
                         .topbarMenuSearchInput {
                             max-width: 300px;
                             padding-bottom: 2px;
                         }
                         .topbarMenuSearchIcon {
-                            margin-left: $sizeAlignElementTabletMobile;
+                            margin-left: $sizeAlignElementTM;
                         }
                     }
                     .topbarMenuImg {

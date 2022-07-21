@@ -5,6 +5,9 @@ import './updateAccount.scss'
 
 export default function UpdateAccount() {
 
+const handleUpdate = async()=> {
+    //
+}
 const userInfo = useSelector(state => state.user.userInfo)
     return (
         <div className='updateAccount'>
@@ -69,7 +72,7 @@ const userInfo = useSelector(state => state.user.userInfo)
                     </label>
                     <input type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
                 </div>
-                <button className='updateAccountContentSubmit'> SUBMIT </button>
+                <button className='updateAccountContentSubmit btnBig btnMain' onClick={handleUpdate}> SUBMIT </button>
             </div>
         </div>
     )

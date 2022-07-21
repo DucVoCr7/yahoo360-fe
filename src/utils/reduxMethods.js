@@ -4,6 +4,14 @@ export const useReduxUserId = () => {
     const userId = useSelector(state=> state.user.userInfo?.id)
   return userId
 }
+export const useReduxUserName = () => {
+    const userName = useSelector(state=> state.user.userInfo?.name)
+  return userName
+}
+export const useReduxUserImage = () => {
+    const userImage = useSelector(state=> state.user.userInfo?.image)
+  return userImage
+}
 export const useReduxValueGender = (key) => {
     const valueGender = useSelector(state=> state.app.gender.find(item => item.key === key)?.value)
     return valueGender

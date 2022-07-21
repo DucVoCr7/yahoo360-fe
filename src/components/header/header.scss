@@ -16,7 +16,7 @@
             font-size: 50px;
             text-shadow: $shadowFull;
             @include trackingExpand;
-            text-decoration: none;
+            
         }
 
         &Title {
@@ -47,12 +47,12 @@
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            background: linear-gradient(rgba(255, 255, 255, 0), white);
+            background: linear-gradient(rgba(255, 255, 255, 0), $whiteColor);
 
             &Item {
                 @include font('title');
                 text-transform: uppercase;
-                text-decoration: none;
+                
                 font-weight: 600;
                 color: black;
                 padding: 0 15px;
@@ -87,7 +87,7 @@
             font-size: 30px; //
             text-shadow: $shadowFull;
             @include trackingExpand;
-            text-decoration: none;
+            
         }
 
         &Title {
@@ -119,23 +119,23 @@
             display: flex;
             justify-content: space-between; //
             align-items: flex-end;
-            background: linear-gradient(rgba(255, 255, 255, 0), white);
+            background: linear-gradient(rgba(255, 255, 255, 0), $whiteColor);
 
             &Item {
                 &:first-child {
                     //
-                    padding-left: $sizeAlignPageTabletMobile; //
+                    padding-left: $sizeAlignPageTM; //
                 }
 
                 &:last-child {
-                    padding-right: $sizeAlignPageTabletMobile; //
+                    padding-right: $sizeAlignPageTM; //
                 }
 
                 //
 
                 @include font('title');
                 text-transform: uppercase;
-                text-decoration: none;
+                
                 font-weight: 600;
                 font-size: 14px; //
                 color: black;

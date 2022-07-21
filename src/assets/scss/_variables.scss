@@ -2,6 +2,7 @@ $shadowFull: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 $shadowLine: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 $shadowNotTop:rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
+$backGroundEmpty: linear-gradient(to left, #dce8eb, #f8e8dc);
 
 $heightHeader: 400px;
 $heightHeaderOfUser: 300px;
@@ -17,13 +18,22 @@ $heightFooterM: 70px;
 
 
 $sizeAlignPagePC: 20px;
-$sizeAlignPageTabletMobile: 15px;
+$sizeAlignPageTM: 15px;
 $sizeAlignElementPC: 15px;
-$sizeAlignElementTabletMobile: 10px;
+$sizeAlignElementTM: 10px;
 
-$mainColor: #ff7b00;
+
+$mainBtnColor: #ff7b00;
+$blueBtnColor: rgb(138, 156, 245);
+$greyBtnColor: rgb(228, 230, 238);
+$clickBtnColor: #ffac2f;
+
+
+$greyBorder: #CCCCCC;
+$blackBorder: black;
+
 // $mainColor: rgb(97, 124, 255);
-$clickColor: #ffac2f;
+$mainColor: #ff7b00;
 $errorColor: #CC0000;
 $placeholderColor: #9e9e9e;
 $contentBriefColor: #727272;

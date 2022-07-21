@@ -120,8 +120,8 @@ function UpdatePost({post, setOpenUpdate, setPost}) {
 
             {/* Submit */}
             <div className="updatePostAction">
-                <button className="updatePostActionCancel" onClick={()=> setOpenUpdate(false)}>CANCEL</button>
-                <button className="updatePostActionSubmit" onClick={handleSubmit}>UPDATE</button>
+                <button className="updatePostActionCancel btnBig btnGrey" onClick={()=> setOpenUpdate(false)}>CANCEL</button>
+                <button className="updatePostActionSubmit btnBig btnMain" onClick={handleSubmit}>UPDATE</button>
             </div>
         </div>
     )

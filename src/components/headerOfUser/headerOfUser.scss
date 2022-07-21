@@ -15,7 +15,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: linear-gradient(to left, #dce8eb, #f8e8dc);
+            background-image: $backGroundEmpty;
             &Content {
                 &Icon {
                     display: block;
@@ -88,7 +88,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: linear-gradient(to left, #dce8eb, #f8e8dc);
+            background-image: $backGroundEmpty;
             &Content {
                 &Icon {
                     display: block;

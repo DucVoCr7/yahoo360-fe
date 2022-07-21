@@ -36,13 +36,13 @@ function Infomation({gender, position, postsNumber, address, statusFriend, isHom
                 <div className="infomationContentBottom">
                     {
                         // La ban be cua nhau
-                        statusFriend === 4 &&
+                        statusFriend === 3 &&
                         <div className="infomationContentBottomItem">
-                            <button className="removeFriend">
+                            <button className="removeFriend btnSmall btnGrey">
                                 Remove
                                 <i className="removeFriendIcon bi bi-person-dash-fill"></i>
                             </button>
-                            <button className="isFriend">
+                            <button className="isFriend btnSmall btnSmall btnBlue" >
                                 Friend
                                 <i className="isFriendIcon bi bi-person-check-fill"></i>
                             </button>
@@ -50,13 +50,13 @@ function Infomation({gender, position, postsNumber, address, statusFriend, isHom
                     }
                     {   
                         // Minh da gui yeu cau ket ban cho no
-                        statusFriend === 9 &&
+                        statusFriend === 0 &&
                         <div className="infomationContentBottomItem">
-                            <button className="removeRequestFriend">
+                            <button className="removeRequestFriend btnSmall btnGrey">
                                 Remove
                                 <i className="removeRequestFriendIcon bi bi-send-x"></i>
                             </button>
-                            <button className="requestFriend">
+                            <button className="requestFriend btnSmall btnBlue">
                                 Request
                                 <i className="requestFriendIcon bi-send-check"></i>
                             </button>
@@ -66,11 +66,11 @@ function Infomation({gender, position, postsNumber, address, statusFriend, isHom
                         // No da gui yeu cau ket ban cho minh
                         statusFriend === 2 &&
                         <div className="infomationContentBottomItem">
-                            <button className="removeFriendRequest">
+                            <button className="removeFriendRequest btnSmall btnGrey">
                                 Refuse
                                 <i className="removeFriendRequestIcon bi bi-send-x"></i>
                             </button>
-                            <button className="friendRequest">
+                            <button className="friendRequest btnSmall btnBlue">
                                 Accept
                                 <i className="friendRequestIcon bi-send-check"></i>
                             </button>
@@ -78,9 +78,9 @@ function Infomation({gender, position, postsNumber, address, statusFriend, isHom
                     }
                     {
                         // Khong la ban be cua nhau, cung khong co yeu cau nao ca
-                        statusFriend === 0 &&
+                        statusFriend === 1 &&
                         <div className="infomationContentBottomItem">
-                            <button className="notFriend">
+                            <button className="notFriend btnSmall btnBlue">
                                 Send a friend request
                                 <i className="notFriendIcon bi-person-plus-fill"></i>
                             </button>

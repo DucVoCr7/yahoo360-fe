@@ -1,40 +1,43 @@
 @use '/src/assets/scss' as *;
+
 @media (min-width: 901px) {
     .postsBigTop {
         width: 100%;
         height: 600px;
         display: flex;
         flex-direction: column;
+
         &Top {
             flex: 1;
-            padding-bottom: $sizeAlignElementPC;
-            border-bottom: 1px solid $disableColor;
-            margin-bottom: $sizeAlignElementPC;
+            @include paddingMarginBorder('PC', 'bottom');
             overflow: hidden;
         }
+
         &Bottom {
             flex: 1;
             overflow: hidden;
             display: flex;
+
             &Item {
                 flex: 1;
                 overflow: hidden;
                 display: flex;
                 flex-direction: column;
+
                 &:first-child {
-                    padding-right: $sizeAlignElementPC;
-                    border-right: 1px solid $disableColor;
-                    margin-right: $sizeAlignElementPC;
+                    @include paddingMarginBorder('PC', 'right');
                 }
+
                 > :nth-child(n) {
                     flex: 1;
                     height: 50%;
                 }
+
                 > :first-child {
                     padding-bottom: $sizeAlignElementPC;
                     border-bottom: 1px solid $disableColor;
-                    // margin-bottom: $sizeAlignElementPC;
                 }
+
                 > :last-child {
                     padding-top: $sizeAlignElementPC;
                 }
@@ -50,43 +53,46 @@
         height: 600px;
         display: flex;
         flex-direction: column;
+
         &Top {
             flex: 1;
-            padding-bottom: $sizeAlignElementTabletMobile; //
-            border-bottom: 1px solid $disableColor;
-            margin-bottom: $sizeAlignElementTabletMobile; //
+            @include paddingMarginBorder('TM', 'bottom');
             overflow: hidden;
         }
+
         &Bottom {
             flex: 1;
             overflow: hidden;
             display: flex;
+
             &Item {
                 flex: 1;
                 overflow: hidden;
                 display: flex;
                 flex-direction: column;
+
                 &:first-child {
-                    padding-right: $sizeAlignElementTabletMobile; //
-                    border-right: 1px solid $disableColor;
-                    margin-right: $sizeAlignElementTabletMobile; //
+                    @include paddingMarginBorder('TM', 'right');
                 }
+
                 > :nth-child(n) {
                     flex: 1;
                     height: 50%;
                 }
+
                 > :first-child {
-                    padding-bottom: $sizeAlignElementTabletMobile; //
+                    padding-bottom: $sizeAlignElementTM; //
                     border-bottom: 1px solid $disableColor;
-                    // margin-bottom: $sizeAlignElementTabletMobile; //
                 }
+
                 > :last-child {
-                    padding-top: $sizeAlignElementTabletMobile; //
+                    padding-top: $sizeAlignElementTM; //
                 }
             }
         }
     }
 }
+
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
     .postsBigTop {
@@ -94,31 +100,32 @@
         height: auto; //
         display: flex;
         flex-direction: column;
+
         &Top {
             flex: 1;
-            padding-bottom: $sizeAlignElementTabletMobile; //
-            border-bottom: 1px solid $disableColor;
-            margin-bottom: $sizeAlignElementTabletMobile; //
+            @include paddingMarginBorder('TM', 'bottom');
             overflow: hidden;
         }
+
         &Bottom {
             flex: 1;
             overflow: hidden;
             display: flex;
             flex-direction: column; //
+
             &Item {
                 flex: 1;
                 overflow: hidden;
                 display: flex;
                 flex-direction: column;
+
                 &:first-child {
                     padding-right: 0; //
                     border-right: none; //
                     margin-right: 0; //
-                    padding-bottom: $sizeAlignElementTabletMobile; //
-                    border-bottom: 1px solid $disableColor; //
-                    margin-bottom: $sizeAlignElementTabletMobile; //
+                    @include paddingMarginBorder('TM', 'bottom');
                 }
+
                 > :nth-child(n) {
                     flex: none; //
                     height: 200px; //
@@ -126,10 +133,9 @@
                     padding: 0; //
                     border: none; //
                     margin: 0; //
-                    padding-bottom: $sizeAlignElementTabletMobile; //
-                    border-bottom: 1px solid $disableColor; //
-                    margin-bottom: $sizeAlignElementTabletMobile; //
+                    @include paddingMarginBorder('TM', 'bottom');
                 }
+
                 > :last-child {
                     padding: 0; //
                     border: none; //

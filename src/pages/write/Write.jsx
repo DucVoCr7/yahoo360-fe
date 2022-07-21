@@ -93,7 +93,7 @@ export default function Write() {
             <div className="writeContent">
             <CKEditor
                 editor={ClassicEditor}
-                data="<p>Enter content post....</p>"
+                data=""
                 onChange={(event, editor) => {
                     const data = editor.getData();
                     setPostInfo({...postInfo, content: data})
@@ -104,7 +104,7 @@ export default function Write() {
             {error?.content && <span className='writeError'>{error.content}</span>}
 
             {/* Submit */}
-            <button className="writeSubmit" onClick={handleSubmit}>SUBMIT</button>
+            <button className="writeSubmit btnBig btnMain" onClick={handleSubmit}>SUBMIT</button>
         </div>
     )
 }
