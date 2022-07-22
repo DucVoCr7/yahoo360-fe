@@ -64,6 +64,10 @@
                     &Info {
                         font-weight: 500;
                     }
+                    &Error {
+                        font-weight: 500;
+                        color: $errorColor;
+                    }
                 }
                 &Input {
                     &:focus {
@@ -79,6 +83,23 @@
             }
             &Submit {
                 width: 100% !important;
+                &.active {
+                    position: relative;
+                    background-color: $disableColor;
+                    cursor: progress;
+                    &::after{
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                        display: block;
+                        content: '';
+                        background-image: url('../../assets/image/loading.gif');
+                        background-size: cover;
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
             }
         }
     }
@@ -147,9 +168,12 @@
                     justify-content: space-between;
                     align-items: center;
                     font-weight: 600;
-
                     &Info {
                         font-weight: 500;
+                    }
+                    &Error {
+                        font-weight: 500;
+                        color: $errorColor;
                     }
                 }
                 &Input {
@@ -166,6 +190,23 @@
             }
             &Submit {
                 width: 100% !important;
+                &.active {
+                    position: relative;
+                    background-color: $disableColor;
+                    cursor: progress;
+                    &::after{
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                        display: block;
+                        content: '';
+                        background-image: url('../../assets/image/loading.gif');
+                        background-size: cover;
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
             }
         }
     }
@@ -234,6 +275,10 @@
                     &Info {
                         font-weight: 500;
                     }
+                    &Error {
+                        font-weight: 500;
+                        color: $errorColor;
+                    }
                 }
                 &Input {
                     &:focus {
@@ -249,6 +294,23 @@
             }
             &Submit {
                 width: 100% !important;
+                &.active {
+                    position: relative;
+                    background-color: $disableColor;
+                    cursor: progress;
+                    &::after{
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                        display: block;
+                        content: '';
+                        background-image: url('../../assets/image/loading.gif');
+                        background-size: cover;
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
             }
         }
     }

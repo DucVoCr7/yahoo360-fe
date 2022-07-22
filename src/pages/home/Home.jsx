@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { userRequest } from '../../utils/requestMethods'
 import HeaderOfUser from '../../components/headerOfUser/HeaderOfUser'
-import PostsSummary from '../../components/postsSummary/PostsSummary'
+import PostsUser from '../../components/postsUser/PostsUser'
 import Sidebar from '../../components/sidebar/Sidebar'
 import { useDispatch, useSelector } from 'react-redux'
 import './home.scss'
@@ -63,7 +63,7 @@ console.log('re-render:Home')
             setPhotos={setPhotos}
             setMusics={setMusics}
             isHomePage={true}/>
-          <PostsSummary posts={posts} isHomePage={true}/>
+          <PostsUser posts={posts} isHomePage={true}/>
         </div>
       :
       <div className='home loading'></div>

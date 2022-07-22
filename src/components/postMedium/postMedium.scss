@@ -1,42 +1,90 @@
 @use '/src/assets/scss' as *;
 @media (min-width: 901px) {
     .postMedium {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        
-        
         &:hover {
             color: $contentBriefColor;
         }
-        &Left {
-            flex: 8;
-            margin-right: $sizeAlignElementPC;
+        &.noImg {
+            .postMediumImg {
+                display: none;
+            }
+            .postMediumTitle {
+
+            }
+        }
+        &.noContentTop {
+            .postMediumContent {
+                display: none;
+            }
+            .postMediumTitle {
+                font-size: 30px;
+                margin-top: 5px;
+            }
+        }
+        &.noContentCenter {
+            .postMediumContent {
+                display: none;
+            }
+            .postMediumTitle {
+                margin-top: 5px;
+            }
+        }
+        &.full {
+            display: flex;
+            flex-direction: row-reverse;
+            > :first-child {
+                flex: 3;
+            }
+            > :last-child {
+                flex: 7;
+                padding-right: $sizeAlignElementPC;
+            }
+            .postMediumImg {
+                min-height: 140px;
+                max-height: 170px;
+            }
+            .postMediumContent {
+                @include limitLine(3);
+            }
+        }
+        &.fullUser {
+            display: flex;
+            flex-direction: row-reverse;
+            > :first-child {
+                flex: 3;
+            }
+            > :last-child {
+                flex: 7;
+                padding-right: $sizeAlignElementPC;
+            }
+            .postMediumImg {
+                min-height: 140px;
+                max-height: 150px;
+            }
+            .postMediumContent {
+                @include limitLine(4);
+            }
+        }
+        &Group {
             display: flex;
             flex-direction: column;
             .postMediumTitle {
                 @include font('title');
-                font-size: 20px;
-                padding: 0;
-                margin: 0;
                 font-weight: 600;
-                @include limitLine(1);
-                overflow: visible;
-                
+                line-height: 1.4;
+                margin: 0;
+                @include limitLine(2);
             }
             .postMediumAuthor {
                 display: flex;
                 align-items: center;
                 padding-top: $sizeAlignElementPC;
-                
-    
                 &Img {
                     box-shadow: $shadowFull;
                     width: 25px;
                     height: 25px;
                     border-radius: 50%;
                 }
-    
                 &Name {
                     @include font('title');
                     font-size: 16px;
@@ -45,16 +93,13 @@
             }
             .postMediumOther {
                 @include font('title');
-                padding: $sizeAlignElementPC 0;
+                padding-top: $sizeAlignElementPC;
                 font-size: 15px;
-                
                 &Child {
-                    &:first-child {
-                        padding: 0;
-                        margin: 0;
-                        border: none;
+                    &:last-child {
+                        margin-right: 0;
                     }
-@include paddingMarginBorder('PC', 'left');
+                    margin-right: 10px;
                     &Icon {
                         margin-right: 5px;
                     }
@@ -62,192 +107,32 @@
             }
             .postMediumContent {
                 @include font('content');
-                font-size: 14.5px;
+                padding-top: $sizeAlignElementPC;
                 line-height: 1.4;
-                text-align: justify;
                 color: $contentBriefColor;
-                overflow: hidden;
+                @include limitLine(4);
             }
         }
-        &Right {
-            flex: 2;
+
+        &Group {
             .postMediumImg {
+                display: block;
+                max-height: 300px;
+                min-height: 150px;
                 width: 100%;
-                height: 100%;
-                border-radius: 5px;
                 object-fit: cover;
             }
         }
-    
+
     }
 }
+
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
 @media (min-width: 740px) and (max-width: 900px) {
-    .postMedium {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        
-        
-        &:hover {
-            color: $contentBriefColor;
-        }
-        &Left {
-            flex: 7; //
-            // padding-right: $sizeAlignElementTM; //
-            // border-right: 1px solid $disableColor;
-            margin-right: $sizeAlignElementTM; //
-            display: flex;
-            flex-direction: column;
-            .postMediumTitle {
-                @include font('title');
-                font-size: 20px;
-                padding: 0;
-                margin: 0;
-                line-height: 1.2; //
-                font-weight: 600;
-                @include limitLine(1);
-                overflow: visible;
-            }
-            .postMediumAuthor {
-                display: flex;
-                align-items: center;
-                padding-top: $sizeAlignElementTM; //
-                
-    
-                &Img {
-                    box-shadow: $shadowFull;
-                    width: 25px;
-                    height: 25px;
-                    border-radius: 50%;
-                }
-    
-                &Name {
-                    @include font('title');
-                    font-size: 16px;
-                    margin-left: 10px
-                }
-            }
-            .postMediumOther {
-                @include font('title');
-                padding: $sizeAlignElementTM 0; //
-                
-                font-size: 15px;
-                &Child {
-                    &:first-child {
-                        padding: 0;
-                        margin: 0;
-                        border: none;
-                    }
-                    @include paddingMarginBorder('TM', 'left');
-                    &Icon {
-                        margin-right: 5px;
-                    }
-                }
-            }
-            .postMediumContent {
-                @include font('content');
-                font-size: 14.5px;
-                line-height: 1.4;
-                text-align: justify;
-                color: $contentBriefColor;
-                overflow: hidden;
-            }
-        }
-        &Right {
-            flex: 3; //
-            .postMediumImg {
-                width: 100%;
-                height: 100%;
-                border-radius: 5px;
-                object-fit: cover;
-            }
-        }
-    
-    }
-    
+
 }
 
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
-    .postMedium {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        
-        
-        &:hover {
-            color: $contentBriefColor;
-        }
-        &Left {
-            flex: 6; //
-            margin-right: $sizeAlignElementTM; //
-            display: flex;
-            flex-direction: column;
-            .postMediumTitle {
-                @include font('title');
-                font-size: 16.5px; //
-                flex: 1;
-                padding: 0;
-                font-weight: 600;
-                margin: 0;
-                @include limitLine(3);
-                overflow: visible;
-            }
-            .postMediumAuthor {
-                display: flex;
-                align-items: center;
-                padding-top: $sizeAlignElementTM; //
-                
-    
-                &Img {
-                    box-shadow: $shadowFull;
-                    width: 25px;
-                    height: 25px;
-                    border-radius: 50%;
-                }
-    
-                &Name {
-                    @include font('title');
-                    font-size: 15px;
-                    margin-left: 10px;
-                    @include limitLine(1);
-                }
-            }
-            .postMediumOther {
-                @include font('title');
-                padding: $sizeAlignElementTM 0 0 0; //
-                font-size: 15px;
-                
-                &Child {
-                    &:first-child {
-                        padding: 0;
-                        margin: 0;
-                        border: none;
-                    }
-                    @include paddingMarginBorder('PC', 'left');
-                    &Icon {
-                        margin-right: 5px;
-                    }
-                    &:last-child {
-                        display: none;
-                    }
-                }
 
-            }
-            .postMediumContent {
-                display: none;
-            }
-        }
-        &Right {
-            flex: 4; //
-            .postMediumImg {
-                width: 100%;
-                height: 100%;
-                border-radius: 5px;
-                object-fit: cover;
-            }
-        }
-    
-    }
 }

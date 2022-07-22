@@ -43,7 +43,7 @@ function Reply({ reply, setReplies, setCommentsNumber }) {
           </div>
           <div className="replyRightAction">
             <span className="replyRightActionItem">
-              {convertDate(reply.createdAt, false)}
+              {convertDate(reply.createdAt, 'noYear')}
             </span>
             {userId === reply.userId &&
               <>

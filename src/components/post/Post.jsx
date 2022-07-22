@@ -18,7 +18,7 @@ function Post({post, setPost}) {
 
     const [openComments, setOpenComments] = useState()
     const navigate = useNavigate();
-
+    console.log(post)
     const handleLike = async (event)=> {
         try {
             const response = await userRequest.post('/likes', {
@@ -73,7 +73,7 @@ function Post({post, setPost}) {
                     </Link>
                     <span className= "postActionsChild" onClick={handleLike}>
                         <i className={isLike ? "postActionsChildIcon active bi bi-hand-thumbs-up-fill" : "postActionsChildIcon bi bi-hand-thumbs-up"} ></i>
-                        {isLike ? `You +${likesNumber - 1}` : likesNumber}
+                        {likesNumber}
                     </span>
                     <span className="postActionsChild" onClick={()=> setOpenComments(true)}>
                         <i className= "postActionsChildIcon bi bi-chat-left"></i>
@@ -94,7 +94,7 @@ function Post({post, setPost}) {
                     <span className="postTime">{convertDate(post.updatedAt)}</span>
                 </div>
                 <div className="postContent" dangerouslySetInnerHTML={{__html: post.content}}/>
-                <button className="postComments btnBig btnMain" onClick={()=> setOpenComments(true)}>READ {post.commentsNumber} COMMENTS</button>
+                <button className="postComments btnBig btnMain" onClick={()=> setOpenComments(true)}>READ {commentsNumber} COMMENTS</button>
             </div>
             {openComments && 
                 <Comments postId={post.id} setOpenComments={setOpenComments} setCommentsNumber={setCommentsNumber}/>

@@ -15,7 +15,7 @@ import "slick-carousel/slick/slick-theme.css";
 import User from "./pages/user/User";
 import UpdateAccount from "./pages/updateAccount/UpdateAccount";
 import Management from "./pages/management/Management";
-import PostsCategory from "./pages/postsCategory/PostsCategory";
+import Category from "./pages/category/Category";
 
 
 export default function App() {
@@ -31,7 +31,7 @@ export default function App() {
           <Route path="/" element={<Community/>}/>
           <Route path="/users/:userId" element={<User/>}/>
           <Route path="/posts/:postId" element={<Single/>}/>
-          <Route path='/posts' element={<PostsCategory/>}/>
+          <Route path='/posts' element={<Category/>}/>
 
           <Route path="/home" element={<Home/>}/>
           <Route path="/write" element={<Write/>}/>

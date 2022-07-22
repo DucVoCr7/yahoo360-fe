@@ -1,45 +1,23 @@
 @use '/src/assets/scss' as *;
-
 @media (min-width: 901px) {
     .postsBigTop {
-        width: 100%;
-        height: 600px;
-        display: flex;
-        flex-direction: column;
-
         &Top {
-            flex: 1;
             @include paddingMarginBorder('PC', 'bottom');
-            overflow: hidden;
         }
-
         &Bottom {
-            flex: 1;
-            overflow: hidden;
             display: flex;
-
             &Item {
                 flex: 1;
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-
                 &:first-child {
                     @include paddingMarginBorder('PC', 'right');
                 }
-
+                display: flex;
+                flex-direction: column;
                 > :nth-child(n) {
                     flex: 1;
-                    height: 50%;
                 }
-
                 > :first-child {
-                    padding-bottom: $sizeAlignElementPC;
-                    border-bottom: 1px solid $disableColor;
-                }
-
-                > :last-child {
-                    padding-top: $sizeAlignElementPC;
+                    @include paddingMarginBorder('PC', 'bottom');
                 }
             }
         }
@@ -48,100 +26,10 @@
 
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
 @media (min-width: 740px) and (max-width: 900px) {
-    .postsBigTop {
-        width: 100%;
-        height: 600px;
-        display: flex;
-        flex-direction: column;
 
-        &Top {
-            flex: 1;
-            @include paddingMarginBorder('TM', 'bottom');
-            overflow: hidden;
-        }
-
-        &Bottom {
-            flex: 1;
-            overflow: hidden;
-            display: flex;
-
-            &Item {
-                flex: 1;
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-
-                &:first-child {
-                    @include paddingMarginBorder('TM', 'right');
-                }
-
-                > :nth-child(n) {
-                    flex: 1;
-                    height: 50%;
-                }
-
-                > :first-child {
-                    padding-bottom: $sizeAlignElementTM; //
-                    border-bottom: 1px solid $disableColor;
-                }
-
-                > :last-child {
-                    padding-top: $sizeAlignElementTM; //
-                }
-            }
-        }
-    }
 }
 
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
-    .postsBigTop {
-        width: 100%;
-        height: auto; //
-        display: flex;
-        flex-direction: column;
 
-        &Top {
-            flex: 1;
-            @include paddingMarginBorder('TM', 'bottom');
-            overflow: hidden;
-        }
-
-        &Bottom {
-            flex: 1;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column; //
-
-            &Item {
-                flex: 1;
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-
-                &:first-child {
-                    padding-right: 0; //
-                    border-right: none; //
-                    margin-right: 0; //
-                    @include paddingMarginBorder('TM', 'bottom');
-                }
-
-                > :nth-child(n) {
-                    flex: none; //
-                    height: 200px; //
-                    box-sizing: content-box;
-                    padding: 0; //
-                    border: none; //
-                    margin: 0; //
-                    @include paddingMarginBorder('TM', 'bottom');
-                }
-
-                > :last-child {
-                    padding: 0; //
-                    border: none; //
-                    margin: 0; //
-                }
-            }
-        }
-    }
 }

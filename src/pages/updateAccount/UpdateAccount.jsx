@@ -1,14 +1,48 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import avatar from '../../assets/image/avatar.jpg'
+import { updateAccount } from '../../redux/userSlice'
+import { handleErrorUpdateUser } from '../../utils/handleErrorUpdateUser'
 import './updateAccount.scss'
 
 export default function UpdateAccount() {
-
-const handleUpdate = async()=> {
-    //
+const {pending, userInfo} = useSelector(state => state.user)
+const [infoUpdate, setInfoUpdate] = useState({})
+const [errors, setErrors] = useState()
+const dispatch = useDispatch()
+const navigate = useNavigate()
+const handleChange = event => setInfoUpdate({...infoUpdate, [event.target.name]: event.target.value})
+const handleSetFile = event => {
+    const file = event.target.files[0]
+    file.preview = URL.createObjectURL(file)
+    setInfoUpdate({...infoUpdate, image: file})
 }
-const userInfo = useSelector(state => state.user.userInfo)
+const handleUpdate = async()=> {
+    const [dataNeedUpdate, resultErrors] = handleErrorUpdateUser(infoUpdate)
+    if(Object.keys(dataNeedUpdate).length === 0) {
+        navigate('/home')
+    } else {
+        console.log(dataNeedUpdate, resultErrors)
+        if(Object.keys(resultErrors).length === 0) {
+            const data = new FormData()
+            Object.keys(dataNeedUpdate).forEach(key=> data.append(key, dataNeedUpdate[key]))
+            const statusUpdate = await dispatch(updateAccount({userId: userInfo.id, dataUpdate: data}));
+            if(!statusUpdate.error) {
+                navigate('/home')
+            }
+        } else {
+            console.log(1)
+            console.log(resultErrors)
+            setErrors(resultErrors)
+        }
+    }
+}
+useEffect(()=> {
+    return ()=> infoUpdate?.image && URL.revokeObjectURL(infoUpdate.image.preview)
+}, [infoUpdate?.image])
     return (
         <div className='updateAccount'>
             <span className="updateAccountTitle">
@@ -16,12 +50,17 @@ const userInfo = useSelector(state => state.user.userInfo)
             </span>
             <div className="updateAccountContent">
                 <span className="updateAccountContentItem">
-                    <img src={userInfo.image ? userInfo.image : avatar} alt="" className="updateAccountContentItemImg" />
+                    <img src={ infoUpdate?.image ? 
+                            infoUpdate.image.preview 
+                            :
+                            userInfo.image ? userInfo.image : avatar
+                        } 
+                        alt="ImgUser" className="updateAccountContentItemImg" />
                     <label className="updateAccountContentItemLabel" htmlFor='updateAccountImgId'>
                         Change Avatar
                         <i className="updateAccountContentItemLabelInfo bi bi-cloud-arrow-up-fill"></i>
                     </label>
-                    <input type="file" id='updateAccountImgId' hidden/>
+                    <input onChange={handleSetFile} type="file" id='updateAccountImgId' hidden/>
                 </span>
                 <span className="updateAccountContentItem">
                     <label className="updateAccountContentItemLabel">
@@ -30,7 +69,7 @@ const userInfo = useSelector(state => state.user.userInfo)
                             {userInfo.name}
                         </span>
                     </label>
-                    <input type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
+                    <input onChange={handleChange} name='name' type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
                 </span>
                 <span className="updateAccountContentItem">
                     <label className="updateAccountContentItemLabel">
@@ -39,7 +78,7 @@ const userInfo = useSelector(state => state.user.userInfo)
                             {userInfo.gender}
                         </span>
                     </label>
-                    <select className='updateAccountContentItemInput'>
+                    <select onChange={handleChange} name='gender' className='updateAccountContentItemInput'>
                         <option value="" disabled selected>Choice gender...</option>
                         <option value="G0">Male</option>
                         <option value="G1">Female</option>
@@ -48,20 +87,32 @@ const userInfo = useSelector(state => state.user.userInfo)
                 <span className="updateAccountContentItem">
                     <label className="updateAccountContentItemLabel">
                         Email
-                        <span className="updateAccountContentItemLabelInfo">
-                            {userInfo.email}
-                        </span>
+                        {errors?.email ? 
+                            <span className="updateAccountContentItemLabelError">
+                                {errors.email}
+                            </span>
+                            :
+                            <span className="updateAccountContentItemLabelInfo">
+                                {userInfo.email}
+                            </span>
+                        }
                     </label>
-                    <input type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
+                    <input onChange={handleChange} name='email' type="email" className="updateAccountContentItemInput" placeholder='Enter new info...' />
                 </span>
                 <span className="updateAccountContentItem">
                     <label className="updateAccountContentItemLabel">
-                        Phone Number
-                        <span className="updateAccountContentItemLabelInfo">
-                            {userInfo.phoneNumber}
-                        </span>
+                        Phone
+                        {errors?.phoneNumber? 
+                            <span className="updateAccountContentItemLabelError">
+                                {errors.phoneNumber}
+                            </span>
+                            :
+                            <span className="updateAccountContentItemLabelInfo">
+                                {userInfo.phoneNumber}
+                            </span>
+                        }
                     </label>
-                    <input type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
+                    <input onChange={handleChange} name='phoneNumber' type="number" className="updateAccountContentItemInput" placeholder='Enter new info...' />
                 </span>
                 <span className="updateAccountContentItem">
                     <label className="updateAccountContentItemLabel">
@@ -70,9 +121,9 @@ const userInfo = useSelector(state => state.user.userInfo)
                             {userInfo.address}
                         </span>
                     </label>
-                    <input type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
+                    <input onChange={handleChange} name='address' type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
                 </span>
-                <button className='updateAccountContentSubmit btnBig btnMain' onClick={handleUpdate}> SUBMIT </button>
+                <button className={pending ? 'updateAccountContentSubmit btnBig btnMain active' : 'updateAccountContentSubmit btnBig btnMain'}  onClick={handleUpdate}> SUBMIT </button>
             </div>
         </div>
     )

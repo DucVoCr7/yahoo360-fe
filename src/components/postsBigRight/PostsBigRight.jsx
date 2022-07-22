@@ -6,17 +6,17 @@ export default function PostsBigRight({posts, type}) {
     return (
         <div className='postsBigRight'>
             <div className="postsBigRightTop">
-                <div className="postsBigRightTopLeft">
-                    <PostBrief post={posts[0]} type={'noImgBigRightTop'}/>
-                    <PostBrief post={posts[1]} type={'noImgBigRightTop'}/>
-                </div>
-                <div className="postsBigRightTopRight">
+                <span className="postsBigRightTopLeft">
+                    <PostBrief post={posts[0]} type={'noImg'}/>
+                    <PostBrief post={posts[1]} type={'noImg'}/>
+                </span>
+                <span className="postsBigRightTopRight">
                     <PostBrief post={posts[2]} type={'noContentBigRight'}/>
-                </div>
+                </span>
             </div>
             <div className="postsBigRightBottom">
-                <PostBrief post={posts[3]} type={'noImgBigRightBottom'}/>
-                <PostBrief post={posts[4]} type={'noImgBigRightBottom'}/>
+                <PostBrief post={posts[3]} type={'noImg'}/>
+                <PostBrief post={posts[4]} type={'noImg'}/>
             </div>
         </div>
     )

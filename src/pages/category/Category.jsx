@@ -4,10 +4,10 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { publicRequest } from '../../utils/requestMethods';
 import { useSelector } from 'react-redux'
-import './postsCategory.scss'
-import PostsSummary from '../../components/postsSummary/PostsSummary';
+import './category.scss'
+import PostsCategory from '../../components/postsCategory/PostsCategory';
 
-export default function PostsCategory() {
+export default function Category() {
     const [posts, setPosts] = useState()
     const location = useLocation();
     const valueCategory = useSelector(state=> state.app.category.find(item=> item.key === location.search.replace('?category=', '')).value)
@@ -23,13 +23,13 @@ export default function PostsCategory() {
     }, [location.search])
     return (
         posts ? 
-        <div className='postsCategory'>
-            <div className="postsCategoryTitle">
+        <div className='category'>
+            <div className="categoryTitle">
                 {valueCategory}
             </div>
-            <PostsSummary posts={posts} isPostsCategory={true}/>
+            <PostsCategory posts={posts}/>
         </div>
       :
-      <div className='postsCategory loading'></div>
+      <div className='category loading'></div>
     )
 }

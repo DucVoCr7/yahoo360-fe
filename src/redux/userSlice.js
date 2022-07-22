@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { publicRequest } from "../utils/requestMethods";
+import { publicRequest, userRequest } from "../utils/requestMethods";
 export const login = createAsyncThunk('users/login', async(userInfo, {rejectWithValue})=> {
     try {
         const response = await publicRequest.post('/login', userInfo)
@@ -15,6 +15,13 @@ export const register = createAsyncThunk('users/register', async(userInfo, {reje
     } catch (error) {
         return rejectWithValue(error.response.data)
     }
+})
+export const updateAccount = createAsyncThunk('users/updateAccount', async ({userId, dataUpdate})=> {
+    console.log(userId)
+    console.log(dataUpdate)
+    const response = await userRequest.patch(`/users/${userId}`, dataUpdate)
+    console.log(response.data)
+    return response.data
 })
 export const logout = createAsyncThunk('users/logout', async ()=> {
     const response = await publicRequest.post('/deleteRefreshToken', {
@@ -78,6 +85,21 @@ export const userSlice = createSlice({
         [register.rejected]: (state, action)=> {
             state.pending = false
             state.error = action.payload
+        },
+
+        // Update
+        [updateAccount.pending]: (state)=> {
+            state.pending = true
+            state.error = false
+        },
+        [updateAccount.fulfilled]: (state, action)=> {
+            state.pending = false
+            state.error = false
+            state.userInfo = action.payload.user
+        },
+        [updateAccount.rejected]: (state)=> {
+            state.pending = false
+            state.error = false
         },
 
         // Logout

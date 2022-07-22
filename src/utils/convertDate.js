@@ -1,4 +1,4 @@
-const convertDate = (timeStamp, typeFull = true)=> {
+const convertDate = (timeStamp, type)=> {
     let dateObj = new Date(timeStamp);
     // let month = dateObj.getMonth() + 1; // Muốn thể hiện số thì dùng + 1
     let month = dateObj.getMonth(); // Muốn thể hiện text thì mở switch case
@@ -69,10 +69,13 @@ const convertDate = (timeStamp, typeFull = true)=> {
     //         day = 'Saturday'
         
     // }
-    if(typeFull) {
-        return `${hours}:${minutes} ${month} ${date}, ${year}`;
-    } else {
+    if(type === 'noTime') {
+        return `${month} ${date}, ${year}`;
+    } else if(type === 'noYear') {
         return `${hours}:${minutes} ${month} ${date}`;
+    }
+    else {
+        return `${hours}:${minutes} ${month} ${date}, ${year}`;
     }
 }
 export default convertDate

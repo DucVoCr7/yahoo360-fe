@@ -1,7 +1,7 @@
 @use '/src/assets/scss' as *;
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
 @media (min-width: 901px) {
-    .postsCategory {
+    .category {
         &.loading {
             height: calc(100vh - $heightTopbar - $heightFooter);
             position: relative;
@@ -20,23 +20,19 @@
         }
         width: 100%;
         min-height: calc(100vh - $heightTopbar - $heightFooter);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        padding: $sizeAlignElementPC;
         &Title {
             @include font('title');
-            width: calc(100% - $sizeAlignPagePC*2);
+            width: 100%;
             font-size: 30px;
-            line-height: 1;
             text-transform: uppercase;
             font-weight: 600;
-            padding-top: $sizeAlignElementPC;
             @include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double)
         }
     }
 }
 @media (min-width: 740px) and (max-width: 900px) {
-    .postsCategory {
+    .category {
         &.loading {
             height: calc(100vh - $heightTopbar - $heightFooter);
             position: relative;
@@ -72,7 +68,7 @@
 }
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
-        .postsCategory {
+        .category {
             &.loading {
                 height: calc(100vh - $heightTopbar - $heightFooterM);
                 position: relative;

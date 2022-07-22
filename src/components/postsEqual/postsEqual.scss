@@ -2,7 +2,6 @@
 @media (min-width: 901px) {
     .postsEqual {
         display: flex;
-        height: 200px;
         > :nth-child(n) {
             flex: 1;
             @include paddingMarginBorder('PC', 'left');

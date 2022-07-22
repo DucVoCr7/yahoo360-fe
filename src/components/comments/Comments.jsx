@@ -18,6 +18,7 @@ function Comments({postId, setOpenComments, setCommentsNumber}) {
       if(content.trim()) {
         try {
           const data = {postId, userId, content}
+          console.log(data)
           const response = await userRequest.post('/comments', data)
           setComments(prev => [{
             ...response.data.comment, replies: [], user: {

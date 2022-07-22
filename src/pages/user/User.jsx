@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import HeaderOfUser from '../../components/headerOfUser/HeaderOfUser'
-import PostsSummary from '../../components/postsSummary/PostsSummary'
+import PostsUser from '../../components/postsUser/PostsUser'
 import Sidebar from '../../components/sidebar/Sidebar'
 import { publicRequest } from '../../utils/requestMethods'
 import { useSelector } from 'react-redux'
@@ -76,7 +76,7 @@ export default function User() {
             address={address}
             statusFriend={statusFriend}
             />
-          <PostsSummary posts={posts} />
+          <PostsUser posts={posts} />
         </div>
       :
       <div className='user loading'></div>

@@ -1,11 +1,11 @@
 @use '/src/assets/scss' as *;
 @media (min-width: 901px) {
-    .postsBigRight {
+    .postsCategory {
         &Top {
             @include paddingMarginBorder('PC', 'bottom');
             display: flex;
             &Left {
-                width: 30%;
+                width: 40%;
                 @include paddingMarginBorder('PC', 'right');
                 display: flex;
                 flex-direction: column;
@@ -17,16 +17,33 @@
                 }
             }
             &Right {
-                width: 70%;
+                width: 60%;
+            }
+        }
+        &Center {
+            @include paddingMarginBorder('PC', 'bottom');
+            display: flex;
+            > :nth-child(n) {
+                flex: 1;
+                @include paddingMarginBorder('PC', 'right');
+            }
+            > :last-child {
+                padding-right: 0;
+                margin-right: 0;
+                border: none;
             }
         }
         &Bottom {
             display: flex;
+            flex-direction: column;
             > :nth-child(n) {
                 flex: 1;
+                @include paddingMarginBorder('PC', 'bottom');
             }
-            > :first-child {
-                @include paddingMarginBorder('PC', 'right');
+            > :last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                border: none;
             }
         }
     }

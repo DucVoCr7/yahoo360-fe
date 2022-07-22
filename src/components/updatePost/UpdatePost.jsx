@@ -22,7 +22,7 @@ function UpdatePost({post, setOpenUpdate, setPost}) {
     const navigate = useNavigate()
 
 
-    const handlePreview = (event) => {
+    const handleSetFile = (event) => {
         const file = event.target.files[0]
         file.preview = URL.createObjectURL(file)
         setPostUpdate({...postUpdate, image: file})
@@ -34,15 +34,15 @@ function UpdatePost({post, setOpenUpdate, setPost}) {
     }
 
     const handleSubmit = async (event) => {
-        const [dataUpdate, resultError] = handleErrorUpdatePost(postUpdate, post)
+        const [dataUpdate, resultErrors] = handleErrorUpdatePost(postUpdate, post)
         if(Object.keys(dataUpdate).length === 0) {
             console.log(123)
             setOpenUpdate(false)
         } else {
             console.log(1234)
-            if(Object.keys(resultError).length === 0) {
+            if(Object.keys(resultErrors).length === 0) {
                 const data = new FormData()
-                Object.keys(postUpdate).forEach(key=> data.append(key, postUpdate[key]))
+                Object.keys(dataUpdate).forEach(key=> data.append(key, dataUpdate[key]))
                 try {
                     const response = await userRequest.patch(`/posts/${post.id}`, data)
                     console.log(response.data)
@@ -52,7 +52,7 @@ function UpdatePost({post, setOpenUpdate, setPost}) {
                     console.log(error)
                 }
             } else {
-                setError(resultError)
+                setError(resultErrors)
             }
         }
     }
@@ -68,8 +68,8 @@ function UpdatePost({post, setOpenUpdate, setPost}) {
                 <label className='updatePostImageLabel' htmlFor="updatePostImageId">
                     <img src={addImage} alt="imgLabel" className="updatePostImageLabelContent" />
                 </label>
-                <input type="file" id="updatePostImageId" onChange={handlePreview} hidden/>
-                <img src={postUpdate.image?.preview ? postUpdate.image.preview : postUpdate.image} className="updatePostImageContent" name='image' alt="updatePostImage"/>
+                <input type="file" id="updatePostImageId" onChange={handleSetFile} hidden/>
+                <img src={postUpdate.image?.preview ? postUpdate.image.preview : postUpdate.image} className="updatePostImageContent" alt="updatePostImage"/>
             </div>
 
             {/* Title */}

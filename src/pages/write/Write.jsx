@@ -15,7 +15,7 @@ export default function Write() {
     const userId = useReduxUserId()
     const valueCategory = useReduxValueCategory(postInfo?.category)
     const navigate = useNavigate()
-    const handlePreview = (event) => {
+    const handleSetFile = (event) => {
         const file = event.target.files[0]
         file.preview = URL.createObjectURL(file)
         setPostInfo({...postInfo, image: file})
@@ -45,7 +45,7 @@ export default function Write() {
         }
     }
     useEffect(() => {
-        return () => postInfo?.image && URL.revokeObjectURL(postInfo?.image.preview)
+        return () => postInfo?.image && URL.revokeObjectURL(postInfo.image.preview)
     }, [postInfo?.image])
     return (
         <div className='write'>
@@ -55,9 +55,9 @@ export default function Write() {
                 <label className={postInfo?.image ? 'writeImageLabel active' : 'writeImageLabel'} htmlFor="writeImageId">
                     <img src={addImage} alt="imgLabel" className="writeImageLabelContent" />
                 </label>
-                <input type="file" id="writeImageId" onChange={handlePreview} hidden/>
+                <input type="file" id="writeImageId" onChange={handleSetFile} hidden/>
                 {postInfo?.image &&
-                    <img src={postInfo.image.preview} className="writeImageContent" name='image' alt="writeImage"/>
+                    <img src={postInfo.image.preview} className="writeImageContent" alt="writeImage"/>
                 }
             </div>
             {error?.image && <span className='writeError'>{error.image}</span>}

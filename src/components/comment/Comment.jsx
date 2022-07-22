@@ -46,7 +46,7 @@ function Comment({ comment, setComments, setCommentsNumber, postId }) {
             </div>
             <div className="commentTopRightAction">
               <span className="commentTopRightActionItem">
-                {convertDate(comment.createdAt, false)}
+                {convertDate(comment.createdAt, 'noYear')}
               </span>
               <label className="commentTopRightActionItem" htmlFor='replyAwaitId'
                 onClick={() => setOpenReply(true)}
