@@ -1,69 +1,56 @@
 @use '/src/assets/scss' as *;
-
 @media (min-width: 901px) {
     .friends {
-        width: 100%;
-        height: 100%;
+        height: 140px;
         display: flex;
         flex-direction: column;
-
         &Title {
             @include font('title');
+            font-size: 16px;
+            display: block;
             margin-bottom: 10px;
-            display: flex;
-
             &Content {
                 cursor: pointer;
-
                 &Icon {
                     margin-right: 10px;
                 }
             }
         }
-
         &Content {
             flex: 1;
             display: flex;
-            flex-wrap: wrap;
             overflow: hidden;
             position: relative;
-
             &Item {
-                width: 50%;
-                height: 50%;
+                &:first-child {
+                    margin-left: 0;
+                }
+                width: 11.1875%;
+                margin-left: 1.5%;
+                height: 100%;
                 border-radius: 10px;
                 overflow: hidden;
-                position: relative;
-
-                
-
                 &Img {
+                    display: block;
+                    height: 80%;
                     width: 100%;
-                    height: 100%;
                     object-fit: cover;
                 }
-
                 &Name {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
+                    height: 20%;
                     width: 100%;
-                    padding: 2px 5px;
                     @include font('title');
                     font-size: 14px;
-                    color: $whiteColor;
-                    text-shadow: $shadowFull;
-                    line-height: 1.4;
+                    line-height: 1.8;
                     text-align: center;
                     @include limitLine(1);
                 }
             }
-
             &Hidden {
                 cursor: pointer;
                 position: absolute;
-                width: 50%;
-                height: 50%;
+                width: 11.1875%;
+                height: 100%;
                 right: 0;
                 bottom: 0;
                 color: $mainColor;
@@ -76,25 +63,21 @@
                 border-radius: 10px;
             }
         }
-
         &NoContent {
-            width: 100%;
-            height: 100%;
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 10px;
             background-image: $backGroundEmpty;
-
             &Content {
                 &Icon {
                     display: block;
-                    width: 70px;
-                    height: 70px;
+                    width: 40px;
+                    height: 40px;
                 }
             }
         }
-
         &List {
             @include fadeIn;
             position: fixed;
@@ -105,61 +88,43 @@
             left: 0;
             padding: $sizeAlignPagePC;
             overflow-y: scroll;
-
             &Title {
                 @include font('title');
-                font-size: 25px;
-
                 @include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double);
-                
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-
                 &Close {
-                    
                 }
             }
-
             &Content {
                 flex: 1;
                 display: flex;
                 flex-wrap: wrap;
                 overflow: hidden;
                 position: relative;
-
                 &Item {
-
                     &:nth-of-type(7n) {
                         margin-right: 0;
                     }
-
                     width: 13%;
                     height: 150px;
                     margin-right: 1.5%;
                     margin-bottom: 1.5%;
                     border-radius: 10px;
                     overflow: hidden;
-                    position: relative;
-
-                    
-
                     &Img {
+                        display: block;
+                        height: 85%;
                         width: 100%;
-                        height: 100%;
                         object-fit: cover;
                     }
-
                     &Name {
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
+                        height: 15%;
                         width: 100%;
-                        padding: 2px 5px;
                         @include font('title');
-                        color: $whiteColor;
-                        text-shadow: $shadowFull;
-                        line-height: 1.4;
+                        font-size: 15px;
+                        line-height: 1.8;
                         text-align: center;
                         @include limitLine(1);
                     }
@@ -171,74 +136,60 @@
 
 @media (min-width: 740px) and (max-width: 900px) {
     .friends {
-        width: 100%;
-        height: 100%;
+        height: 110px;
         display: flex;
         flex-direction: column;
-
         &Title {
             @include font('title');
             font-size: 16px;
-            margin-bottom: 5px;
-            display: flex;
-
+            display: block;
+            margin-bottom: 10px;
             &Content {
                 cursor: pointer;
-
                 &Icon {
                     margin-right: 10px;
                 }
             }
         }
-
         &Content {
             flex: 1;
             display: flex;
-            flex-wrap: wrap;
             overflow: hidden;
             position: relative;
-
             &Item {
-                width: 50%;
-                height: 50%;
+                &:first-child {
+                    margin-left: 0;
+                }
+                width: 15%;
+                margin-left: 2%;
+                height: 100%;
                 border-radius: 10px;
                 overflow: hidden;
-                position: relative;
-
-                
-
                 &Img {
+                    display: block;
+                    height: 80%;
                     width: 100%;
-                    height: 100%;
                     object-fit: cover;
                 }
-
                 &Name {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
+                    height: 20%;
                     width: 100%;
-                    padding: 2px 5px;
                     @include font('title');
-                    font-size: 14px;
-                    color: $whiteColor;
-                    text-shadow: $shadowFull;
-                    line-height: 1.4;
+                    font-size: 13px;
+                    line-height: 1.6;
                     text-align: center;
                     @include limitLine(1);
                 }
             }
-
             &Hidden {
                 cursor: pointer;
                 position: absolute;
-                width: 50%;
-                height: 50%;
+                width: 15%;
+                height: 100%;
                 right: 0;
                 bottom: 0;
                 color: $mainColor;
                 @include font ('title');
-                font-size: 16px;
                 font-weight: 600;
                 display: flex;
                 align-items: center;
@@ -247,25 +198,21 @@
                 border-radius: 10px;
             }
         }
-
         &NoContent {
-            width: 100%;
-            height: 100%;
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 10px;
             background-image: $backGroundEmpty;
-
             &Content {
                 &Icon {
                     display: block;
-                    width: 50px;
-                    height: 50px;
+                    width: 40px;
+                    height: 40px;
                 }
             }
         }
-
         &List {
             @include fadeIn;
             position: fixed;
@@ -274,57 +221,45 @@
             top: $heightTopbar;
             z-index: 2;
             left: 0;
-            padding: $sizeAlignPageTM;
+            padding: $sizeAlignPagePC;
             overflow-y: scroll;
-
             &Title {
                 @include font('title');
-                @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
+                @include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double);
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-
-                &Close {}
+                &Close {
+                }
             }
-
             &Content {
                 flex: 1;
                 display: flex;
                 flex-wrap: wrap;
                 overflow: hidden;
                 position: relative;
-
                 &Item {
-
-                    &:nth-of-type(3n) {
+                    &:nth-of-type(5n) {
                         margin-right: 0;
                     }
-
-                    width: 18.4%;
-                    height: 120px;
-                    margin-right: 2%;
-                    margin-bottom: 2%;
+                    width: 18.8%;
+                    height: 140px;
+                    margin-right: 1.5%;
+                    margin-bottom: 1.5%;
                     border-radius: 10px;
                     overflow: hidden;
-                    position: relative;
-
                     &Img {
+                        display: block;
+                        height: 85%;
                         width: 100%;
-                        height: 100%;
                         object-fit: cover;
                     }
-
                     &Name {
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
+                        height: 15%;
                         width: 100%;
-                        padding: 2px 5px;
                         @include font('title');
                         font-size: 14px;
-                        color: $whiteColor;
-                        text-shadow: $shadowFull;
-                        line-height: 1.4;
+                        line-height: 1.7;
                         text-align: center;
                         @include limitLine(1);
                     }
@@ -333,77 +268,62 @@
         }
     }
 }
-
 @media (max-width: 739px) {
     .friends {
-        width: 100%;
-        height: 100%;
+        height: 120px;
         display: flex;
         flex-direction: column;
-
         &Title {
             @include font('title');
             font-size: 16px;
-            margin-bottom: 5px;
-            display: flex;
-
+            display: block;
+            margin-bottom: 10px;
             &Content {
                 cursor: pointer;
-
                 &Icon {
                     margin-right: 10px;
                 }
             }
         }
-
         &Content {
             flex: 1;
             display: flex;
-            flex-wrap: wrap;
             overflow: hidden;
             position: relative;
-
             &Item {
-                width: 50%;
-                height: 50%;
+                &:first-child {
+                    margin-left: 0;
+                }
+                width: 23.875%;
+                margin-left: 1.5%;
+                height: 100%;
                 border-radius: 10px;
                 overflow: hidden;
-                position: relative;
-
-                
-
                 &Img {
+                    display: block;
+                    height: 80%;
                     width: 100%;
-                    height: 100%;
                     object-fit: cover;
                 }
-
                 &Name {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
+                    height: 20%;
                     width: 100%;
-                    padding: 2px 5px;
                     @include font('title');
-                    font-size: 14px;
-                    color: $whiteColor;
-                    text-shadow: $shadowFull;
-                    line-height: 1.4;
+                    font-size: 13px;
+                    line-height: 1.6;
                     text-align: center;
                     @include limitLine(1);
                 }
             }
-
             &Hidden {
                 cursor: pointer;
                 position: absolute;
-                width: 50%;
-                height: 50%;
+                width: 23.875%;
+                height: 100%;
                 right: 0;
                 bottom: 0;
                 color: $mainColor;
                 @include font ('title');
-                font-size: 16px;
                 font-weight: 600;
                 display: flex;
                 align-items: center;
@@ -412,25 +332,21 @@
                 border-radius: 10px;
             }
         }
-
         &NoContent {
-            width: 100%;
-            height: 100%;
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 10px;
             background-image: $backGroundEmpty;
-
             &Content {
                 &Icon {
                     display: block;
-                    width: 50px;
-                    height: 50px;
+                    width: 40px;
+                    height: 40px;
                 }
             }
         }
-
         &List {
             @include fadeIn;
             position: fixed;
@@ -439,58 +355,45 @@
             top: $heightTopbar;
             z-index: 2;
             left: 0;
-            padding: $sizeAlignPageTM;
+            padding: $sizeAlignPagePC;
             overflow-y: scroll;
-
             &Title {
                 @include font('title');
-                @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
-              
+                @include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double);
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-
-                &Close {}
+                &Close {
+                }
             }
-
             &Content {
                 flex: 1;
                 display: flex;
                 flex-wrap: wrap;
                 overflow: hidden;
                 position: relative;
-
                 &Item {
-
                     &:nth-of-type(3n) {
                         margin-right: 0;
                     }
-
                     width: 32%;
-                    height: 110px;
+                    height: 140px;
                     margin-right: 2%;
                     margin-bottom: 2%;
                     border-radius: 10px;
                     overflow: hidden;
-                    position: relative;
-
                     &Img {
+                        display: block;
+                        height: 85%;
                         width: 100%;
-                        height: 100%;
                         object-fit: cover;
                     }
-
                     &Name {
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
+                        height: 15%;
                         width: 100%;
-                        padding: 2px 5px;
                         @include font('title');
                         font-size: 14px;
-                        color: $whiteColor;
-                        text-shadow: $shadowFull;
-                        line-height: 1.4;
+                        line-height: 1.7;
                         text-align: center;
                         @include limitLine(1);
                     }

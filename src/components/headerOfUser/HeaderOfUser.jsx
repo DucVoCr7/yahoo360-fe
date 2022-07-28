@@ -19,7 +19,7 @@ function HeaderOfUser({ photos, isHomePage = false }) {
                 <div className="headerOfUserNoPhoto">
                     {isHomePage ?
                         <label className="headerOfUserNoPhotoContent" htmlFor='photosId'>
-                            <img src={empty} alt='emptyIcon' className="headerOfUserNoPhotoContentIcon" />
+                            <img src={empty} alt='emptyIcon' className="headerOfUserNoPhotoContentIcon active" />
                         </label>
                         :
                         <span className="headerOfUserNoPhotoContent">

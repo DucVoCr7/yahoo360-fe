@@ -100,7 +100,7 @@ export default function Topbar() {
                 }
                 {userInfo &&
                     <Link className='topbarItem' to='/home'>
-                        <img className='topbarImg' src={userInfo.image ? userInfo.image : avatar} alt='avatar' />
+                        <img className='topbarImg' src={userInfo.image} alt='avatar' />
                     </Link>}
                 {userInfo?.role === 'R0' && <Link to='/management' className='topbarItem'>MANAGEMENT</Link>}
                 {userInfo &&
@@ -124,12 +124,12 @@ export default function Topbar() {
                 ></i>
                 <div className={openTopbarMenu ? "topbarMenu active" : "topbarMenu"} ref={refTopbarMenu}>
                     <div className='topbarMenuItem'>
-                        <input type='text' className='topbarMenuSearchInput' placeholder='Search...' />
+                        <input type='search' className='topbarMenuSearchInput' placeholder='Search...' />
                         <i className='topbarMenuSearchIcon bi bi-search'></i>
                     </div>
                     {userInfo &&
                         <Link className='topbarMenuItem' to='/home' onClick={()=> setOpenTopbarMenu(false)}>
-                            <img className='topbarMenuImg' src={userInfo.image ? userInfo.image : avatar} alt='avatar' />
+                            <img className='topbarMenuImg' src={userInfo.image} alt='avatar' />
                         </Link>
                     }
                     {userInfo ?

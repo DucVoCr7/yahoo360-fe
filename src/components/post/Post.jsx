@@ -1,7 +1,6 @@
 import React, { useState }  from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './post.scss'
-import avatar from '../../assets/image/avatar.jpg'
 import convertDate from '../../utils/convertDate'
 import Comments from '../comments/Comments'
 import { useReduxUserId, useReduxValueCategory } from '../../utils/reduxMethods'
@@ -88,7 +87,7 @@ function Post({post, setPost}) {
                 </div>
                 <div className="postAuthorTime">
                     <Link to={`/users/${post.userId}`} className="postAuthor">
-                        <img src={post.user.image ? post.user.image : avatar} alt="postImg" className="postAuthorImg"/>
+                        <img src={post.user.image} alt="postImg" className="postAuthorImg"/>
                         <span className="postAuthorName">{post.user.name}</span>
                     </Link>
                     <span className="postTime">{convertDate(post.updatedAt)}</span>

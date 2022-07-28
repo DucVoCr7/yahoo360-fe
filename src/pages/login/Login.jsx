@@ -11,8 +11,8 @@ export default function Login() {
   const navigate = useNavigate()
   const handleLogin = async (event) => {
       event.preventDefault();
-      const statusLogin = await dispatch(login(userInfo))
-      if(!statusLogin.error) {
+      const result = await dispatch(login(userInfo))
+      if(!result.error) {
         navigate('/home')
       }
   }
@@ -37,9 +37,8 @@ export default function Login() {
         <button className={pending ? 'loginSubmit active btnBig btnMain' : 'loginSubmit btnBig btnMain'}  type='submit'>
           {!pending && 'LOGIN'}
         </button>
-        <span className='loginToRegister'>
-          New to Yahoo! 360°? <Link to='/register' className='loginToRegisterLink'>REGISTER</Link>
-        </span>
+        <Link to='/register' className='loginRegister'>New to Yahoo! 360°? REGISTER</Link>
+        <Link to='/' className='loginForgot'>You forgot password?</Link>
       </form>
     </div>
   )

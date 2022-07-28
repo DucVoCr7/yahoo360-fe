@@ -13,8 +13,8 @@ export default function Register() {
   const handleChange = (event) => { setUserInfo({ ...userInfo, [event.target.name]: event.target.value }) }
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const statusRegister = await dispatch(register(userInfo)) 
-    if(!statusRegister.error) {
+    const result = await dispatch(register(userInfo)) 
+    if(!result.error) {
       navigate('/home')
     }
   }
@@ -46,12 +46,7 @@ export default function Register() {
         <button className={pending ? 'registerSubmit btnBig btnMain active' : 'registerSubmit btnBig btnMain'}  type='submit'>
           {!pending && 'REGISTER'}
         </button>
-        <span className="registerRules">
-        Learn about&nbsp;
-          <Link to='/about' className='registerRulesLink'>Terms of Service</Link>&nbsp;
-          & &nbsp;
-          <Link to='/about' className='registerRulesLink'>Privacy Policy</Link>.
-        </span>
+        <Link to='/' className='registerRules'>Learn about Terms of Service & Privacy Policy</Link>
       </form>
     </div>
   )

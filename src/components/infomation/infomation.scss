@@ -1,127 +1,39 @@
 @use '/src/assets/scss' as *;
-@media (min-width: 740px) {
+@media (min-width: 901px) {
     .infomation {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        &Title {
-            @include font('title');
-            margin-bottom: 10px;
-            display: flex;
-            &Content {
-                &Icon {
-                    margin-right: 10px;
-                }
+        @include font('title');
+        font-size: 16px;
+        &Item {
+            margin-right: 30px;
+            &Icon {
+                margin-right: 5px;
             }
         }
-        &Content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            &Top {
-                flex: 1;
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: space-around;
-                background-image: $backGroundEmpty;
-                padding: 10px;
-                border-radius: 10px;
-                &Item {
-                    padding-right: 10px;
-                    @include font('title');
-                    font-size: 17px;
-                    display: flex;
-                    align-items: center;
-                    &Icon {
-                        margin-right: 5px;
-                    }
-                }
-            }
-            &Bottom {
-                &Item {
-                    margin-top: 10px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    .removeFriend, .isFriend, .removeRequestFriend, .requestFriend, .removeFriendRequest, .friendRequest{
-                        width: 48%;
-                        &Icon {
-                            margin-left: 5px;
-                        }
-                    }
-                    .notFriend {
-                        width: 100%;
-                        &Icon {
-                            margin-left: 5px;
-                        }
-                    }
-                }
+    }
+}
+@media (min-width: 740px) and (max-width: 900px) {
+    .infomation {
+        @include font('title');
+        font-size: 16px;
+        &Item {
+            margin-right: 15px;
+            &Icon {
+                margin-right: 5px;
             }
         }
     }
 }
 @media (max-width: 739px) {
     .infomation {
-        width: 100%;
-        height: 100%;
+        @include font('title');
+        font-size: 16px;
         display: flex;
-        flex-direction: column;
-        &Title {
-            @include font('title');
-            font-size: 16px;
-            margin-bottom: 5px;
-            display: flex;
-            &Content {
-                &Icon {
-                    margin-right: 10px;
-                }
-            }
-        }
-        &Content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            &Top {
-                flex: 1;
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: space-around;
-                background-image: $backGroundEmpty;
-                padding: 10px;
-                border-radius: 10px;
-                &Item {
-                    padding-right: 10px;
-                    @include font('title');
-                    font-size: 15px;
-                    display: flex;
-                    align-items: center;
-                    &Icon {
-                        margin-right: 5px;
-                    }
-                }
-            }
-            &Bottom {
-                &Item {
-                    margin-top: 5px;
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    .removeFriend, .isFriend, .removeRequestFriend, .requestFriend, .removeFriendRequest, .friendRequest{
-                        width: 48%;
-                        &Icon {
-                            margin-left: 5px;
-                        }
-                    }
-                    .notFriend {
-                        width: 100%;
-                        &Icon {
-                            margin-left: 5px;
-                        }
-                    }
-                }
+        flex-wrap: wrap;
+        justify-content: space-around;
+        &Item {
+            margin-top: $sizeAlignElementTM;
+            &Icon {
+                margin-right: 5px;
             }
         }
     }

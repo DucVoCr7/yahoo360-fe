@@ -1,6 +1,5 @@
 import React from 'react'
 import './postMedium.scss'
-import avatar from '../../assets/image/avatar.jpg'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import convertDate from '../../utils/convertDate'
@@ -18,7 +17,7 @@ export default function PostMedium({ post, isCategory = false, type}) {
                 {
                     isCategory &&
                     <span className="postMediumAuthor">
-                        <img src={post.user.image ? post.user.image : avatar} alt="postImg" className="postMediumAuthorImg" />
+                        <img src={post.user.image} alt="postImg" className="postMediumAuthorImg" />
                         <span className="postMediumAuthorName">{post.user.name}</span>
                     </span>
                 }

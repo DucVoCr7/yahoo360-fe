@@ -135,15 +135,32 @@ button {
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    font-weight: 500;
 }
+
 button.btnBig {
-    &:active {
-        background-color: $clickBtnColor;
+    &.active {
+        position: relative;
+        background-color: $disableColor;
+        cursor: progress;
+        &::after{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            display: block;
+            content: '';
+            background-image: url('../image/loading.gif');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+        }
     }
     height: 35px;
     width: 140px;
     font-size: 17px; 
 }
+
 button.btnSmall {
     &:active {
         background-color: $clickBtnColor;

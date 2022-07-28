@@ -29,9 +29,9 @@ function CustomPrevArrow(props) {
 }
 
 
-function Photos({ setPhotos, name, photos, isHomePage = false }) {
+function Photos({ setPhotos, name, photos, elementRenderNumber, isHomePage = false }) {
 
-  const photosHiddenNumber = photos.length - 4
+  const photosHiddenNumber = photos.length - elementRenderNumber
   const [file, setFile] = useState()
 
   // Gallery
@@ -108,8 +108,8 @@ function Photos({ setPhotos, name, photos, isHomePage = false }) {
       {photos.length > 0 ?
         <div className="photosContent">
           {photos.map((item, index) => (
-            index < 4 &&
-            <div className="photosContentItem" key={index} onClick={() => handleOpenSlider(index)}>
+            index < elementRenderNumber &&
+            <div className="photosContentItem" key={item.id} onClick={() => handleOpenSlider(index)}>
               <img src={item.photo} alt="friendImg" className="photosContentItemImg" />
             </div>
           ))}
@@ -123,7 +123,8 @@ function Photos({ setPhotos, name, photos, isHomePage = false }) {
         <div className="photosNoContent">
           {isHomePage ?
             <label className="photosNoContentContent" htmlFor='photosId'>
-              <img src={empty} alt='emptyIcon' className="photosNoContentContentIcon"/>
+              <img src={empty} alt='emptyIcon' className="photosNoContentContentIcon active"/>
+              {/* Active img dung de cusor pointer */}
             </label>
             :
             <span className="photosNoContentContent">
@@ -142,7 +143,19 @@ function Photos({ setPhotos, name, photos, isHomePage = false }) {
             {name}'s photos
             <i className="photosGalleryTitleClose bi bi-box-arrow-right" onClick={() => setOpenGallery(false)}></i>
           </div>
-          <Gallery photos={photosGallery} onClick={(event, { photo, index }) => handleOpenSlider(index)} direction={"column"}/>
+          {photos.length > 0 ?
+            <Gallery photos={photosGallery} onClick={(event, { photo, index }) => handleOpenSlider(index)} direction={"column"}/>
+            :
+            isHomePage ?
+              <label className="photosGalleryNoContent" htmlFor='photosId'>
+                <img src={empty} alt='emptyIcon' className="photosGalleryNoContentIcon active"/>
+                {/* Active img dung de cusor pointer */}
+              </label>
+              :
+              <span className="photosGalleryNoContent">
+                <img src={empty} alt='emptyIcon' className="photosGalleryNoContentIcon"/>
+              </span>
+          }
         </div>
       }
 

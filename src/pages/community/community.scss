@@ -69,8 +69,136 @@
     }
 }
 @media (min-width: 740px) and (max-width: 900px) {
+    .community {
+        &.loading {
+            height: calc(100vh - $heightTopbar - $heightFooter);
+            position: relative;
+            &::after {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                display: block;
+                content: '';
+                background-image: url('../../assets/image/loading.gif');
+                background-size: cover;
+                width: 70px;
+                height: 70px;
+            }
+        }
+        width: 100%;
+        padding: 5px $sizeAlignPageTM $sizeAlignPageTM $sizeAlignPageTM;
+        &Top {
+            display: flex;
+            flex-direction: column;
+            border-top: 4px double $blackBorder;
+            padding-top: $sizeAlignElementTM;
+            @include paddingMarginBorder('TM', 'bottom', $blackColor);
+            &Left {
+                @include paddingMarginBorder('TM', 'bottom', $blackColor);
+                &Item {
+                    @include paddingMarginBorder('TM', 'bottom', $blackColor);
+                    &:last-child {
+                        padding: 0;
+                        margin: 0;
+                        border: none;
+                    }
+                }
+            }
+            &Right {
+                &Item {
+                    @include paddingMarginBorder('TM', 'bottom', $blackColor);
+                    &:last-child {
+                        padding: 0;
+                        margin: 0;
+                        border: none;
+                    }
+                }
+            }
+        }
+        &Bottom {
 
+        }
+        &Name {
+            display: inline-block;
+            @include font('title');
+            background-color: $mainColor;
+            border: 1px solid $disableColor;
+            border-radius: 5px;
+            box-shadow: $shadowFull;
+            padding: 5px 10px;
+            
+            
+            margin-bottom: $sizeAlignElementPC;
+            &Icon {
+                margin-right: 5px;
+            }
+        }
+    }
 }
 @media (max-width: 739px) {
+    .community {
+        &.loading {
+            height: calc(100vh - $heightTopbar - $heightFooterM);
+            position: relative;
+            &::after {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                display: block;
+                content: '';
+                background-image: url('../../assets/image/loading.gif');
+                background-size: cover;
+                width: 70px;
+                height: 70px;
+            }
+        }
+        width: 100%;
+        padding: 5px $sizeAlignPageTM $sizeAlignPageTM $sizeAlignPageTM;
+        &Top {
+            display: flex;
+            flex-direction: column;
+            border-top: 4px double $blackBorder;
+            padding-top: $sizeAlignElementTM;
+            @include paddingMarginBorder('TM', 'bottom', $blackColor);
+            &Left {
+                @include paddingMarginBorder('TM', 'bottom', $blackColor);
+                &Item {
+                    @include paddingMarginBorder('TM', 'bottom', $blackColor);
+                    &:last-child {
+                        padding: 0;
+                        margin: 0;
+                        border: none;
+                    }
+                }
+            }
+            &Right {
+                &Item {
+                    @include paddingMarginBorder('TM', 'bottom', $blackColor);
+                    &:last-child {
+                        padding: 0;
+                        margin: 0;
+                        border: none;
+                    }
+                }
+            }
+        }
+        &Bottom {
 
+        }
+        &Name {
+            display: inline-block;
+            @include font('title');
+            background-color: $mainColor;
+            border: 1px solid $disableColor;
+            border-radius: 5px;
+            box-shadow: $shadowFull;
+            padding: 5px 10px;
+            margin-bottom: $sizeAlignElementTM;
+            &Icon {
+                margin-right: 5px;
+            }
+        }
+    }
 }

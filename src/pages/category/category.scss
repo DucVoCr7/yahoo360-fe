@@ -51,54 +51,46 @@
         }
         width: 100%;
         min-height: calc(100vh - $heightTopbar - $heightFooter);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        padding: $sizeAlignElementTM;
         &Title {
             @include font('title');
-            width: calc(100% - $sizeAlignPageTM*2);
+            width: 100%;
             font-size: 30px;
-            line-height: 1;
             text-transform: uppercase;
             font-weight: 600;
-            padding-top: $sizeAlignElementTM;
             @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double)
         }
     }
 }
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
-        .category {
-            &.loading {
-                height: calc(100vh - $heightTopbar - $heightFooterM);
-                position: relative;
-                &::after{
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translateX(-50%) translateY(-50%);
-                    display: block;
-                    content: '';
-                    background-image: url('../../assets/image/loading.gif');
-                    background-size: cover;
-                    width: 70px;
-                    height: 70px;
-                }
-            }
-            width: 100%;
-            min-height: calc(100vh - $heightTopbar - $heightFooterM);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            &Title {
-                @include font('title');
-                width: calc(100% - $sizeAlignPageTM*2);
-                font-size: 20px;
-                text-transform: uppercase;
-                line-height: 1;
-                font-weight: 600;
-                padding-top: $sizeAlignElementTM;
-                @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double)
+    .category {
+        &.loading {
+            height: calc(100vh - $heightTopbar - $heightFooterM);
+            position: relative;
+            &::after{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                display: block;
+                content: '';
+                background-image: url('../../assets/image/loading.gif');
+                background-size: cover;
+                width: 70px;
+                height: 70px;
             }
         }
+        width: 100%;
+        min-height: calc(100vh - $heightTopbar - $heightFooterM);
+        padding: $sizeAlignElementTM;
+        &Title {
+            @include font('title');
+            width: 100%;
+            font-size: 25px;
+            text-transform: uppercase;
+            font-weight: 600;
+            @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double)
+        }
+    }
 }

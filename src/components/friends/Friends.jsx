@@ -4,9 +4,9 @@ import empty from '../../assets/image/empty.png'
 import './friends.scss'
 
 
-function Friends({ name, friends }) {
+function Friends({ name, friends, elementRenderNumber }) {
 
-  const friendsHiddenNumber = friends.length - 4
+  const friendsHiddenNumber = friends.length - elementRenderNumber
   const [openFriends, setOpenFriends] = useState(false)
 
   console.log('re-render: Friends')
@@ -25,7 +25,7 @@ function Friends({ name, friends }) {
 
         <div className="friendsContent">
           {friends.map((friend, index) => (
-            index < 4 &&
+            index < elementRenderNumber &&
             <Link to={`/users/${friend.friendId}`} className="friendsContentItem" key={index}>
               <img src={friend.dataFriend.image} alt="friendImg" className="friendsContentItemImg" />
               <span className="friendsContentItemName">{friend.dataFriend.name}</span>

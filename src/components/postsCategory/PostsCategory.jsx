@@ -6,11 +6,11 @@ export default function PostsCategory({posts}) {
         <div className='postsCategory'>
             <div className="postsCategoryTop">
                 <span className="postsCategoryTopLeft">
-                    <PostMedium post={posts[0]} isCategory={true} type={'noImg'}/>
                     <PostMedium post={posts[1]} isCategory={true} type={'noImg'}/>
+                    <PostMedium post={posts[2]} isCategory={true} type={'noImg'}/>
                 </span>
                 <span className="postsCategoryTopRight">
-                    <PostMedium post={posts[2]} isCategory={true} type={'noContentTop'}/>
+                    <PostMedium post={posts[0]} isCategory={true} type={'noContentTop'}/>
                 </span>
             </div>
             <div className="postsCategoryCenter">

@@ -7,11 +7,11 @@ export default function PostsBigRight({posts, type}) {
         <div className='postsBigRight'>
             <div className="postsBigRightTop">
                 <span className="postsBigRightTopLeft">
-                    <PostBrief post={posts[0]} type={'noImg'}/>
                     <PostBrief post={posts[1]} type={'noImg'}/>
+                    <PostBrief post={posts[2]} type={'noImg'}/>
                 </span>
                 <span className="postsBigRightTopRight">
-                    <PostBrief post={posts[2]} type={'noContentBigRight'}/>
+                    <PostBrief post={posts[0]} type={'noContentBigRight'}/>
                 </span>
             </div>
             <div className="postsBigRightBottom">

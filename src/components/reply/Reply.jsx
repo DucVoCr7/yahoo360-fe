@@ -2,7 +2,6 @@ import React, { memo, useState } from 'react'
 import convertDate from '../../utils/convertDate'
 import { Link } from 'react-router-dom'
 import ReplyRepair from '../replyRepair/ReplyRepair'
-import avatar from '../../assets/image/avatar.jpg'
 import './reply.scss'
 import { useReduxUserId } from '../../utils/reduxMethods'
 import { useCallback } from 'react'
@@ -29,7 +28,7 @@ function Reply({ reply, setReplies, setCommentsNumber }) {
   return (
     <div className='reply'>
       <Link to={`/users/${reply.userId}`} className='replyLeft'>
-        <img src={reply.user.image ? reply.user.image : avatar} alt="userImg" className="replyLeftImg" />
+        <img src={reply.user.image} alt="userImg" className="replyLeftImg" />
       </Link>
       {!openRepair ?
         <div className="replyRight">

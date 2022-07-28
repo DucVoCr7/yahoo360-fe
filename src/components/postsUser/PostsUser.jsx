@@ -14,20 +14,20 @@ function PostsUser({ posts, isHomePage = false }) {
                             <div className="postsUserContentCenter">
                                 {posts.map((post, index) => (
                                     index < 4 &&
-                                    <PostMedium post={post} type={'noContentCenter'} />
+                                    <PostMedium post={post} type={'noContentCenter'} key={index}/>
                                 ))}
                             </div>
                             <div className="postsUserContentBottom">
                                 {posts.map((post, index) => (
                                     index >= 4 &&
-                                    <PostMedium post={post} type={'fullUser'} />
+                                    <PostMedium post={post} type={'fullUser'} key={index}/>
                                 ))}
                             </div>
                         </>
                         :
                         <div className="postsUserContentBottom">
                             {posts.map((post, index) => (
-                                <PostMedium post={post} type={'fullUser'} />
+                                <PostMedium post={post} type={'fullUser'} key={index}/>
                             ))}
                         </div>
                     }
@@ -37,7 +37,7 @@ function PostsUser({ posts, isHomePage = false }) {
                 <div className="postsUserNoContent">
                     {isHomePage ?
                         <Link to={'/write'} className="postsUserNoContentContent">
-                            <img src={empty} alt='emptyIcon' className="postsUserNoContentContentIcon" />
+                            <img src={empty} alt='emptyIcon' className="postsUserNoContentContentIcon active" />
                         </Link>
                         :
                         <span className="postsUserNoContentContent">

@@ -19,10 +19,17 @@
             @include limitLine(2);
         }
         .postContent {
-            @include font('content');
-            line-height: 1.4;
             color: $contentBriefColor;
             @include limitLine(5);
+            @include font('content');
+            line-height: 1.4;
+            > :nth-child(n) {
+                @include font('content');
+                line-height: 1.4;
+                font-weight: 500;
+                margin: 0;
+                padding: 0;
+            }
         }
         &.noImg{
             .postImg {
@@ -61,10 +68,134 @@
 
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
 @media (min-width: 740px) and (max-width: 900px) {
-
+    .postBrief {
+        &:hover {
+            color: $contentBriefColor;
+        }
+        .postImg {
+            max-height: 300px;
+            min-height: 150px;
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+        .postTitle {
+            @include font('title');
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 0 0 5px 0;
+            @include limitLine(2);
+        }
+        .postContent {
+            color: $contentBriefColor;
+            @include limitLine(5);
+            @include font('content');
+            line-height: 1.4;
+            > :nth-child(n) {
+                @include font('content');
+                font-weight: 500;
+                line-height: 1.4;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        &.noImg{
+            .postImg {
+                display: none;
+            }
+        }
+        &.noContentBigRight{
+            .postTitle {
+                font-size: 30px;
+                margin: 5px 0 0 0;
+            }
+            .postContent {
+                display: none;
+            }
+        }
+        &.noContentBigTop{
+            .postTitle {
+                font-size: 20px;
+                margin: 5px 0 0 0;
+            }
+            .postContent {
+                display: none;
+            }
+        }
+        &.noContentEqual {
+            .postTitle {
+                margin: 5px 0 0 0;
+            }
+            .postContent {
+                display: none;
+            }
+        }
+    }
 }
 
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
-
+    .postBrief {
+        &:hover {
+            color: $contentBriefColor;
+        }
+        .postImg {
+            max-height: 300px;
+            min-height: 150px;
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+        .postTitle {
+            @include font('title');
+            font-weight: 600;
+            line-height: 1.4;
+            margin: 0 0 5px 0;
+            @include limitLine(2);
+        }
+        .postContent {
+            color: $contentBriefColor;
+            @include limitLine(5);
+            @include font('content');
+            line-height: 1.4;
+            > :nth-child(n) {
+                @include font('content');
+                font-weight: 500;
+                line-height: 1.4;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        &.noImg{
+            .postImg {
+                display: none;
+            }
+        }
+        &.noContentBigRight{
+            .postTitle {
+                font-size: 25px;
+                margin: 5px 0 0 0;
+            }
+            .postContent {
+                display: none;
+            }
+        }
+        &.noContentBigTop{
+            .postTitle {
+                font-size: 25px;
+                margin: 5px 0 0 0;
+            }
+            .postContent {
+                display: none;
+            }
+        }
+        &.noContentEqual {
+            .postTitle {
+                margin: 5px 0 0 0;
+            }
+            .postContent {
+                display: none;
+            }
+        }
+    }
 }

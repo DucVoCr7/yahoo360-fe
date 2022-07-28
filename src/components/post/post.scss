@@ -79,6 +79,10 @@
             font-size: 18px;
             line-height: 2;
             text-align: justify;
+            > :first-child {
+                padding-top: 0;
+                margin-top: 0;
+            }
         }
     
         .postComments {
@@ -167,6 +171,10 @@
             font-size: 18px;
             line-height: 2;
             text-align: justify;
+            > :first-child {
+                padding-top: 0;
+                margin-top: 0;
+            }
         }
     
         .postComments {
@@ -196,14 +204,14 @@
             font-weight: 600;
             line-height: 1.3;
             margin: 0;
-            padding: calc($sizeAlignPageTM * 2) 0;
+            padding: calc($sizeAlignElementTM * 2) 0;
             
         }
     
         .postActions {
             width: calc(100% - $sizeAlignPageTM * 2);//
             @include font('title');
-            padding-bottom: calc($sizeAlignPageTM * 2);
+            padding-bottom: calc($sizeAlignElementTM * 2);
             display: flex;
             &Child {
                 border: 1px solid $disableColor;
@@ -226,14 +234,12 @@
         .postAuthorTime {
             width: calc(100% - $sizeAlignPageTM * 2);//
             display: flex;
-            align-items: center;
-            padding-bottom: calc($sizeAlignPageTM * 2);
+            flex-direction: column;
+            padding-bottom: calc($sizeAlignElementTM * 2);
             .postAuthor {
-                
-                
                 display: flex;
                 align-items: center;
-    
+                padding-bottom: calc($sizeAlignElementTM * 2);
                 &Img {
                     width: 40px;
                     height: 40px;
@@ -249,9 +255,6 @@
             }
             .postTime {
                 @include font('title');
-                padding-left: 10px; 
-                border-left: 1px solid $disableColor;
-                margin-left: 10px
             }
         }
     
@@ -261,6 +264,10 @@
             font-size: 18px;
             line-height: 2;
             text-align: justify;
+            > :first-child {
+                padding-top: 0;
+                margin-top: 0;
+            }
         }
     
         .postComments {

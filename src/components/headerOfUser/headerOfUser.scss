@@ -1,5 +1,5 @@
 @use '/src/assets/scss' as *;
-@media (min-width: 740px) {
+@media (min-width: 901px) {
     .headerOfUser {
         width: 100%;
         overflow: hidden;
@@ -18,9 +18,12 @@
             background-image: $backGroundEmpty;
             &Content {
                 &Icon {
+                    &.active {
+                        cursor: pointer;
+                    }
                     display: block;
-                    width: 70px;
-                    height: 70px;
+                    width: 40px;
+                    height: 40px;
                 }
             }
         }
@@ -28,8 +31,8 @@
     
         // Custom Slider
             //Space between slide
-            .slick-list {margin: 0 -5px;}
-            .slick-slide>div {padding: 0 5px;}
+            .slick-list {margin: 0 -1px;}
+            .slick-slide>div {padding: 0 1px;}
         
             // Arrow
             .slick-arrow,
@@ -70,7 +73,80 @@
             }
     }
 }
-
+@media (min-width: 740px) and (max-width: 900px) {
+    .headerOfUser {
+        width: 100%;
+        overflow: hidden;
+        height: $heightHeaderOfUserM;
+        &Photo {
+            width: 100%;
+            height: $heightHeaderOfUserM;
+            object-fit: cover;
+        }
+        &NoPhoto {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: $backGroundEmpty;
+            &Content {
+                &Icon {
+                    &.active {
+                        cursor: pointer;
+                    }
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    
+    
+        // Custom Slider
+            //Space between slide
+            .slick-list {margin: 0 -1px;}
+            .slick-slide>div {padding: 0 1px;}
+        
+            // Arrow
+            .slick-arrow,
+            .slick-next,
+            .slick-prev {
+                display: none !important;
+            }
+        
+            // Dot
+            .slick-dots {
+                bottom: 10px;
+                display: flex !important;
+                justify-content: center;
+        
+                & > li {
+                    &.slick-active {
+                        background-color: $mainColor;
+                    }
+        
+                    width: 30px;
+                    height: 2px;
+                    margin: 0 2px;
+                    background-color: $disableColor;
+        
+                    & > button {
+                        position: absolute;
+                        transform: translateY(-50%);
+                        width: 100%;
+                        height: 15px;
+                        background-color: transparent;
+                        box-shadow: none;
+        
+                        &::before {
+                            all: unset;
+                        }
+                    }
+                }
+            }
+    }
+}
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
     .headerOfUser {
@@ -91,17 +167,20 @@
             background-image: $backGroundEmpty;
             &Content {
                 &Icon {
+                    &.active {
+                        cursor: pointer;
+                    }
                     display: block;
-                    width: 50px;
-                    height: 50px;
+                    width: 40px;
+                    height: 40px;
                 }
             }
         }
 
             // Custom Slider
             //Space between slide
-            .slick-list {margin: 0 -2px;}
-            .slick-slide>div {padding: 0 2px;}
+            .slick-list {margin: 0 -0.5px;}
+            .slick-slide>div {padding: 0 0.5px;}
         
             // Arrow
             .slick-arrow,
@@ -112,33 +191,7 @@
         
             // Dot
             .slick-dots {
-                bottom: 7px;
-                display: flex !important;
-                justify-content: center;
-        
-                & > li {
-                    &.slick-active {
-                        background-color: $mainColor;
-                    }
-        
-                    width: 10px;
-                    height: 1px;
-                    margin: 0 1.5px;
-                    background-color: $disableColor;
-        
-                    & > button {
-                        position: absolute;
-                        transform: translateY(-50%);
-                        width: 100%;
-                        height: 15px;
-                        background-color: transparent;
-                        box-shadow: none;
-        
-                        &::before {
-                            all: unset;
-                        }
-                    }
-                }
+                display: none !important;
             }
     }
 }

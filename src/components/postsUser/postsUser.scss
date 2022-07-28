@@ -45,9 +45,12 @@
             background-image: $backGroundEmpty;
             &Content {
                 &Icon {
+                    &.active {
+                        cursor: pointer;
+                    }
                     display: block;
-                    width: 70px;
-                    height: 70px;
+                    width: 40px;
+                    height: 40px;
                 }
             }
         }
@@ -63,17 +66,37 @@
         display: flex;
         flex-direction: column;
         &Content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            > :nth-child(n) {
-                height: 150px;
-@include paddingMarginBorder('TM', 'bottom');
+            &Center {
+                @include paddingMarginBorder('TM', 'bottom');
+                display: flex;
+                overflow: scroll;
+                &::-webkit-scrollbar {
+                    display: none; 
+                }
+                > :nth-child(n) {
+                    flex: none;
+                    box-sizing: content-box;
+                    width: 250px;
+                    @include paddingMarginBorder('TM', 'right');
+                }
+                > :last-child {
+                    padding-right: 0;
+                    margin-right: 0;
+                    border: none;
+                }
             }
-            > :last-child {
-                padding: 0;
-                margin: 0;
-                border: none;
+            &Bottom {
+                display: flex;
+                flex-direction: column;
+                > :nth-child(n) {
+                    flex: 1;
+                    @include paddingMarginBorder('TM', 'bottom');
+                }
+                > :last-child {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    border: none;
+                }
             }
         }
         &NoContent {
@@ -87,9 +110,12 @@
             background-image: $backGroundEmpty;
             &Content {
                 &Icon {
+                    &.active {
+                        cursor: pointer;
+                    }
                     display: block;
-                    width: 70px;
-                    height: 70px;
+                    width: 40px;
+                    height: 40px;
                 }
             }
         }
@@ -104,17 +130,37 @@
         display: flex;
         flex-direction: column;
         &Content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            > :nth-child(n) {
-                height: 130px;
-@include paddingMarginBorder('TM', 'bottom');
+            &Center {
+                @include paddingMarginBorder('TM', 'bottom');
+                display: flex;
+                overflow: scroll;
+                &::-webkit-scrollbar {
+                    display: none; 
+                }
+                > :nth-child(n) {
+                    flex: none;
+                    box-sizing: content-box;
+                    width: 200px;
+                    @include paddingMarginBorder('TM', 'right');
+                }
+                > :last-child {
+                    padding-right: 0;
+                    margin-right: 0;
+                    border: none;
+                }
             }
-            > :last-child {
-                padding: 0;
-                margin: 0;
-                border: none;
+            &Bottom {
+                display: flex;
+                flex-direction: column;
+                > :nth-child(n) {
+                    flex: 1;
+                    @include paddingMarginBorder('TM', 'bottom');
+                }
+                > :last-child {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    border: none;
+                }
             }
         }
         &NoContent {
@@ -128,9 +174,12 @@
             background-image: $backGroundEmpty;
             &Content {
                 &Icon {
+                    &.active {
+                        cursor: pointer;
+                    }
                     display: block;
-                    width: 50px;
-                    height: 50px;
+                    width: 40px;
+                    height: 40px;
                 }
             }
         }

@@ -12,6 +12,14 @@ export const useReduxUserImage = () => {
     const userImage = useSelector(state=> state.user.userInfo?.image)
   return userImage
 }
+export const useReduxUserFriendRequestReceiveds = () => {
+  const userFriendRequestReceiveds = useSelector(state=> state.user.friendRequestReceiveds)
+return userFriendRequestReceiveds
+}
+export const useReduxUserFriendRequestSents = () => {
+  const userFriendRequestSents = useSelector(state=> state.user.friendRequestSents)
+return userFriendRequestSents
+}
 export const useReduxValueGender = (key) => {
     const valueGender = useSelector(state=> state.app.gender.find(item => item.key === key)?.value)
     return valueGender

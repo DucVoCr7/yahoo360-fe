@@ -1,27 +1,90 @@
 import React from 'react'
-import Image from '../image/Image'
 import Infomation from '../infomation/Infomation'
 import Photos from '../photos/Photos'
 import Friends from '../friends/Friends'
-import Musics from '../musics/Musics'
 import './sidebar.scss'
+import NameMusics from '../NameMusics/NameMusics'
+import ActionsFriend from '../actionsFriend/ActionsFriend'
+import { useRef } from 'react'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
-export default function Sidebar({setPhotos, setMusics, image, postsNumber, photos, friends, musics, name, gender, position, address, statusFriend, isHomePage = false}) {
+export default function Sidebar({
+    name,
+    image, 
+
+    id,
+    setFriends,
+    statusFriend, 
+    setStatusFriend, 
+    
+    gender, 
+    position, 
+    postsNumber, 
+    address, 
+
+    photos, 
+    setPhotos, 
+
+    musics, 
+    setMusics, 
+
+    friends, 
+
+    isHomePage = false}) {
+    let elementRenderNumber
+    if(window.innerWidth > 900) {
+        elementRenderNumber = 8
+    } else if(window.innerWidth < 740) {
+        elementRenderNumber = 4
+    } else {
+        elementRenderNumber = 6
+    }
     console.log('re-render: Sidebar')
     return (
         <div className='sidebar'>
-            <Image name={name} image={image}/>
-            <Infomation 
-            postsNumber={postsNumber}
-            gender={gender} 
-            position = {position}
-            address = {address}
-            statusFriend = {statusFriend}
-            isHomePage={isHomePage}
-            />
-            <Photos name={name} photos={photos} setPhotos={setPhotos} isHomePage={isHomePage}/>
-            <Friends name={name} friends={friends}/>
-            <Musics musics={musics} isHomePage={isHomePage} setMusics={setMusics}/>
+            <div className="sidebarTop">
+                <div className="sidebarTopLeft">
+                    <img src={image} alt="userImage" className="sidebarTopLeftImg"/>
+                </div>
+                <div className="sidebarTopRight">
+                    <div className="sidebarTopRightTop">
+                        <NameMusics 
+                            name={name} 
+                            musics={musics}
+                            isHomePage={isHomePage}
+                        />
+                        <ActionsFriend
+                            id={id}
+                            friends={friends}
+                            setFriends={setFriends}
+                            statusFriend={statusFriend}
+                            setStatusFriend={setStatusFriend}
+                        />
+                    </div>
+                    <div className="sidebarTopRightBottom">
+                        <Infomation
+                            gender={gender} 
+                            position = {position}
+                            postsNumber={postsNumber}
+                            address = {address}
+                        />
+                    </div>
+                </div>
+            </div>
+            <div className="sidebarBottom">
+                <Photos 
+                    name={name} 
+                    photos={photos} 
+                    setPhotos={setPhotos}
+                    elementRenderNumber={elementRenderNumber} 
+                    isHomePage={isHomePage}/>
+                <Friends 
+                    name={name} 
+                    elementRenderNumber={elementRenderNumber} 
+                    friends={friends}
+                />
+            </div>
         </div>
     )
 }

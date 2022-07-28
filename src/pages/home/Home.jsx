@@ -3,12 +3,14 @@ import { userRequest } from '../../utils/requestMethods'
 import HeaderOfUser from '../../components/headerOfUser/HeaderOfUser'
 import PostsUser from '../../components/postsUser/PostsUser'
 import Sidebar from '../../components/sidebar/Sidebar'
-import { useDispatch, useSelector } from 'react-redux'
 import './home.scss'
-import { setFriendsRequest } from '../../redux/userSlice'
+import { useReduxUserId } from '../../utils/reduxMethods'
+import { useDispatch } from 'react-redux'
+import { setFriendRequestReceiveds, setFriendRequestSents } from '../../redux/userSlice'
 export default function Home() {
 
-const dispatch = useDispatch();
+const dispatch = useDispatch()
+const userId = useReduxUserId()
 
 const [image, setImage] = useState()
 const [posts, setPosts] = useState()
@@ -20,13 +22,12 @@ const [name, setName] = useState()
 const [gender, setGender] = useState()
 const [position, setPosition] = useState()
 const [address, setAddress] = useState()
-const userId = useSelector(state=> state.user.userInfo?.id)
 
 useEffect(()=> {
   (async()=> {
     try {
       const response = await userRequest.get(`/homePage/${userId}`)
-      console.log(response)
+      console.log(response.data)
       setImage(response.data.dataUser.image)
       setPosts(response.data.dataUser.posts)
       setPostsNumber(response.data.dataUser.posts.length)
@@ -37,8 +38,9 @@ useEffect(()=> {
       setGender(response.data.dataUser.gender)
       setPosition(response.data.dataUser.position)
       setAddress(response.data.dataUser.address)
-      
-      dispatch(setFriendsRequest(response.data.dataUser.friendsRequest))
+
+      dispatch(setFriendRequestReceiveds(response.data.dataUser.friendRequestReceiveds))
+      dispatch(setFriendRequestSents(response.data.dataUser.friendRequestSents))
 
     } catch (error) {
       console.log(error)
@@ -49,21 +51,30 @@ console.log('re-render:Home')
     return (
       name ? 
         <div className='home'>
-          <HeaderOfUser photos={photos} isHomePage={true}/>
+          <HeaderOfUser 
+            photos={photos} 
+            isHomePage={true}
+          />
           <Sidebar
             image={image}
-            postsNumber={postsNumber}
-            photos={photos}
-            friends={friends}
-            musics={musics}
             name={name}
+
             gender={gender}
             position={position}
+            postsNumber={postsNumber}
             address={address}
+
+            photos={photos}
             setPhotos={setPhotos}
+            friends={friends}
+            musics={musics}
             setMusics={setMusics}
-            isHomePage={true}/>
-          <PostsUser posts={posts} isHomePage={true}/>
+            isHomePage={true}
+          />
+          <PostsUser
+           posts={posts} 
+           isHomePage={true}
+          />
         </div>
       :
       <div className='home loading'></div>

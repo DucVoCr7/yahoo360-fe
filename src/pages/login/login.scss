@@ -42,29 +42,12 @@
                 border-bottom: 1px solid $blackBorder;
             }
             .loginSubmit {
-                &.active {
-                    position: relative;
-                    background-color: $disableColor;
-                    cursor: progress;
-                    &::after{
-                        position: absolute;
-                        left: 50%;
-                        top: 50%;
-                        transform: translateX(-50%) translateY(-50%);
-                        display: block;
-                        content: '';
-                        background-image: url('../../assets/image/loading.gif');
-                        background-size: cover;
-                        width: 50px;
-                        height: 50px;
-                    }
-                }
+
             }
-            .loginToRegister {
-                font-weight: 300;
-                &Link {
-    
-                }
+            .loginRegister, .loginForgot {
+                @include font('content');
+                font-size: 16px;
+                text-align: center;
             }
         }
     }
@@ -82,7 +65,7 @@
         @include font('title');
         &Form {
             width: 300px;
-            height: 340px;
+            height: 300px;
             background-color: rgba($whiteColor, 0.85) ;
             display: flex;
             flex-direction: column;
@@ -93,6 +76,7 @@
             box-shadow: $shadowFull;
             .loginLogo {
                 @include font('logo');
+                font-size: 25px;
                 text-shadow: $shadowFull;
             }
             .loginLabel {
@@ -113,29 +97,12 @@
                 border-bottom: 1px solid $blackBorder;
             }
             .loginSubmit {
-                &.active {
-                    position: relative;
-                    background-color: $disableColor;
-                    cursor: progress;
-                    &::after{
-                        position: absolute;
-                        left: 50%;
-                        top: 50%;
-                        transform: translateX(-50%) translateY(-50%);
-                        display: block;
-                        content: '';
-                        background-image: url('../../assets/image/loading.gif');
-                        background-size: cover;
-                        width: 50px;
-                        height: 50px;
-                    }
-                }
+                
             }
-            .loginToRegister {
-                font-weight: 300;
-                &Link {
-    
-                }
+            .loginRegister, .loginForgot {
+                @include font('content');
+                font-size: 16px;
+                text-align: center;
             }
         }
     }

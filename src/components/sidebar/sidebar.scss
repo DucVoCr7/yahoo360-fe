@@ -1,87 +1,79 @@
 @use '/src/assets/scss' as *;
-
-@media (min-width: 1024px) {
+@media (min-width: 901px) {
     .sidebar {
         width: calc(100% - $sizeAlignPagePC*2);
         padding-top: $sizeAlignElementPC;
         @include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double);
-        box-sizing: border-box;
-        height: 200px;
-        display: flex;
+        &Top {
+            display: flex;
+            &Left {
+                width: calc(180px + $sizeAlignElementPC);
+                position: relative;
+                &Img {
+                    height: 180px;
+                    width: 180px;
+                    border-radius: 50%;
+                    border: 5px solid $backgroundColorLight;
+                    position: absolute;
+                    bottom: -5px;
+                    left: -5px;
+                }
+            }
+            &Right {
+                flex: 1;
+                &Top {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: $sizeAlignElementPC;
+                }
+                &Bottom {
 
-        > :nth-child(n) {
-            flex: 1;
-            @include paddingMarginBorder('PC', 'left');
+                }
+            }
         }
-
-        > :first-child {
-            flex: none;
-            width: 200px;
-            padding: 0;
-            margin: 0;
-            border: none;
-        }
-    }
-}
-
-@media (min-width: 901px) and (max-width: 1023px) {
-    .sidebar {
-        width: calc(100% - $sizeAlignPageTM*2);
-        padding-top: $sizeAlignElementTM;
-        @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
-        box-sizing: border-box;
-        height: 200px;
-        display: flex;
-        overflow: scroll; //
-
-        &::-webkit-scrollbar {
-            ///
-            display: none; //
-        }
-
-        > :nth-child(n) {
-            flex: none;
-            width: 220px;
-            @include paddingMarginBorder('TM', 'left');
-        }
-
-        > :first-child {
-            flex: none;
-            width: 200px;
-            padding: 0;
-            margin: 0;
-            border: none;
+        &Bottom {
+            > :first-child {
+                margin: $sizeAlignElementPC 0;
+            }
         }
     }
 }
-
 @media (min-width: 740px) and (max-width: 900px) {
     .sidebar {
         width: calc(100% - $sizeAlignPageTM*2);
         padding-top: $sizeAlignElementTM;
         @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
-        box-sizing: border-box;
-        height: 200px;
-        display: flex;
-        overflow: scroll; //
+        &Top {
+            display: flex;
+            &Left {
+                width: calc(150px + $sizeAlignElementTM);
+                position: relative;
+                &Img {
+                    height: 150px;
+                    width: 150px;
+                    border-radius: 50%;
+                    border: 5px solid $backgroundColorLight;
+                    position: absolute;
+                    bottom: -5px;
+                    left: -5px;
+                }
+            }
+            &Right {
+                flex: 1;
+                &Top {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: $sizeAlignElementTM;
+                }
+                &Bottom {
 
-        &::-webkit-scrollbar {
-            ///
-            display: none; //
+                }
+            }
         }
-
-        > :nth-child(n) {
-            flex: none;
-            width: 220px;
-            @include paddingMarginBorder('TM', 'left');
-        }
-
-        > :first-child {
-            flex: none;
-            width: 200px;
-            padding: 0;
-            margin: 0;
-            border: none;
+        &Bottom {
+            > :first-child {
+                margin: $sizeAlignElementTM 0;
+            }
         }
     }
 }
@@ -91,28 +83,45 @@
         width: calc(100% - $sizeAlignPageTM*2);
         padding-top: $sizeAlignElementTM;
         @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
-        box-sizing: border-box;
-        height: 180px;
-        display: flex;
-        overflow: scroll; //
-
-        &::-webkit-scrollbar {
-            ///
-            display: none; //
+        &Top {
+            &Left {
+                position: relative;
+                height: 100px;
+                &Img {
+                    height: 150px;
+                    width: 150px;
+                    border-radius: 50%;
+                    border: 3px solid $backgroundColorLight;
+                    position: absolute;
+                    bottom: -3px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            &Right {
+                margin: $sizeAlignElementTM 0;
+                &Top {
+                    > :nth-child(n) {
+                        margin-bottom: $sizeAlignElementTM;
+                    }
+                    > :last-child {
+                        margin-bottom: 0;
+                    }
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+                &Bottom {
+                    
+                }
+            }
         }
-
-        > :nth-child(n) {
-            flex: none;
-            width: 200px;
-            @include paddingMarginBorder('TM', 'left');
-        }
-
-        > :first-child {
-            flex: none;
-            width: 180px;
-            padding: 0;
-            margin: 0;
-            border: none;
+        &Bottom {
+            > :first-child {
+                @include paddingMarginBorder('TM', 'top');
+                @include paddingMarginBorder('TM', 'bottom');
+            }
         }
     }
 }

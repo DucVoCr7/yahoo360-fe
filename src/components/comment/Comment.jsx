@@ -5,7 +5,6 @@ import Reply from '../reply/Reply'
 import CommentRepair from '../commentRepair/CommentRepair'
 import ReplyAwait from '../replyAwait/ReplyAwait'
 import { useReduxUserId } from '../../utils/reduxMethods'
-import avatar from '../../assets/image/avatar.jpg'
 import './comment.scss'
 import { userRequest } from '../../utils/requestMethods'
 import { useCallback } from 'react'
@@ -32,7 +31,7 @@ function Comment({ comment, setComments, setCommentsNumber, postId }) {
     <div className='comment'>
       <div className="commentTop">
         <Link to={`/users/${comment.userId}`} className='commentTopLeft'>
-          <img src={comment.user.image ? comment.user.image : avatar} alt="userImg" className="commentTopLeftImg"/>
+          <img src={comment.user.image} alt="userImg" className="commentTopLeftImg"/>
         </Link>
         {!openRepair ?
           <div className="commentTopRight">

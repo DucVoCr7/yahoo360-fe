@@ -26,10 +26,53 @@
 
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
 @media (min-width: 740px) and (max-width: 900px) {
-
+    .postsBigTop {
+        &Top {
+            @include paddingMarginBorder('TM', 'bottom');
+        }
+        &Bottom {
+            display: flex;
+            &Item {
+                flex: 1;
+                &:first-child {
+                    @include paddingMarginBorder('TM', 'right');
+                }
+                display: flex;
+                flex-direction: column;
+                > :nth-child(n) {
+                    flex: 1;
+                }
+                > :first-child {
+                    @include paddingMarginBorder('TM', 'bottom');
+                }
+            }
+        }
+    }
 }
 
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
-
+    .postsBigTop {
+        &Top {
+            @include paddingMarginBorder('TM', 'bottom');
+        }
+        &Bottom {
+            display: flex;
+            flex-direction: column;
+            &Item {
+                flex: 1;
+                &:first-child {
+                    @include paddingMarginBorder('TM', 'bottom');
+                }
+                display: flex;
+                flex-direction: column;
+                > :nth-child(n) {
+                    flex: 1;
+                }
+                > :first-child {
+                    @include paddingMarginBorder('TM', 'bottom');
+                }
+            }
+        }
+    }
 }

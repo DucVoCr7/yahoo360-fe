@@ -11,16 +11,14 @@ export const login = createAsyncThunk('users/login', async(userInfo, {rejectWith
 export const register = createAsyncThunk('users/register', async(userInfo, {rejectWithValue})=> {
     try {
         const response = await publicRequest.post('/register', userInfo)
+        console.log(response.data)
         return response.data
     } catch (error) {
         return rejectWithValue(error.response.data)
     }
 })
 export const updateAccount = createAsyncThunk('users/updateAccount', async ({userId, dataUpdate})=> {
-    console.log(userId)
-    console.log(dataUpdate)
     const response = await userRequest.patch(`/users/${userId}`, dataUpdate)
-    console.log(response.data)
     return response.data
 })
 export const logout = createAsyncThunk('users/logout', async ()=> {
@@ -44,15 +42,18 @@ export const userSlice = createSlice({
         error: null,
         accessToken: null,
         refreshToken: null,
-        friendsRequest: null
+        friendRequestReceiveds: null,
+        friendRequestSents: null
     },
     reducers: {
-        setFriendsRequest: (state, action)=> {
-            state.friendsRequest = action.payload
+        setFriendRequestReceiveds: (state, action)=> {
+            state.friendRequestReceiveds = action.payload
+        },
+        setFriendRequestSents: (state, action)=> {
+            state.friendRequestSents = action.payload
         }
     },
     extraReducers: {
-
         // Login
         [login.pending]: (state)=> {
             state.pending = true
@@ -117,6 +118,6 @@ export const userSlice = createSlice({
         }
     },
 })
-export const {setFriendsRequest} = userSlice.actions
+export const {setFriendRequestReceiveds, setFriendRequestSents} = userSlice.actions
 const userReducer = userSlice.reducer
 export default userReducer

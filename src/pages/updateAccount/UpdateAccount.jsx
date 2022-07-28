@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import avatar from '../../assets/image/avatar.jpg'
 import { updateAccount } from '../../redux/userSlice'
 import { handleErrorUpdateUser } from '../../utils/handleErrorUpdateUser'
 import './updateAccount.scss'
@@ -25,7 +24,6 @@ const handleUpdate = async()=> {
     if(Object.keys(dataNeedUpdate).length === 0) {
         navigate('/home')
     } else {
-        console.log(dataNeedUpdate, resultErrors)
         if(Object.keys(resultErrors).length === 0) {
             const data = new FormData()
             Object.keys(dataNeedUpdate).forEach(key=> data.append(key, dataNeedUpdate[key]))
@@ -53,7 +51,7 @@ useEffect(()=> {
                     <img src={ infoUpdate?.image ? 
                             infoUpdate.image.preview 
                             :
-                            userInfo.image ? userInfo.image : avatar
+                            userInfo.image
                         } 
                         alt="ImgUser" className="updateAccountContentItemImg" />
                     <label className="updateAccountContentItemLabel" htmlFor='updateAccountImgId'>
@@ -123,7 +121,7 @@ useEffect(()=> {
                     </label>
                     <input onChange={handleChange} name='address' type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
                 </span>
-                <button className={pending ? 'updateAccountContentSubmit btnBig btnMain active' : 'updateAccountContentSubmit btnBig btnMain'}  onClick={handleUpdate}> SUBMIT </button>
+                <button className={pending ? 'updateAccountContentSubmit btnBig btnMain active' : 'updateAccountContentSubmit btnBig btnMain'}  onClick={handleUpdate}> {!pending && 'UPDATE'} </button>
             </div>
         </div>
     )

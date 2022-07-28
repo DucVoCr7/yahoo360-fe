@@ -106,11 +106,18 @@
                 }
             }
             .postMediumContent {
-                @include font('content');
                 padding-top: $sizeAlignElementPC;
-                line-height: 1.4;
                 color: $contentBriefColor;
                 @include limitLine(4);
+                @include font('content');
+                line-height: 1.4;
+                > :nth-child(n) {
+                    @include font('content');
+                    font-weight: 500;
+                    line-height: 1.4;
+                    margin: 0;
+                    padding: 0;
+                }
             }
         }
 
@@ -129,10 +136,252 @@
 
 /* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
 @media (min-width: 740px) and (max-width: 900px) {
+    .postMedium {
+        &:hover {
+            color: $contentBriefColor;
+        }
+        &.noImg {
+            .postMediumImg {
+                display: none;
+            }
+            .postMediumTitle {
 
+            }
+        }
+        &.noContentTop {
+            .postMediumContent {
+                display: none;
+            }
+            .postMediumTitle {
+                font-size: 30px;
+                margin-top: 5px;
+            }
+        }
+        &.noContentCenter {
+            .postMediumContent {
+                display: none;
+            }
+            .postMediumTitle {
+                margin-top: 5px;
+            }
+        }
+        &.full {
+            display: flex;
+            flex-direction: row-reverse;
+            > :first-child {
+                flex: 3;
+            }
+            > :last-child {
+                flex: 7;
+                padding-right: $sizeAlignElementTM;
+            }
+            .postMediumImg {
+                min-height: 140px;
+                max-height: 170px;
+            }
+            .postMediumContent {
+                @include limitLine(2);
+            }
+        }
+        &.fullUser {
+            display: flex;
+            flex-direction: row-reverse;
+            > :first-child {
+                flex: 3;
+            }
+            > :last-child {
+                flex: 7;
+                padding-right: $sizeAlignElementTM;
+            }
+            .postMediumImg {
+                min-height: 140px;
+                max-height: 150px;
+            }
+            .postMediumContent {
+                @include limitLine(4);
+            }
+        }
+        &Group {
+            display: flex;
+            flex-direction: column;
+            .postMediumTitle {
+                @include font('title');
+                font-weight: 600;
+                line-height: 1.4;
+                margin: 0;
+                @include limitLine(2);
+            }
+            .postMediumAuthor {
+                display: flex;
+                align-items: center;
+                padding-top: $sizeAlignElementTM;
+                &Img {
+                    box-shadow: $shadowFull;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                }
+                &Name {
+                    @include font('title');
+                    font-size: 16px;
+                    margin-left: 10px
+                }
+            }
+            .postMediumOther {
+                @include font('title');
+                padding-top: $sizeAlignElementTM;
+                font-size: 15px;
+                &Child {
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    margin-right: 10px;
+                    &Icon {
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .postMediumContent {
+                padding-top: $sizeAlignElementTM;
+                color: $contentBriefColor;
+                @include limitLine(4);
+                @include font('content');
+                line-height: 1.4;
+                > :nth-child(n) {
+                    @include font('content');
+                    font-weight: 500;
+                    line-height: 1.4;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+
+        &Group {
+            .postMediumImg {
+                display: block;
+                max-height: 300px;
+                min-height: 150px;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
 }
 
 /* OPEN - MOBILE độ phân giải <= 739px */
 @media (max-width: 739px) {
+    .postMedium {
+        &:hover {
+            color: $contentBriefColor;
+        }
+        &.noImg {
+            .postMediumImg {
+                display: none;
+            }
+            .postMediumTitle {
 
+            }
+        }
+        &.noContentTop {
+            .postMediumContent {
+                display: none;
+            }
+            .postMediumTitle {
+                font-size: 25px;
+                margin-top: 5px;
+            }
+        }
+        &.noContentCenter {
+            .postMediumContent {
+                display: none;
+            }
+            .postMediumTitle {
+                margin-top: 5px;
+            }
+        }
+        &.full {
+            .postMediumImg {
+                display: none;
+            }
+            .postMediumContent {
+                @include limitLine(4);
+            }
+        }
+        &.fullUser {
+            .postMediumImg {
+                display: none;
+            }
+            .postMediumContent {
+                @include limitLine(4);
+            }
+        }
+        &Group {
+            display: flex;
+            flex-direction: column;
+            .postMediumTitle {
+                @include font('title');
+                font-weight: 600;
+                line-height: 1.4;
+                margin: 0;
+                @include limitLine(2);
+            }
+            .postMediumAuthor {
+                display: flex;
+                align-items: center;
+                padding-top: $sizeAlignElementTM;
+                &Img {
+                    box-shadow: $shadowFull;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                }
+                &Name {
+                    @include font('title');
+                    font-size: 16px;
+                    margin-left: 10px
+                }
+            }
+            .postMediumOther {
+                @include font('title');
+                padding-top: $sizeAlignElementTM;
+                font-size: 15px;
+                &Child {
+                    &:last-child {
+                        display: none;
+                    }
+                    margin-right: 10px;
+                    &Icon {
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .postMediumContent {
+                padding-top: $sizeAlignElementTM;
+                color: $contentBriefColor;
+                @include limitLine(4);
+                @include font('content');
+                line-height: 1.4;
+                > :nth-child(n) {
+                    @include font('content');
+                    font-weight: 500;
+                    line-height: 1.4;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
+
+        &Group {
+            .postMediumImg {
+                display: block;
+                max-height: 300px;
+                min-height: 150px;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
 }

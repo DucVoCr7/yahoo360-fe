@@ -1,0 +1,43 @@
+@use '/src/assets/scss' as *;
+@media (min-width: 901px) {
+    .actionsFriend {
+        .isFriend, .requestFriend, .friendRequest {
+            margin-bottom: $sizeAlignElementPC;
+        }
+        .removeFriend, .isFriend, .removeRequestFriend, .requestFriend, .removeFriendRequest, .friendRequest, .notFriend{
+            width: 100%;
+            padding: 0 10px;
+            &Icon {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+@media (min-width: 740px) and (max-width: 900px) {
+    .actionsFriend {
+        .isFriend, .requestFriend, .friendRequest {
+            margin-bottom: $sizeAlignElementTM;
+        }
+        .removeFriend, .isFriend, .removeRequestFriend, .requestFriend, .removeFriendRequest, .friendRequest, .notFriend{
+            width: 100%;
+            padding: 0 10px;
+            &Icon {
+                margin-left: 5px;
+            }
+        }
+    }
+}
+@media (max-width: 739px) {
+    .actionsFriend {
+        .isFriend, .requestFriend, .friendRequest {
+            margin-bottom: $sizeAlignElementTM;
+        }
+        .removeFriend, .isFriend, .removeRequestFriend, .requestFriend, .removeFriendRequest, .friendRequest, .notFriend{
+            width: 100%;
+            padding: 0 10px;
+            &Icon {
+                margin-left: 5px;
+            }
+        }
+    }
+}
