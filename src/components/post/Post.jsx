@@ -1,23 +1,23 @@
-import React, { useState }  from 'react'
+import React, { useState, useEffect }  from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import './post.scss'
 import convertDate from '../../utils/convertDate'
 import Comments from '../comments/Comments'
 import { useReduxUserId, useReduxValueCategory } from '../../utils/reduxMethods'
-import { useEffect } from 'react'
 import { publicRequest, userRequest } from '../../utils/requestMethods'
 import UpdatePost from '../updatePost/UpdatePost'
+import './post.scss'
+
 function Post({post, setPost}) {
+
     const [likesNumber, setLikesNumber] = useState(post.likesNumber)
     const [commentsNumber, setCommentsNumber] = useState(post.commentsNumber)
     const [isLike, setIsLike] = useState(false)
     const [openUpdate, setOpenUpdate] = useState(false)
     const valueCategory = useReduxValueCategory(post.category)
     const userId = useReduxUserId()
-
     const [openComments, setOpenComments] = useState()
     const navigate = useNavigate();
-    console.log(post)
+
     const handleLike = async (event)=> {
         try {
             const response = await userRequest.post('/likes', {

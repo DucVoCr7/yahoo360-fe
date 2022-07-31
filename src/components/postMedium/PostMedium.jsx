@@ -3,10 +3,18 @@ import './postMedium.scss'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import convertDate from '../../utils/convertDate'
-export default function PostMedium({ post, isCategory = false, type}) {
+import { useReduxValueCategory } from '../../utils/reduxMethods'
+export default function PostMedium({ 
+    post, 
+    isCategory = false, 
+    isSearch = false,
+    type
+}) {
+
     // Dùng tạm khi nào biết cách mapSatetoprops thì xóa đi
-    const valueCategory = useSelector(state => state.app.category.find(element => element.key === post.category).value)
+    const valueCategory = useReduxValueCategory(post.category)
     ///
+
     return (
         <Link to={`/posts/${post.id}`} className={`postMedium ${type}`}>
             <div className="postMediumGroup">
@@ -15,7 +23,7 @@ export default function PostMedium({ post, isCategory = false, type}) {
             <div className="postMediumGroup">
                 <h1 className="postMediumTitle">{post.title}</h1>
                 {
-                    isCategory &&
+                    (isCategory || isSearch) &&
                     <span className="postMediumAuthor">
                         <img src={post.user.image} alt="postImg" className="postMediumAuthorImg" />
                         <span className="postMediumAuthorName">{post.user.name}</span>

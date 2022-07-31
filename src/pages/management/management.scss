@@ -1,45 +1,103 @@
 @use '/src/assets/scss' as *;
-.management {
-    &.loading {
-        width: 100%;
-        height: calc(100vh - $heightTopbar - $heightFooter);
-        position: relative;
-        &::after{
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            display: block;
-            content: '';
-            background-image: url('../../assets/image/loading.gif');
-            background-size: cover;
-            width: 70px;
-            height: 70px;
-        }
-    }
-    width: 100%;
-    padding: $sizeAlignElementPC $sizeAlignPagePC;
-    min-height: calc(100vh - $heightTopbar - $heightFooter);
-    display: flex;
-    flex-direction: column;
-    &Title {
-        @include font('title');
-        font-size: 30px;
-        font-weight: 600;
-        padding-bottom: $sizeAlignElementPC;
-        border-bottom: 4px double $blackColor;
-        margin-bottom: $sizeAlignElementPC;
-    }
-    &Top {
-        display: flex;
-        width: 100%;
-        @include paddingMarginBorder('PC', 'bottom');
-        &Item {
-            &:first-child {
-                @include paddingMarginBorder('PC', 'right');
+@media (min-width: 901px) {
+    .management {
+        &.loading {
+            width: 100%;
+            height: calc(100vh - $heightTopbar - $heightFooter);
+            position: relative;
+            &::after{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                display: block;
+                content: '';
+                background-image: url('../../assets/image/loading.gif');
+                background-size: cover;
+                width: 70px;
+                height: 70px;
             }
+        }
+        width: 100%;
+        padding: $sizeAlignElementPC $sizeAlignPagePC;
+        min-height: calc(100vh - $heightTopbar - $heightFooter);
+        display: flex;
+        flex-direction: column;
+        &Title {
+            @include font('title');
+            font-size: 30px;
+            font-weight: 600;
+            padding-bottom: $sizeAlignElementPC;
+            border-bottom: 4px double $blackColor;
+            margin-bottom: $sizeAlignElementPC;
+        }
+        &Top {
+            display: flex;
+            width: 100%;
+            @include paddingMarginBorder('PC', 'bottom');
+            &Item {
+                &:first-child {
+                    @include paddingMarginBorder('PC', 'right');
+                }
+                flex: 1;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                &Title {
+                    @include font('title');
+                    font-weight: 600;
+                    margin-bottom: $sizeAlignElementPC;
+                    display: flex;
+                    align-items: center;
+                    &Content {
+                        flex: 1;
+                    }
+                    &Search {
+                        border-bottom: 1px solid $blackBorder;
+                        padding: 2px 0;
+                        &:focus-within {
+                            border-color: $mainColor;
+                        }
+                        &:focus-within &Icon {
+                            color: $mainColor;
+                        }
+                        &Icon {
+                            padding-right: 5px;
+                        }
+                        &Input {
+    
+                        }
+                    }
+                    &View {
+                        margin: 0 $sizeAlignElementPC;
+                        font-size: 20px;
+                        border: 1px solid $mainColor;
+                        overflow: hidden;
+                        border-radius: 5px;
+                        &Icon {
+                            &.active {
+                                background-color: $mainColor;
+                            }
+                            display: inline-block;
+                            padding: 3px;
+                        }
+                    }
+                    &Export {
+                        
+                    }
+                }
+                &Content {
+                    flex: 1;
+                    border-radius: 10px;
+                    background-image: $backGroundEmpty;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+        &Bottom {
             flex: 1;
-            height: 200px;
             display: flex;
             flex-direction: column;
             &Title {
@@ -64,102 +122,386 @@
                         padding-right: 5px;
                     }
                     &Input {
-
+    
                     }
-                }
-                &View {
-                    margin: 0 $sizeAlignElementPC;
-                    font-size: 20px;
-                    border: 1px solid $mainColor;
-                    overflow: hidden;
-                    border-radius: 5px;
-                    &Icon {
-                        &.active {
-                            background-color: $mainColor;
-                        }
-                        display: inline-block;
-                        padding: 3px;
-                    }
-                }
-                &Export {
-                    
                 }
             }
             &Content {
                 flex: 1;
-                border-radius: 10px;
-                background-image: $backGroundEmpty;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                .managementTable {
+                    width: 100%;
+                    &Row {
+                        &:hover td {
+                            background-color: $disableColor;
+                        }
+                        .managementTableHeader {
+                            @include font('title');
+                            font-weight: 600;
+                            padding: 10px 0;
+                            background-color: $blueBtnColor;
+                        }
+                        .managementTableData {
+                            @include font('content');
+                            font-size: 16px;
+                            text-align: center;
+                            background-color: $greyBtnColor;
+                            padding: 5px;
+                            &Button {
+                                &:nth-child(1) {
+                                    background-color: rgb(47, 163, 47);
+                                }
+                                &:nth-child(2) {
+                                    background-color: rgb(224, 151, 42);
+                                }
+                                &:nth-child(3) {
+                                    background-color: rgb(190, 74, 74);
+                                }
+                                &:nth-child(4) {
+                                    background-color: rgb(255, 0, 0);
+                                }
+                                display: inline-block;
+                                margin: 0 10px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
-    &Bottom {
-        flex: 1;
+}
+@media (min-width: 740px) and (max-width: 900px) {
+    .management {
+        &.loading {
+            width: 100%;
+            height: calc(100vh - $heightTopbar - $heightFooter);
+            position: relative;
+            &::after{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                display: block;
+                content: '';
+                background-image: url('../../assets/image/loading.gif');
+                background-size: cover;
+                width: 50px;
+                height: 50px;
+            }
+        }
+        width: 100%;
+        padding: $sizeAlignElementTM $sizeAlignPageTM;
+        min-height: calc(100vh - $heightTopbar - $heightFooter);
         display: flex;
         flex-direction: column;
         &Title {
             @include font('title');
+            font-size: 30px;
             font-weight: 600;
-            margin-bottom: $sizeAlignElementPC;
+            padding-bottom: $sizeAlignElementTM;
+            border-bottom: 4px double $blackColor;
+            margin-bottom: $sizeAlignElementTM;
+        }
+        &Top {
             display: flex;
-            align-items: center;
-            &Content {
+            width: 100%;
+            @include paddingMarginBorder('PC', 'bottom');
+            &Item {
+                &:first-child {
+                    @include paddingMarginBorder('PC', 'right');
+                }
                 flex: 1;
-            }
-            &Search {
-                border-bottom: 1px solid $blackBorder;
-                padding: 2px 0;
-                &:focus-within {
-                    border-color: $mainColor;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                &Title {
+                    @include font('title');
+                    font-weight: 600;
+                    margin-bottom: $sizeAlignElementTM;
+                    display: flex;
+                    align-items: center;
+                    &Content {
+                        flex: 1;
+                    }
+                    &Search {
+                        border-bottom: 1px solid $blackBorder;
+                        padding: 2px 0;
+                        &:focus-within {
+                            border-color: $mainColor;
+                        }
+                        &:focus-within &Icon {
+                            color: $mainColor;
+                        }
+                        &Icon {
+                            padding-right: 5px;
+                        }
+                        &Input {
+    
+                        }
+                    }
+                    &View {
+                        margin: 0 $sizeAlignElementTM;
+                        font-size: 20px;
+                        border: 1px solid $mainColor;
+                        overflow: hidden;
+                        border-radius: 5px;
+                        &Icon {
+                            &.active {
+                                background-color: $mainColor;
+                            }
+                            display: inline-block;
+                            padding: 3px;
+                        }
+                    }
+                    &Export {
+                        
+                    }
                 }
-                &:focus-within &Icon {
-                    color: $mainColor;
-                }
-                &Icon {
-                    padding-right: 5px;
-                }
-                &Input {
-
+                &Content {
+                    flex: 1;
+                    border-radius: 10px;
+                    background-image: $backGroundEmpty;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
             }
         }
-        &Content {
+        &Bottom {
             flex: 1;
-            .managementTable {
-                width: 100%;
-                &Row {
-                    &:hover td {
-                        background-color: $disableColor;
+            display: flex;
+            flex-direction: column;
+            &Title {
+                @include font('title');
+                font-weight: 600;
+                margin-bottom: $sizeAlignElementTM;
+                display: flex;
+                align-items: center;
+                &Content {
+                    flex: 1;
+                }
+                &Search {
+                    border-bottom: 1px solid $blackBorder;
+                    padding: 2px 0;
+                    &:focus-within {
+                        border-color: $mainColor;
                     }
-                    .managementTableHeader {
-                        @include font('title');
-                        font-weight: 600;
-                        padding: 10px 0;
-                        background-color: $blueBtnColor;
+                    &:focus-within &Icon {
+                        color: $mainColor;
                     }
-                    .managementTableData {
-                        @include font('content');
-                        font-size: 16px;
-                        text-align: center;
-                        background-color: $greyBtnColor;
-                        padding: 5px;
-                        &Button {
-                            &:nth-child(1) {
-                                background-color: rgb(47, 163, 47);
+                    &Icon {
+                        padding-right: 5px;
+                    }
+                    &Input {
+    
+                    }
+                }
+            }
+            &Content {
+                flex: 1;
+                .managementTable {
+                    width: 100%;
+                    &Row {
+                        &:hover td {
+                            background-color: $disableColor;
+                        }
+                        .managementTableHeader {
+                            @include font('title');
+                            font-weight: 600;
+                            padding: 10px 0;
+                            background-color: $blueBtnColor;
+                        }
+                        .managementTableData {
+                            @include font('content');
+                            font-size: 16px;
+                            text-align: center;
+                            background-color: $greyBtnColor;
+                            padding: 5px;
+                            &Button {
+                                &:nth-child(1) {
+                                    background-color: rgb(47, 163, 47);
+                                }
+                                &:nth-child(2) {
+                                    background-color: rgb(224, 151, 42);
+                                }
+                                &:nth-child(3) {
+                                    background-color: rgb(190, 74, 74);
+                                }
+                                &:nth-child(4) {
+                                    background-color: rgb(255, 0, 0);
+                                }
+                                display: inline-block;
+                                margin: 0 10px;
                             }
-                            &:nth-child(2) {
-                                background-color: rgb(224, 151, 42);
-                            }
-                            &:nth-child(3) {
-                                background-color: rgb(190, 74, 74);
-                            }
-                            &:nth-child(4) {
-                                background-color: rgb(255, 0, 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 739px) {
+    .management {
+        &.loading {
+            width: 100%;
+            height: calc(100vh - $heightTopbar - $heightFooterM);
+            position: relative;
+            &::after{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                display: block;
+                content: '';
+                background-image: url('../../assets/image/loading.gif');
+                background-size: cover;
+                width: 50px;
+                height: 50px;
+            }
+        }
+        width: 100%;
+        padding: $sizeAlignElementTM $sizeAlignPageTM;
+        min-height: calc(100vh - $heightTopbar - $heightFooter);
+        display: flex;
+        flex-direction: column;
+        &Title {
+            @include font('title');
+            font-size: 30px;
+            font-weight: 600;
+            padding-bottom: $sizeAlignElementTM;
+            border-bottom: 4px double $blackColor;
+            margin-bottom: $sizeAlignElementTM;
+        }
+        &Top {
+            display: flex;
+            width: 100%;
+            @include paddingMarginBorder('PC', 'bottom');
+            &Item {
+                &:first-child {
+                    @include paddingMarginBorder('PC', 'right');
+                }
+                flex: 1;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                &Title {
+                    @include font('title');
+                    font-weight: 600;
+                    margin-bottom: $sizeAlignElementTM;
+                    display: flex;
+                    align-items: center;
+                    &Content {
+                        flex: 1;
+                    }
+                    &Search {
+                        border-bottom: 1px solid $blackBorder;
+                        padding: 2px 0;
+                        &:focus-within {
+                            border-color: $mainColor;
+                        }
+                        &:focus-within &Icon {
+                            color: $mainColor;
+                        }
+                        &Icon {
+                            padding-right: 5px;
+                        }
+                        &Input {
+    
+                        }
+                    }
+                    &View {
+                        margin: 0 $sizeAlignElementTM;
+                        font-size: 20px;
+                        border: 1px solid $mainColor;
+                        overflow: hidden;
+                        border-radius: 5px;
+                        &Icon {
+                            &.active {
+                                background-color: $mainColor;
                             }
                             display: inline-block;
-                            margin: 0 10px;
+                            padding: 3px;
+                        }
+                    }
+                    &Export {
+                        
+                    }
+                }
+                &Content {
+                    flex: 1;
+                    border-radius: 10px;
+                    background-image: $backGroundEmpty;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+        &Bottom {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            &Title {
+                @include font('title');
+                font-weight: 600;
+                margin-bottom: $sizeAlignElementTM;
+                display: flex;
+                align-items: center;
+                &Content {
+                    flex: 1;
+                }
+                &Search {
+                    border-bottom: 1px solid $blackBorder;
+                    padding: 2px 0;
+                    &:focus-within {
+                        border-color: $mainColor;
+                    }
+                    &:focus-within &Icon {
+                        color: $mainColor;
+                    }
+                    &Icon {
+                        padding-right: 5px;
+                    }
+                    &Input {
+    
+                    }
+                }
+            }
+            &Content {
+                flex: 1;
+                .managementTable {
+                    width: 100%;
+                    &Row {
+                        &:hover td {
+                            background-color: $disableColor;
+                        }
+                        .managementTableHeader {
+                            @include font('title');
+                            font-weight: 600;
+                            padding: 10px 0;
+                            background-color: $blueBtnColor;
+                        }
+                        .managementTableData {
+                            @include font('content');
+                            font-size: 16px;
+                            text-align: center;
+                            background-color: $greyBtnColor;
+                            padding: 5px;
+                            &Button {
+                                &:nth-child(1) {
+                                    background-color: rgb(47, 163, 47);
+                                }
+                                &:nth-child(2) {
+                                    background-color: rgb(224, 151, 42);
+                                }
+                                &:nth-child(3) {
+                                    background-color: rgb(190, 74, 74);
+                                }
+                                &:nth-child(4) {
+                                    background-color: rgb(255, 0, 0);
+                                }
+                                display: inline-block;
+                                margin: 0 10px;
+                            }
                         }
                     }
                 }
@@ -168,15 +510,3 @@
     }
 }
 
-//* OPEN - COMPUTER-LOW độ phân giải từ 1024 đến <= 1239 px. */
-@media (min-width: 1024px) and (max-width: 1239px) {
-
-}
-/* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
-@media (min-width: 740px) and (max-width: 1023px) {
-
-}
-/* OPEN - MOBILE độ phân giải <= 739px */
-@media (max-width: 739px) {
-
-}

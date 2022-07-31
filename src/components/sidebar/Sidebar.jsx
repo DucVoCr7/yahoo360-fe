@@ -3,11 +3,8 @@ import Infomation from '../infomation/Infomation'
 import Photos from '../photos/Photos'
 import Friends from '../friends/Friends'
 import './sidebar.scss'
-import NameMusics from '../NameMusics/NameMusics'
+import NameMusics from '../nameMusics/NameMusics'
 import ActionsFriend from '../actionsFriend/ActionsFriend'
-import { useRef } from 'react'
-import { useEffect } from 'react'
-import { useState } from 'react'
 
 export default function Sidebar({
     name,
@@ -52,6 +49,7 @@ export default function Sidebar({
                         <NameMusics 
                             name={name} 
                             musics={musics}
+                            setMusics={setMusics}
                             isHomePage={isHomePage}
                         />
                         <ActionsFriend

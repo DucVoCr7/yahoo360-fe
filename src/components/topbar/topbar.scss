@@ -12,7 +12,6 @@
         position: -webkit-sticky; /* Safari */
         top: 0;
         @include font('part');
-        
         padding: 0 $sizeAlignPagePC;
         // Mobile
         &GroupM {
@@ -22,7 +21,6 @@
         &Group {
             display: flex;
             align-items: center;
-    
             // Item
             .topbarItem {
                 &:last-child {
@@ -31,10 +29,7 @@
                 display: flex;
                 align-items: center;
                 margin-right: 20px;
-                
-                
                 cursor: pointer;
-    
                 // Search
                 &:focus-within .topbarSearchIcon {
                     color: $mainColor;
@@ -43,11 +38,12 @@
     
                 }
                 .topbarSearchInput {
-                    @include font('part');
+                    &:focus {
+                        border-bottom: 1px solid $mainColor;
+                    }
+                    @include font('title');
                     width: 100%;
-                    margin-left: 20px;
                 }
-    
                 // Notify
                 .topbarNotifyIcon {
                     &.active {
@@ -97,8 +93,6 @@
                         height: calc($heightChildTopbar + 10px);
                         padding: 0 20px;
                         border-bottom: 1px solid $disableColor;
-                        
-                        
                         &:hover {
                             background-color: $mainColor;
                         }
@@ -113,14 +107,12 @@
                         }
                     }
                 }
-    
                 // Image
                 .topbarImg {
                     height: 30px;
                     width: 30px;
                     border-radius: 50%;
                 }
-    
                 // Setting
                 .topbarSettingIcon {
                     &.active {
@@ -138,7 +130,6 @@
                     top: 100%;
                     right: $sizeAlignPagePC;
                     box-shadow: $shadowBottom;
-                    
                     border-bottom-left-radius: 4px;
                     border-bottom-right-radius: 4px;
                     overflow: hidden;
@@ -147,8 +138,6 @@
                             border: none;
                         }
                         padding: 0 20px;
-                        
-                        
                         height: $heightChildTopbar;
                         display: flex;
                         align-items: center;
@@ -180,9 +169,7 @@
         position: -webkit-sticky; /* Safari */
         top: 0;
         @include font('part');
-        
         padding: 0 $sizeAlignPageTM; //
-    
         &Menu {
             display: none;
         }
@@ -194,7 +181,6 @@
         &Group {
             display: flex;
             align-items: center;
-    
             // Item
             .topbarItem {
                 &:last-child {
@@ -203,23 +189,20 @@
                 display: flex;
                 align-items: center;
                 margin-right: 15px; //
-                
-                
                 cursor: pointer;
-    
                 // Search
                 &:focus-within .topbarSearchIcon {
                     color: $mainColor;
                 }
                 .topbarSearchIcon {
-    
                 }
                 .topbarSearchInput {
-                    @include font('part');
+                    &:focus {
+                        border-bottom: 1px solid $mainColor;
+                    }
+                    @include font('title');
                     width: 100%;
-                    margin-left: 15px; //
                 }
-    
                 // Notify
                 .topbarNotifyIcon {
                     &.active {
@@ -269,8 +252,6 @@
                         height: calc($heightChildTopbar + 10px);
                         padding: 0 20px;
                         border-bottom: 1px solid $disableColor;
-                        
-                        
                         &:hover {
                             background-color: $mainColor;
                         }
@@ -285,14 +266,12 @@
                         }
                     }
                 }
-    
                 // Image
                 .topbarImg {
                     height: 30px;
                     width: 30px;
                     border-radius: 50%;
                 }
-    
                 // Setting
                 .topbarSettingIcon {
                     &.active {
@@ -310,7 +289,6 @@
                     top: 100%;
                     right: $sizeAlignPageTM; //
                     box-shadow: $shadowBottom;
-                    
                     border-bottom-left-radius: 4px;
                     border-bottom-right-radius: 4px;
                     overflow: hidden;
@@ -319,8 +297,6 @@
                             border: none;
                         }
                         padding: 0 15px; //
-                        
-                        
                         height: $heightChildTopbar;
                         display: flex;
                         align-items: center;
@@ -352,7 +328,6 @@
         top: 0;
         @include font('part');
         padding: 0 $sizeAlignPageTM; //
-
         // Tablet PC
         &Group {
             display: none;
@@ -372,7 +347,6 @@
                 cursor: pointer;
                 // Notify
                 .topbarNotifyIcon {
-
                 }
                 .topbarNotifyNumber {
                     position: absolute;
@@ -431,8 +405,8 @@
                         display: flex;
                         align-items: flex-end;
                         .topbarMenuSearchInput {
-                            padding: 0;
-                            min-width: 250px;
+                            padding: 2px 0;
+                            min-width: 200px;
                         }
                         .topbarMenuSearchIcon {
                             margin-left: $sizeAlignElementTM;
@@ -440,8 +414,8 @@
                         }
                     }
                     .topbarMenuImg {
-                        width: 70px;
-                        height: 70px;
+                        width: 80px;
+                        height: 80px;
                         object-fit: cover;
                         border-radius: 50%; 
                     }

@@ -106,9 +106,12 @@ export const userSlice = createSlice({
         // Logout
         [logout.fulfilled]: (state)=> {
             state.userInfo = null
+            state.pending = null
+            state.error = null
             state.accessToken = null
             state.refreshToken = null
-            state.friendsRequest = null
+            state.friendRequestReceiveds = null
+            state.friendRequestSents = null  
         },
 
         // RefreshToken

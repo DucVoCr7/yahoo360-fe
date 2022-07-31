@@ -1,6 +1,4 @@
-import React from 'react'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { userRequest } from '../../utils/requestMethods'
 import './management.scss'
 
@@ -14,7 +12,7 @@ export default function Management() {
             setData(response.data.data)
         })()
     }, [])
-    console.log(data)
+
     return (
         data ?
             <div className='management'>

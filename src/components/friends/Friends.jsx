@@ -3,26 +3,24 @@ import { Link } from 'react-router-dom'
 import empty from '../../assets/image/empty.png'
 import './friends.scss'
 
-
-function Friends({ name, friends, elementRenderNumber }) {
+function Friends({ 
+  name, 
+  friends, 
+  elementRenderNumber 
+}) {
 
   const friendsHiddenNumber = friends.length - elementRenderNumber
   const [openFriends, setOpenFriends] = useState(false)
 
-  console.log('re-render: Friends')
   return (
     <div className='friends'>
-
       <title className='friendsTitle'>
         <span className="friendsTitleContent" onClick={() => setOpenFriends(true)}>
         <i className="friendsTitleContentIcon bi bi-person-plus-fill"></i>
           FRIENDS ({friends.length})
         </span>
       </title>
-
-      {
-        friends.length > 0 ?
-
+      {friends.length > 0 ?
         <div className="friendsContent">
           {friends.map((friend, index) => (
             index < elementRenderNumber &&
@@ -41,7 +39,6 @@ function Friends({ name, friends, elementRenderNumber }) {
         </div>
       }
 
-      
       {/* FriendsList */}
       {openFriends &&
         <div className="friendsList">

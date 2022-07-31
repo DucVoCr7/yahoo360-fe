@@ -1,10 +1,10 @@
-import React, { memo } from 'react'
-import './actionsFriend.scss'
-import { useReduxUserFriendRequestReceiveds, useReduxUserFriendRequestSents, useReduxUserId, useReduxUserImage, useReduxUserName, useReduxValueGender, useReduxValuePosition } from '../../utils/reduxMethods'
-import { useCallback } from 'react'
+import React, { useCallback, memo } from 'react';
+import { useReduxUserFriendRequestReceiveds, useReduxUserFriendRequestSents, useReduxUserId, useReduxUserImage, useReduxUserName } from '../../utils/reduxMethods'
 import { userRequest } from '../../utils/requestMethods'
 import { useDispatch } from 'react-redux'
 import { setFriendRequestReceiveds, setFriendRequestSents } from '../../redux/userSlice'
+import './actionsFriend.scss'
+
 function ActionsFriend({
     id,
     friends,
@@ -19,6 +19,7 @@ function ActionsFriend({
     const userImg = useReduxUserImage()
     const userFriendRequestSents = useReduxUserFriendRequestSents()
     const userFriendRequestReceiveds = useReduxUserFriendRequestReceiveds()
+
     const handleRemoveFriend = useCallback(async () => {
         try {
             const idFriendData = friends.find(friend => friend.friendId === userId).id
@@ -41,7 +42,6 @@ function ActionsFriend({
             console.log(error)
         }
     })
-
     const handleRefuseRequest = useCallback(async () => {
         try {
             const idRequest = userFriendRequestReceiveds.find(request => request.userId === id).id
@@ -53,21 +53,23 @@ function ActionsFriend({
             console.log(error)
         }
     })
-
     const handleAcceptRequest = useCallback(async () => {
-        const idRequest = userFriendRequestReceiveds.find(request => request.userId === id).id
-        const response = await userRequest.patch(`/friends/acceptRequest/${idRequest}`)
-        setStatusFriend(3)
-        const newUserFriendRequestReceiveds = userFriendRequestReceiveds.filter(request => request.id !== idRequest)
-        dispatch(setFriendRequestReceiveds(newUserFriendRequestReceiveds))
-        setFriends(prev => [{
-            ...response.data.friend, dataFriend: {
-                name: userName,
-                image: userImg
-            }
-        }, ...prev])
+        try {
+            const idRequest = userFriendRequestReceiveds.find(request => request.userId === id).id
+            const response = await userRequest.patch(`/friends/acceptRequest/${idRequest}`)
+            setStatusFriend(3)
+            const newUserFriendRequestReceiveds = userFriendRequestReceiveds.filter(request => request.id !== idRequest)
+            dispatch(setFriendRequestReceiveds(newUserFriendRequestReceiveds))
+            setFriends(prev => [{
+                ...response.data.friend, dataFriend: {
+                    name: userName,
+                    image: userImg
+                }
+            }, ...prev])
+        } catch (error) {
+            console.log(error)
+        }
     })
-
     const handleSentRequest = useCallback(async () => {
         try {
             const response = await userRequest.post('/friends/sentRequest', {

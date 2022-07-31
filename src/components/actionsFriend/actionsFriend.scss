@@ -30,7 +30,7 @@
 @media (max-width: 739px) {
     .actionsFriend {
         .isFriend, .requestFriend, .friendRequest {
-            margin-bottom: $sizeAlignElementTM;
+            margin-bottom: $sizeAlignElementPC;
         }
         .removeFriend, .isFriend, .removeRequestFriend, .requestFriend, .removeFriendRequest, .friendRequest, .notFriend{
             width: 100%;

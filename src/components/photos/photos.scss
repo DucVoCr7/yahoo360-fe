@@ -33,7 +33,7 @@
                 width: 11.1875%;
                 height: 100%;
                 margin-left: 1.5%;
-                border-radius: 10px;
+                border-radius: 3px;
                 cursor: pointer;
                 overflow: hidden;
                 &Img {
@@ -56,7 +56,7 @@
                 align-items: center;
                 justify-content: center;
                 background-color: rgba($color: #000000, $alpha: 0.6);
-                border-radius: 10px;
+                border-radius: 3px;
             }
         }
         &NoContent {
@@ -64,7 +64,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 10px;
+            border-radius: 3px;
             background-image: $backGroundEmpty;
             &Content {
                 &Icon {
@@ -101,7 +101,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border-radius: 10px;
+                border-radius: 3px;
                 &Icon {
                     &.active {
                         cursor: pointer;
@@ -240,7 +240,7 @@
                 width: 15%;
                 height: 100%;
                 margin-left: 2%;
-                border-radius: 10px;
+                border-radius: 3px;
                 cursor: pointer;
                 overflow: hidden;
                 &Img {
@@ -263,7 +263,7 @@
                 align-items: center;
                 justify-content: center;
                 background-color: rgba($color: #000000, $alpha: 0.6);
-                border-radius: 10px;
+                border-radius: 3px;
             }
         }
         &NoContent {
@@ -271,7 +271,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 10px;
+            border-radius: 3px;
             background-image: $backGroundEmpty;
             &Content {
                 &Icon {
@@ -292,13 +292,13 @@
             top: $heightTopbar;
             z-index: 2;
             left: 0;
-            padding: $sizeAlignPagePC;
+            padding: $sizeAlignPageTM;
             overflow-y: scroll;
             display: flex;
             flex-direction: column;
             &Title {
                 @include font('title');
-                @include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double);
+                @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
                 display: flex;
                 justify-content: space-between;
                 &Close {}
@@ -308,7 +308,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border-radius: 10px;
+                border-radius: 3px;
                 &Icon {
                     &.active {
                         cursor: pointer;
@@ -334,11 +334,11 @@
             z-index: 2;
             left: 0;
 
-            padding: $sizeAlignPagePC;
+            padding: $sizeAlignPageTM;
 
             &Title {
                 @include font('title');
-                @include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double);
+                @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
 
                 display: flex;
                 justify-content: space-between;
@@ -374,38 +374,9 @@
                             object-fit: cover;
                         }
                     }
-
                     .slick-prev,
                     .slick-next {
-                        z-index: 2;
-                        width: 30px;
-                        height: 30px;
-                        display: flex;
-                        align-items: center;
-
-                        >i {
-                            color: white;
-                            text-shadow: $shadowFull;
-                            font-size: 40px;
-                        }
-                    }
-
-                    .slick-prev {
-                        &::before {
-                            content: '';
-                        }
-
-                        left: 0;
-                        justify-content: flex-start;
-                    }
-
-                    .slick-next {
-                        &::before {
-                            content: '';
-                        }
-
-                        right: 0;
-                        justify-content: flex-end;
+                        display: none;
                     }
                 }
             }
@@ -446,7 +417,7 @@
                 width: 23.875%;
                 height: 100%;
                 margin-left: 1.5%;
-                border-radius: 10px;
+                border-radius: 3px;
                 cursor: pointer;
                 overflow: hidden;
                 &Img {
@@ -469,7 +440,7 @@
                 align-items: center;
                 justify-content: center;
                 background-color: rgba($color: #000000, $alpha: 0.6);
-                border-radius: 10px;
+                border-radius: 3px;
             }
         }
         &NoContent {
@@ -477,7 +448,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 10px;
+            border-radius: 3px;
             background-image: $backGroundEmpty;
             &Content {
                 &Icon {
@@ -498,13 +469,13 @@
             top: $heightTopbar;
             z-index: 2;
             left: 0;
-            padding: $sizeAlignPagePC;
+            padding: $sizeAlignPageTM;
             overflow-y: scroll;
             display: flex;
             flex-direction: column;
             &Title {
                 @include font('title');
-                @include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double);
+                @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
                 display: flex;
                 justify-content: space-between;
                 &Close {}
@@ -514,7 +485,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                border-radius: 10px;
+                border-radius: 3px;
                 &Icon {
                     &.active {
                         cursor: pointer;
@@ -540,11 +511,11 @@
             z-index: 2;
             left: 0;
 
-            padding: $sizeAlignPagePC;
+            padding: $sizeAlignPageTM;
 
             &Title {
                 @include font('title');
-                @include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double);
+                @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
 
                 display: flex;
                 justify-content: space-between;
@@ -583,35 +554,7 @@
 
                     .slick-prev,
                     .slick-next {
-                        z-index: 2;
-                        width: 30px;
-                        height: 30px;
-                        display: flex;
-                        align-items: center;
-
-                        >i {
-                            color: white;
-                            text-shadow: $shadowFull;
-                            font-size: 40px;
-                        }
-                    }
-
-                    .slick-prev {
-                        &::before {
-                            content: '';
-                        }
-
-                        left: 0;
-                        justify-content: flex-start;
-                    }
-
-                    .slick-next {
-                        &::before {
-                            content: '';
-                        }
-
-                        right: 0;
-                        justify-content: flex-end;
+                        display: none;
                     }
                 }
             }

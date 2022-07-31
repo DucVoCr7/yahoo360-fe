@@ -3,10 +3,11 @@ import { userRequest } from '../../utils/requestMethods'
 import HeaderOfUser from '../../components/headerOfUser/HeaderOfUser'
 import PostsUser from '../../components/postsUser/PostsUser'
 import Sidebar from '../../components/sidebar/Sidebar'
-import './home.scss'
 import { useReduxUserId } from '../../utils/reduxMethods'
 import { useDispatch } from 'react-redux'
 import { setFriendRequestReceiveds, setFriendRequestSents } from '../../redux/userSlice'
+import './home.scss'
+
 export default function Home() {
 
 const dispatch = useDispatch()
@@ -47,7 +48,7 @@ useEffect(()=> {
     }
   })();
 }, [userId])
-console.log('re-render:Home')
+
     return (
       name ? 
         <div className='home'>

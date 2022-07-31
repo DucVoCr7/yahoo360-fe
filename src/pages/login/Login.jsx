@@ -4,11 +4,14 @@ import { Link, useNavigate } from 'react-router-dom'
 import { login } from '../../redux/userSlice'
 import './login.scss'
 export default function Login() {
+  
   const [userInfo, setUserInfo] = useState()
   const dispatch = useDispatch()
-  const handleChange = (event) => setUserInfo({ ...userInfo, [event.target.name]: event.target.value })
   const {error, pending} = useSelector(state => state.user)
   const navigate = useNavigate()
+
+  const handleChange = (event) => setUserInfo({ ...userInfo, [event.target.name]: event.target.value })
+  
   const handleLogin = async (event) => {
       event.preventDefault();
       const result = await dispatch(login(userInfo))
@@ -16,6 +19,7 @@ export default function Login() {
         navigate('/home')
       }
   }
+
   return (
     <div className='login'>
       <form className='loginForm' onSubmit={handleLogin}>

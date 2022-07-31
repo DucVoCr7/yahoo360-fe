@@ -1,9 +1,10 @@
 import React from 'react'
-import './header.scss'
 import Slider from 'react-slick';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import slideShow from '../../utils/constArrayImg';
+import './header.scss'
+
 function Header() {
     const settings = {
       fade: true,
@@ -13,7 +14,9 @@ function Header() {
       autoplay: true,
       autoplaySpeed: 10000
     };
+
     const {category} = useSelector(state=> state.app)
+
     return (
         <div className='header'>
           <Link to='/' className="headerLogo">YAHOO 360</Link>

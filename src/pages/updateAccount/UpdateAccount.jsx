@@ -1,6 +1,4 @@
-import React from 'react'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateAccount } from '../../redux/userSlice'
@@ -8,17 +6,20 @@ import { handleErrorUpdateUser } from '../../utils/handleErrorUpdateUser'
 import './updateAccount.scss'
 
 export default function UpdateAccount() {
+
 const {pending, userInfo} = useSelector(state => state.user)
 const [infoUpdate, setInfoUpdate] = useState({})
 const [errors, setErrors] = useState()
 const dispatch = useDispatch()
 const navigate = useNavigate()
+
 const handleChange = event => setInfoUpdate({...infoUpdate, [event.target.name]: event.target.value})
 const handleSetFile = event => {
     const file = event.target.files[0]
     file.preview = URL.createObjectURL(file)
     setInfoUpdate({...infoUpdate, image: file})
 }
+
 const handleUpdate = async()=> {
     const [dataNeedUpdate, resultErrors] = handleErrorUpdateUser(infoUpdate)
     if(Object.keys(dataNeedUpdate).length === 0) {
@@ -38,9 +39,11 @@ const handleUpdate = async()=> {
         }
     }
 }
+
 useEffect(()=> {
     return ()=> infoUpdate?.image && URL.revokeObjectURL(infoUpdate.image.preview)
 }, [infoUpdate?.image])
+
     return (
         <div className='updateAccount'>
             <span className="updateAccountTitle">
@@ -77,7 +80,7 @@ useEffect(()=> {
                         </span>
                     </label>
                     <select onChange={handleChange} name='gender' className='updateAccountContentItemInput'>
-                        <option value="" disabled selected>Choice gender...</option>
+                        <option value="" disabled selected>Choice ...</option>
                         <option value="G0">Male</option>
                         <option value="G1">Female</option>
                     </select>
@@ -95,7 +98,7 @@ useEffect(()=> {
                             </span>
                         }
                     </label>
-                    <input onChange={handleChange} name='email' type="email" className="updateAccountContentItemInput" placeholder='Enter new info...' />
+                    <input onChange={handleChange} name='email' type="text" className="updateAccountContentItemInput" placeholder='Enter new info...' />
                 </span>
                 <span className="updateAccountContentItem">
                     <label className="updateAccountContentItemLabel">

@@ -5,6 +5,7 @@ import avatar from '../../assets/image/avatar.jpg'
 import { logout } from '../../redux/userSlice'
 import './topbar.scss'
 export default function Topbar() {
+
     const [openNotify, setOpenNotify] = useState(false)
     const [openSetting, setOpenSetting] = useState(false)
     const [openTopbarMenu, setOpenTopbarMenu] = useState(false)
@@ -15,12 +16,30 @@ export default function Topbar() {
     const navigate = useNavigate()
     const {userInfo} = useSelector(state => state.user)
     const dispatch = useDispatch()
+    
     const handleLogout = async (event) => {
         const statusLogout = await dispatch(logout())
         if(!statusLogout.error) {
             navigate('/')
         }
     }
+
+
+    const [searchTerm, setSearchTerm] = useState('')
+    const refTimeout = useRef(null)
+    const handleSearch = (event) => {
+        setSearchTerm(event.target.value)
+        if(refTimeout.current) {
+            clearTimeout(refTimeout.current)
+        }
+        refTimeout.current = setTimeout(()=> {
+            const valueSearch = event.target.value.trim()
+            if(valueSearch) {
+                navigate(`/searchPosts?title=${valueSearch}`)
+            }
+        }, 500)
+    }
+
     // Click outSide close ref
     useEffect(() => {
         const handleClickOutSideNotify = (event) => {
@@ -47,7 +66,8 @@ export default function Topbar() {
             window.removeEventListener('click', handleClickOutSideTopbarMenu)
         }
     }, [])
-    // console.log(category)
+
+
     return (
         <div className='topbar'>
             {/* Topbar Tablet Computer */}
@@ -57,7 +77,12 @@ export default function Topbar() {
             </div>
             <div className='topbarGroup'>
                 <div className='topbarItem'>
-                    <input type='text' className='topbarSearchInput' placeholder='Search...' />
+                    <input type='text' 
+                        className='topbarSearchInput' 
+                        placeholder='Search posts by title...'
+                        value={searchTerm}
+                        onChange={handleSearch}
+                    />
                     <i className='topbarSearchIcon bi bi-search'></i>
                 </div>
                 {userInfo &&
@@ -124,7 +149,13 @@ export default function Topbar() {
                 ></i>
                 <div className={openTopbarMenu ? "topbarMenu active" : "topbarMenu"} ref={refTopbarMenu}>
                     <div className='topbarMenuItem'>
-                        <input type='search' className='topbarMenuSearchInput' placeholder='Search...' />
+                        <input 
+                            type='search' 
+                            className='topbarMenuSearchInput' 
+                            placeholder='Search posts by title...'
+                            value={searchTerm}
+                            onChange={handleSearch}
+                        />
                         <i className='topbarMenuSearchIcon bi bi-search'></i>
                     </div>
                     {userInfo &&

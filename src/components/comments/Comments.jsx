@@ -1,12 +1,14 @@
-import React, { useState, useEffect }  from 'react'
-import { useCallback } from 'react'
-import { memo } from 'react'
+import React, { useState, useEffect,  memo, useCallback }  from 'react'
 import { publicRequest, userRequest } from '../../utils/requestMethods'
 import { useReduxUserId, useReduxUserImage, useReduxUserName } from '../../utils/reduxMethods'
 import Comment from '../comment/Comment'
 import './comments.scss'
 
-function Comments({postId, setOpenComments, setCommentsNumber}) {
+function Comments({
+  postId, 
+  setOpenComments, 
+  setCommentsNumber
+}) {
 
     const [comments, setComments] = useState()
     const [content, setContent] = useState('')
@@ -18,7 +20,6 @@ function Comments({postId, setOpenComments, setCommentsNumber}) {
       if(content.trim()) {
         try {
           const data = {postId, userId, content}
-          console.log(data)
           const response = await userRequest.post('/comments', data)
           setComments(prev => [{
             ...response.data.comment, replies: [], user: {
@@ -33,7 +34,7 @@ function Comments({postId, setOpenComments, setCommentsNumber}) {
         }
       }
     })
-    console.log(comments)
+
     useEffect(()=> {
       (async()=> {
         try {
@@ -45,7 +46,6 @@ function Comments({postId, setOpenComments, setCommentsNumber}) {
       })()
     }, [postId])
 
-    console.log('render Comments')
   return (
     comments ?
     <div className='comments'>

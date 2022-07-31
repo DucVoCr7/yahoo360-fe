@@ -17,6 +17,7 @@
                     position: absolute;
                     bottom: -5px;
                     left: -5px;
+                    box-shadow: $shadowFull;
                 }
             }
             &Right {
@@ -56,6 +57,7 @@
                     position: absolute;
                     bottom: -5px;
                     left: -5px;
+                    box-shadow: $shadowFull;
                 }
             }
             &Right {
@@ -63,7 +65,7 @@
                 &Top {
                     display: flex;
                     justify-content: space-between;
-                    margin-bottom: $sizeAlignElementTM;
+                    margin-bottom: $sizeAlignElementPC;
                 }
                 &Bottom {
 
@@ -96,13 +98,14 @@
                     bottom: -3px;
                     left: 50%;
                     transform: translateX(-50%);
+                    box-shadow: $shadowFull;
                 }
             }
             &Right {
                 margin: $sizeAlignElementTM 0;
                 &Top {
                     > :nth-child(n) {
-                        margin-bottom: $sizeAlignElementTM;
+                        margin-bottom: $sizeAlignElementPC;
                     }
                     > :last-child {
                         margin-bottom: 0;

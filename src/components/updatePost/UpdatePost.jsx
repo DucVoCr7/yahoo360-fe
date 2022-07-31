@@ -4,9 +4,9 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import handleErrorUpdatePost from '../../utils/handleErrorUpdatePost';
 import addImage from '../../assets/image/addImage.png'
-import { useReduxCategoryList, useReduxUserId, useReduxValueCategory } from '../../utils/reduxMethods';
+import { useReduxCategoryList, useReduxValueCategory } from '../../utils/reduxMethods';
 import {userRequest} from '../../utils/requestMethods'
-import { useNavigate } from 'react-router-dom';
+                                                                                                   
 function UpdatePost({post, setOpenUpdate, setPost}) {
     const [postUpdate, setPostUpdate] = useState({
         image: post.image,
@@ -17,9 +17,7 @@ function UpdatePost({post, setOpenUpdate, setPost}) {
     const [openCategory, setOpenCategory] = useState(false)
     const [error, setError] = useState({})
     const categoryList = useReduxCategoryList()
-    const userId = useReduxUserId()
     const valueCategory = useReduxValueCategory(postUpdate.category)
-    const navigate = useNavigate()
 
 
     const handleSetFile = (event) => {
@@ -36,10 +34,8 @@ function UpdatePost({post, setOpenUpdate, setPost}) {
     const handleSubmit = async (event) => {
         const [dataUpdate, resultErrors] = handleErrorUpdatePost(postUpdate, post)
         if(Object.keys(dataUpdate).length === 0) {
-            console.log(123)
             setOpenUpdate(false)
         } else {
-            console.log(1234)
             if(Object.keys(resultErrors).length === 0) {
                 const data = new FormData()
                 Object.keys(dataUpdate).forEach(key=> data.append(key, dataUpdate[key]))
@@ -56,10 +52,11 @@ function UpdatePost({post, setOpenUpdate, setPost}) {
             }
         }
     }
+
     useEffect(() => {
         return () => postUpdate?.image && URL.revokeObjectURL(postUpdate?.image.preview)
     }, [postUpdate?.image])
-    console.log('postUpdate:', postUpdate)
+
     return (
         <div className='updatePost'>
 

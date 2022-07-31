@@ -10,7 +10,9 @@ export default function Register() {
   const {error, pending} = useSelector(state => state.user)
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  
   const handleChange = (event) => { setUserInfo({ ...userInfo, [event.target.name]: event.target.value }) }
+  
   const handleSubmit = async (event) => {
     event.preventDefault()
     const result = await dispatch(register(userInfo)) 
@@ -18,6 +20,7 @@ export default function Register() {
       navigate('/home')
     }
   }
+
   return (
     <div className='register'>
       <form className="registerForm" onSubmit={handleSubmit}>

@@ -1,11 +1,17 @@
-import React from 'react'
-import { useCallback } from 'react'
-import { useState } from 'react'
+import React, { memo, useCallback, useState } from 'react'
 import { userRequest } from '../../utils/requestMethods'
 import './commentRepair.scss'
-function CommentRepair({commentId, commentContent, setCommentContent, setOpenRepair}) {
+
+function CommentRepair({
+    commentId, 
+    commentContent, 
+    setCommentContent, 
+    setOpenRepair
+}) {
+
     const [contentRepair, setContentRepair] = useState(commentContent)
-    const handleRepairComment = useCallback(async (event) => {
+
+    const handleRepairComment = useCallback(async () => {
         if(contentRepair === commentContent || contentRepair.trim() === '') {
             setOpenRepair(false)
         } else {
@@ -21,7 +27,6 @@ function CommentRepair({commentId, commentContent, setCommentContent, setOpenRep
         }
     })
 
-   console.log('render CommentRepair') 
   return (
     <div className='commentRepair'>
         <textarea className="commentRepairContent"
@@ -40,4 +45,4 @@ function CommentRepair({commentId, commentContent, setCommentContent, setOpenRep
   )
 }
 
-export default CommentRepair
+export default memo(CommentRepair)

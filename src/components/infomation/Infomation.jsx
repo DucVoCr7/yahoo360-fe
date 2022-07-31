@@ -1,18 +1,17 @@
 import React, { memo } from 'react'
 import { useReduxValueGender, useReduxValuePosition } from '../../utils/reduxMethods'
 import './infomation.scss'
+
 function Infomation({
-        gender, 
-        position, 
-        postsNumber, 
-        address
-    }) {
+    gender, 
+    position, 
+    postsNumber, 
+    address
+}) {
 
     const valueGender = useReduxValueGender(gender)
     const valuePosition = useReduxValuePosition(position)
 
-
-    console.log('re-render: Infomation')
   return (
     <div className='infomation'>
         <span className="infomationItem">

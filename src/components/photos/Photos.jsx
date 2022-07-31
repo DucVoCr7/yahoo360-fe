@@ -1,15 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { memo } from 'react';
+import React, { useEffect, useRef, useState, memo } from 'react'
 import Gallery from 'react-photo-gallery'
-import { useSelector } from 'react-redux';
 import Slider from "react-slick";
 import { userRequest } from '../../utils/requestMethods';
 import empty from '../../assets/image/empty.png'
+import { useReduxUserId } from '../../utils/reduxMethods';
 import './photos.scss'
 
-
 function CustomNextArrow(props) {
-
   const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
@@ -19,7 +16,6 @@ function CustomNextArrow(props) {
 }
 
 function CustomPrevArrow(props) {
-
   const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
@@ -28,11 +24,17 @@ function CustomPrevArrow(props) {
   )
 }
 
-
-function Photos({ setPhotos, name, photos, elementRenderNumber, isHomePage = false }) {
+function Photos({ 
+  setPhotos, 
+  name, 
+  photos, 
+  elementRenderNumber, 
+  isHomePage = false 
+}) {
 
   const photosHiddenNumber = photos.length - elementRenderNumber
   const [file, setFile] = useState()
+  const userId = useReduxUserId()
 
   // Gallery
   const photosGallery = photos.map((item, index) => {
@@ -40,7 +42,6 @@ function Photos({ setPhotos, name, photos, elementRenderNumber, isHomePage = fal
     else return { src: item.photo, height: 2, width: 3 }
   })
   const [openGallery, setOpenGallery] = useState(false)
-
 
   // SlideShow
   const [openSlider, setOpenSlider] = useState(false)
@@ -64,12 +65,12 @@ function Photos({ setPhotos, name, photos, elementRenderNumber, isHomePage = fal
 
 
   // UploadFile
-  const userId = useSelector(state => state.user.userInfo?.id)
   const handleSetFile = (event) => {
     const file = event.target.files[0]
     file.preview = URL.createObjectURL(file)
     setFile(file)
   }
+
   useEffect(() => {
     (async () => {
       if (file) {
@@ -87,7 +88,6 @@ function Photos({ setPhotos, name, photos, elementRenderNumber, isHomePage = fal
     return () => file && URL.revokeObjectURL(file.preview)
   }, [file])
 
-  console.log('re-render: Photos')
   return (
     <div className='photos'>
       <title className='photosTitle'>
@@ -134,8 +134,6 @@ function Photos({ setPhotos, name, photos, elementRenderNumber, isHomePage = fal
         </div>
       }
 
-
-
       {/* Gallery */}
       {openGallery &&
         <div className="photosGallery">
@@ -158,8 +156,6 @@ function Photos({ setPhotos, name, photos, elementRenderNumber, isHomePage = fal
           }
         </div>
       }
-
-
 
       {/* SlideShowPhoTo */}
       <div className={openSlider ? "photosSlider active" : "photosSlider"}>

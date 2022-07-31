@@ -1,18 +1,23 @@
-import React, { memo, useState } from 'react'
+import React, { useCallback, memo, useState } from 'react';
 import { Link } from 'react-router-dom'
 import convertDate from '../../utils/convertDate'
 import Reply from '../reply/Reply'
 import CommentRepair from '../commentRepair/CommentRepair'
 import ReplyAwait from '../replyAwait/ReplyAwait'
 import { useReduxUserId } from '../../utils/reduxMethods'
-import './comment.scss'
 import { userRequest } from '../../utils/requestMethods'
-import { useCallback } from 'react'
+import './comment.scss'
 
-function Comment({ comment, setComments, setCommentsNumber, postId }) {
+function Comment({ 
+  comment, 
+  setComments, 
+  setCommentsNumber, 
+  postId
+}) {
+
+  const userId = useReduxUserId()
   const [commentContent, setCommentContent] = useState(comment.content)
   const [replies, setReplies] = useState(comment.replies)
-  const userId = useReduxUserId()
   const [openRepair, setOpenRepair] = useState(false)
   const [openReply, setOpenReply] = useState(false)
 
@@ -26,7 +31,6 @@ function Comment({ comment, setComments, setCommentsNumber, postId }) {
     }
   })
 
-  console.log('render Comment')
   return (
     <div className='comment'>
       <div className="commentTop">

@@ -1,0 +1,157 @@
+@use '/src/assets/scss' as *;
+@media (min-width: 901px) {
+    .postsSearch {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        &Content {
+            &Center {
+                @include paddingMarginBorder('PC', 'bottom');
+                display: flex;
+                > :nth-child(n) {
+                    flex: 1;
+                    @include paddingMarginBorder('PC', 'right');
+                }
+                > :last-child {
+                    padding-right: 0;
+                    margin-right: 0;
+                    border: none;
+                }
+            }
+            &Bottom {
+                display: flex;
+                flex-direction: column;
+                > :nth-child(n) {
+                    flex: 1;
+                    @include paddingMarginBorder('PC', 'bottom');
+                }
+                > :last-child {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    border: none;
+                }
+            }
+        }
+        &NoContent {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+                &Icon {
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                }
+        }
+    }
+}
+
+/* OPEN - TABLET độ phân giải từ 740px đến <= 1023 px */
+@media (min-width: 740px) and (max-width: 900px) {
+    .postsSearch {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        &Content {
+            &Center {
+                @include paddingMarginBorder('TM', 'bottom');
+                display: flex;
+                overflow: scroll;
+                &::-webkit-scrollbar {
+                    display: none; 
+                }
+                > :nth-child(n) {
+                    flex: none;
+                    box-sizing: content-box;
+                    width: 250px;
+                    @include paddingMarginBorder('TM', 'right');
+                }
+                > :last-child {
+                    padding-right: 0;
+                    margin-right: 0;
+                    border: none;
+                }
+            }
+            &Bottom {
+                display: flex;
+                flex-direction: column;
+                > :nth-child(n) {
+                    flex: 1;
+                    @include paddingMarginBorder('TM', 'bottom');
+                }
+                > :last-child {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    border: none;
+                }
+            }
+        }
+        &NoContent {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+                &Icon {
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                }
+        }
+    }
+}
+/* OPEN - MOBILE độ phân giải <= 739px */
+@media (max-width: 739px) {
+    .postsSearch {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        &Content {
+            &Center {
+                @include paddingMarginBorder('TM', 'bottom');
+                display: flex;
+                overflow: scroll;
+                &::-webkit-scrollbar {
+                    display: none; 
+                }
+                > :nth-child(n) {
+                    flex: none;
+                    box-sizing: content-box;
+                    width: 200px;
+                    @include paddingMarginBorder('TM', 'right');
+                }
+                > :last-child {
+                    padding-right: 0;
+                    margin-right: 0;
+                    border: none;
+                }
+            }
+            &Bottom {
+                display: flex;
+                flex-direction: column;
+                > :nth-child(n) {
+                    flex: 1;
+                    @include paddingMarginBorder('TM', 'bottom');
+                }
+                > :last-child {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    border: none;
+                }
+            }
+        }
+        &NoContent {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+                &Icon {
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                }
+        }
+    }
+}

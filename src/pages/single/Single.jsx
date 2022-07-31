@@ -5,8 +5,10 @@ import { publicRequest } from '../../utils/requestMethods'
 import './single.scss'
 
 export default function Single() {
+
     const [post, setPost] = useState()
     const params = useParams()
+
     useEffect(()=> {
         (async()=> {
             try {
@@ -17,6 +19,7 @@ export default function Single() {
             }
         })()
     }, [params])
+    
     return (
         post ?
         <div className='single'>

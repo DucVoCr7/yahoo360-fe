@@ -5,8 +5,8 @@ import PostsUser from '../../components/postsUser/PostsUser'
 import Sidebar from '../../components/sidebar/Sidebar'
 import { publicRequest } from '../../utils/requestMethods'
 import checkStatusFriend from '../../utils/checkStatusFriend'
-import './user.scss'
 import { useReduxUserFriendRequestReceiveds, useReduxUserFriendRequestSents, useReduxUserId } from '../../utils/reduxMethods'
+import './user.scss'
 
 export default function User() {
 
@@ -21,13 +21,11 @@ export default function User() {
   const [position, setPosition] = useState()
   const [address, setAddress] = useState()
   const [id, setId] = useState()
-
+  const [statusFriend, setStatusFriend] = useState()
 
   const userId = useReduxUserId()
   const userFriendRequestReceiveds = useReduxUserFriendRequestReceiveds()
   const userFriendRequestSents = useReduxUserFriendRequestSents()
-
-  const [statusFriend, setStatusFriend] = useState()
 
   const navigate = useNavigate()
   const params = useParams()
@@ -58,14 +56,13 @@ export default function User() {
             userFriendRequestReceiveds,
             userFriendRequestSents
           ))
-  
         } catch (error) {
           console.log(error)
         }
       })();
     }
   }, [params.userId])
-  console.log('re-render:User')
+
   return (
     name ?
         <div className='user'>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import './community.scss'
 import Header from '../../components/header/Header'
 import { publicRequest } from '../../utils/requestMethods'
 import PostsEqual from '../../components/postsEqual/PostsEqual'
@@ -8,10 +7,14 @@ import { Link } from 'react-router-dom'
 import PostsBigRight from '../../components/postsBigRight/PostsBigRight'
 import { useSelector, useDispatch } from 'react-redux'
 import { appStart } from '../../redux/appSlice'
+import './community.scss'
+
 export default function Community() {
+
     const { category } = useSelector(state => state.app)
     const [dataCommunity, setDataCommunity] = useState()
     const dispatch = useDispatch()
+
     useEffect(() => {
         (async () => {
             try {
@@ -23,6 +26,7 @@ export default function Community() {
             }
         })()
     }, [])
+    
     return (
         dataCommunity ?
             <>

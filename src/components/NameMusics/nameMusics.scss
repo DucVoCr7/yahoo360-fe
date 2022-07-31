@@ -1,35 +1,109 @@
 @use '/src/assets/scss' as *;
 @media (min-width: 901px) {
  .nameMusics {
-    &Name {
+    .name {
         @include font('title');
         font-size: 30px;
         font-weight: 600;
         margin-bottom: $sizeAlignElementPC;
     }
-    &Music {
+    .music {
         width: 300px;
         height: 30px;
         display: flex;
         align-items: center;
         background-color: $greyBtnColor;
+        box-shadow: $shadowFull;
+        padding: 3px;
         border-radius: 15px;
-        padding: 5px;
         position: relative;
         @include font('title');
-        &Icon {
-            font-size: 20px;
-        }
         &Content {
             flex: 1;
-            margin: 0 10px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            &Thumb {
+                display: block;
+                height: 100%;
+                width: 24px;
+                background-color: gray;
+                border-radius: 50%;
+                position: relative;
+                &Img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: inherit;
+                    height: inherit;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                &Icon {
+                    position: absolute;
+                    bottom: -2px;
+                    right: -8px;
+                    font-size: 15px;
+                    border-radius: 50%;
+                    background-color: $greyBtnColor;
+                }
+            }
+            &Action {
+                margin: 0 10px;
+            }
+            &Title {
+                flex: 1;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+                &Info {
+                    &.active {
+                        @include marquee;
+                    }
+                    display: flex;
+                    align-items: center;
+                    width: 200%;
+                    height: 100%;
+                    position: absolute;
+                    overflow: hidden;
+                    &Child {
+                        @include limitLine(1);
+                        float: left;
+                        width: 50%;
+                    }
+                }
+            }
+            &Video {
+                display: none;
+            }
         }
         &NoContent {
             flex: 1;
-            margin: 0 10px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            &Thumb {
+                height: 100%;
+                width: 24px;
+                border-radius: 50%;
+                background-color: gray;
+                margin-right: 15px;
+                position: relative;
+                &Icon {
+                    position: absolute;
+                    bottom: -2px;
+                    right: -8px;
+                    font-size: 15px;
+                    border-radius: 50%;
+                    background-color: $greyBtnColor;
+                }
+            }
         }
         &OpenAdd, &OpenChange {
             font-size: 20px;
+            margin-left: 10px;
             cursor: pointer;
         }
         &Add {
@@ -42,6 +116,7 @@
                 top: -11%;
                 right: 0;
             }
+            z-index: 3;
             @include ScaleTopRight;
             box-shadow: $shadowFull;
             width: 100%;
@@ -82,20 +157,21 @@
 }
 @media (min-width: 740px) and (max-width: 900px) {
     .nameMusics {
-        &Name {
+       .name {
             @include font('title');
             font-size: 25px;
             font-weight: 600;
-            margin-bottom: $sizeAlignElementTM;
+            margin-bottom: $sizeAlignElementPC;
         }
-        &Music {
+        .music {
             width: 300px;
             height: 30px;
             display: flex;
             align-items: center;
             background-color: $greyBtnColor;
             border-radius: 15px;
-            padding: 5px;
+            padding: 3px;
+            box-shadow: $shadowFull;
             position: relative;
             @include font('title');
             &Icon {
@@ -103,14 +179,91 @@
             }
             &Content {
                 flex: 1;
-                margin: 0 10px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                &Thumb {
+                    display: block;
+                    height: 100%;
+                    width: 24px;
+                    background-color: gray;
+                    border-radius: 50%;
+                    position: relative;
+                    &Img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: inherit;
+                        height: inherit;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                    &Icon {
+                        position: absolute;
+                        bottom: -2px;
+                        right: -8px;
+                        font-size: 15px;
+                        border-radius: 50%;
+                        background-color: $greyBtnColor;
+                    }
+                }
+                &Action {
+                    margin: 0 10px;
+                }
+                &Title {
+                    flex: 1;
+                    height: 100%;
+                    overflow: hidden;
+                    position: relative;
+                    &Info {
+                        &.active {
+                            @include marquee;
+                        }
+                        display: flex;
+                        align-items: center;
+                        width: 200%;
+                        height: 100%;
+                        position: absolute;
+                        overflow: hidden;
+                        &Child {
+                            @include limitLine(1);
+                            float: left;
+                            text-align: left;
+                            width: 50%;
+                        }
+                    }
+                }
+                &Video {
+                    display: none;
+                }
             }
             &NoContent {
                 flex: 1;
-                margin: 0 10px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                &Thumb {
+                    height: 100%;
+                    width: 24px;
+                    border-radius: 50%;
+                    background-color: gray;
+                    margin-right: 15px;
+                    position: relative;
+                    &Icon {
+                        position: absolute;
+                        bottom: -2px;
+                        right: -8px;
+                        font-size: 15px;
+                        border-radius: 50%;
+                        background-color: $greyBtnColor;
+                    }
+                }
             }
             &OpenAdd, &OpenChange {
                 font-size: 20px;
+                margin-left: 10px;
                 cursor: pointer;
             }
             &Add {
@@ -123,6 +276,7 @@
                     top: -11%;
                     right: 0;
                 }
+                z-index: 3;
                 @include ScaleTopRight;
                 box-shadow: $shadowFull;
                 width: 100%;
@@ -163,20 +317,21 @@
 }
 @media (max-width: 739px) {
     .nameMusics {
-        &Name {
+       .name {
             @include font('title');
             font-size: 20px;
             font-weight: 600;
-            margin-bottom: $sizeAlignElementTM;
+            margin-bottom: $sizeAlignElementPC;
         }
-        &Music {
+        .music {
             width: 250px;
             height: 30px;
             display: flex;
             align-items: center;
             background-color: $greyBtnColor;
             border-radius: 15px;
-            padding: 5px;
+            padding: 3px;
+            box-shadow: $shadowFull;
             position: relative;
             @include font('title');
             font-size: 16px;
@@ -185,14 +340,91 @@
             }
             &Content {
                 flex: 1;
-                margin: 0 10px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                &Thumb {
+                    display: block;
+                    height: 100%;
+                    width: 24px;
+                    background-color: gray;
+                    border-radius: 50%;
+                    position: relative;
+                    &Img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: inherit;
+                        height: inherit;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                    &Icon {
+                        position: absolute;
+                        bottom: -2px;
+                        right: -8px;
+                        font-size: 15px;
+                        border-radius: 50%;
+                        background-color: $greyBtnColor;
+                    }
+                }
+                &Action {
+                    margin: 0 5px 0 10px;
+                }
+                &Title {
+                    flex: 1;
+                    height: 100%;
+                    overflow: hidden;
+                    position: relative;
+                    &Info {
+                        &.active {
+                            @include marquee;
+                        }
+                        display: flex;
+                        align-items: center;
+                        width: 200%;
+                        height: 100%;
+                        position: absolute;
+                        overflow: hidden;
+                        &Child {
+                            @include limitLine(1);
+                            float: left;
+                            text-align: left;
+                            width: 50%;
+                        }
+                    }
+                }
+                &Video {
+                    display: none;
+                }
             }
             &NoContent {
                 flex: 1;
-                margin: 0 10px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                &Thumb {
+                    height: 100%;
+                    width: 24px;
+                    border-radius: 50%;
+                    background-color: gray;
+                    margin-right: 15px;
+                    position: relative;
+                    &Icon {
+                        position: absolute;
+                        bottom: -2px;
+                        right: -8px;
+                        font-size: 15px;
+                        border-radius: 50%;
+                        background-color: $greyBtnColor;
+                    }
+                }
             }
             &OpenAdd, &OpenChange {
                 font-size: 16px;
+                margin-left: 5px;
                 cursor: pointer;
             }
             &Add {
@@ -205,7 +437,7 @@
                     top: -11%;
                     right: 0;
                 }
-                z-index: 2;
+                z-index: 3;
                 @include ScaleTopRight;
                 box-shadow: $shadowFull;
                 width: 100%;

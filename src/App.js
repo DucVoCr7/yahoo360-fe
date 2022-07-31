@@ -16,6 +16,7 @@ import User from "./pages/user/User";
 import UpdateAccount from "./pages/updateAccount/UpdateAccount";
 import Management from "./pages/management/Management";
 import Category from "./pages/category/Category";
+import Search from "./pages/search/Search";
 
 
 export default function App() {
@@ -37,6 +38,8 @@ export default function App() {
           <Route path="/write" element={<Write/>}/>
           <Route path="/updateAccount" element={<UpdateAccount/>}/>
           <Route path='/management' element={<Management/>}/>
+
+          <Route path='searchPosts' element={<Search/>}/>
         </Routes>
       </BrowserRouter>
       <Footer/>
