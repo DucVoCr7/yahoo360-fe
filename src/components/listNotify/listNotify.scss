@@ -1,0 +1,160 @@
+@use '/src/assets/scss' as *;
+@media (min-width: 901px) {
+    .listNotify {
+        width: 320px;
+        @include font('title');
+        &Title {
+            padding: 10px 15px;
+            font-weight: 600;
+            border-bottom: 4px double $greyBorder;
+            display: flex;
+            justify-content: space-between;
+            &Icon {
+
+            }
+        }
+        &Item {
+            padding: 10px 15px;
+            display: block;
+            border-bottom: 1px solid $greyBorder;
+            &Top {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                &Img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                &Content {
+                    font-size: 15px;
+                    line-height: 1.2;
+                    margin-left: 10px;
+                }
+            }
+            &Bottom {
+                font-size: 13px;
+                color: $contentBriefColor;
+            }
+        }
+        &NoContent {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &Icon {
+                height: 40px;
+                width: 40px;
+                display: block;
+            }
+        }
+    }
+}
+
+@media (min-width: 740px) and (max-width: 900px) {
+    .listNotify {
+        width: 320px;
+        @include font('title');
+        &Title {
+            padding: 10px 15px;
+            font-weight: 600;
+            border-bottom: 4px double $greyBorder;
+            display: flex;
+            justify-content: space-between;
+            &Icon {
+
+            }
+        }
+        &Item {
+            padding: 10px 15px;
+            display: block;
+            border-bottom: 1px solid $greyBorder;
+            &Top {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                &Img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                &Content {
+                    font-size: 15px;
+                    line-height: 1.2;
+                    margin-left: 10px;
+                }
+            }
+            &Bottom {
+                font-size: 13px;
+                color: $contentBriefColor;
+            }
+        }
+        &NoContent {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &Icon {
+                height: 40px;
+                width: 40px;
+                display: block;
+            }
+        }
+    }
+}
+@media (max-width: 739px) {
+    .listNotify {
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - $heightTopbar);
+        @include font('title');
+        &Title {
+            padding: 10px 15px;
+            font-weight: 600;
+            border-bottom: 4px double $greyBorder;
+            display: flex;
+            justify-content: space-between;
+            &Icon {
+
+            }
+        }
+        &Item {
+            padding: 10px 15px;
+            display: block;
+            border-bottom: 1px solid $greyBorder;
+            &Top {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                &Img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                &Content {
+                    font-size: 15px;
+                    line-height: 1.2;
+                    margin-left: 10px;
+                }
+            }
+            &Bottom {
+                font-size: 13px;
+                color: $contentBriefColor;
+            }
+        }
+        &NoContent {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &Icon {
+                height: 40px;
+                width: 40px;
+                display: block;
+            }
+        }
+    }
+}

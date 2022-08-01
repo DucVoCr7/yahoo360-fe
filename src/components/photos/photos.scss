@@ -1,9 +1,6 @@
 @use '/src/assets/scss' as *;
 @media (min-width: 901px) {
     .photos {
-        height: 100px;
-        display: flex;
-        flex-direction: column;
         &Title {
             @include font('title');
             font-size: 16px;
@@ -22,7 +19,6 @@
             }
         }
         &Content {
-            flex: 1;
             display: flex;
             overflow: hidden;
             position: relative;
@@ -31,14 +27,14 @@
                     margin-left: 0;
                 }
                 width: 11.1875%;
-                height: 100%;
                 margin-left: 1.5%;
                 border-radius: 3px;
                 cursor: pointer;
                 overflow: hidden;
                 &Img {
                     width: 100%;
-                    height: 100%;
+                    height: 70px;
+                    display: block;
                     object-fit: cover;
                 }
             }
@@ -60,7 +56,7 @@
             }
         }
         &NoContent {
-            flex: 1;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -208,9 +204,6 @@
 
 @media (min-width: 740px) and (max-width: 900px) {
     .photos {
-        height: 90px;
-        display: flex;
-        flex-direction: column;
         &Title {
             @include font('title');
             font-size: 16px;
@@ -229,7 +222,6 @@
             }
         }
         &Content {
-            flex: 1;
             display: flex;
             overflow: hidden;
             position: relative;
@@ -238,14 +230,14 @@
                     margin-left: 0;
                 }
                 width: 15%;
-                height: 100%;
                 margin-left: 2%;
                 border-radius: 3px;
                 cursor: pointer;
                 overflow: hidden;
                 &Img {
                     width: 100%;
-                    height: 100%;
+                    height: 60px;
+                    display: block;
                     object-fit: cover;
                 }
             }
@@ -267,7 +259,7 @@
             }
         }
         &NoContent {
-            flex: 1;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -385,9 +377,6 @@
 }
 @media (max-width: 739px) {
     .photos {
-        height: 120px;
-        display: flex;
-        flex-direction: column;
         &Title {
             @include font('title');
             font-size: 16px;
@@ -406,7 +395,6 @@
             }
         }
         &Content {
-            flex: 1;
             display: flex;
             overflow: hidden;
             position: relative;
@@ -415,14 +403,14 @@
                     margin-left: 0;
                 }
                 width: 23.875%;
-                height: 100%;
                 margin-left: 1.5%;
                 border-radius: 3px;
                 cursor: pointer;
                 overflow: hidden;
                 &Img {
                     width: 100%;
-                    height: 100%;
+                    height: 60px;
+                    display: block;
                     object-fit: cover;
                 }
             }
@@ -444,7 +432,7 @@
             }
         }
         &NoContent {
-            flex: 1;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;

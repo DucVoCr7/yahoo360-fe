@@ -63,49 +63,22 @@
                     height: 15px;
                     width: 15px;
                     font-size: 10px;
-                    font-weight: 700;
+                    
                     color: $whiteColor;
-                    font-weight: 500;
+
                     background-color: $errorColor;
                     border-radius: 50%;
                 }
                 .topbarNotifyList {
-                    &.active {
-                        display: block;
-                        @include slideLeft;
-                    }
-                    display: none;
+                    @include slideLeft;
                     position: absolute;
                     top: 100%;
                     right: $sizeAlignPagePC;
                     box-shadow: $shadowBottom;
-                    
-                    max-height: calc(($heightChildTopbar + 10px) * 4);
+                    max-height: 300px;
                     overflow-y: auto;
-                    border-bottom-left-radius: 4px;
-                    border-bottom-right-radius: 4px;
-                    .topbarNotifyItem {
-                        &:last-child {
-                            border: none;
-                        }
-                        display: flex;
-                        align-items: center;
-                        height: calc($heightChildTopbar + 10px);
-                        padding: 0 20px;
-                        border-bottom: 1px solid $disableColor;
-                        &:hover {
-                            background-color: $mainColor;
-                        }
-                        .topbarNotifyImg {
-                            height: 30px;
-                            width: 30px;
-                            border-radius: 50%;
-                            margin-right: 10px;
-                        }
-                        .topbarNotifyContent {
-                            font-size: 17px;
-                        }
-                    }
+                    border-bottom-left-radius: 3px;
+                    border-bottom-right-radius: 3px;
                 }
                 // Image
                 .topbarImg {
@@ -130,15 +103,15 @@
                     top: 100%;
                     right: $sizeAlignPagePC;
                     box-shadow: $shadowBottom;
-                    border-bottom-left-radius: 4px;
-                    border-bottom-right-radius: 4px;
+                    border-bottom-left-radius: 3px;
+                    border-bottom-right-radius: 3px;
                     overflow: hidden;
                     .topbarSettingItem {
                         &:last-child {
                             border: none;
                         }
-                        padding: 0 20px;
-                        height: $heightChildTopbar;
+                        padding: 0 15px;
+                        height: $heightTopbar;
                         display: flex;
                         align-items: center;
                         font-size: 17px;
@@ -222,49 +195,22 @@
                     height: 15px;
                     width: 15px;
                     font-size: 10px;
-                    font-weight: 700;
+                    
                     color: $whiteColor;
-                    font-weight: 500;
+
                     background-color: $errorColor;
                     border-radius: 50%;
                 }
                 .topbarNotifyList {
-                    &.active {
-                        display: block;
-                        @include slideLeft;
-                    }
-                    display: none;
+                    @include slideLeft;
                     position: absolute;
                     top: 100%;
                     right: $sizeAlignPageTM; //
                     box-shadow: $shadowBottom;
-                    
-                    max-height: calc(($heightChildTopbar + 10px) * 4);
+                    max-height: 300px;
                     overflow-y: auto;
-                    border-bottom-left-radius: 4px;
-                    border-bottom-right-radius: 4px;
-                    .topbarNotifyItem {
-                        &:last-child {
-                            border: none;
-                        }
-                        display: flex;
-                        align-items: center;
-                        height: calc($heightChildTopbar + 10px);
-                        padding: 0 20px;
-                        border-bottom: 1px solid $disableColor;
-                        &:hover {
-                            background-color: $mainColor;
-                        }
-                        .topbarNotifyImg {
-                            height: 30px;
-                            width: 30px;
-                            border-radius: 50%;
-                            margin-right: 10px;
-                        }
-                        .topbarNotifyContent {
-                            font-size: 17px;
-                        }
-                    }
+                    border-bottom-left-radius: 3px;
+                    border-bottom-right-radius: 3px;
                 }
                 // Image
                 .topbarImg {
@@ -289,15 +235,15 @@
                     top: 100%;
                     right: $sizeAlignPageTM; //
                     box-shadow: $shadowBottom;
-                    border-bottom-left-radius: 4px;
-                    border-bottom-right-radius: 4px;
+                    border-bottom-left-radius: 3px;
+                    border-bottom-right-radius: 3px;
                     overflow: hidden;
                     .topbarSettingItem {
                         &:last-child {
                             border: none;
                         }
                         padding: 0 15px; //
-                        height: $heightChildTopbar;
+                        height: $heightTopbar;
                         display: flex;
                         align-items: center;
                         font-size: 17px;
@@ -347,6 +293,9 @@
                 cursor: pointer;
                 // Notify
                 .topbarNotifyIcon {
+                    &.active {
+                        color: $mainColor;
+                    }
                 }
                 .topbarNotifyNumber {
                     position: absolute;
@@ -357,12 +306,17 @@
                     justify-content: center;
                     height: 15px;
                     width: 15px;
-                    font-size: 10px;
-                    font-weight: 700;
+                    font-size: 10px;                    
                     color: $whiteColor;
-                    font-weight: 500;
                     background-color: $errorColor;
                     border-radius: 50%;
+                }
+                .topbarNotifyList {
+                    @include slideLeft;
+                    position: absolute;
+                    width: 100%;
+                    top: 100%;
+                    right: 0;
                 }  
             }
             .topbarMenu {

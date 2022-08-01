@@ -100,7 +100,7 @@
         &Title {
             @include font('title');
             width: calc(100% - $sizeAlignPageTM*2);
-            font-size: 30px;
+            font-size: 25px;
 
             text-transform: uppercase;
             font-weight: 600;
@@ -115,9 +115,7 @@
             margin-bottom: $sizeAlignElementPC;
             &Item {
                 &:first-child &Label {
-                    &:hover {
-                        background-color: $clickBtnColor;
-                    }
+                    font-weight: 500;
                     height: 30px;
                     width: unset;
                     justify-content: center;
@@ -201,10 +199,7 @@
             margin-bottom: $sizeAlignElementPC;
             &Item {
                 &:first-child &Label {
-                    &:hover {
-                        background-color: $clickBtnColor;
-                    }
-                    color: black;
+                    font-weight: 500;
                     height: 30px;
                     width: unset;
                     justify-content: center;
@@ -212,7 +207,6 @@
                     padding: 0 10px;
                     border-radius: 10px;
                     cursor: pointer;
-
                     &Info {
                         font-size: 20px;
                         margin-left: 10px;

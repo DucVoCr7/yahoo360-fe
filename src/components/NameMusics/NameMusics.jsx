@@ -59,12 +59,13 @@ function NameMusics({ name, musics, setMusics, isHomePage = false }) {
           console.log(response.data)
           setThumbnailURL(response.data.thumbnail_url)
           setTitleMusic(response.data.title)
+          setPlaying(false)
         } catch (error) {
           console.log(error)
         }
       })()
     }
-  }, [musics.length])
+  }, [musics])
 
   return (
     <div className="nameMusics">

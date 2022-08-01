@@ -1,20 +1,28 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import avatar from '../../assets/image/avatar.jpg'
 import { logout } from '../../redux/userSlice'
+import { useReduxUserFriendRequestReceiveds } from '../../utils/reduxMethods'
+import ListNotify from '../listNotify/ListNotify'
 import './topbar.scss'
 export default function Topbar() {
 
     const [openNotify, setOpenNotify] = useState(false)
+    const [openNotifyM, setOpenNotifyM] = useState(false)
     const [openSetting, setOpenSetting] = useState(false)
     const [openTopbarMenu, setOpenTopbarMenu] = useState(false)
-    const refNotify = useRef()
+    const refNotifyList = useRef()
+    const refNotifyIcon = useRef()
+    const refNotifyNumber = useRef() 
+    const refNotifyListM = useRef()
+    const refNotifyIconM = useRef()
+    const refNotifyNumberM = useRef() 
     const refSetting = useRef()
     const refTopbarMenu = useRef()
     const refTopbarMenuIcon = useRef()
-    const navigate = useNavigate()
+    const friendRequestReceiveds = useReduxUserFriendRequestReceiveds()
     const {userInfo} = useSelector(state => state.user)
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     
     const handleLogout = async (event) => {
@@ -43,8 +51,21 @@ export default function Topbar() {
     // Click outSide close ref
     useEffect(() => {
         const handleClickOutSideNotify = (event) => {
-            if (refNotify.current && !refNotify.current.contains(event.target)) {
+            if (refNotifyList.current && 
+                !refNotifyList.current.contains(event.target) && 
+                !refNotifyIcon.current.contains(event.target) &&
+                !refNotifyNumber.current.contains(event.target)
+                ) {
                 setOpenNotify(false)
+            }
+        }
+        const handleClickOutSideNotifyM = (event) => {
+            if (refNotifyListM.current && 
+                !refNotifyListM.current.contains(event.target) && 
+                !refNotifyIconM.current.contains(event.target) &&
+                !refNotifyNumberM.current.contains(event.target)
+                ) {
+                setOpenNotifyM(false)
             }
         }
         const handleClickOutSideSetting = (event) => {
@@ -52,18 +73,22 @@ export default function Topbar() {
                 setOpenSetting(false)
             }
         }
-        const handleClickOutSideTopbarMenu = (event) => {
+        const handleScrollClickOutSideTopbarMenu = (event) => {
             if (refTopbarMenu.current && !refTopbarMenu.current.contains(event.target) && !refTopbarMenuIcon.current.contains(event.target)) {
                 setOpenTopbarMenu(false)
             }
         }
         window.addEventListener('click', handleClickOutSideNotify)
+        window.addEventListener('click', handleClickOutSideNotifyM)
         window.addEventListener('click', handleClickOutSideSetting)
-        window.addEventListener('click', handleClickOutSideTopbarMenu)
+        window.addEventListener('click', handleScrollClickOutSideTopbarMenu)
+        window.addEventListener('scroll', handleScrollClickOutSideTopbarMenu)
         return () => {
             window.removeEventListener('click', handleClickOutSideNotify)
+            window.removeEventListener('click', handleClickOutSideNotifyM)
             window.removeEventListener('click', handleClickOutSideSetting)
-            window.removeEventListener('click', handleClickOutSideTopbarMenu)
+            window.removeEventListener('click', handleScrollClickOutSideTopbarMenu)
+            window.removeEventListener('scroll', handleScrollClickOutSideTopbarMenu)
         }
     }, [])
 
@@ -85,60 +110,55 @@ export default function Topbar() {
                     />
                     <i className='topbarSearchIcon bi bi-search'></i>
                 </div>
-                {userInfo &&
-                    <div className='topbarItem' onClick={() => setOpenNotify(!openNotify)} ref={refNotify}>
-                        <i className={openNotify ? 'topbarNotifyIcon bi bi-bell-fill active' : 'topbarNotifyIcon bi bi-bell'} ></i>
-                        <span className={openNotify ? 'topbarNotifyNumber active' : "topbarNotifyNumber"} >1</span>
-                        <div className={openNotify ? 'topbarNotifyList active' : 'topbarNotifyList'}>
-                            <Link className='topbarNotifyItem' to='/notify'>
-                                <img src={avatar} className="topbarNotifyImg" alt='avatar' />
-                                <span className="topbarNotifyContent">
-                                    Hello vừa gửi yêu cầu kết bạn.
+                {userInfo ? 
+                    <>
+                        <div className='topbarItem'>
+                            <i 
+                                className={openNotify ? 
+                                    'topbarNotifyIcon bi bi-bell-fill active' 
+                                    : 
+                                    'topbarNotifyIcon bi bi-bell'}
+                                ref={refNotifyIcon}
+                                onClick={() => setOpenNotify(!openNotify)}
+                            />
+                            {friendRequestReceiveds?.length > 0 &&
+                                <span 
+                                    className={openNotify ? 'topbarNotifyNumber active' : "topbarNotifyNumber"}
+                                    onClick={() => setOpenNotify(!openNotify)}
+                                >
+                                    {friendRequestReceiveds.length}
                                 </span>
-                            </Link>
-                            <Link className='topbarNotifyItem' to='/notify'>
-                                <img src={avatar} className="topbarNotifyImg" alt='avatar' />
-                                <span className="topbarNotifyContent">
-                                    Hello thích bài viết của bạn.
-                                </span>
-                            </Link>
-                            <Link className='topbarNotifyItem' to='/notify'>
-                                <img src={avatar} className="topbarNotifyImg" alt='avatar' />
-                                <span className="topbarNotifyContent">
-                                    Hello thích bài viết của bạn.
-                                </span>
-                            </Link>
-                            <Link className='topbarNotifyItem' to='/notify'>
-                                <img src={avatar} className="topbarNotifyImg" alt='avatar' />
-                                <span className="topbarNotifyContent">
-                                    Hello thích bài viết của bạn.
-                                </span>
-                            </Link>
-                            <Link className='topbarNotifyItem' to='/notify'>
-                                <img src={avatar} className="topbarNotifyImg" alt='avatar' />
-                                <span className="topbarNotifyContent">
-                                    Hello thích bài viết của bạn.
-                                </span>
-                            </Link>
+                            }
+                            {openNotify &&
+                                <div className='topbarNotifyList' ref={refNotifyList}>
+                                    <ListNotify data={friendRequestReceiveds} setOpenNotify={setOpenNotify}/>
+                                </div>
+                            }
                         </div>
-                    </div>
-                }
-                {userInfo &&
-                    <Link className='topbarItem' to='/home'>
-                        <img className='topbarImg' src={userInfo.image} alt='avatar' />
-                    </Link>}
-                {userInfo?.role === 'R0' && <Link to='/management' className='topbarItem'>MANAGEMENT</Link>}
-                {userInfo &&
-                    <div className='topbarItem' onClick={() => setOpenSetting(!openSetting)} ref={refSetting}>
-                        <i className={openSetting ? 'topbarSettingIcon bi bi-gear-fill active' : 'topbarSettingIcon bi bi-gear'} ></i>
-                        <div className={openSetting ? 'topbarSettingList active' : 'topbarSettingList'}>
-                            <Link className='topbarSettingItem' to='/updateAccount'>Update Account</Link>
-                            <Link className='topbarSettingItem' to='/' onClick={handleLogout}>Logout</Link>
+                        <Link className='topbarItem' to='/home'>
+                            <img className='topbarImg' src={userInfo.image} alt='avatar'/>
+                        </Link>
+                        {userInfo.role === 'R0' && 
+                            <Link to='/management' className='topbarItem'>MANAGEMENT</Link>
+                        }
+                        <div className='topbarItem' onClick={() => setOpenSetting(!openSetting)} ref={refSetting}>
+                            <i className={openSetting ? 
+                                'topbarSettingIcon bi bi-gear-fill active' 
+                                : 
+                                'topbarSettingIcon bi bi-gear'
+                            }/>
+                            <div className={openSetting ? 'topbarSettingList active' : 'topbarSettingList'}>
+                                <Link className='topbarSettingItem' to='/updateAccount'>Update Account</Link>
+                                <Link className='topbarSettingItem' to='/' onClick={handleLogout}>Logout</Link>
+                            </div>
                         </div>
-                    </div>
+                    </>
+                    :
+                    <>
+                        <Link className='topbarItem' to='/login'>LOGIN</Link>
+                        <Link className='topbarItem' to='/register'>REGISTER</Link>
+                    </>
                 }
-                {!userInfo && <Link className='topbarItem' to='/login'>LOGIN</Link>}
-                {!userInfo && <Link className='topbarItem' to='/register'>REGISTER</Link>}
             </div>
 
 
@@ -158,16 +178,22 @@ export default function Topbar() {
                         />
                         <i className='topbarMenuSearchIcon bi bi-search'></i>
                     </div>
-                    {userInfo &&
-                        <Link className='topbarMenuItem' to='/home' onClick={()=> setOpenTopbarMenu(false)}>
-                            <img className='topbarMenuImg' src={userInfo.image} alt='avatar' />
-                        </Link>
-                    }
                     {userInfo ?
-                        <div className="topbarMenuItem" onClick={()=> setOpenTopbarMenu(false)}>
-                            <Link className='topbarMenuItemChild' to='/updateAccount'>UPDATE ACCOUNT</Link>
-                            <Link className='topbarMenuItemChild' to='/' onClick={handleLogout}>LOGOUT</Link>
-                        </div>
+                        <>  
+                            <Link className='topbarMenuItem' to='/home' onClick={()=> setOpenTopbarMenu(false)}>
+                                <img className='topbarMenuImg' src={userInfo.image} alt='avatar' />
+                            </Link>
+                            <div className="topbarMenuItem" onClick={()=> setOpenTopbarMenu(false)}>
+                                <Link className='topbarMenuItemChild' to='/updateAccount'>UPDATE ACCOUNT</Link>
+                                <Link className='topbarMenuItemChild' to='/' onClick={handleLogout}>LOGOUT</Link>
+                            </div>
+                            {userInfo.role === 'R0' && 
+                                <Link to='/management' className='topbarMenuItem' onClick={()=> setOpenTopbarMenu(false)}>
+                                    <i className="topbarMenuItemChild bi bi-clipboard-data-fill"></i>
+                                    MANAGEMENT
+                                </Link>
+                            }
+                        </>
                         :
                         <div className="topbarMenuItem" onClick={()=> setOpenTopbarMenu(false)}>
                             <Link className='topbarMenuItemChild' to='/login'>LOGIN</Link>
@@ -178,11 +204,6 @@ export default function Topbar() {
                         <i className="topbarMenuItemChild bi bi-pen-fill"></i>
                         WRITE YOUR POST!
                     </Link>
-                    {userInfo?.role === 'R0' && 
-                    <Link to='/management' className='topbarMenuItem' onClick={()=> setOpenTopbarMenu(false)}>
-                        <i className="topbarMenuItemChild bi bi-clipboard-data-fill"></i>
-                        MANAGEMENT
-                    </Link>}
                 </div>
             </div>
             <Link to='/' className="topbarGroupM">
@@ -190,10 +211,31 @@ export default function Topbar() {
             </Link>
             <div className="topbarGroupM">
                 {userInfo ?
-                    <Link to='' className='topbarItem'>
-                        <i className="topbarNotifyIcon bi bi-bell-fill"></i>
-                        <span className="topbarNotifyNumber">1</span>
-                    </Link>
+                    <div className='topbarItem'>
+                        <i className={openNotifyM ? 
+                            'topbarNotifyIcon bi bi-bell-fill active' 
+                            : 
+                            'topbarNotifyIcon bi bi-bell'}
+                            onClick={() => setOpenNotifyM(!openNotifyM)}
+                            ref={refNotifyIconM}
+                        />
+                        {friendRequestReceiveds?.length > 0 &&
+                            <span className={openNotifyM ? 
+                                'topbarNotifyNumber active' 
+                                : 
+                                "topbarNotifyNumber"}
+                                onClick={() => setOpenNotifyM(!openNotifyM)}
+                                ref={refNotifyNumberM}
+                            >
+                                {friendRequestReceiveds.length}
+                            </span>
+                        }
+                        {openNotifyM &&
+                            <div className='topbarNotifyList'ref={refNotifyListM}>
+                                <ListNotify data={friendRequestReceiveds} setOpenNotify={setOpenNotifyM}/>
+                            </div>
+                        }
+                    </div>
                     :
                     <Link className='topbarItem' to='/login'>
                         <i className="topbarIcon bi bi-person-fill"></i>

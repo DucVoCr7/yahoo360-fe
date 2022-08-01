@@ -1,9 +1,6 @@
 @use '/src/assets/scss' as *;
 @media (min-width: 901px) {
     .friends {
-        height: 140px;
-        display: flex;
-        flex-direction: column;
         &Title {
             @include font('title');
             font-size: 16px;
@@ -17,7 +14,6 @@
             }
         }
         &Content {
-            flex: 1;
             display: flex;
             overflow: hidden;
             position: relative;
@@ -27,18 +23,16 @@
                 }
                 width: 11.1875%;
                 margin-left: 1.5%;
-                height: 100%;
                 border-radius: 3px;
                 overflow: hidden;
                 &Img {
                     display: block;
-                    height: 80%;
+                    height: 70px;
                     width: 100%;
                     border-radius: 3px;
                     object-fit: cover;
                 }
                 &Name {
-                    height: 20%;
                     width: 100%;
                     @include font('title');
                     font-size: 14px;
@@ -65,7 +59,7 @@
             }
         }
         &NoContent {
-            flex: 1;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -138,9 +132,6 @@
 
 @media (min-width: 740px) and (max-width: 900px) {
     .friends {
-        height: 110px;
-        display: flex;
-        flex-direction: column;
         &Title {
             @include font('title');
             font-size: 16px;
@@ -164,18 +155,16 @@
                 }
                 width: 15%;
                 margin-left: 2%;
-                height: 100%;
                 border-radius: 3px;
                 overflow: hidden;
                 &Img {
                     display: block;
-                    height: 80%;
+                    height: 60px;
                     width: 100%;
                     border-radius: 3px;
                     object-fit: cover;
                 }
                 &Name {
-                    height: 20%;
                     width: 100%;
                     @include font('title');
                     font-size: 13px;
@@ -202,7 +191,7 @@
             }
         }
         &NoContent {
-            flex: 1;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -274,9 +263,6 @@
 }
 @media (max-width: 739px) {
     .friends {
-        height: 120px;
-        display: flex;
-        flex-direction: column;
         &Title {
             @include font('title');
             font-size: 16px;
@@ -290,7 +276,6 @@
             }
         }
         &Content {
-            flex: 1;
             display: flex;
             overflow: hidden;
             position: relative;
@@ -300,18 +285,16 @@
                 }
                 width: 23.875%;
                 margin-left: 1.5%;
-                height: 100%;
                 border-radius: 3px;
                 overflow: hidden;
                 &Img {
                     display: block;
-                    height: 80%;
+                    height: 60px;
                     width: 100%;
                     border-radius: 3px;
                     object-fit: cover;
                 }
                 &Name {
-                    height: 20%;
                     width: 100%;
                     @include font('title');
                     font-size: 13px;
@@ -338,7 +321,7 @@
             }
         }
         &NoContent {
-            flex: 1;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;

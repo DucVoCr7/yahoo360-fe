@@ -55,7 +55,7 @@
         &Title {
             @include font('title');
             width: 100%;
-            font-size: 30px;
+            font-size: 25px;
             text-transform: uppercase;
             font-weight: 600;
             @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double)

@@ -19,153 +19,41 @@
             }
         }
         width: 100%;
-        padding: $sizeAlignElementPC $sizeAlignPagePC;
         min-height: calc(100vh - $heightTopbar - $heightFooter);
+        padding: $sizeAlignPagePC;
         display: flex;
         flex-direction: column;
         &Title {
             @include font('title');
             font-size: 30px;
             font-weight: 600;
-            padding-bottom: $sizeAlignElementPC;
-            border-bottom: 4px double $blackColor;
-            margin-bottom: $sizeAlignElementPC;
+            @include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double)
         }
         &Top {
-            display: flex;
-            width: 100%;
             @include paddingMarginBorder('PC', 'bottom');
+            > :nth-child(n) {
+                @include paddingMarginBorder('PC', 'bottom');
+            }
+            > :last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                border: none;
+            }
             &Item {
-                &:first-child {
+                display: flex;
+                > :nth-child(n) {
+                    flex: 1;
                     @include paddingMarginBorder('PC', 'right');
                 }
-                flex: 1;
-                height: 200px;
-                display: flex;
-                flex-direction: column;
-                &Title {
-                    @include font('title');
-                    font-weight: 600;
-                    margin-bottom: $sizeAlignElementPC;
-                    display: flex;
-                    align-items: center;
-                    &Content {
-                        flex: 1;
-                    }
-                    &Search {
-                        border-bottom: 1px solid $blackBorder;
-                        padding: 2px 0;
-                        &:focus-within {
-                            border-color: $mainColor;
-                        }
-                        &:focus-within &Icon {
-                            color: $mainColor;
-                        }
-                        &Icon {
-                            padding-right: 5px;
-                        }
-                        &Input {
-    
-                        }
-                    }
-                    &View {
-                        margin: 0 $sizeAlignElementPC;
-                        font-size: 20px;
-                        border: 1px solid $mainColor;
-                        overflow: hidden;
-                        border-radius: 5px;
-                        &Icon {
-                            &.active {
-                                background-color: $mainColor;
-                            }
-                            display: inline-block;
-                            padding: 3px;
-                        }
-                    }
-                    &Export {
-                        
-                    }
-                }
-                &Content {
-                    flex: 1;
-                    border-radius: 10px;
-                    background-image: $backGroundEmpty;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                > :last-child {
+                    padding-right: 0;
+                    margin-right: 0;
+                    border: none;
                 }
             }
         }
         &Bottom {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            &Title {
-                @include font('title');
-                font-weight: 600;
-                margin-bottom: $sizeAlignElementPC;
-                display: flex;
-                align-items: center;
-                &Content {
-                    flex: 1;
-                }
-                &Search {
-                    border-bottom: 1px solid $blackBorder;
-                    padding: 2px 0;
-                    &:focus-within {
-                        border-color: $mainColor;
-                    }
-                    &:focus-within &Icon {
-                        color: $mainColor;
-                    }
-                    &Icon {
-                        padding-right: 5px;
-                    }
-                    &Input {
-    
-                    }
-                }
-            }
-            &Content {
-                flex: 1;
-                .managementTable {
-                    width: 100%;
-                    &Row {
-                        &:hover td {
-                            background-color: $disableColor;
-                        }
-                        .managementTableHeader {
-                            @include font('title');
-                            font-weight: 600;
-                            padding: 10px 0;
-                            background-color: $blueBtnColor;
-                        }
-                        .managementTableData {
-                            @include font('content');
-                            font-size: 16px;
-                            text-align: center;
-                            background-color: $greyBtnColor;
-                            padding: 5px;
-                            &Button {
-                                &:nth-child(1) {
-                                    background-color: rgb(47, 163, 47);
-                                }
-                                &:nth-child(2) {
-                                    background-color: rgb(224, 151, 42);
-                                }
-                                &:nth-child(3) {
-                                    background-color: rgb(190, 74, 74);
-                                }
-                                &:nth-child(4) {
-                                    background-color: rgb(255, 0, 0);
-                                }
-                                display: inline-block;
-                                margin: 0 10px;
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 }
@@ -189,153 +77,42 @@
             }
         }
         width: 100%;
-        padding: $sizeAlignElementTM $sizeAlignPageTM;
         min-height: calc(100vh - $heightTopbar - $heightFooter);
+        padding: $sizeAlignPageTM;
         display: flex;
         flex-direction: column;
         &Title {
             @include font('title');
-            font-size: 30px;
+            font-size: 25px;
             font-weight: 600;
-            padding-bottom: $sizeAlignElementTM;
-            border-bottom: 4px double $blackColor;
-            margin-bottom: $sizeAlignElementTM;
+            @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double)
         }
         &Top {
-            display: flex;
-            width: 100%;
-            @include paddingMarginBorder('PC', 'bottom');
+            @include paddingMarginBorder('TM', 'bottom');
+            > :nth-child(n) {
+                @include paddingMarginBorder('TM', 'bottom');
+            }
+            > :last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                border: none;
+            }
             &Item {
-                &:first-child {
-                    @include paddingMarginBorder('PC', 'right');
-                }
-                flex: 1;
-                height: 200px;
                 display: flex;
                 flex-direction: column;
-                &Title {
-                    @include font('title');
-                    font-weight: 600;
-                    margin-bottom: $sizeAlignElementTM;
-                    display: flex;
-                    align-items: center;
-                    &Content {
-                        flex: 1;
-                    }
-                    &Search {
-                        border-bottom: 1px solid $blackBorder;
-                        padding: 2px 0;
-                        &:focus-within {
-                            border-color: $mainColor;
-                        }
-                        &:focus-within &Icon {
-                            color: $mainColor;
-                        }
-                        &Icon {
-                            padding-right: 5px;
-                        }
-                        &Input {
-    
-                        }
-                    }
-                    &View {
-                        margin: 0 $sizeAlignElementTM;
-                        font-size: 20px;
-                        border: 1px solid $mainColor;
-                        overflow: hidden;
-                        border-radius: 5px;
-                        &Icon {
-                            &.active {
-                                background-color: $mainColor;
-                            }
-                            display: inline-block;
-                            padding: 3px;
-                        }
-                    }
-                    &Export {
-                        
-                    }
-                }
-                &Content {
+                > :nth-child(n) {
                     flex: 1;
-                    border-radius: 10px;
-                    background-image: $backGroundEmpty;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    @include paddingMarginBorder('TM', 'bottom');
+                }
+                > :last-child {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    border: none;
                 }
             }
         }
         &Bottom {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            &Title {
-                @include font('title');
-                font-weight: 600;
-                margin-bottom: $sizeAlignElementTM;
-                display: flex;
-                align-items: center;
-                &Content {
-                    flex: 1;
-                }
-                &Search {
-                    border-bottom: 1px solid $blackBorder;
-                    padding: 2px 0;
-                    &:focus-within {
-                        border-color: $mainColor;
-                    }
-                    &:focus-within &Icon {
-                        color: $mainColor;
-                    }
-                    &Icon {
-                        padding-right: 5px;
-                    }
-                    &Input {
-    
-                    }
-                }
-            }
-            &Content {
-                flex: 1;
-                .managementTable {
-                    width: 100%;
-                    &Row {
-                        &:hover td {
-                            background-color: $disableColor;
-                        }
-                        .managementTableHeader {
-                            @include font('title');
-                            font-weight: 600;
-                            padding: 10px 0;
-                            background-color: $blueBtnColor;
-                        }
-                        .managementTableData {
-                            @include font('content');
-                            font-size: 16px;
-                            text-align: center;
-                            background-color: $greyBtnColor;
-                            padding: 5px;
-                            &Button {
-                                &:nth-child(1) {
-                                    background-color: rgb(47, 163, 47);
-                                }
-                                &:nth-child(2) {
-                                    background-color: rgb(224, 151, 42);
-                                }
-                                &:nth-child(3) {
-                                    background-color: rgb(190, 74, 74);
-                                }
-                                &:nth-child(4) {
-                                    background-color: rgb(255, 0, 0);
-                                }
-                                display: inline-block;
-                                margin: 0 10px;
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 }
@@ -359,153 +136,42 @@
             }
         }
         width: 100%;
-        padding: $sizeAlignElementTM $sizeAlignPageTM;
-        min-height: calc(100vh - $heightTopbar - $heightFooter);
+        min-height: calc(100vh - $heightTopbar - $heightFooterM);
+        padding: $sizeAlignPageTM;
         display: flex;
         flex-direction: column;
         &Title {
             @include font('title');
-            font-size: 30px;
+            font-size: 20px;
             font-weight: 600;
-            padding-bottom: $sizeAlignElementTM;
-            border-bottom: 4px double $blackColor;
-            margin-bottom: $sizeAlignElementTM;
+            @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double)
         }
         &Top {
-            display: flex;
-            width: 100%;
-            @include paddingMarginBorder('PC', 'bottom');
+            @include paddingMarginBorder('TM', 'bottom');
+            > :nth-child(n) {
+                @include paddingMarginBorder('TM', 'bottom');
+            }
+            > :last-child {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                border: none;
+            }
             &Item {
-                &:first-child {
-                    @include paddingMarginBorder('PC', 'right');
-                }
-                flex: 1;
-                height: 200px;
                 display: flex;
                 flex-direction: column;
-                &Title {
-                    @include font('title');
-                    font-weight: 600;
-                    margin-bottom: $sizeAlignElementTM;
-                    display: flex;
-                    align-items: center;
-                    &Content {
-                        flex: 1;
-                    }
-                    &Search {
-                        border-bottom: 1px solid $blackBorder;
-                        padding: 2px 0;
-                        &:focus-within {
-                            border-color: $mainColor;
-                        }
-                        &:focus-within &Icon {
-                            color: $mainColor;
-                        }
-                        &Icon {
-                            padding-right: 5px;
-                        }
-                        &Input {
-    
-                        }
-                    }
-                    &View {
-                        margin: 0 $sizeAlignElementTM;
-                        font-size: 20px;
-                        border: 1px solid $mainColor;
-                        overflow: hidden;
-                        border-radius: 5px;
-                        &Icon {
-                            &.active {
-                                background-color: $mainColor;
-                            }
-                            display: inline-block;
-                            padding: 3px;
-                        }
-                    }
-                    &Export {
-                        
-                    }
-                }
-                &Content {
+                > :nth-child(n) {
                     flex: 1;
-                    border-radius: 10px;
-                    background-image: $backGroundEmpty;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    @include paddingMarginBorder('TM', 'bottom');
+                }
+                > :last-child {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    border: none;
                 }
             }
         }
         &Bottom {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            &Title {
-                @include font('title');
-                font-weight: 600;
-                margin-bottom: $sizeAlignElementTM;
-                display: flex;
-                align-items: center;
-                &Content {
-                    flex: 1;
-                }
-                &Search {
-                    border-bottom: 1px solid $blackBorder;
-                    padding: 2px 0;
-                    &:focus-within {
-                        border-color: $mainColor;
-                    }
-                    &:focus-within &Icon {
-                        color: $mainColor;
-                    }
-                    &Icon {
-                        padding-right: 5px;
-                    }
-                    &Input {
-    
-                    }
-                }
-            }
-            &Content {
-                flex: 1;
-                .managementTable {
-                    width: 100%;
-                    &Row {
-                        &:hover td {
-                            background-color: $disableColor;
-                        }
-                        .managementTableHeader {
-                            @include font('title');
-                            font-weight: 600;
-                            padding: 10px 0;
-                            background-color: $blueBtnColor;
-                        }
-                        .managementTableData {
-                            @include font('content');
-                            font-size: 16px;
-                            text-align: center;
-                            background-color: $greyBtnColor;
-                            padding: 5px;
-                            &Button {
-                                &:nth-child(1) {
-                                    background-color: rgb(47, 163, 47);
-                                }
-                                &:nth-child(2) {
-                                    background-color: rgb(224, 151, 42);
-                                }
-                                &:nth-child(3) {
-                                    background-color: rgb(190, 74, 74);
-                                }
-                                &:nth-child(4) {
-                                    background-color: rgb(255, 0, 0);
-                                }
-                                display: inline-block;
-                                margin: 0 10px;
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 }

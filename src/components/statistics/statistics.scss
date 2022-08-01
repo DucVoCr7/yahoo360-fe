@@ -1,0 +1,192 @@
+@use '/src/assets/scss' as *;
+@media (min-width: 901px) {
+    .statistics {  
+        &Top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: $sizeAlignElementPC;
+            &Title {
+                @include font('title');
+                font-weight: 600;
+            }
+            &Content {
+                display: flex;
+                align-items: center;
+                &Search {
+                    &:focus-within {
+                        border-color: $mainColor;
+                    }
+                    &:focus-within &Icon {
+                        color: $mainColor;
+                    }
+                    @include font('title');
+                    border-bottom: 1px solid $blackBorder;
+                    padding-bottom: 2px;
+                    &Icon {
+                        margin-right: 10px;
+                    }
+                    &Input {
+                        width: 120px;
+                    }
+                }
+                &Action {
+                    display: flex;
+                    align-items: center;
+                    &View {
+                        margin: 0 $sizeAlignElementPC;
+                        &Icon {
+                            &.active {
+                                background-color: $blueBtnColor;
+                            }
+                            background-color: $greyBtnColor;
+                            font-size: 17px;
+                            padding: 3px;
+                            border-radius: 3px;
+                        }
+                    }
+                    &Export {
+
+                    }
+                }
+            }
+        }
+        &Bottom {
+            min-height: 100px;
+            border-radius: 10px;
+            background-image: $backGroundEmpty;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+
+@media (min-width: 740px) and (max-width: 900px) {
+    .statistics {  
+        &Top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: $sizeAlignElementTM;
+            &Title {
+                @include font('title');
+                font-weight: 600;
+            }
+            &Content {
+                display: flex;
+                align-items: center;
+                &Search {
+                    &:focus-within {
+                        border-color: $mainColor;
+                    }
+                    &:focus-within &Icon {
+                        color: $mainColor;
+                    }
+                    @include font('title');
+                    border-bottom: 1px solid $blackBorder;
+                    padding-bottom: 2px;
+                    &Icon {
+                        margin-right: 10px;
+                    }
+                    &Input {
+                        width: 120px;
+                    }
+                }
+                &Action {
+                    display: flex;
+                    align-items: center;
+                    &View {
+                        margin: 0 $sizeAlignElementPC;
+                        &Icon {
+                            &.active {
+                                background-color: $blueBtnColor;
+                            }
+                            background-color: $greyBtnColor;
+                            font-size: 17px;
+                            padding: 3px;
+                            border-radius: 3px;
+                        }
+                    }
+                    &Export {
+
+                    }
+                }
+            }
+        }
+        &Bottom {
+            min-height: 100px;
+            border-radius: 10px;
+            background-image: $backGroundEmpty;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+
+@media (max-width: 739px) {
+    .statistics {  
+        &Top {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: $sizeAlignElementTM;
+            &Title {
+                @include font('title');
+                margin-bottom: $sizeAlignElementTM;
+                font-weight: 600;
+            }
+            &Content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                &Search {
+                    &:focus-within {
+                        border-color: $mainColor;
+                    }
+                    &:focus-within &Icon {
+                        color: $mainColor;
+                    }
+                    @include font('title');
+                    border-bottom: 1px solid $blackBorder;
+                    padding-bottom: 2px;
+                    margin-bottom: $sizeAlignElementTM;
+                    &Icon {
+                        margin-right: 10px;
+                    }
+                    &Input {
+
+                    }
+                }
+                &Action {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    &View {
+                        margin-right: $sizeAlignElementPC;
+                        &Icon {
+                            &.active {
+                                background-color: $blueBtnColor;
+                            }
+                            background-color: $greyBtnColor;
+                            font-size: 17px;
+                            padding: 3px;
+                            border-radius: 3px;
+                        }
+                    }
+                    &Export {
+
+                    }
+                }
+            }
+        }
+        &Bottom {
+            min-height: 100px;
+            border-radius: 10px;
+            background-image: $backGroundEmpty;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

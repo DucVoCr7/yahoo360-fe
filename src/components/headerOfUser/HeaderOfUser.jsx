@@ -9,12 +9,28 @@ function HeaderOfUser({
 }) {
 
     const settings = {
-        dots: true,
         infinite: true,
-        slidesToShow: 3,
         slidesToScroll: 1,
+        slidesToShow: 3,
+        dots: true,
         autoplay: true,
-        autoplaySpeed: 10000
+        autoplaySpeed: 10000,
+        responsive: [
+            {
+              breakpoint: 901,
+              settings: {
+                slidesToShow: 2,
+                dots: false
+              }
+            },
+            {
+                breakpoint: 740,
+                settings: {
+                  slidesToShow: 1,
+                  dots: false
+                }
+            }
+          ]
     };
 
     return (

@@ -1,0 +1,222 @@
+@use '/src/assets/scss' as *;
+@media (min-width: 901px) {
+    .listUsers {  
+        &Top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: $sizeAlignElementPC;
+            &Title {
+                @include font('title');
+                font-weight: 600;
+            }
+            &Search {
+                &:focus-within {
+                    border-color: $mainColor;
+                }
+                &:focus-within &Icon {
+                    color: $mainColor;
+                }
+                @include font('title');
+                border-bottom: 1px solid $blackBorder;
+                padding-bottom: 2px;
+                &Icon {
+                    margin-right: 10px;
+                }
+                &Input {
+                    width: 250px;
+                }
+            }
+        }
+        &Bottom {
+            .managementTable {
+                width: 100%;
+                &Row {
+                    &:hover td {
+                        background-color: $disableColor;
+                    }
+                    .managementTableHeader {
+                        @include font('title');
+                        font-size: 16px;
+                        font-weight: 500;
+                        padding: 5px 0;
+                        background-color: $blueBtnColor;
+                    }
+                    .managementTableData {
+                        @include font('content');
+                        font-size: 16px;
+                        text-align: center;
+                        background-color: $greyBtnColor;
+                        padding: 5px;
+                        &Button {
+                            &:nth-child(1) {
+                                background-color: rgb(47, 163, 47);
+                            }
+                            &:nth-child(2) {
+                                background-color: rgb(224, 151, 42);
+                            }
+                            &:nth-child(3) {
+                                background-color: rgb(190, 74, 74);
+                            }
+                            &:nth-child(4) {
+                                background-color: rgb(255, 0, 0);
+                            }
+                            display: inline;
+                            margin: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 740px) and (max-width: 900px) {
+    .listUsers {  
+        &Top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: $sizeAlignElementTM;
+            &Title {
+                @include font('title');
+                font-weight: 600;
+            }
+            &Search {
+                &:focus-within {
+                    border-color: $mainColor;
+                }
+                &:focus-within &Icon {
+                    color: $mainColor;
+                }
+                @include font('title');
+                border-bottom: 1px solid $blackBorder;
+                padding-bottom: 2px;
+                &Icon {
+                    margin-right: 10px;
+                }
+                &Input {
+                    width: 250px;
+                }
+            }
+        }
+        &Bottom {
+            .managementTable {
+                width: 100%;
+                &Row {
+                    &:hover td {
+                        background-color: $disableColor;
+                    }
+                    .managementTableHeader {
+                        @include font('title');
+                        font-weight: 500;
+                        font-size: 16px;
+                        padding: 5px 0;
+                        background-color: $blueBtnColor;
+                    }
+                    .managementTableData {
+                        @include font('content');
+                        font-size: 16px;
+                        text-align: center;
+                        background-color: $greyBtnColor;
+                        padding: 5px;
+                        &Button {
+                            &:nth-child(1) {
+                                background-color: rgb(47, 163, 47);
+                            }
+                            &:nth-child(2) {
+                                background-color: rgb(224, 151, 42);
+                            }
+                            &:nth-child(3) {
+                                background-color: rgb(190, 74, 74);
+                            }
+                            &:nth-child(4) {
+                                background-color: rgb(255, 0, 0);
+                            }
+                            display: inline;
+                            margin: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 739px) {
+    .listUsers {  
+        &Top {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: $sizeAlignElementTM;
+            &Title {
+                @include font('title');
+                font-weight: 600;
+                margin-bottom: $sizeAlignElementTM;
+            }
+            &Search {
+                &:focus-within {
+                    border-color: $mainColor;
+                }
+                &:focus-within &Icon {
+                    color: $mainColor;
+                }
+                @include font('title');
+                border-bottom: 1px solid $blackBorder;
+                padding-bottom: 2px;
+                &Icon {
+                    margin-right: 10px;
+                }
+                &Input {
+
+                }
+            }
+        }
+        &Bottom {
+            .managementTable {
+                width: 100%;
+                &Row {
+                    &:hover td {
+                        background-color: $disableColor;
+                    }
+                    .managementTableHeader {
+                        &:nth-child(3) {
+                            display: none
+                        }
+                        @include font('title');
+                        font-size: 16px;
+                        font-weight: 500;
+                        padding: 5px 0;
+                        background-color: $blueBtnColor;
+                    }
+                    .managementTableData {
+                        &:nth-child(3) {
+                            display: none
+                        }
+                        @include font('content');
+                        font-size: 16px;
+                        text-align: center;
+                        background-color: $greyBtnColor;
+                        padding: 5px;
+                        &Button {
+                            &:nth-child(1) {
+                                background-color: rgb(47, 163, 47);
+                            }
+                            &:nth-child(2) {
+                                background-color: rgb(224, 151, 42);
+                            }
+                            &:nth-child(3) {
+                                background-color: rgb(190, 74, 74);
+                            }
+                            &:nth-child(4) {
+                                background-color: rgb(255, 0, 0);
+                            }
+                            display: inline;
+                            margin: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
