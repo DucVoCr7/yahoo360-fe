@@ -90,7 +90,54 @@
                 @include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double);
                 display: flex;
                 justify-content: space-between;
-                &Close {}
+                &Content {
+                    flex: 1
+                }
+                &Trash {
+                    @include paddingMarginBorder('PC', 'right');
+                    cursor: pointer
+                }
+                &CheckBox {
+                    @include paddingMarginBorder('PC', 'right');
+                    cursor: pointer;
+                    &Input {
+
+                    }
+                    &Label {
+
+                    }
+                }
+                &Close {
+                    cursor: pointer;
+                }
+            }
+            .react-photo-album--photo--wrapper.active {
+                position: relative;
+                &::after {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    background-color: rgb(47, 255, 109);
+                    content: "\2713";
+                    font-size: 15px;
+                    font-weight: 600;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            .react-photo-album--photo {
+                object-fit: cover;
+                transition: transform .135s cubic-bezier(0.0,0.0,0.2,1),opacity linear .15s;
+                &.active {
+                    transform: translateZ(0px) scale3d(0.9, 0.9, 1);
+                    transition: transform .135s cubic-bezier(0.0,0.0,0.2,1),opacity linear .15s;
+                }
             }
             &NoContent {
                 flex: 1;
@@ -134,7 +181,9 @@
 
                 &Number {}
 
-                &Close {}
+                &Close {
+                    cursor: pointer;
+                }
             }
 
             &Content {
@@ -293,7 +342,54 @@
                 @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
                 display: flex;
                 justify-content: space-between;
-                &Close {}
+                &Content {
+                    flex: 1
+                }
+                &Trash {
+                    @include paddingMarginBorder('TM', 'right');
+                    cursor: pointer
+                }
+                &CheckBox {
+                    @include paddingMarginBorder('TM', 'right');
+                    cursor: pointer;
+                    &Input {
+
+                    }
+                    &Label {
+
+                    }
+                }
+                &Close {
+                    cursor: pointer;
+                }
+            }
+            .react-photo-album--photo--wrapper.active {
+                position: relative;
+                &::after {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    background-color: rgb(47, 255, 109);
+                    content: "\2713";
+                    font-size: 15px;
+                    font-weight: 600;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            .react-photo-album--photo {
+                object-fit: cover;
+                transition: transform .135s cubic-bezier(0.0,0.0,0.2,1),opacity linear .15s;
+                &.active {
+                    transform: translateZ(0px) scale3d(0.9, 0.9, 1);
+                    transition: transform .135s cubic-bezier(0.0,0.0,0.2,1),opacity linear .15s;
+                }
             }
             &NoContent {
                 flex: 1;
@@ -466,7 +562,57 @@
                 @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
                 display: flex;
                 justify-content: space-between;
-                &Close {}
+                align-items: center;
+                &Content {
+                    flex: 1;
+                    line-height: 1.3;
+                    
+                }
+                &Trash {
+                    @include paddingMarginBorder('TM', 'right');
+                    cursor: pointer
+                }
+                &CheckBox {
+                    @include paddingMarginBorder('TM', 'right');
+                    cursor: pointer;
+                    &Input {
+
+                    }
+                    &Label {
+
+                    }
+                }
+                &Close {
+                    cursor: pointer;
+                }
+            }
+            .react-photo-album--photo--wrapper.active {
+                position: relative;
+                &::after {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    background-color: rgb(47, 255, 109);
+                    content: "\2713";
+                    font-size: 15px;
+                    font-weight: 600;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            .react-photo-album--photo {
+                object-fit: cover;
+                transition: transform .135s cubic-bezier(0.0,0.0,0.2,1),opacity linear .15s;
+                &.active {
+                    transform: translateZ(0px) scale3d(0.9, 0.9, 1);
+                    transition: transform .135s cubic-bezier(0.0,0.0,0.2,1),opacity linear .15s;
+                }
             }
             &NoContent {
                 flex: 1;

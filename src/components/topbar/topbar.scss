@@ -70,7 +70,11 @@
                     border-radius: 50%;
                 }
                 .topbarNotifyList {
-                    @include slideLeft;
+                    &.active {
+                        display: block;
+                        @include slideLeft;
+                    }
+                    display: none;
                     position: absolute;
                     top: 100%;
                     right: $sizeAlignPagePC;
@@ -202,7 +206,11 @@
                     border-radius: 50%;
                 }
                 .topbarNotifyList {
-                    @include slideLeft;
+                    &.active {
+                        display: block;
+                        @include slideLeft;
+                    }
+                    display: none;
                     position: absolute;
                     top: 100%;
                     right: $sizeAlignPageTM; //
@@ -312,7 +320,11 @@
                     border-radius: 50%;
                 }
                 .topbarNotifyList {
-                    @include slideLeft;
+                    &.active {
+                        display: block;
+                        @include slideLeft;
+                    }
+                    display: none;
                     position: absolute;
                     width: 100%;
                     top: 100%;

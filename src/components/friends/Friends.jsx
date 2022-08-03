@@ -44,7 +44,7 @@ function Friends({
         <div className="friendsList">
           <div className="friendsListTitle">
             {name}'s friends
-            <i className="friendsListTitleClose bi bi-box-arrow-right" onClick={() => setOpenFriends(false)}></i>
+            <i className="friendsListTitleClose bi bi-x-lg" onClick={() => setOpenFriends(false)}></i>
           </div>
           <div className="friendsListContent">
             {friends.map((friend, index) => (

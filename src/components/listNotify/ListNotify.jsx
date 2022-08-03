@@ -14,7 +14,7 @@ function ListNotify({data, setOpenNotify}) {
                 onClick={() => setOpenNotify(false)}
             />
         </div>
-        {data.length > 0 ?
+        {data?.length > 0 ?
             data.map(item => (
                 <Link to={`/users/${item.userId}`} className='listNotifyItem' onClick={()=> setOpenNotify(false)}>
                     <span className="listNotifyItemTop">

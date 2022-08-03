@@ -51,30 +51,22 @@ export default function Topbar() {
     // Click outSide close ref
     useEffect(() => {
         const handleClickOutSideNotify = (event) => {
-            if (refNotifyList.current && 
-                !refNotifyList.current.contains(event.target) && 
-                !refNotifyIcon.current.contains(event.target) &&
-                !refNotifyNumber.current.contains(event.target)
-                ) {
+            if (refNotifyList.current && !refNotifyList.current?.contains(event.target) && !refNotifyIcon.current?.contains(event.target) && !refNotifyNumber.current?.contains(event.target)) {
                 setOpenNotify(false)
             }
         }
         const handleClickOutSideNotifyM = (event) => {
-            if (refNotifyListM.current && 
-                !refNotifyListM.current.contains(event.target) && 
-                !refNotifyIconM.current.contains(event.target) &&
-                !refNotifyNumberM.current.contains(event.target)
-                ) {
+            if (refNotifyListM.current && !refNotifyListM.current?.contains(event.target) && !refNotifyIconM.current?.contains(event.target) &&!refNotifyNumberM.current?.contains(event.target)) {
                 setOpenNotifyM(false)
             }
         }
         const handleClickOutSideSetting = (event) => {
-            if (refSetting.current && !refSetting.current.contains(event.target)) {
+            if (refSetting.current && !refSetting.current?.contains(event.target)) {
                 setOpenSetting(false)
             }
         }
         const handleScrollClickOutSideTopbarMenu = (event) => {
-            if (refTopbarMenu.current && !refTopbarMenu.current.contains(event.target) && !refTopbarMenuIcon.current.contains(event.target)) {
+            if (refTopbarMenu.current && !refTopbarMenu.current?.contains(event.target) && !refTopbarMenuIcon.current?.contains(event.target)) {
                 setOpenTopbarMenu(false)
             }
         }
@@ -129,11 +121,9 @@ export default function Topbar() {
                                     {friendRequestReceiveds.length}
                                 </span>
                             }
-                            {openNotify &&
-                                <div className='topbarNotifyList' ref={refNotifyList}>
-                                    <ListNotify data={friendRequestReceiveds} setOpenNotify={setOpenNotify}/>
-                                </div>
-                            }
+                            <div className={openNotify ? 'topbarNotifyList active' : 'topbarNotifyList'} ref={refNotifyList}>
+                                <ListNotify data={friendRequestReceiveds} setOpenNotify={setOpenNotify}/>
+                            </div>
                         </div>
                         <Link className='topbarItem' to='/home'>
                             <img className='topbarImg' src={userInfo.image} alt='avatar'/>
@@ -230,11 +220,9 @@ export default function Topbar() {
                                 {friendRequestReceiveds.length}
                             </span>
                         }
-                        {openNotifyM &&
-                            <div className='topbarNotifyList'ref={refNotifyListM}>
-                                <ListNotify data={friendRequestReceiveds} setOpenNotify={setOpenNotifyM}/>
-                            </div>
-                        }
+                        <div className={openNotifyM ? 'topbarNotifyList active' : 'topbarNotifyList'} ref={refNotifyListM}>
+                            <ListNotify data={friendRequestReceiveds} setOpenNotify={setOpenNotifyM}/>
+                        </div>
                     </div>
                     :
                     <Link className='topbarItem' to='/login'>
