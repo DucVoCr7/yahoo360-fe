@@ -34,12 +34,12 @@ export default function App() {
           <Route path="/posts/:postId" element={<Single/>}/>
           <Route path='/posts' element={<Category/>}/>
 
-          <Route path="/home" element={<Home/>}/>
-          <Route path="/write" element={<Write/>}/>
-          <Route path="/updateAccount" element={<UpdateAccount/>}/>
-          <Route path='/management' element={<Management/>}/>
+          <Route path="/home" element={userInfo ? <Home/> : <Login/>}/>
+          <Route path="/write" element={userInfo ? <Write/> : <Login/>}/>
+          <Route path="/updateAccount" element={userInfo ? <UpdateAccount/> :<Login/>}/>
+          <Route path='/management' element={userInfo ? <Management/> : <Login/>}/>
 
-          <Route path='searchPosts' element={<Search/>}/>
+          <Route path='/searchPosts' element={<Search/>}/>
         </Routes>
       </BrowserRouter>
       <Footer/>

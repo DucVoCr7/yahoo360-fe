@@ -94,6 +94,9 @@ export default function Write() {
             <CKEditor
                 editor={ClassicEditor}
                 data=""
+                config={{
+                    removePlugins: ["EasyImage","ImageUpload","MediaEmbed"]
+                }}
                 onChange={(event, editor) => {
                     const data = editor.getData();
                     setPostInfo({...postInfo, content: data})

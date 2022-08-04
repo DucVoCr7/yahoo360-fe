@@ -56,7 +56,6 @@ function NameMusics({ name, musics, setMusics, isHomePage = false }) {
       (async () => {
         try {
           const response = await axios.get(`https://noembed.com/embed?dataType=json&url=${musics[0].music}`)
-          console.log(response.data)
           setThumbnailURL(response.data.thumbnail_url)
           setTitleMusic(response.data.title)
           setPlaying(false)

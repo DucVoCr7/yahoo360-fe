@@ -4,13 +4,17 @@
         &Title {
             @include font('title');
             font-size: 16px;
-            display: block;
+            display: flex;
+            justify-content: space-between;
             margin-bottom: 10px;
             &Content {
                 cursor: pointer;
                 &Icon {
                     margin-right: 10px;
                 }
+            }
+            &SeeAll {
+
             }
         }
         &Content {
@@ -135,13 +139,17 @@
         &Title {
             @include font('title');
             font-size: 16px;
-            display: block;
+            display: flex;
+            justify-content: space-between;
             margin-bottom: 10px;
             &Content {
                 cursor: pointer;
                 &Icon {
                     margin-right: 10px;
                 }
+            }
+            &SeeAll {
+
             }
         }
         &Content {
@@ -266,13 +274,17 @@
         &Title {
             @include font('title');
             font-size: 16px;
-            display: block;
+            display: flex;
+            justify-content: space-between;
             margin-bottom: 10px;
             &Content {
                 cursor: pointer;
                 &Icon {
                     margin-right: 10px;
                 }
+            }
+            &SeeAll {
+
             }
         }
         &Content {

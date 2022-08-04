@@ -10,7 +10,6 @@ export const publicRequest = axios.create({})
 export const userRequest = axios.create({})
 userRequest.interceptors.request.use( async config => {
     const accessToken = store.getState().user.accessToken
-    console.log(accessToken)
     if (accessToken) {
         let currentDate = new Date();
         const decodedToken = jwt_decode(accessToken);

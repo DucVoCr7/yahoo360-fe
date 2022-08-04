@@ -16,8 +16,11 @@ function Friends({
     <div className='friends'>
       <title className='friendsTitle'>
         <span className="friendsTitleContent" onClick={() => setOpenFriends(true)}>
-        <i className="friendsTitleContentIcon bi bi-person-plus-fill"></i>
+          <i className="friendsTitleContentIcon bi bi-person-plus-fill"></i>
           FRIENDS ({friends.length})
+        </span>
+        <span className="friendsTitleSeeAll" onClick={() => setOpenFriends(true)}>
+            See all...
         </span>
       </title>
       {friends.length > 0 ?

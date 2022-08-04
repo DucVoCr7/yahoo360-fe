@@ -106,6 +106,9 @@ function UpdatePost({post, setOpenUpdate, setPost}) {
             <CKEditor
                 editor={ClassicEditor}
                 data={postUpdate.content}
+                config={{
+                    removePlugins: ["EasyImage","ImageUpload","MediaEmbed"]
+                }}
                 onChange={(event, editor) => {
                     const data = editor.getData();
                     setPostUpdate({...postUpdate, content: data})

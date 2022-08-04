@@ -13,9 +13,15 @@
                     margin-right: 10px;
                 }
             }
-            &Add {
-                cursor: pointer;
-                &Icon {}
+            &Action {
+                &SeeAll {
+                    cursor: pointer;
+                }
+                &Add {
+                    @include paddingMarginBorder('PC', 'left');
+                    cursor: pointer;
+                    &Icon {}
+                }
             }
         }
         &Content {
@@ -162,7 +168,7 @@
             }
 
             display: none;
-            @include fadeIn;
+            @include slideRight;
             position: fixed;
             width: 100%;
             height: calc(100% - $heightTopbar);
@@ -265,9 +271,15 @@
                     margin-right: 10px;
                 }
             }
-            &Add {
-                cursor: pointer;
-                &Icon {}
+            &Action {
+                &SeeAll {
+                    cursor: pointer;
+                }
+                &Add {
+                    @include paddingMarginBorder('TM', 'left');
+                    cursor: pointer;
+                    &Icon {}
+                }
             }
         }
         &Content {
@@ -414,7 +426,7 @@
             }
 
             display: none;
-            @include fadeIn;
+            @include slideRight;
             position: fixed;
             width: 100%;
             height: calc(100% - $heightTopbar);
@@ -485,9 +497,15 @@
                     margin-right: 10px;
                 }
             }
-            &Add {
-                cursor: pointer;
-                &Icon {}
+            &Action {
+                &SeeAll {
+                    cursor: pointer;
+                }
+                &Add {
+                    @include paddingMarginBorder('TM', 'left');
+                    cursor: pointer;
+                    &Icon {}
+                }
             }
         }
         &Content {
@@ -637,7 +655,7 @@
             }
 
             display: none;
-            @include fadeIn;
+            @include slideRight;
             position: fixed;
             width: 100%;
             height: calc(100% - $heightTopbar);

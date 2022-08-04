@@ -17,14 +17,14 @@ export const register = createAsyncThunk('users/register', async(userInfo, {reje
         return rejectWithValue(error.response.data)
     }
 })
-export const updateAccount = createAsyncThunk('users/updateAccount', async ({userId, dataUpdate})=> {
-    const response = await userRequest.patch(`/users/${userId}`, dataUpdate)
-    return response.data
-})
 export const logout = createAsyncThunk('users/logout', async ()=> {
-    const response = await publicRequest.post('/deleteRefreshToken', {
+    const response = await publicRequest.post('/logout', {
         refreshToken: JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).refreshToken
     })
+    return response.data
+})
+export const updateAccount = createAsyncThunk('users/updateAccount', async ({userId, dataUpdate})=> {
+    const response = await userRequest.patch(`/users/${userId}`, dataUpdate)
     return response.data
 })
 export const refreshToken = createAsyncThunk('users/refreshToken', async ()=> {

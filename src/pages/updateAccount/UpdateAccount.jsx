@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { updateAccount } from '../../redux/userSlice'
 import { handleErrorUpdateUser } from '../../utils/handleErrorUpdateUser'
 import './updateAccount.scss'
+import { useReduxValueGender } from '../../utils/reduxMethods'
 
 export default function UpdateAccount() {
 
@@ -12,7 +13,7 @@ const [infoUpdate, setInfoUpdate] = useState({})
 const [errors, setErrors] = useState()
 const dispatch = useDispatch()
 const navigate = useNavigate()
-
+const valueGender = useReduxValueGender(userInfo.gender)
 const handleChange = event => setInfoUpdate({...infoUpdate, [event.target.name]: event.target.value})
 const handleSetFile = event => {
     const file = event.target.files[0]
@@ -33,8 +34,6 @@ const handleUpdate = async()=> {
                 navigate('/home')
             }
         } else {
-            console.log(1)
-            console.log(resultErrors)
             setErrors(resultErrors)
         }
     }
@@ -76,7 +75,7 @@ useEffect(()=> {
                     <label className="updateAccountContentItemLabel">
                         Gender
                         <span className="updateAccountContentItemLabelInfo">
-                            {userInfo.gender}
+                            {valueGender}
                         </span>
                     </label>
                     <select onChange={handleChange} name='gender' className='updateAccountContentItemInput'>

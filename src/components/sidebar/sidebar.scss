@@ -7,7 +7,7 @@
         &Top {
             display: flex;
             &Left {
-                width: calc(180px + $sizeAlignElementPC);
+                width: calc(180px + $sizeAlignElementPC + 10px);
                 position: relative;
                 &Img {
                     height: 180px;
@@ -15,8 +15,8 @@
                     border-radius: 50%;
                     border: 5px solid $backgroundColorLight;
                     position: absolute;
-                    bottom: -5px;
-                    left: -5px;
+                    bottom: 0;
+                    left: 0;
                     box-shadow: $shadowFull;
                 }
             }
@@ -47,7 +47,7 @@
         &Top {
             display: flex;
             &Left {
-                width: calc(150px + $sizeAlignElementTM);
+                width: calc(150px + $sizeAlignElementTM + 10px);
                 position: relative;
                 &Img {
                     height: 150px;
@@ -55,8 +55,8 @@
                     border-radius: 50%;
                     border: 5px solid $backgroundColorLight;
                     position: absolute;
-                    bottom: -5px;
-                    left: -5px;
+                    bottom: 0;
+                    left: 0;
                     box-shadow: $shadowFull;
                 }
             }
@@ -95,7 +95,7 @@
                     border-radius: 50%;
                     border: 3px solid $backgroundColorLight;
                     position: absolute;
-                    bottom: -3px;
+                    bottom: 0;
                     left: 50%;
                     transform: translateX(-50%);
                     box-shadow: $shadowFull;

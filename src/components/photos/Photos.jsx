@@ -41,8 +41,8 @@ function Photos({
     if (index % 3 === 1) {
       return {
         src: item.photo,
-        width: 1080,
-        height: 1620,
+        width: 900,
+        height: 800,
         key: item.id
       }
     }
@@ -50,7 +50,7 @@ function Photos({
       return {
         src: item.photo,
         width: 1080,
-        height: 1440,
+        height: 600,
         key: item.id
       }
     }
@@ -58,11 +58,20 @@ function Photos({
       return {
         src: item.photo,
         width: 1080,
-        height: 720,
+        height: 400,
         key: item.id
       }
     }
   })
+  const handleCustomColumn = (containerWidth) => {
+    if (containerWidth > 900) {
+      return 5;
+    } else if (containerWidth < 740) {
+      return 3;
+    } else {
+      return 4;
+    }
+  }
   const [selectPhoto, setSelectPhoto] = useState(false)
   const [openGallery, setOpenGallery] = useState(false)
   const [idPhotosSelected, setIdPhotosSelected] = useState([])
@@ -76,6 +85,13 @@ function Photos({
       <img alt={alt} style={{ ...style, width: "100%", padding: 0 }} {...restImageProps} />
     </div>
   )
+  const handleCloseGallery = ()=> {
+    setOpenGallery(false)
+    setSelectPhoto(false)
+  }
+  const handleOpenGallery = () => {
+    setOpenGallery(true)
+  } 
   const handleOnSelectPhoto = () => {
     setSelectPhoto(!selectPhoto)
     setIdPhotosSelected([])
@@ -125,10 +141,12 @@ function Photos({
   }
   const handleOpenSlider = (index) => {
     setOpenSlider(true)
-    setOpenGallery(false)
+    handleCloseGallery()
     refSlider.current.slickGoTo(index)
   }
-
+  const handleCloseSlider =()=> {
+    setOpenSlider(false)
+  }
 
 
   // UploadFile
@@ -147,6 +165,7 @@ function Photos({
         try {
           const response = await userRequest.post('/photos', formData)
           setPhotos([response.data.photo, ...photos])
+          setFile(null)
         } catch (error) {
           console.log(error)
         }
@@ -158,19 +177,24 @@ function Photos({
   return (
     <div className='photos'>
       <title className='photosTitle'>
-        <span className="photosTitleContent" onClick={() => setOpenGallery(true)}>
+        <span className="photosTitleContent" onClick={handleOpenGallery}>
           <i className="photosTitleContentIcon bi bi-camera-fill"></i>
           PHOTOS ({photos.length})
         </span>
-        {isHomePage &&
-          <>
-            <label className="photosTitleAdd" htmlFor='photosId'>
-              <i className="photosTitleAddIcon bi bi-plus"></i>
-              <i className="photosTitleAddIcon bi bi-card-image"></i>
-            </label>
-            <input type="file" id="photosId" hidden onChange={handleSetFile} />
-          </>
-        }
+        <span className="photosTitleAction">
+          <span className="photosTitleActionSeeAll" onClick={handleOpenGallery}>
+            See all...
+          </span>
+          {isHomePage &&
+            <>
+              <label className="photosTitleActionAdd" htmlFor='photosId'>
+                <i className="photosTitleActionAddIcon bi bi-plus"></i>
+                <i className="photosTitleActionAddIcon bi bi-card-image"></i>
+              </label>
+              <input type="file" id="photosId" hidden onChange={handleSetFile} />
+            </>
+          }
+        </span>
       </title>
       {photos.length > 0 ?
         <div className="photosContent">
@@ -181,7 +205,7 @@ function Photos({
             </div>
           ))}
           {photosHiddenNumber > 0 &&
-            <span className="photosContentHidden" onClick={() => setOpenGallery(true)}>
+            <span className="photosContentHidden" onClick={handleOpenGallery}>
               +{photosHiddenNumber}
             </span>
           }
@@ -225,11 +249,13 @@ function Photos({
                 />
               </>
             }
-            <i className="photosGalleryTitleClose bi bi-x-lg" onClick={() => setOpenGallery(false)}></i>
+            <i className="photosGalleryTitleClose bi bi-x-lg" onClick={handleCloseGallery}></i>
           </div>
           {photos.length > 0 ?
             <PhotoAlbum
-              layout="rows"
+              layout="columns"
+              columns={handleCustomColumn}
+              minColumns={5}
               spacing={5}
               photos={photosGallery}
               renderPhoto={renderPhoto}
@@ -256,7 +282,7 @@ function Photos({
           <span className="photosSliderTitleNumber">
             {slideActive}/{photos.length}
           </span>
-          <i className="photosSliderTitleClose bi bi-x-lg" onClick={() => setOpenSlider(false)}></i>
+          <i className="photosSliderTitleClose bi bi-x-lg" onClick={handleCloseSlider}></i>
         </div>
         <div className="photosSliderContent">
           <Slider {...settings} ref={refSlider}>

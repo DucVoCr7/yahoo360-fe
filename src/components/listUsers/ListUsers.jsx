@@ -1,8 +1,24 @@
 import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
+import { userRequest } from '../../utils/requestMethods'
 import './listUsers.scss'
 
 function ListUsers({ data }) {
 
+    const navigate = useNavigate()
+    const handleDetailsUser = (userId) => {
+        navigate(`/users/${userId}`)
+    }
+    const handleLogoutUser = async (userId) => {
+        const response = await userRequest.post(`/admin/${userId}`)
+        console.log(response.data)
+    }
+    const handleBlockUser = (userId) => {
+
+    }
+    const handleDeleteUser = (userId) => {
+
+    }
     return (
         <div className="listUsers">
         <div className="listUsersTop">
@@ -27,10 +43,26 @@ function ListUsers({ data }) {
                         <td className='managementTableData'>{user.name}</td>
                         <td className='managementTableData'>{user.email}</td>
                         <td className='managementTableData'>
-                            <button className='managementTableDataButton btnSmall'>Details</button>
-                            <button className='managementTableDataButton btnSmall'>Logout</button>
-                            <button className='managementTableDataButton btnSmall'>Block</button>
-                            <button className='managementTableDataButton btnSmall'>Delete</button>
+                            <button className='managementTableDataButton btnSmall'
+                                onClick={()=> handleDetailsUser(user.id)}
+                            >
+                                Details
+                            </button>
+                            <button className='managementTableDataButton btnSmall'
+                                onClick={()=> handleLogoutUser(user.id)}
+                            >
+                                Logout
+                            </button>
+                            <button className='managementTableDataButton btnSmall'
+                                onClick={()=> handleBlockUser(user.id)}
+                            >
+                                Block
+                            </button>
+                            <button className='managementTableDataButton btnSmall'
+                                onClick={()=> handleDeleteUser(user.id)}
+                            >
+                                Delete
+                            </button>
                         </td>
                     </tr>
                 )}

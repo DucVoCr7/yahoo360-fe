@@ -7,10 +7,9 @@ import './management.scss'
 export default function Management() {
 
     const [data, setData] = useState()
-
     useEffect(()=> {
         (async()=> {
-            const response = await userRequest.get('/users')
+            const response = await userRequest.get('/admin')
             setData(response.data.data)
         })()
     }, [])
