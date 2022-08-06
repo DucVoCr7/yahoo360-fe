@@ -20,12 +20,12 @@
         width: 50%;
         height: calc(100vh - $heightTopbar);
         position: fixed;
-        bottom: 0;
+        top: $heightTopbar;
         right: 0;
         box-shadow: $shadowFull;
         transform: translateX(50%);
         padding: $sizeAlignPagePC;
-        overflow: scroll;
+        overflow-y: scroll;
         @include slideLeft;
 
         &Top {
@@ -86,12 +86,12 @@
         width: 600px;
         height: calc(100vh - $heightTopbar);
         position: fixed;
-        bottom: 0;
+        top: $heightTopbar;
         right: 0;
         box-shadow: $shadowFull;
         transform: translateX(50%);
         padding: $sizeAlignPageTM;
-        overflow: scroll;
+        overflow-y: scroll;
         @include slideLeft;
 
         &Top {
@@ -152,12 +152,12 @@
         width: 100%;
         height: calc(100vh - $heightTopbar);
         position: fixed;
-        bottom: 0;
+        top: $heightTopbar;
         right: 0;
         box-shadow: $shadowFull;
         transform: translateX(50%);
         padding: $sizeAlignPageTM;
-        overflow: scroll;
+        overflow-y: scroll;
         @include slideLeft;
 
         &Top {

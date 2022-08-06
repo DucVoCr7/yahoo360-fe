@@ -168,7 +168,7 @@
             }
 
             display: none;
-            @include slideRight;
+            @include slideLeft;
             position: fixed;
             width: 100%;
             height: calc(100% - $heightTopbar);
@@ -426,7 +426,7 @@
             }
 
             display: none;
-            @include slideRight;
+            @include slideLeft;
             position: fixed;
             width: 100%;
             height: calc(100% - $heightTopbar);
@@ -655,7 +655,7 @@
             }
 
             display: none;
-            @include slideRight;
+            @include slideLeft;
             position: fixed;
             width: 100%;
             height: calc(100% - $heightTopbar);
