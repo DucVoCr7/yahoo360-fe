@@ -1,13 +1,23 @@
 import React, { useState } from 'react'
 import { useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useReduxUserId, useReduxUserImage, useReduxUserName } from '../../utils/reduxMethods'
 import { userRequest } from '../../utils/requestMethods'
 import './replyAwait.scss'
-function ReplyAwait({commentId, setOpenReply, postId, setCommentsNumber, setReplies}) {
+
+function ReplyAwait({
+    commentId, 
+    setOpenReply, 
+    postId, 
+    setCommentsNumber, 
+    setReplies
+}) {
+
     const [content, setContent] = useState('')
     const userId = useReduxUserId()
     const userName = useReduxUserName()
     const userImage = useReduxUserImage()
+    const navigate = useNavigate()
     const handleReply = useCallback(async () => {
         if(content.trim()) {
             try {
@@ -21,7 +31,7 @@ function ReplyAwait({commentId, setOpenReply, postId, setCommentsNumber, setRepl
                     image: userImage,
                 }}, ...prev])
             } catch (error) {
-                console.log(error)
+                navigate('/login')
             }
         } else {
             setOpenReply(false)

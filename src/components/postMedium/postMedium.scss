@@ -306,7 +306,7 @@
                 display: none;
             }
             .postMediumContent {
-                @include limitLine(4);
+                @include limitLine(3);
             }
         }
         &.fullUser {
@@ -314,7 +314,7 @@
                 display: none;
             }
             .postMediumContent {
-                @include limitLine(4);
+                @include limitLine(3);
             }
         }
         &Group {
@@ -360,7 +360,7 @@
             .postMediumContent {
                 padding-top: $sizeAlignElementTM;
                 color: $contentBriefColor;
-                @include limitLine(4);
+                @include limitLine(3);
                 @include font('content');
                 line-height: 1.4;
                 > :nth-child(n) {

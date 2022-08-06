@@ -12,7 +12,6 @@ export default function User() {
 
   const [image, setImage] = useState()
   const [posts, setPosts] = useState()
-  const [postsNumber, setPostsNumber] = useState()
   const [photos, setPhotos] = useState()
   const [friends, setFriends] = useState()
   const [musics, setMusics] = useState()
@@ -35,10 +34,9 @@ export default function User() {
       (async () => {
         try {
           const response = await publicRequest.get(`/userPage/${params.userId}`)
-          console.log(response.data)
+  
           setImage(response.data.dataUser.image)
           setPosts(response.data.dataUser.posts)
-          setPostsNumber(response.data.dataUser.posts.length)
           setPhotos(response.data.dataUser.photos)
           setFriends(response.data.dataUser.friends)
           setMusics(response.data.dataUser.musics)
@@ -79,7 +77,6 @@ export default function User() {
             setStatusFriend={setStatusFriend}
             gender={gender}
             position={position}
-            postsNumber={postsNumber}
             address={address}
 
             photos={photos}

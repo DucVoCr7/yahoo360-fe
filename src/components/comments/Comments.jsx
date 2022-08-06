@@ -2,6 +2,7 @@ import React, { useState, useEffect,  memo, useCallback }  from 'react'
 import { publicRequest, userRequest } from '../../utils/requestMethods'
 import { useReduxUserId, useReduxUserImage, useReduxUserName } from '../../utils/reduxMethods'
 import Comment from '../comment/Comment'
+import { useNavigate } from 'react-router-dom'
 import './comments.scss'
 
 function Comments({
@@ -15,6 +16,7 @@ function Comments({
     const userId = useReduxUserId()
     const userName = useReduxUserName()
     const userImage = useReduxUserImage()
+    const navigate = useNavigate()
 
     const handleComment = useCallback(async()=> {
       if(content.trim()) {
@@ -30,7 +32,7 @@ function Comments({
           setCommentsNumber(prev => prev + 1)
           setContent('')
         } catch (error) {
-          console.log(error)
+          navigate('/login')
         }
       }
     })
@@ -52,7 +54,7 @@ function Comments({
         <div className="commentsTop">
             <div className="commentsTopTitle">
                 Write comments
-                <i className="commentsTopTitleClose bi bi-box-arrow-right" 
+                <i className="commentsTopTitleClose bi bi-x-lg" 
                   onClick={() => setOpenComments(false)}
                 />
             </div>

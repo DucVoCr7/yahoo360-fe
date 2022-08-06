@@ -3,6 +3,7 @@ import { useReduxUserFriendRequestReceiveds, useReduxUserFriendRequestSents, use
 import { userRequest } from '../../utils/requestMethods'
 import { useDispatch } from 'react-redux'
 import { setFriendRequestReceiveds, setFriendRequestSents } from '../../redux/userSlice'
+import { useNavigate } from 'react-router-dom';
 import './actionsFriend.scss'
 
 function ActionsFriend({
@@ -14,6 +15,7 @@ function ActionsFriend({
 }) {
 
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const userId = useReduxUserId()
     const userName = useReduxUserName()
     const userImg = useReduxUserImage()
@@ -79,7 +81,7 @@ function ActionsFriend({
             setStatusFriend(2)
             dispatch(setFriendRequestSents([response.data.request, ...userFriendRequestSents]))
         } catch (error) {
-            console.log(error)
+            navigate('/login')
         }
     })
 

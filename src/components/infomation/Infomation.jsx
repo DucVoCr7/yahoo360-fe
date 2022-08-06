@@ -5,7 +5,6 @@ import './infomation.scss'
 function Infomation({
     gender, 
     position, 
-    postsNumber, 
     address
 }) {
 
@@ -21,10 +20,6 @@ function Infomation({
         <span className="infomationItem">
             <i className="infomationItemIcon bi-bookmark-star-fill"></i>
             {valuePosition}
-        </span>
-        <span className="infomationItem">
-            <i className="infomationItemIcon bi bi-file-earmark-richtext-fill"></i>
-            {postsNumber}
         </span>
         <span className="infomationItem">
             <i className="infomationItemIcon bi-house-fill"></i>

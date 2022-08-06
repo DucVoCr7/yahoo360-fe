@@ -3,10 +3,15 @@ import { Link } from 'react-router-dom'
 import empty from '../../assets/image/empty.png'
 import './postsUser.scss'
 import PostMedium from '../postMedium/PostMedium'
+
 function PostsUser({ posts, isHomePage = false }) {
-    console.log('re-render: PostsUser')
+
     return (
         <div className='postsUser'>
+            <span className="postsUserTitle">
+                <i className="postsUserTitleIcon bi bi-file-earmark-richtext-fill"></i>
+                POSTS ({posts.length})
+            </span>
             {posts.length > 0 ?
                 <div className="postsUserContent">
                     {posts.length > 5 ?

@@ -20,7 +20,9 @@ import Search from "./pages/search/Search";
 
 
 export default function App() {
+  
   const {userInfo} = useSelector(state => state.user)
+
   return (
     <div className="App">
       <BrowserRouter>

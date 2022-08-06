@@ -32,7 +32,7 @@ function Post({post, setPost}) {
                 setIsLike(true)
             }
         } catch (error) {
-            console.log(error)
+            navigate('/login')
         }
     }
 
@@ -58,7 +58,6 @@ function Post({post, setPost}) {
         })()
     }, [post.id])
 
-    console.log('render Post')
     return (
         !openUpdate ? 
             <>

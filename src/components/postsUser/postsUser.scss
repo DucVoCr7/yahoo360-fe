@@ -6,6 +6,14 @@
         flex: 1;
         display: flex;
         flex-direction: column;
+        &Title {
+            @include font('title');
+            font-size: 16px;
+            margin-bottom: $sizeAlignElementPC;
+            &Icon {
+                margin-right: 10px;
+            }
+        }
         &Content {
             &Center {
                 @include paddingMarginBorder('PC', 'bottom');
@@ -65,6 +73,14 @@
         flex: 1;
         display: flex;
         flex-direction: column;
+        &Title {
+            @include font('title');
+            font-size: 16px;
+            margin-bottom: $sizeAlignElementTM;
+            &Icon {
+                margin-right: 10px;
+            }
+        }
         &Content {
             &Center {
                 @include paddingMarginBorder('TM', 'bottom');
@@ -129,6 +145,14 @@
         flex: 1;
         display: flex;
         flex-direction: column;
+        &Title {
+            @include font('title');
+            font-size: 16px;
+            margin-bottom: $sizeAlignElementTM;
+            &Icon {
+                margin-right: 10px;
+            }
+        }
         &Content {
             &Center {
                 @include paddingMarginBorder('TM', 'bottom');

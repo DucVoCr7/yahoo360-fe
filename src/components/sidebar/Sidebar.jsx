@@ -17,7 +17,6 @@ export default function Sidebar({
     
     gender, 
     position, 
-    postsNumber, 
     address, 
 
     photos, 
@@ -37,7 +36,7 @@ export default function Sidebar({
     } else {
         elementRenderNumber = 6
     }
-    console.log('re-render: Sidebar')
+
     return (
         <div className='sidebar'>
             <div className="sidebarTop">
@@ -64,7 +63,6 @@ export default function Sidebar({
                         <Infomation
                             gender={gender} 
                             position = {position}
-                            postsNumber={postsNumber}
                             address = {address}
                         />
                     </div>

@@ -6,7 +6,7 @@
             font-size: 16px;
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
+            margin-bottom: $sizeAlignElementPC;
             &Content {
                 cursor: pointer;
                 &Icon {
@@ -141,7 +141,7 @@
             font-size: 16px;
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
+            margin-bottom: $sizeAlignElementTM;
             &Content {
                 cursor: pointer;
                 &Icon {
@@ -276,7 +276,7 @@
             font-size: 16px;
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
+            margin-bottom: $sizeAlignElementTM;
             &Content {
                 cursor: pointer;
                 &Icon {

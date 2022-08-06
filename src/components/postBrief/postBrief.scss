@@ -155,7 +155,7 @@
         }
         .postContent {
             color: $contentBriefColor;
-            @include limitLine(5);
+            @include limitLine(3);
             @include font('content');
             line-height: 1.4;
             > :nth-child(n) {

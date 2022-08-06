@@ -15,7 +15,6 @@ const userId = useReduxUserId()
 
 const [image, setImage] = useState()
 const [posts, setPosts] = useState()
-const [postsNumber, setPostsNumber] = useState()
 const [photos, setPhotos] = useState()
 const [friends, setFriends] = useState()
 const [musics, setMusics] = useState()
@@ -31,7 +30,6 @@ useEffect(()=> {
       console.log(response.data)
       setImage(response.data.dataUser.image)
       setPosts(response.data.dataUser.posts)
-      setPostsNumber(response.data.dataUser.posts.length)
       setPhotos(response.data.dataUser.photos)
       setFriends(response.data.dataUser.friends)
       setMusics(response.data.dataUser.musics)
@@ -62,7 +60,6 @@ useEffect(()=> {
 
             gender={gender}
             position={position}
-            postsNumber={postsNumber}
             address={address}
 
             photos={photos}

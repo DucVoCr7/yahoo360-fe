@@ -24,7 +24,6 @@ function Reply({ reply, setReplies, setCommentsNumber }) {
     }
   })
 
-  console.log('render Reply')
   return (
     <div className='reply'>
       <Link to={`/users/${reply.userId}`} className='replyLeft'>

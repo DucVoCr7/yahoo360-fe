@@ -4,7 +4,7 @@
         &Title {
             @include font('title');
             font-size: 16px;
-            margin-bottom: 10px;
+            margin-bottom: $sizeAlignElementPC;
             display: flex;
             justify-content: space-between;
             &Content {
@@ -262,7 +262,7 @@
         &Title {
             @include font('title');
             font-size: 16px;
-            margin-bottom: 10px;
+            margin-bottom: $sizeAlignElementTM;
             display: flex;
             justify-content: space-between;
             &Content {
@@ -488,7 +488,7 @@
         &Title {
             @include font('title');
             font-size: 16px;
-            margin-bottom: 10px;
+            margin-bottom: $sizeAlignElementTM;
             display: flex;
             justify-content: space-between;
             &Content {

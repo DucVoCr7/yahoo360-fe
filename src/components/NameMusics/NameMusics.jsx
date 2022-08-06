@@ -83,7 +83,7 @@ function NameMusics({ name, musics, setMusics, isHomePage = false }) {
                 "musicContentAction bi bi-pause-fill"
                 :
                 "musicContentAction bi bi-play-fill"
-              }
+                }
                 onClick={() => setPlaying(!playing)}
               />
               <span className="musicContentTitle">

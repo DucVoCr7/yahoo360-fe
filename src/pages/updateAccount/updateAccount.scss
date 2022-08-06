@@ -27,15 +27,13 @@
             &Item {
                 &:first-child &Label {
                     font-weight: 500;
-                    height: 30px;
+                    height: 35px;
                     width: unset;
-                    justify-content: center;
                     background-color: $mainColor;
                     padding: 0 10px;
                     border-radius: 10px;
                     cursor: pointer;
                     &Info {
-                        font-size: 20px;
                         margin-left: 10px;
 
                     }
@@ -116,15 +114,13 @@
             &Item {
                 &:first-child &Label {
                     font-weight: 500;
-                    height: 30px;
+                    height: 35px;
                     width: unset;
-                    justify-content: center;
                     background-color: $mainColor;
                     padding: 0 10px;
                     border-radius: 10px;
                     cursor: pointer;
                     &Info {
-                        font-size: 20px;
                         margin-left: 10px;
 
                     }
@@ -200,15 +196,13 @@
             &Item {
                 &:first-child &Label {
                     font-weight: 500;
-                    height: 30px;
+                    height: 35px;
                     width: unset;
-                    justify-content: center;
                     background-color: $mainColor;
                     padding: 0 10px;
                     border-radius: 10px;
                     cursor: pointer;
                     &Info {
-                        font-size: 20px;
                         margin-left: 10px;
 
                     }

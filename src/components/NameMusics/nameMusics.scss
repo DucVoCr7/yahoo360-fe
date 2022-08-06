@@ -9,13 +9,13 @@
     }
     .music {
         width: 300px;
-        height: 30px;
+        height: 35px;
         display: flex;
         align-items: center;
         background-color: $greyBtnColor;
-        box-shadow: $shadowFull;
-        padding: 3px;
-        border-radius: 15px;
+        
+        padding: 5px;
+        border-radius: 17.5px;
         position: relative;
         @include font('title');
         &Content {
@@ -27,7 +27,7 @@
             &Thumb {
                 display: block;
                 height: 100%;
-                width: 24px;
+                width: 25px;
                 background-color: gray;
                 border-radius: 50%;
                 position: relative;
@@ -118,7 +118,7 @@
             }
             z-index: 3;
             @include ScaleTopRight;
-            box-shadow: $shadowFull;
+            
             width: 100%;
             position: absolute;
             top: calc(100% + 5px);
@@ -165,13 +165,13 @@
         }
         .music {
             width: 300px;
-            height: 30px;
+            height: 35px;
             display: flex;
             align-items: center;
             background-color: $greyBtnColor;
-            border-radius: 15px;
-            padding: 3px;
-            box-shadow: $shadowFull;
+            border-radius: 17.5px;
+            padding: 5px;
+            
             position: relative;
             @include font('title');
             &Icon {
@@ -186,7 +186,7 @@
                 &Thumb {
                     display: block;
                     height: 100%;
-                    width: 24px;
+                    width: 25px;
                     background-color: gray;
                     border-radius: 50%;
                     position: relative;
@@ -278,7 +278,7 @@
                 }
                 z-index: 3;
                 @include ScaleTopRight;
-                box-shadow: $shadowFull;
+                
                 width: 100%;
                 position: absolute;
                 top: calc(100% + 5px);
@@ -325,13 +325,13 @@
         }
         .music {
             width: 250px;
-            height: 30px;
+            height: 35px;
             display: flex;
             align-items: center;
             background-color: $greyBtnColor;
-            border-radius: 15px;
-            padding: 3px;
-            box-shadow: $shadowFull;
+            border-radius: 17.5px;
+            padding: 5px;
+            
             position: relative;
             @include font('title');
             font-size: 16px;
@@ -347,7 +347,7 @@
                 &Thumb {
                     display: block;
                     height: 100%;
-                    width: 24px;
+                    width: 25px;
                     background-color: gray;
                     border-radius: 50%;
                     position: relative;
@@ -439,7 +439,7 @@
                 }
                 z-index: 3;
                 @include ScaleTopRight;
-                box-shadow: $shadowFull;
+                
                 width: 100%;
                 position: absolute;
                 top: calc(100% + 5px);

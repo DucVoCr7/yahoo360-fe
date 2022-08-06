@@ -3,7 +3,8 @@ import jwt_decode from "jwt-decode";
 import {store} from '../redux/store'
 import { refreshToken } from "../redux/userSlice";
 
-axios.defaults.baseURL = 'https://server-yahoo360v2.herokuapp.com/api'
+axios.defaults.baseURL = process.env.REACT_APP_BACK_END_URL
+// axios.defaults.baseURL = 'https://server-yahoo360v2.herokuapp.com/api'
 
 export const publicRequest = axios.create({})
 
