@@ -179,11 +179,11 @@ function Photos({
       <title className='photosTitle'>
         <span className="photosTitleContent" onClick={handleOpenGallery}>
           <i className="photosTitleContentIcon bi bi-camera-fill"></i>
-          PHOTOS ({photos.length})
+          PHOTOS
         </span>
         <span className="photosTitleAction">
           <span className="photosTitleActionSeeAll" onClick={handleOpenGallery}>
-            See all...
+            See all ({photos.length})
           </span>
           {isHomePage &&
             <>

@@ -97,6 +97,7 @@
                 font-size: 15px;
                 &Child {
                     &:last-child {
+                        color: $contentBriefColor;
                         margin-right: 0;
                     }
                     margin-right: 10px;
@@ -234,6 +235,7 @@
                 &Child {
                     &:last-child {
                         margin-right: 0;
+                        color: $contentBriefColor;
                     }
                     margin-right: 10px;
                     &Icon {
@@ -322,6 +324,7 @@
             flex-direction: column;
             .postMediumTitle {
                 @include font('title');
+                font-size: 16px;
                 font-weight: 600;
                 line-height: 1.4;
                 margin: 0;

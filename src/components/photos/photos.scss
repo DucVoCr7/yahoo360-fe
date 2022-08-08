@@ -3,19 +3,30 @@
     .photos {
         &Title {
             @include font('title');
-            font-size: 16px;
+            font-weight: 600;
             margin-bottom: $sizeAlignElementPC;
             display: flex;
+            align-items: center;
             justify-content: space-between;
             &Content {
                 cursor: pointer;
+                display: flex;
+                align-items: center;
                 &Icon {
                     margin-right: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 35px;
+                    width: 35px;
+                    border-radius: 50%;
+                    background-color: $greyBtnColor;
                 }
             }
             &Action {
                 &SeeAll {
                     cursor: pointer;
+                    font-weight: 500;
                 }
                 &Add {
                     @include paddingMarginBorder('PC', 'left');
@@ -62,12 +73,8 @@
             }
         }
         &NoContent {
-            height: 70px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            border-radius: 3px;
-            background-image: $backGroundEmpty;
             &Content {
                 &Icon {
                     &.active {
@@ -261,19 +268,30 @@
     .photos {
         &Title {
             @include font('title');
-            font-size: 16px;
+            font-weight: 600;
             margin-bottom: $sizeAlignElementTM;
             display: flex;
+            align-items: center;
             justify-content: space-between;
             &Content {
                 cursor: pointer;
+                display: flex;
+                align-items: center;
                 &Icon {
                     margin-right: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 35px;
+                    width: 35px;
+                    border-radius: 50%;
+                    background-color: $greyBtnColor;
                 }
             }
             &Action {
                 &SeeAll {
                     cursor: pointer;
+                    font-weight: 500;
                 }
                 &Add {
                     @include paddingMarginBorder('TM', 'left');
@@ -320,20 +338,16 @@
             }
         }
         &NoContent {
-            height: 60px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            border-radius: 3px;
-            background-image: $backGroundEmpty;
             &Content {
                 &Icon {
                     &.active {
                         cursor: pointer;
                     }
                     display: block;
-                    width: 40px;
-                    height: 40px;
+                    width: 30px;
+                    height: 30px;
                 }
             }
         }
@@ -487,19 +501,31 @@
     .photos {
         &Title {
             @include font('title');
+            font-weight: 600;
             font-size: 16px;
             margin-bottom: $sizeAlignElementTM;
             display: flex;
+            align-items: center;
             justify-content: space-between;
             &Content {
                 cursor: pointer;
+                display: flex;
+                align-items: center;
                 &Icon {
                     margin-right: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 50%;
+                    background-color: $greyBtnColor;
                 }
             }
             &Action {
                 &SeeAll {
                     cursor: pointer;
+                    font-weight: 500;
                 }
                 &Add {
                     @include paddingMarginBorder('TM', 'left');
@@ -546,20 +572,16 @@
             }
         }
         &NoContent {
-            height: 60px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            border-radius: 3px;
-            background-image: $backGroundEmpty;
             &Content {
                 &Icon {
                     &.active {
                         cursor: pointer;
                     }
                     display: block;
-                    width: 40px;
-                    height: 40px;
+                    width: 30px;
+                    height: 30px;
                 }
             }
         }

@@ -190,6 +190,7 @@
         &Name {
             display: inline-block;
             @include font('title');
+            font-size: 16px;
             background-color: $mainColor;
             border: 1px solid $disableColor;
             border-radius: 5px;

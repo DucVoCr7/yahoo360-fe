@@ -140,14 +140,15 @@
             color: $contentBriefColor;
         }
         .postImg {
-            max-height: 300px;
-            min-height: 150px;
+            max-height: 160px;
+            min-height: 140px;
             display: block;
             width: 100%;
             object-fit: cover;
         }
         .postTitle {
             @include font('title');
+            font-size: 16px;
             font-weight: 600;
             line-height: 1.4;
             margin: 0 0 5px 0;
@@ -173,7 +174,6 @@
         }
         &.noContentBigRight{
             .postTitle {
-                font-size: 25px;
                 margin: 5px 0 0 0;
             }
             .postContent {
@@ -182,7 +182,6 @@
         }
         &.noContentBigTop{
             .postTitle {
-                font-size: 25px;
                 margin: 5px 0 0 0;
             }
             .postContent {

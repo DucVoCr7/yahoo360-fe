@@ -3,7 +3,6 @@
     .sidebar {
         width: calc(100% - $sizeAlignPagePC*2);
         padding-top: $sizeAlignElementPC;
-        @include paddingMarginBorder('PC', 'bottom', $blackBorder, 4px, double);
         &Top {
             display: flex;
             &Left {
@@ -33,8 +32,11 @@
             }
         }
         &Bottom {
+            > :nth-child(n) {
+                @include paddingMarginBorder('PC', 'bottom');
+            }
             > :first-child {
-                margin: $sizeAlignElementPC 0;
+                @include paddingMarginBorder('PC', 'top');
             }
         }
     }
@@ -43,7 +45,6 @@
     .sidebar {
         width: calc(100% - $sizeAlignPageTM*2);
         padding-top: $sizeAlignElementTM;
-        @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
         &Top {
             display: flex;
             &Left {
@@ -73,8 +74,11 @@
             }
         }
         &Bottom {
+            > :nth-child(n) {
+                @include paddingMarginBorder('TM', 'bottom');
+            }
             > :first-child {
-                margin: $sizeAlignElementTM 0;
+                @include paddingMarginBorder('TM', 'top');
             }
         }
     }
@@ -84,7 +88,6 @@
     .sidebar {
         width: calc(100% - $sizeAlignPageTM*2);
         padding-top: $sizeAlignElementTM;
-        @include paddingMarginBorder('TM', 'bottom', $blackBorder, 4px, double);
         &Top {
             &Left {
                 position: relative;
@@ -121,9 +124,11 @@
             }
         }
         &Bottom {
+            > :nth-child(n) {
+                @include paddingMarginBorder('TM', 'bottom');
+            }
             > :first-child {
                 @include paddingMarginBorder('TM', 'top');
-                @include paddingMarginBorder('TM', 'bottom');
             }
         }
     }

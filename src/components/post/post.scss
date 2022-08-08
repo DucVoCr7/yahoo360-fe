@@ -68,6 +68,7 @@
             .postTime {
                 @include font('title');
                 padding-left: 10px;
+                color: $contentBriefColor;
                 border-left: 1px solid $disableColor;
                 margin-left: 10px
             }
@@ -161,6 +162,7 @@
             .postTime {
                 @include font('title');
                 padding-left: 10px;
+                color: $contentBriefColor;
                 border-left: 1px solid $disableColor;
                 margin-left: 10px
             }
@@ -255,6 +257,7 @@
             }
             .postTime {
                 @include font('title');
+                color: $contentBriefColor;
             }
         }
     
