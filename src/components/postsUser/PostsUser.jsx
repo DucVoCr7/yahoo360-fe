@@ -9,8 +9,13 @@ function PostsUser({ posts, isHomePage = false }) {
     return (
         <div className='postsUser'>
             <span className="postsUserTitle">
-                <i className="postsUserTitleIcon bi bi-file-earmark-richtext-fill"></i>
-                POSTS ({posts.length})
+                <span className="postsUserTitleContent">
+                    <i className="postsUserTitleContentIcon bi bi-file-earmark-richtext-fill"></i>
+                    POSTS
+                </span>
+                <span className="postsUserTitleSeeAll">
+                    ({posts.length})
+                </span>
             </span>
             {posts.length > 0 ?
                 <div className="postsUserContent">

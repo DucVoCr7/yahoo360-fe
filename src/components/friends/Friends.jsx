@@ -14,7 +14,7 @@ function Friends({
 
   return (
     <div className='friends'>
-      <title className='friendsTitle'>
+      <span className='friendsTitle'>
         <span className="friendsTitleContent" onClick={() => setOpenFriends(true)}>
           <i className="friendsTitleContentIcon bi bi-person-fill"></i>
           FRIENDS
@@ -22,7 +22,7 @@ function Friends({
         <span className="friendsTitleSeeAll" onClick={() => setOpenFriends(true)}>
             See all ({friends.length})
         </span>
-      </title>
+      </span>
       {friends.length > 0 ?
         <div className="friendsContent">
           {friends.map((friend, index) => (

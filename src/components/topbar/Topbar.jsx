@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { logout } from '../../redux/userSlice'
 import { useReduxUserFriendRequestReceiveds } from '../../utils/reduxMethods'
 import ListNotify from '../listNotify/ListNotify'
@@ -24,7 +24,6 @@ export default function Topbar() {
     const {userInfo} = useSelector(state => state.user)
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const location = useLocation()
     const handleLogout = async (event) => {
         const statusLogout = await dispatch(logout())
         if(!statusLogout.error) {
@@ -196,11 +195,9 @@ export default function Topbar() {
                     </Link>
                 </div>
             </div>
-            {location.pathname !== '/' &&
-                <Link to='/' className="topbarGroupM">
-                    YAHOO 360
-                </Link>
-            }
+            <Link to='/' className="topbarGroupM">
+                YAHOO 360
+            </Link>
             <div className="topbarGroupM">
                 {userInfo ?
                     <div className='topbarItem'>
